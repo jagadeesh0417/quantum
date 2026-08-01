@@ -211,6 +211,23 @@ section { padding: 100px 0; }
   font-size: 16px; color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.7;
 }
 
+.service-group { margin-top: 64px; }
+
+.service-group .group-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px; font-weight: 400; line-height: 1.3; letter-spacing: -0.3px;
+  color: var(--ink);
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.service-group .group-lead {
+  font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px;
+}
+
+.service-group + .service-group { margin-top: 72px; }
+
 @keyframes idleFloat {
   0% { transform: translateY(0); }
   100% { transform: translateY(-4px); }
