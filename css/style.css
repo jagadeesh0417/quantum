@@ -525,6 +525,14 @@ section { padding: 100px 0; }
 
 .therapy-module p { font-size: 14px; line-height: 1.7; margin-bottom: 0; }
 
+.therapy-module ul { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+
+.therapy-module li {
+  font-size: 14px; color: var(--muted); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6;
+}
+
+.therapy-module li::before { content: '—'; color: var(--brand-blue); font-weight: 400; }
+
 .check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
 
 .check-list li {
