@@ -1,3 +1,4 @@
+/* Quantum Health Biotech Park — site core interactions (build trigger) */
 document.addEventListener('DOMContentLoaded', function () {
 
   // Mobile nav toggle
