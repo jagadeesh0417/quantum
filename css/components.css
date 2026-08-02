@@ -242,6 +242,7 @@
   transition: border-color 0.3s ease;
 }
 .accordion-item.open { border-color: rgba(201,162,39,0.5); }
+.accordion-item.active { border-color: rgba(201,162,39,0.5); }
 .accordion-header {
   width: 100%;
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
@@ -260,6 +261,7 @@
   transition: transform 0.3s ease, background 0.3s ease;
 }
 .accordion-item.open .accordion-icon { transform: rotate(45deg); background: var(--gold-soft); color: var(--gold); }
+.accordion-item.active .accordion-icon { transform: rotate(45deg); background: var(--gold-soft); color: var(--gold); }
 .accordion-body { display: none; padding: 0 22px 20px; font-size: 14px; color: var(--muted); line-height: 1.85; }
 .accordion-item.open .accordion-body { display: block; }
 .accordion-body ul { list-style: none; margin-top: 8px; }
