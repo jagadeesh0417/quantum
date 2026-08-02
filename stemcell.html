@@ -5,287 +5,352 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>Stem Cell Therapy — QuantumHealth, Zurich</title>
-  <meta name="description" content="A complete guide to stem cell therapy: what stem cells are, how they work, types, sources, delivery methods, and what treatment involves. Educational resource from QuantumHealth.">
+  <title>Stem Cell Therapy | Quantum Health Biotech Park, Bengaluru</title>
+  <meta name="description" content="A complete guide to stem cell therapy from Quantum Health Biotech Park, Bengaluru: what stem cells are, how they work, types, sources, delivery methods, and what treatment involves.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="preloader" aria-hidden="true">
+    <span class="pl-logo">&#x25C8;</span>
+    <span class="pl-ring"></span>
+  </div>
   <div class="bg-gradient"></div>
-  <nav class="navbar">
+
+  <!-- ================= HEADER ================= -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">&#x25C8; QuantumHealth</a>
+      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li class="has-mega" id="mega-wrap">
+          <a href="services.html" class="nav-link-mega">Services <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu">
+            <div>
+              <h4>Medicine &amp; Diagnostics</h4>
+              <a href="services.html">Our Services <span class="mega-sub">— 8 clinical divisions</span></a>
+              <a href="therapies.html">Therapies <span class="mega-sub">— 18 treatment areas</span></a>
+              <a href="stemcell.html">Stem Cell Therapies <span class="mega-sub">— cellular medicine</span></a>
+              <a href="programs.html">Programmes <span class="mega-sub">— residential stays</span></a>
+            </div>
+            <div>
+              <h4>Wellness &amp; Hospitality</h4>
+              <a href="wellness.html">Wellness Experience <span class="mega-sub">— your 10-stage journey</span></a>
+              <a href="resort-tour.html">Resort Tour <span class="mega-sub">— virtual campus journey</span></a>
+              <a href="gallery.html">Campus Gallery <span class="mega-sub">— grounds &amp; suites</span></a>
+              <a href="contact.html">Contact &amp; Visit <span class="mega-sub">— tours &amp; transfers</span></a>
+            </div>
+            <div>
+              <h4>Why Quantum</h4>
+              <a href="index.html#why">Why Choose Quantum</a>
+              <a href="index.html#vision">Our Vision</a>
+              <a href="index.html#journey">Your Health Journey</a>
+              <a href="index.html#cta">Book a Consultation</a>
+            </div>
+          </div>
+        </li>
         <li><a href="therapies.html">Therapies</a></li>
-        <li><a href="stemcell.html" class="active">Stem Cell</a></li>
+        <li><a href="stemcell.html">Stem Cell</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+      <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
-        <span class="lang-current">EN <span class="lang-arrow">▾</span></span>
+        <span class="lang-current">EN <span class="lang-arrow">&#x25BE;</span></span>
         <div class="lang-dropdown">
-          <a href="de/stemcell.html">DE</a>
-          <a href="ar/stemcell.html">AR</a>
+          <a href="de/index.html">DE</a>
+          <a href="ar/index.html">AR</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
+  <!-- ================= HERO ================= -->
+  <section class="pg-hero" id="main">
     <div class="container">
-      <span class="breadcrumb">Home &gt; Stem Cell Therapy</span>
-      <h1 class="heading-gradient">Stem Cell Therapy</h1>
-      <p>A complete guide to regenerative cellular medicine</p>
+      <nav class="pg-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">&rsaquo;</span>
+        <span class="current">Stem Cell Therapy</span>
+      </nav>
+      <span class="pg-sub">Regenerative Medicine</span>
+      <h1>A complete guide to <em>cellular medicine</em></h1>
+      <p>What stem cells are, how they work, the types and sources used in therapy, and what treatment involves — from consultation to follow-up.</p>
     </div>
   </section>
 
+  <!-- ================= INTRODUCTION ================= -->
   <section class="section" data-reveal>
     <div class="container">
-      <span class="eyebrow">QuantumHealth &middot; Zurich</span>
-      <h2 class="heading-gradient">Introduction</h2>
-      <p class="section-intro">Stem cells are among the most remarkable tools in modern medicine. As the body's raw material, they hold the ability to repair, replace, and regenerate damaged tissue — offering a way to treat the underlying causes of disease and aging rather than only managing symptoms.</p>
-      <p>This guide is a complete introduction to stem cell therapy. It explains what stem cells are and how they work, the different types and where they come from, the specific therapies offered, and what treatment involves from consultation to follow-up. The aim is to give you a clear, grounded understanding so you can make informed decisions with your medical team.</p>
-      <p>Stem cell therapy is rarely used in isolation. It is tailored to the individual and often combined with supporting therapies for a coordinated effect. Throughout, the focus is on the science, the practical reality of treatment, and honest expectations.</p>
-      <p style="color:var(--muted);font-size:14px;font-style:italic;margin-top:16px">A note on evidence: cellular medicine is advancing rapidly, and the strength of evidence varies by condition. Descriptions here explain the intended rationale and typical use of stem cell therapy rather than promising specific outcomes. This is general educational information and does not replace a personal medical consultation, diagnosis, or treatment plan.</p>
+      <div class="lgl-prose">
+        <span class="lgl-meta">Quantum Health Biotech Park &middot; Bengaluru</span>
+        <p>Stem cells are among the most remarkable tools in modern medicine. As the body's raw material, they hold the ability to repair, replace, and regenerate damaged tissue — offering a way to treat the underlying causes of disease and ageing rather than only managing symptoms.</p>
+        <p>This guide is a complete introduction to stem cell therapy. It explains what stem cells are and how they work, the different types and where they come from, the specific therapies offered, and what treatment involves from consultation to follow-up. The aim is to give you a clear, grounded understanding so you can make informed decisions with your medical team.</p>
+        <p>Stem cell therapy is rarely used in isolation. It is tailored to the individual and often combined with supporting therapies for a coordinated effect. Throughout, the focus is on the science, the practical reality of treatment, and honest expectations.</p>
+        <div class="note-box">A note on evidence: cellular medicine is advancing rapidly, and the strength of evidence varies by condition. Descriptions here explain the intended rationale and typical use of stem cell therapy rather than promising specific outcomes. This is general educational information and does not replace a personal medical consultation, diagnosis, or treatment plan.</div>
+      </div>
     </div>
   </section>
 
+  <!-- ================= CONTENTS ================= -->
   <section class="section" data-reveal>
     <div class="container">
-      <span class="eyebrow">How this guide is organized</span>
-      <h2 class="heading-gradient">Contents</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto">
-        <div class="journey-step"><span class="journey-num">I</span><h3>Understanding Stem Cells</h3><p>What they are, the different types, and how they heal.</p></div>
-        <div class="journey-step"><span class="journey-num">II</span><h3>Where Stem Cells Come From</h3><p>The sources used in therapy and how they are chosen.</p></div>
-        <div class="journey-step"><span class="journey-num">III</span><h3>Stem Cell Therapies</h3><p>The specific treatments offered and how each works.</p></div>
-        <div class="journey-step"><span class="journey-num">IV</span><h3>Treatment &amp; Care</h3><p>Delivery, the treatment process, safety, and what to expect.</p></div>
+      <div class="sec-head">
+        <span class="eyebrow">How this guide is organised</span>
+        <h2><em>Contents</em></h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">I</span><div><h3>Understanding Stem Cells</h3><p>What they are, the different types, and how they heal.</p></div></div>
+        <div class="step-card"><span class="step-num">II</span><div><h3>Where Stem Cells Come From</h3><p>The sources used in therapy and how they are chosen.</p></div></div>
+        <div class="step-card"><span class="step-num">III</span><div><h3>Stem Cell Therapies</h3><p>The specific treatments offered and how each works.</p></div></div>
+        <div class="step-card"><span class="step-num">IV</span><div><h3>Treatment &amp; Care</h3><p>Delivery, the treatment process, safety, and what to expect.</p></div></div>
       </div>
       <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:20px">Treatment is always personalised; the details here describe general patterns, while your own plan is tailored to your health, goals, and diagnostic findings after consultation.</p>
     </div>
   </section>
 
-  <section class="section" data-reveal>
+  <!-- ================= PART I ================= -->
+  <section class="section" id="understanding" data-reveal>
     <div class="container">
-      <span class="section-tag">Part I</span>
-      <h2 class="heading-gradient">Understanding Stem Cells</h2>
-      <p class="section-desc">The biology behind regenerative medicine — what stem cells are, and how they repair the body.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">What Are Stem Cells?</h2>
-      <p>Stem cells are the body's raw material — unspecialised cells from which all other specialised cells are generated. Unlike a mature nerve, muscle, or blood cell, a stem cell has not yet committed to a specific job, which gives it a unique flexibility that the body draws on to build, maintain, and repair tissue throughout life.</p>
-      <p>Two defining properties set stem cells apart. The first is <strong>self-renewal</strong>: the ability to divide and produce more stem cells, maintaining a reserve — achieved through symmetric division (producing two stem cells) and asymmetric division (producing one stem cell and one cell that goes on to specialise). The second is <strong>differentiation</strong>: the ability to mature into specialised cell types, often in stages, passing through a more restricted progenitor stage before becoming a fully specialised bone, cartilage, muscle, or nerve cell. Together, these properties make stem cells the foundation of the body's repair systems — and of regenerative medicine.</p>
-      <p>In everyday life, stem cells quietly replace cells that are lost to normal wear, injury, or disease. When tissue is damaged, they can be recruited to the site to help rebuild it. Regenerative therapy harnesses this natural capacity — supplying stem cells, or supporting the body's own — to enhance repair where age or illness has reduced it.</p>
-      <p>Because of their versatility and powerful effects, stem cells are being studied and used across an enormous range of conditions, from orthopedic injuries to neurological, cardiac, and autoimmune disease.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">Stem Cell Potency &amp; Types</h2>
-      <p>Not all stem cells are equal. They differ in <strong>potency</strong> — the range of cell types they can become — and this determines how they are used in medicine.</p>
-      <div class="benefits-grid" style="max-width:800px">
-        <div class="benefit-item"><div><h4>Totipotent</h4><p>Able to form every cell type plus supporting tissues; exist only at the very earliest stage of development.</p></div></div>
-        <div class="benefit-item"><div><h4>Pluripotent</h4><p>Able to become almost any cell type in the body; embryonic stem cells are the classic example.</p></div></div>
-        <div class="benefit-item"><div><h4>Multipotent</h4><p>Able to become a related family of cell types; mesenchymal stem cells are the most widely used in therapy.</p></div></div>
-        <div class="benefit-item"><div><h4>Progenitor Cells</h4><p>Further specialised, committed toward one particular lineage for rebuilding a specific tissue.</p></div></div>
+      <div class="sec-head">
+        <span class="eyebrow">Part I</span>
+        <h2>Understanding <em>Stem Cells</em></h2>
+        <p>The biology behind regenerative medicine — what stem cells are, and how they repair the body.</p>
       </div>
-      <p>A second important distinction is between adult (or somatic) stem cells and other types. Adult stem cells — including the mesenchymal stem cells found in bone marrow, fat, umbilical cord, placenta, and dental pulp — are the mainstay of clinical regenerative therapy because they are accessible, versatile, and have a strong safety record. Their combination of multipotency, powerful signaling, and immune-modulating behaviour is exactly what makes them so useful.</p>
-      <p>In practice, the choice of cell type, potency, and source is matched to the treatment goal and the individual — a decision made during consultation and diagnostic assessment rather than by a fixed rule.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">How Stem Cells Heal the Body</h2>
-      <p>It is a common misconception that stem cells work simply by turning into new tissue. In reality, they heal through several complementary mechanisms working together — and for the mesenchymal stem cells most used in therapy, the signaling role is often the most important.</p>
-      <div class="flip-grid">
-        <div class="flip-card"><h3>Paracrine Signaling</h3><p>Stem cells release a rich mixture of growth factors, cytokines, and exosomes that instruct surrounding cells to repair — the single most important mechanism for MSCs.</p></div>
-        <div class="flip-card"><h3>Immunomodulation</h3><p>They sense and rebalance an over- or under-active immune response, calming harmful inflammation.</p></div>
-        <div class="flip-card"><h3>Angiogenesis</h3><p>They promote the formation of new blood vessels, restoring circulation and oxygen to damaged tissue.</p></div>
-        <div class="flip-card"><h3>Homing</h3><p>They naturally migrate toward sites of injury and inflammation, concentrating their effect where it is needed.</p></div>
-        <div class="flip-card"><h3>Differentiation</h3><p>Where appropriate, they mature into the specific cell types the tissue requires.</p></div>
-        <div class="flip-card"><h3>Anti-Fibrotic &amp; Anti-Apoptotic</h3><p>They help reduce scarring and prevent the premature death of stressed cells.</p></div>
-      </div>
-      <p>This multi-pathway action is why stem cell therapy can help across such a wide range of conditions: rather than doing one thing, the cells orchestrate a coordinated repair response tailored to the environment they find themselves in.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">Why Stem Cells Decline with Age</h2>
-      <p>Aging is, at its core, a cellular process — and the decline of stem cells is central to it. As we grow older, both the number and the activity of our stem cells diminish. Fewer stem cells are available to replace those lost to wear and injury, and those that remain divide and respond less efficiently. At the same time, cells accumulate damage: telomeres — the protective caps on our chromosomes — shorten with each division, mitochondria produce energy less efficiently, and molecular clutter such as advanced glycation end-products builds up.</p>
-      <p>The combined result is slower, less complete healing, reduced resilience, and a rising risk of age-related disease. Tissues that once repaired quickly recover more slowly, and low-grade inflammation tends to increase.</p>
-      <p>Regenerative and anti-aging medicine targets this decline directly — replenishing stem cells and their signals, and supporting the cellular systems on which repair depends — with the goal of restoring the body's capacity to heal.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <span class="section-tag">Part II</span>
-      <h2 class="heading-gradient">Where Stem Cells Come From</h2>
-      <p class="section-desc">The sources of stem cells used in therapy, and how the right one is chosen.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">Autologous vs Allogeneic Sources</h2>
-      <p>Stem cells used in therapy come from two broad categories, each with distinct advantages. The right choice depends on the condition, the treatment goal, the cells required, and the individual.</p>
-      <div class="diff-grid">
-        <div class="diff-item"><h3>Autologous — from your own body</h3><p>Autologous cells are collected from the patient and returned to the same person. Because they are the individual's own cells, rejection and allergic reaction are not concerns. The main considerations are that collection involves a minor procedure and that, with age or illness, a person's own cells may be fewer or less vigorous.</p></div>
-        <div class="diff-item"><h3>Allogeneic — from screened donor tissue</h3><p>Allogeneic cells are obtained from carefully screened donor tissue, most often birth-associated tissues such as the umbilical cord or placenta that would otherwise be discarded. These cells are prized for being young, potent, and plentiful. Mesenchymal stem cells in particular are considered low-risk for rejection because of their immune-modulating properties, and all donor material is thoroughly screened for safety.</p></div>
+      <div class="lgl-prose">
+        <h2>What Are Stem Cells?</h2>
+        <p>Stem cells are the body's raw material — unspecialised cells from which all other specialised cells are generated. Unlike a mature nerve, muscle, or blood cell, a stem cell has not yet committed to a specific job, which gives it a unique flexibility that the body draws on to build, maintain, and repair tissue throughout life.</p>
+        <p>Two defining properties set stem cells apart. The first is <strong>self-renewal</strong>: the ability to divide and produce more stem cells, maintaining a reserve — achieved through symmetric division (producing two stem cells) and asymmetric division (producing one stem cell and one cell that goes on to specialise). The second is <strong>differentiation</strong>: the ability to mature into specialised cell types, often in stages, passing through a more restricted progenitor stage before becoming a fully specialised bone, cartilage, muscle, or nerve cell. Together, these properties make stem cells the foundation of the body's repair systems — and of regenerative medicine.</p>
+        <p>In everyday life, stem cells quietly replace cells that are lost to normal wear, injury, or disease. When tissue is damaged, they can be recruited to the site to help rebuild it. Regenerative therapy harnesses this natural capacity — supplying stem cells, or supporting the body's own — to enhance repair where age or illness has reduced it.</p>
+        <p>Because of their versatility and powerful effects, stem cells are being studied and used across an enormous range of conditions, from orthopaedic injuries to neurological, cardiac, and autoimmune disease.</p>
       </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Autologous Sources</h2>
-      <p>Stem cells collected from the patient's own body.</p>
-      <div class="flip-grid">
-        <div class="flip-card"><h3>Bone Marrow-Derived (BMSCs)</h3><p>The original and most extensively studied source. Bone marrow contains both hematopoietic (blood-forming) stem cells and mesenchymal stem cells, collected from the pelvic bone. Its long clinical track record makes it a well-understood, trusted source.</p></div>
-        <div class="flip-card"><h3>Peripheral Blood (PBSCs)</h3><p>Stem cells mobilised out of the bone marrow and into the bloodstream, collected from a blood sample. This offers a less invasive alternative to a marrow harvest while still providing valuable stem cells.</p></div>
-        <div class="flip-card"><h3>Adipose Tissue-Derived (ADSCs)</h3><p>Fat tissue is an abundant and accessible reservoir of mesenchymal stem cells, obtained in relatively large numbers through a minor procedure. This ease of access and high yield have made adipose tissue an increasingly popular autologous source.</p></div>
+      <div class="sec-head left">
+        <h2>Stem Cell Potency &amp; <em>Types</em></h2>
+        <p>Not all stem cells are equal. They differ in <strong>potency</strong> — the range of cell types they can become — and this determines how they are used in medicine.</p>
       </div>
-      <p>Because all three come from the patient, they carry essentially no risk of immune rejection.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">Allogeneic Sources</h2>
-      <p>Stem cells from carefully screened donor tissue.</p>
-      <div class="flip-grid">
-        <div class="flip-card"><h3>Amniotic Membrane (AMSCs)</h3><p>Derived from the amniotic membrane surrounding the developing baby, these young cells have notable regenerative and anti-inflammatory properties and are valued for their potency.</p></div>
-        <div class="flip-card"><h3>Wharton's Jelly (WJSCs)</h3><p>Sourced from the gelatinous connective tissue of the umbilical cord, these are among the most potent and readily proliferating mesenchymal stem cells. Their youth and vigour make them a highly regarded allogeneic source.</p></div>
-        <div class="flip-card"><h3>Dental Pulp (DPSCs)</h3><p>Obtained from the soft pulp inside teeth, dental pulp stem cells are versatile and have shown particular potential for neural and dental tissue.</p></div>
-        <div class="flip-card"><h3>Umbilical Cord Blood (UCBSCs)</h3><p>Collected from the blood of the umbilical cord, these cells are rich in hematopoietic stem cells and have a long, established history of use in cell therapy and transplantation.</p></div>
+      <div class="sv-grid">
+        <article class="sv-card"><span class="sv-ico">&#x1F331;</span><h3>Totipotent</h3><p>Able to form every cell type plus supporting tissues; exist only at the very earliest stage of development.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9E9;</span><h3>Pluripotent</h3><p>Able to become almost any cell type in the body; embryonic stem cells are the classic example.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9EC;</span><h3>Multipotent</h3><p>Able to become a related family of cell types; mesenchymal stem cells are the most widely used in therapy.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9BE;</span><h3>Progenitor Cells</h3><p>Further specialised, committed toward one particular lineage for rebuilding a specific tissue.</p></article>
       </div>
-      <p>All donor-derived cells are thoroughly screened, and mesenchymal types are considered low-risk for rejection thanks to their immune-regulating nature.</p>
+      <div class="lgl-prose">
+        <p>A second important distinction is between adult (or somatic) stem cells and other types. Adult stem cells — including the mesenchymal stem cells found in bone marrow, fat, umbilical cord, placenta, and dental pulp — are the mainstay of clinical regenerative therapy because they are accessible, versatile, and have a strong safety record. Their combination of multipotency, powerful signalling, and immune-modulating behaviour is exactly what makes them so useful.</p>
+        <p>In practice, the choice of cell type, potency, and source is matched to the treatment goal and the individual — a decision made during consultation and diagnostic assessment rather than by a fixed rule.</p>
+      </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Choosing the Right Source</h2>
-      <p>There is no single "best" stem cell source — the ideal choice depends on the individual and the goal of treatment. Several factors guide the decision:</p>
-      <ul style="list-style:disc;padding-left:20px;color:var(--muted);display:flex;flex-direction:column;gap:8px;max-width:700px;margin:0 auto">
-        <li>The condition being treated — different tissues and goals may favour different cell types and sources.</li>
-        <li>The patient's age and health — younger, healthier individuals may have vigorous autologous cells, while donor cells offer youth and potency regardless of the recipient's age.</li>
-        <li>Cell type required — whether the goal calls for mesenchymal, hematopoietic, or organ-specific progenitors.</li>
-        <li>Quantity and potency needed — some sources yield more cells, or more potent cells, than others.</li>
-        <li>Practical considerations — the invasiveness of collection and the individual's preferences.</li>
-      </ul>
-      <p>This decision is made together with your medical team, informed by consultation and diagnostic assessment, to arrive at the approach best suited to you.</p>
+      <div class="sec-head left">
+        <h2>How Stem Cells <em>Heal the Body</em></h2>
+        <p>It is a common misconception that stem cells work simply by turning into new tissue. In reality, they heal through several complementary mechanisms working together — and for the mesenchymal stem cells most used in therapy, the signalling role is often the most important.</p>
+      </div>
+      <div class="sv-grid">
+        <article class="sv-card"><span class="sv-ico">&#x1F4E1;</span><h3>Paracrine Signalling</h3><p>Stem cells release a rich mixture of growth factors, cytokines, and exosomes that instruct surrounding cells to repair — the single most important mechanism for MSCs.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F6E1;&#xFE0F;</span><h3>Immunomodulation</h3><p>They sense and rebalance an over- or under-active immune response, calming harmful inflammation.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1FA78;</span><h3>Angiogenesis</h3><p>They promote the formation of new blood vessels, restoring circulation and oxygen to damaged tissue.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9ED;</span><h3>Homing</h3><p>They naturally migrate toward sites of injury and inflammation, concentrating their effect where it is needed.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9EC;</span><h3>Differentiation</h3><p>Where appropriate, they mature into the specific cell types the tissue requires.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9BE;</span><h3>Anti-Fibrotic &amp; Anti-Apoptotic</h3><p>They help reduce scarring and prevent the premature death of stressed cells.</p></article>
+      </div>
+      <div class="lgl-prose">
+        <p>This multi-pathway action is why stem cell therapy can help across such a wide range of conditions: rather than doing one thing, the cells orchestrate a coordinated repair response tailored to the environment they find themselves in.</p>
+      </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-tag">Part III</span>
-      <h2 class="heading-gradient">Stem Cell Therapies</h2>
-      <p class="section-desc">The specific stem cell treatments offered — what each is, and how it works.</p>
+      <div class="lgl-prose">
+        <h2>Why Stem Cells Decline with Age</h2>
+        <p>Ageing is, at its core, a cellular process — and the decline of stem cells is central to it. As we grow older, both the number and the activity of our stem cells diminish. Fewer stem cells are available to replace those lost to wear and injury, and those that remain divide and respond less efficiently. At the same time, cells accumulate damage: telomeres — the protective caps on our chromosomes — shorten with each division, mitochondria produce energy less efficiently, and molecular clutter such as advanced glycation end-products builds up.</p>
+        <p>The combined result is slower, less complete healing, reduced resilience, and a rising risk of age-related disease. Tissues that once repaired quickly recover more slowly, and low-grade inflammation tends to increase.</p>
+        <p>Regenerative and anti-ageing medicine targets this decline directly — replenishing stem cells and their signals, and supporting the cellular systems on which repair depends — with the goal of restoring the body's capacity to heal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PART II ================= -->
+  <section class="section" id="sources" data-reveal>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">Part II</span>
+        <h2>Where Stem Cells <em>Come From</em></h2>
+        <p>The sources of stem cells used in therapy, and how the right one is chosen.</p>
+      </div>
+      <div class="sec-head left" style="margin-bottom:20px">
+        <h3 style="font-size:24px;margin:0 0 12px">Autologous vs Allogeneic Sources</h3>
+      </div>
+      <div class="cmp-grid">
+        <article class="cmp-card"><h3>Autologous — from your own body</h3><p>Autologous cells are collected from the patient and returned to the same person. Because they are the individual's own cells, rejection and allergic reaction are not concerns. The main considerations are that collection involves a minor procedure and that, with age or illness, a person's own cells may be fewer or less vigorous.</p></article>
+        <article class="cmp-card"><h3>Allogeneic — from screened donor tissue</h3><p>Allogeneic cells are obtained from carefully screened donor tissue, most often birth-associated tissues such as the umbilical cord or placenta that would otherwise be discarded. These cells are prized for being young, potent, and plentiful. Mesenchymal stem cells in particular are considered low-risk for rejection because of their immune-modulating properties, and all donor material is thoroughly screened for safety.</p></article>
+      </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <div class="programme-card">
-        <h3>Mesenchymal Stem Cells (MSCs)</h3>
-        <p>The versatile workhorse of regenerative medicine.</p>
-        <p style="margin-top:12px">MSCs are multipotent adult stem cells capable of becoming bone, cartilage, muscle, and fat cells. They are among the most widely used and studied cells in regenerative medicine because they are versatile, can be obtained from several tissues, and exert broad healing effects. Importantly, most of their benefit comes not from replacing tissue directly but from coordinating the body's own repair.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">The science — how it works</p>
-        <p>MSCs act mainly through <strong>paracrine signaling</strong> — they secrete a rich mixture of growth factors, cytokines, and exosomes that reduce inflammation, regulate an over- or under-active immune system, promote new blood-vessel growth, and stimulate resident cells to regenerate. They also "home" toward sites of injury and inflammation, naturally concentrating their effect. This combination of immune modulation, anti-inflammatory action, and repair signaling explains their use across many different conditions.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">Applications</p>
-        <ul style="list-style:disc;padding-left:20px;color:var(--muted)">
-          <li>Broad anti-inflammatory and immune-balancing support</li>
-          <li>Joint, cartilage, and soft-tissue repair</li>
-          <li>Autoimmune and inflammatory conditions</li>
-          <li>Support across many organ systems</li>
+      <div class="sec-head left">
+        <h2>Autologous <em>Sources</em></h2>
+        <p>Stem cells collected from the patient's own body.</p>
+      </div>
+      <div class="sv-grid">
+        <article class="sv-card"><span class="sv-ico">&#x1F9B4;</span><h3>Bone Marrow-Derived (BMSCs)</h3><p>The original and most extensively studied source. Bone marrow contains both haematopoietic (blood-forming) stem cells and mesenchymal stem cells, collected from the pelvic bone. Its long clinical track record makes it a well-understood, trusted source.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F489;</span><h3>Peripheral Blood (PBSCs)</h3><p>Stem cells mobilised out of the bone marrow and into the bloodstream, collected from a blood sample. This offers a less invasive alternative to a marrow harvest while still providing valuable stem cells.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9EB;</span><h3>Adipose Tissue-Derived (ADSCs)</h3><p>Fat tissue is an abundant and accessible reservoir of mesenchymal stem cells, obtained in relatively large numbers through a minor procedure. This ease of access and high yield have made adipose tissue an increasingly popular autologous source.</p></article>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin-top:16px">Because all three come from the patient, they carry essentially no risk of immune rejection.</p>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="sec-head left">
+        <h2>Allogeneic <em>Sources</em></h2>
+        <p>Stem cells from carefully screened donor tissue.</p>
+      </div>
+      <div class="sv-grid">
+        <article class="sv-card"><span class="sv-ico">&#x1F4A7;</span><h3>Amniotic Membrane (AMSCs)</h3><p>Derived from the amniotic membrane surrounding the developing baby, these young cells have notable regenerative and anti-inflammatory properties and are valued for their potency.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F31F;</span><h3>Wharton's Jelly (WJSCs)</h3><p>Sourced from the gelatinous connective tissue of the umbilical cord, these are among the most potent and readily proliferating mesenchymal stem cells. Their youth and vigour make them a highly regarded allogeneic source.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9B7;</span><h3>Dental Pulp (DPSCs)</h3><p>Obtained from the soft pulp inside teeth, dental pulp stem cells are versatile and have shown particular potential for neural and dental tissue.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1FA78;</span><h3>Umbilical Cord Blood (UCBSCs)</h3><p>Collected from the blood of the umbilical cord, these cells are rich in haematopoietic stem cells and have a long, established history of use in cell therapy and transplantation.</p></article>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin-top:16px">All donor-derived cells are thoroughly screened, and mesenchymal types are considered low-risk for rejection thanks to their immune-regulating nature.</p>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="lgl-prose">
+        <h2>Choosing the Right Source</h2>
+        <p>There is no single "best" stem cell source — the ideal choice depends on the individual and the goal of treatment. Several factors guide the decision:</p>
+        <ul>
+          <li>The condition being treated — different tissues and goals may favour different cell types and sources.</li>
+          <li>The patient's age and health — younger, healthier individuals may have vigorous autologous cells, while donor cells offer youth and potency regardless of the recipient's age.</li>
+          <li>Cell type required — whether the goal calls for mesenchymal, haematopoietic, or organ-specific progenitors.</li>
+          <li>Quantity and potency needed — some sources yield more cells, or more potent cells, than others.</li>
+          <li>Practical considerations — the invasiveness of collection and the individual's preferences.</li>
         </ul>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">Key benefits</p>
-        <ul style="list-style:disc;padding-left:20px;color:var(--muted)">
-          <li>Powerful, multi-pathway repair signaling</li>
-          <li>Immune-modulating effect for over-active immune conditions</li>
-          <li>Available from bone marrow, adipose tissue, umbilical cord, placenta, and dental pulp</li>
-          <li>Versatile delivery options</li>
-        </ul>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">What to expect</p>
-        <p>After consultation and any needed testing, MSCs are delivered either intravenously for systemic effect or by local injection into a joint or specific tissue. The process is typically straightforward and well tolerated, with brief rest afterward and route-specific aftercare.</p>
+        <p>This decision is made together with your medical team, informed by consultation and diagnostic assessment, to arrive at the approach best suited to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PART III ================= -->
+  <section class="section" id="therapies" data-reveal>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">Part III</span>
+        <h2>Stem Cell <em>Therapies</em></h2>
+        <p>The specific stem cell treatments offered — what each is, and how it works.</p>
       </div>
 
-      <div class="programme-card">
-        <h3>Organ-Based Stem Cell Therapy (SCT)</h3>
-        <p>Targeted regeneration for a specific organ system.</p>
-        <p style="margin-top:12px">Organ-based stem cell therapy directs regenerative cells to a specific organ or system rather than treating the body generically. The aim is to repair or replace cells lost to disease, injury, or aging in a focused way — whether the target is neurological, cardiac, pulmonary, hepatic, renal, or musculoskeletal.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">How it works</p>
-        <p>Regenerative cells are selected to match the target condition and delivered by the route that best reaches the affected tissue. Once in place, they dampen harmful inflammation, release growth factors that instruct resident cells to repair, encourage new blood vessels to restore circulation, and help modulate the local immune response. In some settings they may differentiate into needed cell types.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">Applications</p>
-        <ul style="list-style:disc;padding-left:20px;color:var(--muted)">
-          <li>Neurological and spinal-cord conditions</li>
-          <li>Heart and vascular disease</li>
-          <li>Lung, liver, kidney, and pancreatic disorders</li>
-          <li>Orthopedic and degenerative joint conditions</li>
-          <li>General age-related decline and tissue repair</li>
-        </ul>
+      <div class="sv-group">
+        <h3 class="sv-group-title"><span class="sv-ico">&#x1F9EC;</span> Mesenchymal Stem Cells (MSCs)</h3>
+        <p class="sv-group-lead">The versatile workhorse of regenerative medicine.</p>
+        <div class="lgl-prose">
+          <p>MSCs are multipotent adult stem cells capable of becoming bone, cartilage, muscle, and fat cells. They are among the most widely used and studied cells in regenerative medicine because they are versatile, can be obtained from several tissues, and exert broad healing effects. Importantly, most of their benefit comes not from replacing tissue directly but from coordinating the body's own repair.</p>
+          <h2 style="font-size:17px;margin-top:22px">The science — how it works</h2>
+          <p>MSCs act mainly through <strong>paracrine signalling</strong> — they secrete a rich mixture of growth factors, cytokines, and exosomes that reduce inflammation, regulate an over- or under-active immune system, promote new blood-vessel growth, and stimulate resident cells to regenerate. They also "home" toward sites of injury and inflammation, naturally concentrating their effect. This combination of immune modulation, anti-inflammatory action, and repair signalling explains their use across many different conditions.</p>
+          <h2 style="font-size:17px;margin-top:22px">Applications &amp; key benefits</h2>
+          <ul>
+            <li>Broad anti-inflammatory and immune-balancing support</li>
+            <li>Joint, cartilage, and soft-tissue repair</li>
+            <li>Autoimmune and inflammatory conditions</li>
+            <li>Powerful, multi-pathway repair signalling</li>
+            <li>Available from bone marrow, adipose tissue, umbilical cord, placenta, and dental pulp</li>
+          </ul>
+          <p>After consultation and any needed testing, MSCs are delivered either intravenously for systemic effect or by local injection into a joint or specific tissue. The process is typically straightforward and well tolerated, with brief rest afterward and route-specific aftercare.</p>
+        </div>
       </div>
 
-      <div class="programme-card">
-        <h3>Exosome Therapy — Enhanced MSCs</h3>
-        <p>The regenerative power of stem cells, without the cells.</p>
-        <p style="margin-top:12px">Exosomes are tiny lipid-bilayer vesicles — roughly 30 to 150 nanometres across — that cells use to communicate. Those released by MSCs carry proteins, lipids, mRNA, microRNA, and growth factors, reproducing many of the effects of stem cells as a cell-free therapy, with practical advantages.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">How it works</p>
-        <p>When delivered into the body, MSC-exosomes fuse with recipient cells and transfer their bioactive cargo directly, switching on repair and anti-inflammatory pathways. Their extremely small size lets them reach tissues that whole cells cannot, including crossing the blood-brain barrier. Because no living cells are transplanted, there is no risk of the cells forming tumours, and exosomes are easier to standardise and dose.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">Applications</p>
-        <ul style="list-style:disc;padding-left:20px;color:var(--muted)">
-          <li>Skin regeneration and aesthetic treatments</li>
-          <li>Wound healing and tissue repair</li>
-          <li>Neurological support</li>
-          <li>Amplifying and extending the effect of stem cell protocols</li>
-        </ul>
+      <div class="sv-group">
+        <h3 class="sv-group-title"><span class="sv-ico">&#x1FAC0;</span> Organ-Based Stem Cell Therapy (SCT)</h3>
+        <p class="sv-group-lead">Targeted regeneration for a specific organ system.</p>
+        <div class="lgl-prose">
+          <p>Organ-based stem cell therapy directs regenerative cells to a specific organ or system rather than treating the body generically. The aim is to repair or replace cells lost to disease, injury, or ageing in a focused way — whether the target is neurological, cardiac, pulmonary, hepatic, renal, or musculoskeletal.</p>
+          <h2 style="font-size:17px;margin-top:22px">How it works</h2>
+          <p>Regenerative cells are selected to match the target condition and delivered by the route that best reaches the affected tissue. Once in place, they dampen harmful inflammation, release growth factors that instruct resident cells to repair, encourage new blood vessels to restore circulation, and help modulate the local immune response. In some settings they may differentiate into needed cell types.</p>
+          <h2 style="font-size:17px;margin-top:22px">Applications</h2>
+          <ul>
+            <li>Neurological and spinal-cord conditions</li>
+            <li>Heart and vascular disease</li>
+            <li>Lung, liver, kidney, and pancreatic disorders</li>
+            <li>Orthopaedic and degenerative joint conditions</li>
+            <li>General age-related decline and tissue repair</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="programme-card">
-        <h3>Organ-Specific Progenitor Stem Cells</h3>
-        <p>Partly specialised cells for rebuilding one target tissue.</p>
-        <p style="margin-top:12px">Progenitor cells sit one step beyond stem cells — already committed toward a particular tissue lineage, such as cardiac, hepatic, pancreatic, or neural. Because they are partially specialised, they can integrate into and regenerate a specific organ more directly than a general-purpose cell.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">How it works</p>
-        <p>Once delivered, organ-specific progenitors continue maturing along their predetermined lineage and contribute directly to rebuilding the target tissue, while also supporting the surrounding repair environment with helpful signalling.</p>
-        <p style="margin-top:12px;font-weight:600;color:var(--accent)">Applications</p>
-        <ul style="list-style:disc;padding-left:20px;color:var(--muted)">
-          <li>Focused regeneration of a single organ or tissue</li>
-          <li>Conditions where general support is not enough</li>
-          <li>Complement to systemic stem cell therapy</li>
-        </ul>
+      <div class="sv-group">
+        <h3 class="sv-group-title"><span class="sv-ico">&#x1F4E6;</span> Exosome Therapy — Enhanced MSCs</h3>
+        <p class="sv-group-lead">The regenerative power of stem cells, without the cells.</p>
+        <div class="lgl-prose">
+          <p>Exosomes are tiny lipid-bilayer vesicles — roughly 30 to 150 nanometres across — that cells use to communicate. Those released by MSCs carry proteins, lipids, mRNA, microRNA, and growth factors, reproducing many of the effects of stem cells as a cell-free therapy, with practical advantages.</p>
+          <h2 style="font-size:17px;margin-top:22px">How it works</h2>
+          <p>When delivered into the body, MSC-exosomes fuse with recipient cells and transfer their bioactive cargo directly, switching on repair and anti-inflammatory pathways. Their extremely small size lets them reach tissues that whole cells cannot, including crossing the blood-brain barrier. Because no living cells are transplanted, there is no risk of the cells forming tumours, and exosomes are easier to standardise and dose.</p>
+          <h2 style="font-size:17px;margin-top:22px">Applications</h2>
+          <ul>
+            <li>Skin regeneration and aesthetic treatments</li>
+            <li>Wound healing and tissue repair</li>
+            <li>Neurological support</li>
+            <li>Amplifying and extending the effect of stem cell protocols</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sv-group">
+        <h3 class="sv-group-title"><span class="sv-ico">&#x1F3AF;</span> Organ-Specific Progenitor Stem Cells</h3>
+        <p class="sv-group-lead">Partly specialised cells for rebuilding one target tissue.</p>
+        <div class="lgl-prose">
+          <p>Progenitor cells sit one step beyond stem cells — already committed toward a particular tissue lineage, such as cardiac, hepatic, pancreatic, or neural. Because they are partially specialised, they can integrate into and regenerate a specific organ more directly than a general-purpose cell.</p>
+          <h2 style="font-size:17px;margin-top:22px">How it works</h2>
+          <p>Once delivered, organ-specific progenitors continue maturing along their predetermined lineage and contribute directly to rebuilding the target tissue, while also supporting the surrounding repair environment with helpful signalling.</p>
+          <h2 style="font-size:17px;margin-top:22px">Applications</h2>
+          <ul>
+            <li>Focused regeneration of a single organ or tissue</li>
+            <li>Conditions where general support is not enough</li>
+            <li>Complement to systemic stem cell therapy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PART IV ================= -->
+  <section class="section" id="treatment" data-reveal>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">Part IV</span>
+        <h2>Treatment &amp; <em>Care</em></h2>
+        <p>Delivery, the treatment process, safety, and what to expect.</p>
       </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <span class="section-tag">Part IV</span>
-      <h2 class="heading-gradient">Treatment &amp; Care</h2>
-      <p class="section-desc">Delivery, the treatment process, safety, and what to expect.</p>
-    </div>
-  </section>
-
-  <section class="section" data-reveal>
-    <div class="container">
-      <h2 class="heading-gradient">How Stem Cells Are Delivered</h2>
-      <p>The way stem cells are administered is matched to the condition and the tissue being targeted, because reaching the right place is essential to a therapy's effect.</p>
-      <div class="journey-grid">
-        <div class="journey-step"><span class="journey-num">IV</span><h3>Intravenous (IV) Infusion</h3><p>Cells are delivered into the bloodstream for a systemic, body-wide effect — commonly used when the goal is broad anti-inflammatory and regenerative support.</p></div>
-        <div class="journey-step"><span class="journey-num">IA</span><h3>Intra-Articular Injection</h3><p>Cells are injected directly into a joint to concentrate their effect on cartilage and joint tissue, used for orthopedic conditions such as osteoarthritis.</p></div>
-        <div class="journey-step"><span class="journey-num">IT</span><h3>Intrathecal / Intraspinal Injection</h3><p>Cells are placed into the spinal canal to target neurological and spinal-cord conditions directly, close to the affected tissue.</p></div>
-        <div class="journey-step"><span class="journey-num">IM</span><h3>Intramuscular (IM) Injection</h3><p>Cells or supporting agents are delivered into muscle for gradual absorption.</p></div>
-        <div class="journey-step"><span class="journey-num">LT</span><h3>Local / Targeted Injection</h3><p>Cells are injected directly into a specific site of injury or damage for a focused regenerative effect.</p></div>
+      <div class="sec-head left">
+        <h2>How Stem Cells Are <em>Delivered</em></h2>
+        <p>The way stem cells are administered is matched to the condition and the tissue being targeted, because reaching the right place is essential to a therapy's effect.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">IV</span><div><h3>Intravenous (IV) Infusion</h3><p>Cells are delivered into the bloodstream for a systemic, body-wide effect — commonly used when the goal is broad anti-inflammatory and regenerative support.</p></div></div>
+        <div class="step-card"><span class="step-num">IA</span><div><h3>Intra-Articular Injection</h3><p>Cells are injected directly into a joint to concentrate their effect on cartilage and joint tissue, used for orthopaedic conditions such as osteoarthritis.</p></div></div>
+        <div class="step-card"><span class="step-num">IT</span><div><h3>Intrathecal / Intraspinal Injection</h3><p>Cells are placed into the spinal canal to target neurological and spinal-cord conditions directly, close to the affected tissue.</p></div></div>
+        <div class="step-card"><span class="step-num">IM</span><div><h3>Intramuscular (IM) Injection</h3><p>Cells or supporting agents are delivered into muscle for gradual absorption.</p></div></div>
+        <div class="step-card"><span class="step-num">LT</span><div><h3>Local / Targeted Injection</h3><p>Cells are injected directly into a specific site of injury or damage for a focused regenerative effect.</p></div></div>
       </div>
       <p style="text-align:center;color:var(--muted);margin-top:20px">The route — or combination of routes — is chosen individually as part of your treatment plan.</p>
     </div>
@@ -293,15 +358,17 @@
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">The Treatment Process</h2>
-      <p>While every plan is personalised, stem cell treatment generally follows a clear sequence from first consultation through to follow-up.</p>
-      <div class="journey-grid" style="margin-top:24px">
-        <div class="journey-step"><span class="journey-num">01</span><h3>Consultation</h3><p>Your goals, history, and concerns are reviewed to determine whether stem cell therapy is appropriate and which approach fits.</p></div>
-        <div class="journey-step"><span class="journey-num">02</span><h3>Assessment &amp; Diagnostics</h3><p>Comprehensive testing establishes a clear baseline, confirms suitability, and helps define the target and the plan.</p></div>
-        <div class="journey-step"><span class="journey-num">03</span><h3>Cell Sourcing &amp; Preparation</h3><p>The appropriate cells are obtained — from your own body or screened donor tissue — and prepared to high standards.</p></div>
-        <div class="journey-step"><span class="journey-num">04</span><h3>Delivery</h3><p>Cells are administered by the route best suited to your condition, by trained practitioners under medical supervision, with comfort and safety prioritised.</p></div>
-        <div class="journey-step"><span class="journey-num">05</span><h3>Recovery &amp; Aftercare</h3><p>You rest as advised and follow route-specific aftercare while the body's repair processes begin.</p></div>
-        <div class="journey-step"><span class="journey-num">06</span><h3>Follow-Up &amp; Monitoring</h3><p>Progress is reviewed through follow-up assessments and, where useful, repeat testing, and the plan is refined accordingly.</p></div>
+      <div class="sec-head left">
+        <h2>The Treatment <em>Process</em></h2>
+        <p>While every plan is personalised, stem cell treatment generally follows a clear sequence from first consultation through to follow-up.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">01</span><div><h3>Consultation</h3><p>Your goals, history, and concerns are reviewed to determine whether stem cell therapy is appropriate and which approach fits.</p></div></div>
+        <div class="step-card"><span class="step-num">02</span><div><h3>Assessment &amp; Diagnostics</h3><p>Comprehensive testing establishes a clear baseline, confirms suitability, and helps define the target and the plan.</p></div></div>
+        <div class="step-card"><span class="step-num">03</span><div><h3>Cell Sourcing &amp; Preparation</h3><p>The appropriate cells are obtained — from your own body or screened donor tissue — and prepared to high standards.</p></div></div>
+        <div class="step-card"><span class="step-num">04</span><div><h3>Delivery</h3><p>Cells are administered by the route best suited to your condition, by trained practitioners under medical supervision, with comfort and safety prioritised.</p></div></div>
+        <div class="step-card"><span class="step-num">05</span><div><h3>Recovery &amp; Aftercare</h3><p>You rest as advised and follow route-specific aftercare while the body's repair processes begin.</p></div></div>
+        <div class="step-card"><span class="step-num">06</span><div><h3>Follow-Up &amp; Monitoring</h3><p>Progress is reviewed through follow-up assessments and, where useful, repeat testing, and the plan is refined accordingly.</p></div></div>
       </div>
       <p style="text-align:center;color:var(--muted);margin-top:20px">Because stem cells work with the body's own biology, benefits often build gradually over weeks to months rather than appearing immediately.</p>
     </div>
@@ -309,17 +376,19 @@
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Conditions Addressed</h2>
-      <p>Stem cell therapy is applied across a broad spectrum of conditions spanning the major organ systems. Every case begins with a personalised assessment of whether treatment is suitable and which approach fits best.</p>
-      <div class="flip-grid">
-        <div class="flip-card"><h3>Brain, Spinal Cord &amp; Neurodegenerative</h3><p>From stroke and spinal-cord injury to Parkinson's, MS, and neuropathy.</p></div>
-        <div class="flip-card"><h3>Heart &amp; Cardiovascular</h3><p>Including heart failure and coronary and peripheral artery disease.</p></div>
-        <div class="flip-card"><h3>Lungs &amp; Pulmonary</h3><p>Such as COPD, pulmonary fibrosis, and interstitial lung disease.</p></div>
-        <div class="flip-card"><h3>Liver, Kidney &amp; Pancreas</h3><p>Including cirrhosis, chronic kidney disease, and diabetes.</p></div>
-        <div class="flip-card"><h3>Autoimmune &amp; Connective Tissue</h3><p>Such as rheumatoid arthritis, lupus, and scleroderma.</p></div>
-        <div class="flip-card"><h3>Musculoskeletal &amp; Orthopedic</h3><p>Osteoarthritis, cartilage and tendon injuries, and sports injuries.</p></div>
-        <div class="flip-card"><h3>Skin &amp; Wound Healing</h3><p>From chronic wounds and burns to aesthetic rejuvenation.</p></div>
-        <div class="flip-card"><h3>Other Complex Conditions</h3><p>Including eye, reproductive, ENT, endocrine, and blood disorders.</p></div>
+      <div class="sec-head left">
+        <h2>Conditions <em>Addressed</em></h2>
+        <p>Stem cell therapy is applied across a broad spectrum of conditions spanning the major organ systems. Every case begins with a personalised assessment of whether treatment is suitable and which approach fits best.</p>
+      </div>
+      <div class="sv-grid">
+        <article class="sv-card"><span class="sv-ico">&#x1F9E0;</span><h3>Brain, Spinal Cord &amp; Neurodegenerative</h3><p>From stroke and spinal-cord injury to Parkinson's, MS, and neuropathy.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1FAC0;</span><h3>Heart &amp; Cardiovascular</h3><p>Including heart failure and coronary and peripheral artery disease.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1FAC1;</span><h3>Lungs &amp; Pulmonary</h3><p>Such as COPD, pulmonary fibrosis, and interstitial lung disease.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F4A7;</span><h3>Liver, Kidney &amp; Pancreas</h3><p>Including cirrhosis, chronic kidney disease, and diabetes.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F6E1;&#xFE0F;</span><h3>Autoimmune &amp; Connective Tissue</h3><p>Such as rheumatoid arthritis, lupus, and scleroderma.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F9B4;</span><h3>Musculoskeletal &amp; Orthopaedic</h3><p>Osteoarthritis, cartilage and tendon injuries, and sports injuries.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x2728;</span><h3>Skin &amp; Wound Healing</h3><p>From chronic wounds and burns to aesthetic rejuvenation.</p></article>
+        <article class="sv-card"><span class="sv-ico">&#x1F3E5;</span><h3>Other Complex Conditions</h3><p>Including eye, reproductive, ENT, endocrine, and blood disorders.</p></article>
       </div>
       <p style="text-align:center;color:var(--muted);margin-top:16px">A detailed consultation and diagnostic assessment determine suitability and the most appropriate personalised approach.</p>
     </div>
@@ -327,30 +396,39 @@
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Safety, Quality &amp; Sourcing</h2>
-      <p>Stem cell therapy is powerful, and delivering it safely depends on rigorous standards at every step. Quality and safety are the foundation of responsible care.</p>
-      <div style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:16px">
-        <div class="programme-card"><h3>Careful Sourcing and Preparation</h3><p>Cells are obtained and prepared to high standards, and donor material is thoroughly screened for safety.</p></div>
-        <div class="programme-card"><h3>Qualified, Supervised Delivery</h3><p>Treatments are administered by trained practitioners under medical supervision, using the appropriate route and protocol.</p></div>
-        <div class="programme-card"><h3>Personalised Screening</h3><p>Every treatment is preceded by assessment and, where relevant, testing to confirm suitability and identify anything requiring caution.</p></div>
-        <div class="programme-card"><h3>Ongoing Monitoring</h3><p>Progress and wellbeing are followed through the course of treatment, and plans are adjusted based on response.</p></div>
-        <div class="programme-card"><h3>Honest Communication</h3><p>Realistic, transparent discussion of what stem cell therapy can and cannot do, so expectations are grounded and decisions informed.</p></div>
+      <div class="sec-head">
+        <span class="eyebrow">Safety First</span>
+        <h2>Safety, Quality &amp; <em>Sourcing</em></h2>
+        <p>Stem cell therapy is powerful, and delivering it safely depends on rigorous standards at every step. Quality and safety are the foundation of responsible care.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">&#x1F50D;</span><div><h3>Careful Sourcing and Preparation</h3><p>Cells are obtained and prepared to high standards, and donor material is thoroughly screened for safety.</p></div></div>
+        <div class="step-card"><span class="step-num">&#x2695;&#xFE0F;</span><div><h3>Qualified, Supervised Delivery</h3><p>Treatments are administered by trained practitioners under medical supervision, using the appropriate route and protocol.</p></div></div>
+        <div class="step-card"><span class="step-num">&#x1FA7A;</span><div><h3>Personalised Screening</h3><p>Every treatment is preceded by assessment and, where relevant, testing to confirm suitability and identify anything requiring caution.</p></div></div>
+        <div class="step-card"><span class="step-num">&#x1F4C8;</span><div><h3>Ongoing Monitoring</h3><p>Progress and wellbeing are followed through the course of treatment, and plans are adjusted based on response.</p></div></div>
+        <div class="step-card"><span class="step-num">&#x1F4AC;</span><div><h3>Honest Communication</h3><p>Realistic, transparent discussion of what stem cell therapy can and cannot do, so expectations are grounded and decisions informed.</p></div></div>
       </div>
     </div>
   </section>
 
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Designing a Personalised Protocol</h2>
-      <p>No two patients are the same, so stem cell treatment is never one-size-fits-all. A personalised protocol brings together the right cells, source, dose, delivery route, and timing for a specific person and goal — informed by consultation and diagnostic findings.</p>
-      <p>Stem cell therapy is also frequently combined with supporting treatments that work through complementary mechanisms — for example, therapies that support the healing environment, reduce a harmful burden beforehand, or aid functional recovery afterward. Sequencing and spacing these elements thoughtfully often matters as much as the cells themselves.</p>
-      <p>Protocols are dynamic. Progress is monitored through follow-up assessments and repeat testing, and the plan is refined based on how the individual responds — a start-with-a-baseline, treat, measure, and refine approach that is central to safe and effective regenerative care.</p>
+      <div class="lgl-prose">
+        <h2>Designing a Personalised Protocol</h2>
+        <p>No two patients are the same, so stem cell treatment is never one-size-fits-all. A personalised protocol brings together the right cells, source, dose, delivery route, and timing for a specific person and goal — informed by consultation and diagnostic findings.</p>
+        <p>Stem cell therapy is also frequently combined with supporting treatments that work through complementary mechanisms — for example, therapies that support the healing environment, reduce a harmful burden beforehand, or aid functional recovery afterward. Sequencing and spacing these elements thoughtfully often matters as much as the cells themselves.</p>
+        <p>Protocols are dynamic. Progress is monitored through follow-up assessments and repeat testing, and the plan is refined based on how the individual responds — a start-with-a-baseline, treat, measure, and refine approach that is central to safe and effective regenerative care.</p>
+      </div>
     </div>
   </section>
 
-  <section class="section" data-reveal>
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faqs" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Frequently Asked Questions</h2>
+      <div class="sec-head">
+        <span class="eyebrow">Questions</span>
+        <h2>Frequently Asked <em>Questions</em></h2>
+      </div>
       <div class="accordion">
         <div class="accordion-item">
           <button class="accordion-header">What exactly is stem cell therapy?<span class="accordion-icon">+</span></button>
@@ -392,85 +470,164 @@
     </div>
   </section>
 
-  <section class="section" data-reveal>
+  <!-- ================= GLOSSARY ================= -->
+  <section class="section" id="glossary" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Glossary of Key Terms</h2>
-      <div style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
-        <div class="programme-card"><strong>Stem Cell</strong> — An unspecialised cell that can renew itself and develop into specialised cell types.</div>
-        <div class="programme-card"><strong>Self-Renewal</strong> — A stem cell's ability to divide and produce more stem cells.</div>
-        <div class="programme-card"><strong>Differentiation</strong> — The process by which a stem cell matures into a specialised cell type.</div>
-        <div class="programme-card"><strong>Potency</strong> — How many cell types a stem cell can become — totipotent, pluripotent, or multipotent.</div>
-        <div class="programme-card"><strong>Mesenchymal Stem Cells (MSCs)</strong> — Multipotent adult stem cells that repair tissue largely through signaling and immune modulation.</div>
-        <div class="programme-card"><strong>Hematopoietic Stem Cells</strong> — Blood-forming stem cells that give rise to red cells, white cells, and platelets.</div>
-        <div class="programme-card"><strong>Progenitor Cells</strong> — Partly specialised cells already committed toward a particular tissue lineage.</div>
-        <div class="programme-card"><strong>Exosomes</strong> — Tiny vesicles that carry regenerative signals between cells, used as a cell-free therapy.</div>
-        <div class="programme-card"><strong>Growth Factors</strong> — Signaling proteins that instruct cells to divide, migrate, and repair tissue.</div>
-        <div class="programme-card"><strong>Cytokines</strong> — Signaling molecules that regulate inflammation and immune activity.</div>
-        <div class="programme-card"><strong>Paracrine Signaling</strong> — Cells influencing nearby cells by releasing signaling molecules.</div>
-        <div class="programme-card"><strong>Autologous</strong> — Derived from your own body; carries essentially no risk of immune rejection.</div>
-        <div class="programme-card"><strong>Allogeneic</strong> — Derived from a screened donor; valued for potency and immune-modulating properties.</div>
-        <div class="programme-card"><strong>Immunomodulation</strong> — Adjusting an over- or under-active immune response toward balance.</div>
-        <div class="programme-card"><strong>Angiogenesis</strong> — The formation of new blood vessels.</div>
-        <div class="programme-card"><strong>Wharton's Jelly</strong> — The gelatinous connective tissue of the umbilical cord, a potent source of MSCs.</div>
+      <div class="sec-head">
+        <span class="eyebrow">Reference</span>
+        <h2>Glossary of <em>Key Terms</em></h2>
+      </div>
+      <div class="glossary-list">
+        <div class="glossary-item"><strong>Stem Cell</strong> — An unspecialised cell that can renew itself and develop into specialised cell types.</div>
+        <div class="glossary-item"><strong>Self-Renewal</strong> — A stem cell's ability to divide and produce more stem cells.</div>
+        <div class="glossary-item"><strong>Differentiation</strong> — The process by which a stem cell matures into a specialised cell type.</div>
+        <div class="glossary-item"><strong>Potency</strong> — How many cell types a stem cell can become — totipotent, pluripotent, or multipotent.</div>
+        <div class="glossary-item"><strong>Mesenchymal Stem Cells (MSCs)</strong> — Multipotent adult stem cells that repair tissue largely through signalling and immune modulation.</div>
+        <div class="glossary-item"><strong>Haematopoietic Stem Cells</strong> — Blood-forming stem cells that give rise to red cells, white cells, and platelets.</div>
+        <div class="glossary-item"><strong>Progenitor Cells</strong> — Partly specialised cells already committed toward a particular tissue lineage.</div>
+        <div class="glossary-item"><strong>Exosomes</strong> — Tiny vesicles that carry regenerative signals between cells, used as a cell-free therapy.</div>
+        <div class="glossary-item"><strong>Growth Factors</strong> — Signalling proteins that instruct cells to divide, migrate, and repair tissue.</div>
+        <div class="glossary-item"><strong>Cytokines</strong> — Signalling molecules that regulate inflammation and immune activity.</div>
+        <div class="glossary-item"><strong>Paracrine Signalling</strong> — Cells influencing nearby cells by releasing signalling molecules.</div>
+        <div class="glossary-item"><strong>Autologous</strong> — Derived from your own body; carries essentially no risk of immune rejection.</div>
+        <div class="glossary-item"><strong>Allogeneic</strong> — Derived from a screened donor; valued for potency and immune-modulating properties.</div>
+        <div class="glossary-item"><strong>Immunomodulation</strong> — Adjusting an over- or under-active immune response toward balance.</div>
+        <div class="glossary-item"><strong>Angiogenesis</strong> — The formation of new blood vessels.</div>
+        <div class="glossary-item"><strong>Wharton's Jelly</strong> — The gelatinous connective tissue of the umbilical cord, a potent source of MSCs.</div>
       </div>
     </div>
   </section>
 
+  <!-- ================= JOURNEY ================= -->
   <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Your Treatment Journey</h2>
-      <p>From first contact to long-term follow-up, stem cell treatment is a guided, personalised process built around you.</p>
-      <div class="journey-grid" style="margin-top:24px">
-        <div class="journey-step"><span class="journey-num">01</span><h3>Consultation</h3><p>Understanding your goals, history, and whether stem cell therapy is right for you.</p></div>
-        <div class="journey-step"><span class="journey-num">02</span><h3>Assessment</h3><p>Comprehensive diagnostics to establish a baseline and guide a safe, personalised plan.</p></div>
-        <div class="journey-step"><span class="journey-num">03</span><h3>Personalised Plan</h3><p>The right cells, source, route, and schedule, tailored to your condition and goals.</p></div>
-        <div class="journey-step"><span class="journey-num">04</span><h3>Treatment</h3><p>Delivered by trained practitioners under medical supervision, with safety prioritised.</p></div>
-        <div class="journey-step"><span class="journey-num">05</span><h3>Support &amp; Recovery</h3><p>Aftercare and, where relevant, supporting therapies to consolidate results.</p></div>
-        <div class="journey-step"><span class="journey-num">06</span><h3>Follow-Up</h3><p>Progress reviewed and the plan refined, with repeat testing where useful.</p></div>
+      <div class="sec-head">
+        <span class="eyebrow">Your Path</span>
+        <h2>Your Treatment <em>Journey</em></h2>
+        <p>From first contact to long-term follow-up, stem cell treatment is a guided, personalised process built around you.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">01</span><div><h3>Consultation</h3><p>Understanding your goals, history, and whether stem cell therapy is right for you.</p></div></div>
+        <div class="step-card"><span class="step-num">02</span><div><h3>Assessment</h3><p>Comprehensive diagnostics to establish a baseline and guide a safe, personalised plan.</p></div></div>
+        <div class="step-card"><span class="step-num">03</span><div><h3>Personalised Plan</h3><p>The right cells, source, route, and schedule, tailored to your condition and goals.</p></div></div>
+        <div class="step-card"><span class="step-num">04</span><div><h3>Treatment</h3><p>Delivered by trained practitioners under medical supervision, with safety prioritised.</p></div></div>
+        <div class="step-card"><span class="step-num">05</span><div><h3>Support &amp; Recovery</h3><p>Aftercare and, where relevant, supporting therapies to consolidate results.</p></div></div>
+        <div class="step-card"><span class="step-num">06</span><div><h3>Follow-Up</h3><p>Progress reviewed and the plan refined, with repeat testing where useful.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="text-align:center" data-reveal>
+  <!-- ================= CTA ================= -->
+  <section class="section" data-reveal>
     <div class="container">
-      <h2 class="heading-gradient">Have Questions?</h2>
-      <p style="color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto 24px">Contact us to discuss your questions about stem cell therapy and regenerative medicine.</p>
-      <a href="contact.html" class="btn btn-primary">Contact us &rarr;</a>
+      <div class="cta-band">
+        <div class="container">
+          <h2>Begin Your Journey Towards <em>Better Health</em></h2>
+          <p>Have questions about stem cell therapy and regenerative medicine? Contact our medical team to discuss what may be appropriate for you.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Book Consultation &rarr;</a>
+            <a href="services.html" class="btn btn-outline">Explore Our Services</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo">&#x25C8; QuantumHealth</span>
-          <p>Innovative Healing, Rooted in Nature</p>
+          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</span>
+          <p>India's destination for regenerative medicine, healthy ageing and luxury wellness — set on 22 acres along Kanakapura Road, Bengaluru.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="X"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+          <a href="index.html">Home</a>
+          <a href="about.html">About the Park</a>
+          <a href="services.html">Our Services</a>
+          <a href="therapies.html">Therapies</a>
+          <a href="programs.html">Programmes</a>
+          <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Languages</h4>
-          <ul>
-            <li><a href="index.html">English</a></li>
-            <li><a href="de/index.html">Deutsch</a></li>
-            <li><a href="ar/index.html">العربية</a></li>
-          </ul>
+          <h4>Medical Services</h4>
+          <a href="stemcell.html">Regenerative Medicine</a>
+          <a href="services.html#checkups">Precision Diagnostics</a>
+          <a href="therapies.html#therapy-01">Healthy Ageing</a>
+          <a href="services.html#rehab">Pain &amp; Rehab</a>
+          <a href="programs.html">Executive Assessment</a>
+          <a href="services.html#alternative">Nutrition &amp; Lifestyle</a>
+        </div>
+        <div class="footer-col">
+          <h4>Research &amp; Education</h4>
+          <a href="about.html#commit">Biotechnology Research</a>
+          <a href="about.html#commit">Clinical Innovation</a>
+          <a href="about.html#commit">Medical Education</a>
+          <a href="about.html#commit">Healthcare Training</a>
+          <a href="contact.html">Conference Centre</a>
+        </div>
+        <div class="footer-col">
+          <h4>Wellness &amp; Hospitality</h4>
+          <a href="wellness.html">Wellness Experience</a>
+          <a href="resort-tour.html">Resort Tour</a>
+          <a href="programs.html">Wellness Retreats</a>
+          <a href="gallery.html">Wellness Spa</a>
+          <a href="gallery.html">Residential Suites</a>
+          <a href="gallery.html">Campus Gallery</a>
+          <a href="contact.html">Plan Your Visit</a>
+        </div>
+        <div class="footer-col">
+          <h4>International Patients</h4>
+          <a href="contact.html#ip">Medical Visa Guidance</a>
+          <a href="contact.html#ip">Airport Transfers</a>
+          <a href="contact.html#ip">Accommodation &amp; Concierge</a>
+          <a href="contact.html#ip">Multilingual Care</a>
+          <a href="contact.html#ip">Insurance &amp; Billing</a>
+          <a href="wellness.html">Programme Planning</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            Quantum Health Biotech Park<br>
+            Kanakapura Road, Bengaluru<br>
+            Karnataka, India
+          </address>
+          <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91-XXXXXXXXXX<br>info@quantumhealthbiotech.com</p>
+          <h4 style="margin-top:20px">Newsletter</h4>
+          <form class="newsletter" id="newsletter-form">
+            <input type="email" placeholder="Your email address" aria-label="Email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="newsletter-note" id="newsletter-note"></p>
+          <div class="map-frame">
+            <iframe title="Map — Kanakapura Road, Bengaluru" src="https://maps.google.com/maps?q=Kanakapura%20Road%2C%20Bengaluru%2C%20Karnataka&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
+      <div class="brand-statement">
+        Where Science Inspires Wellness. Where Nature Accelerates Recovery.<br>
+        <span>Where Luxury Meets Healthcare.</span>
+      </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 QuantumHealth. All rights reserved.</p>
+        <p>&copy; <span id="year">2026</span> Quantum Health Biotech Park. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="terms.html#medical-disclaimer">Medical Disclaimer</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script src="js/motion.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
