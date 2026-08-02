@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* ---- Subtle hero parallax + fade on scroll ---- */
+  const heroGrid = document.getElementById('hero-grid');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroGrid && !reducedMotion && !window.matchMedia('(hover: none)').matches) {
+    const onParallax = () => {
+      const y = Math.min(window.scrollY, window.innerHeight);
+      heroGrid.style.transform = 'translateY(' + (y * 0.16).toFixed(1) + 'px)';
+      heroGrid.style.opacity = String(Math.max(0.35, 1 - y / (window.innerHeight * 0.85)));
+    };
+    window.addEventListener('scroll', onParallax, { passive: true });
+  }
+
   /* ---- Mega menu on mobile (tap to open) ---- */
   const megaWrap = document.getElementById('mega-wrap');
   const megaMenu = document.getElementById('mega-menu');
