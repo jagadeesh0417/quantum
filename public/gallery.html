@@ -22,6 +22,13 @@
   <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
+  <div id="banner-stage" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/poster.jpg">
+      <source src="videos/hero-banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="preloader" aria-hidden="true">
     <span class="pl-logo">&#x25C8;</span>
@@ -82,10 +89,6 @@
 
   <!-- ================= HERO ================= -->
   <section class="gal-hero" id="main">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="poster.jpg" aria-hidden="true">
-      <source src="hero-banner.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay" aria-hidden="true"></div>
 
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -313,5 +316,6 @@
   <script src="js/main.js"></script>
   <script src="js/motion.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>
