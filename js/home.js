@@ -269,6 +269,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---- Hero video: play when in view, pause offscreen ---- */
+  document.querySelectorAll('.hero-video').forEach((video) => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      });
+    }, { threshold: 0.05 });
+    videoObserver.observe(video);
+  });
+
   /* ---- Subtle hero parallax + fade on scroll ---- */
   const heroGrid = document.getElementById('hero-grid');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
