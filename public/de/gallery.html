@@ -1,92 +1,321 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>Galerie — QuantumHealth</title>
-  <meta name="description" content="Fotogalerie der QuantumHealth in Zürich. Klinikräume, Behandlungszimmer und Erholungsumgebung.">
+  <title>Galerie | Quantum Health Biotech Park, Bengaluru</title>
+  <link rel="canonical" href="https://quantumhealthbiotechpark.com/de/gallery.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galerie | Quantum Health Biotech Park, Bengaluru">
+  <meta property="og:description" content="Erleben Sie Quantum Health Biotech Park — eine Galerie aus Natur, Luxus, Gesundheitsversorgung, Wellness und Innovation auf 22 Acres an der Kanakapura Road, Bengaluru.">
+  <meta property="og:url" content="https://quantumhealthbiotechpark.com/de/gallery.html">
+  <meta property="og:site_name" content="Quantum Health Biotech Park">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galerie | Quantum Health Biotech Park, Bengaluru">
+  <meta name="twitter:description" content="Erleben Sie Quantum Health Biotech Park — eine Galerie aus Natur, Luxus, Gesundheitsversorgung, Wellness und Innovation auf 22 Acres an der Kanakapura Road, Bengaluru.">
+  <meta name="description" content="Erleben Sie Quantum Health Biotech Park — eine Galerie aus Natur, Luxus, Gesundheitsversorgung, Wellness und Innovation auf 22 Acres an der Kanakapura Road, Bengaluru.">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/gallery.css">
 </head>
 <body>
+  <div id="banner-stage" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="../images/poster.jpg">
+      <source src="../videos/hero-banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+  <div class="preloader" aria-hidden="true">
+    <span class="pl-logo">&#x25C8;</span>
+    <span class="pl-ring"></span>
+  </div>
   <div class="bg-gradient"></div>
-  <nav class="navbar">
+
+  <!-- ================= HEADER ================= -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">&#x25C8; QuantumHealth</a>
+      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</a>
       <ul class="nav-links">
         <li><a href="index.html">Startseite</a></li>
         <li><a href="about.html">Über uns</a></li>
-        <li><a href="services.html">Leistungen</a></li>
+        <li class="has-mega" id="mega-wrap">
+          <a href="services.html" class="nav-link-mega">Leistungen <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu">
+            <div>
+              <h4>Medizin &amp; Diagnostik</h4>
+              <a href="services.html">Unsere Leistungen <span class="mega-sub">— 8 klinische Abteilungen</span></a>
+              <a href="therapies.html">Therapien <span class="mega-sub">— 18 Behandlungsbereiche</span></a>
+              <a href="stemcell.html">Stammzelltherapien <span class="mega-sub">— Zellmedizin</span></a>
+              <a href="programs.html">Programme <span class="mega-sub">— stationäre Aufenthalte</span></a>
+            </div>
+            <div>
+              <h4>Wellness &amp; Gastfreundschaft</h4>
+              <a href="wellness.html">Wellness-Erlebnis <span class="mega-sub">— Ihre Reise in 10 Etappen</span></a>
+              <a href="resort-tour.html">Resort-Tour <span class="mega-sub">— virtueller Campus-Rundgang</span></a>
+              <a href="gallery.html">Campus-Galerie <span class="mega-sub">— Gelände &amp; Suiten</span></a>
+              <a href="about.html">Über den Park <span class="mega-sub">— 22-Hektar-Campus</span></a>
+              <a href="contact.html">Kontakt &amp; Besuch <span class="mega-sub">— Führungen &amp; Transfers</span></a>
+            </div>
+            <div>
+              <h4>Warum Quantum</h4>
+              <a href="index.html#why">Warum Quantum wählen</a>
+              <a href="index.html#vision">Unsere Vision</a>
+              <a href="index.html#journey">Ihre Gesundheitsreise</a>
+              <a href="index.html#cta">Beratung buchen</a>
+            </div>
+          </div>
+        </li>
         <li><a href="therapies.html">Therapien</a></li>
         <li><a href="stemcell.html">Stammzellen</a></li>
         <li><a href="programs.html">Programme</a></li>
         <li><a href="gallery.html" class="active">Galerie</a></li>
-        <li><a href="../contact.html">Kontakt</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
       </ul>
-      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+      <button class="mobile-toggle" aria-label="Navigation umschalten"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
-        <span class="lang-current">DE <span class="lang-arrow">▾</span></span>
+        <span class="lang-current">EN <span class="lang-arrow">&#x25BE;</span></span>
         <div class="lang-dropdown">
-          <a href="../gallery.html">EN</a>
-          <a href="../ar/gallery.html">AR</a>
+          <a href="index.html">DE</a>
+          <a href="../ar/index.html">AR</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <section data-reveal class="page-hero">
+  <!-- ================= HERO ================= -->
+  <section class="gal-hero" id="main">
+
     <div class="container">
-      <span class="breadcrumb">Startseite &gt; Galerie</span>
-      <h1 class="heading-gradient">Galerie</h1>
-      <p>Unsere Klinik und Umgebung in Zürich.</p>
+      <nav class="breadcrumb" aria-label="Brotkrumen-Navigation">
+        <a href="index.html">Startseite</a>
+        <span class="sep">&rsaquo;</span>
+        <span>Galerie</span>
+      </nav>
+      <span class="eyebrow">Galerie</span>
+      <h1>Erleben Sie <em>Quantum Health Biotech Park</em></h1>
+      <p>Entdecken Sie eine Destination, in der moderne Gesundheitsversorgung, Luxus-Gastfreundschaft, Wellness und Natur zusammenkommen, um eine außergewöhnliche Umgebung für Heilung, Regeneration und gesundes Altern zu schaffen.</p>
     </div>
   </section>
 
-  <section data-reveal class="section">
+  <!-- ================= NATURE ================= -->
+  <section class="gal-cat" data-reveal>
     <div class="container">
-      <p class="section-intro">Bilder folgen in Kürze. Besuchen Sie uns oder kontaktieren Sie uns für einen Besichtigungstermin.</p>
+      <div class="gal-head">
+        <div>
+          <span class="gal-num">Kapitel 01 &mdash; Natur</span>
+          <h2>Ruhige Landschaften</h2>
+        </div>
+        <p>Tauchen Sie ein in ruhige Landschaften mit stillen Seen, üppigen Wäldern, botanischen Heilgärten, rauschenden Wasserfällen und malerischen Spazierwegen, die Entspannung und Wohlbefinden fördern sollen.</p>
+      </div>
+      <div class="gal-grid">
+        <button class="gal-tile gal-tall n-1" data-icon="&#x1F30A;" data-title="Stille Seen" data-desc="Private Wasserbereiche für Besinnung, Entspannung und sanfte Aktivitäten auf dem Wasser."><span class="tile-icon">&#x1F30A;</span><h3>Stille Seen</h3><span class="tile-tag">Private Wasserbereiche &middot; Innehalten &amp; Erholung</span></button>
+        <button class="gal-tile n-2" data-icon="&#x1F332;" data-title="Waldpfade" data-desc="Achtsame Spazierwege durch üppiges Grün, gestaltet für Bewegung und Verbindung mit der Natur."><span class="tile-icon">&#x1F332;</span><h3>Waldpfade</h3><span class="tile-tag">Achtsame Spazierwege</span></button>
+        <button class="gal-tile n-3" data-icon="&#x1F33F;" data-title="Botanische Heilgärten" data-desc="Landschaftsgärten mit therapeutischen Pflanzen und beruhigenden Außenbereichen, die das Wohlbefinden fördern."><span class="tile-icon">&#x1F33F;</span><h3>Botanische Heilgärten</h3><span class="tile-tag">Therapeutische Pflanzen &amp; Ruhe</span></button>
+        <button class="gal-tile n-4" data-icon="&#x1F4A7;" data-title="Rauschende Wasserfälle" data-desc="Natürliche Wasserspiele, die beruhigende Klänge der Erholung in den Park bringen."><span class="tile-icon">&#x1F4A7;</span><h3>Rauschende Wasserfälle</h3><span class="tile-tag">Klänge der Erholung</span></button>
+      </div>
     </div>
   </section>
 
-  <section data-reveal class="section" style="text-align:center">
+  <!-- ================= LUXURY ================= -->
+  <section class="gal-cat" data-reveal>
     <div class="container">
-      <a href="../contact.html" class="btn btn-primary">Kontaktieren Sie uns &rarr;</a>
+      <div class="gal-head">
+        <div>
+          <span class="gal-num">Kapitel 02 &mdash; Luxus</span>
+          <h2>Feiner Komfort</h2>
+        </div>
+        <p>Erleben Sie feinen Komfort in Premium-Wellness-Cottages, Executive-Suiten, Luxusvillen, exklusiven Lounges, erstklassigen Spa-Einrichtungen und sorgfältig kuratierten Hospitality-Leistungen.</p>
+      </div>
+      <div class="gal-grid">
+        <button class="gal-tile l-1" data-icon="&#x1F3E1;" data-title="Wellness-Cottages" data-desc="Private, erholsame Aufenthalte in Premium-Cottages, konzipiert für Komfort und Regeneration."><span class="tile-icon">&#x1F3E1;</span><h3>Wellness-Cottages</h3><span class="tile-tag">Private, erholsame Aufenthalte</span></button>
+        <button class="gal-tile gal-tall l-2" data-icon="&#x1F3DB;&#xFE0F;" data-title="Executive-Suiten &amp; Villen" data-desc="Residenzen im Resort-Standard mit Licht von Norden und klinischer Versorgung direkt nebenan."><span class="tile-icon">&#x1F3DB;&#xFE0F;</span><h3>Executive-Suiten &amp; Villen</h3><span class="tile-tag">Residenzen im Resort-Standard</span></button>
+        <button class="gal-tile l-3" data-icon="&#x1F37B;" data-title="Exklusive Lounges" data-desc="Crystal-Café- und Lounge-Bereiche für ruhige Gespräche und unbeschwerte Zeit."><span class="tile-icon">&#x1F37B;</span><h3>Exklusive Lounges</h3><span class="tile-tag">Crystal Café &amp; Lounge</span></button>
+        <button class="gal-tile l-4" data-icon="&#x1F6C0;" data-title="Weltklasse-Spa" data-desc="Ein Wellness-Heiligtum am See mit regenerierenden Therapien und therapeutischen Massagen."><span class="tile-icon">&#x1F6C0;</span><h3>Weltklasse-Spa</h3><span class="tile-tag">Wellness-Heiligtum am See</span></button>
+      </div>
     </div>
   </section>
 
+  <!-- ================= HEALTHCARE ================= -->
+  <section class="gal-cat" data-reveal>
+    <div class="container">
+      <div class="gal-head">
+        <div>
+          <span class="gal-num">Kapitel 03 &mdash; Gesundheitswesen</span>
+          <h2>Präzisionsmedizin</h2>
+        </div>
+        <p>Entdecken Sie modernste Konsultations-Suiten, fortschrittliche Diagnosezentren, Einrichtungen für regenerative Medizin, Executive-Health-Kliniken, Rehabilitationsbereiche und personalisierte Umgebungen für die Gesundheitsversorgung.</p>
+      </div>
+      <div class="gal-grid">
+        <button class="gal-tile gal-tall h-1" data-icon="&#x1F52C;" data-title="Fortschrittliches Diagnosezentrum" data-desc="Molekulare, funktionelle und bildgebende Technologien, die Antworten in Stunden statt Wochen liefern."><span class="tile-icon">&#x1F52C;</span><h3>Fortschrittliches Diagnosezentrum</h3><span class="tile-tag">Molekular, funktionell &amp; bildgebend</span></button>
+        <button class="gal-tile h-2" data-icon="&#x1F4BC;" data-title="Executive-Health-Klinik" data-desc="Umfassende Assessments am selben Tag für Führungskräfte, die keine Zeit verlieren möchten."><span class="tile-icon">&#x1F4BC;</span><h3>Executive-Health-Klinik</h3><span class="tile-tag">Assessments am selben Tag</span></button>
+        <button class="gal-tile h-3" data-icon="&#x1F9EC;" data-title="Einrichtungen für regenerative Medizin" data-desc="Speziell konzipierte Suiten für zelluläre Therapien in der evidenzbasierten regenerativen Medizin."><span class="tile-icon">&#x1F9EC;</span><h3>Einrichtungen für regenerative Medizin</h3><span class="tile-tag">Suiten für zelluläre Therapien</span></button>
+        <button class="gal-tile h-4" data-icon="&#x1F4AA;" data-title="Rehabilitationsbereiche" data-desc="Umgebungen für Physiotherapie und Erholung, gestaltet für messbare Fortschritte."><span class="tile-icon">&#x1F4AA;</span><h3>Rehabilitationsbereiche</h3><span class="tile-tag">Physiotherapie &amp; Erholung</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WELLNESS ================= -->
+  <section class="gal-cat" data-reveal>
+    <div class="container">
+      <div class="gal-head">
+        <div>
+          <span class="gal-num">Kapitel 04 &mdash; Wellness</span>
+          <h2>Balance &amp; Vitalität zurückgewinnen</h2>
+        </div>
+        <p>Entdecken Sie eigene Bereiche für Yoga, Meditation, Hydrotherapie, Ernährung, Fitness, Achtsamkeit und ganzheitliche Wellness-Programme, die Balance und Vitalität wiederherstellen sollen.</p>
+      </div>
+      <div class="gal-grid">
+        <button class="gal-tile w-1" data-icon="&#x1F9D8;" data-title="Yoga- &amp; Meditationspavillon" data-desc="Angeleitete Praxis, Meditation und Atemarbeit in einem Pavillon voller Licht und Ruhe."><span class="tile-icon">&#x1F9D8;</span><h3>Yoga- &amp; Meditationspavillon</h3><span class="tile-tag">Angeleitete Praxis &amp; Atemarbeit</span></button>
+        <button class="gal-tile gal-tall w-2" data-icon="&#x1F4A7;" data-title="Hydrotherapiezentrum" data-desc="Wasserbasierte Therapien, die Entspannung, Rehabilitation und Erholung unterstützen."><span class="tile-icon">&#x1F4A7;</span><h3>Hydrotherapiezentrum</h3><span class="tile-tag">Erholung durch Wasser</span></button>
+        <button class="gal-tile w-3" data-icon="&#x1F957;" data-title="Ernährung &amp; Farm-to-Table" data-desc="Von Chefköchen zubereitete Mahlzeiten, abgestimmt auf Ihren persönlichen Ernährungsplan."><span class="tile-icon">&#x1F957;</span><h3>Ernährung &amp; Farm-to-Table</h3><span class="tile-tag">Von Chefköchen zubereitete Mahlzeiten</span></button>
+        <button class="gal-tile w-4" data-icon="&#x1F9E0;" data-title="Fitness &amp; Achtsamkeit" data-desc="Bewegungswissenschaft und Programme für geistige Klarheit, die Balance und Vitalität wiederherstellen."><span class="tile-icon">&#x1F9E0;</span><h3>Fitness &amp; Achtsamkeit</h3><span class="tile-tag">Bewegung &amp; geistige Klarheit</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INNOVATION ================= -->
+  <section class="gal-cat" data-reveal>
+    <div class="container">
+      <div class="gal-head">
+        <div>
+          <span class="gal-num">Kapitel 05 &mdash; Innovation</span>
+          <h2>Die Zukunft der Gesundheitsversorgung</h2>
+        </div>
+        <p>Erleben Sie die Zukunft der Gesundheitsversorgung durch biotechnologische Forschung, KI-gestützte Diagnostik, medizinische Ausbildung, Innovationszentren und gemeinschaftliche Forschungseinrichtungen, die die regenerative Medizin vorantreiben.</p>
+      </div>
+      <div class="gal-grid">
+        <button class="gal-tile i-1" data-icon="&#x1F9EA;" data-title="Biotechnologische Forschungslabore" data-desc="Translationale Wissenschaft direkt vor Ort, die regenerative Medizin und Diagnostik voranbringt."><span class="tile-icon">&#x1F9EA;</span><h3>Biotechnologische Forschungslabore</h3><span class="tile-tag">Translationale Wissenschaft vor Ort</span></button>
+        <button class="gal-tile i-2" data-icon="&#x1F916;" data-title="KI-gestützte Diagnostik" data-desc="Intelligenz hinter der Analyse — schnellere, tiefere Interpretation Ihrer Ergebnisse."><span class="tile-icon">&#x1F916;</span><h3>KI-gestützte Diagnostik</h3><span class="tile-tag">Intelligenz hinter der Analyse</span></button>
+        <button class="gal-tile gal-tall i-3" data-icon="&#x1F393;" data-title="Medizinisches Ausbildungszentrum" data-desc="Ausbildung der nächsten Generation von Ärztinnen, Ärzten und Pflegeteams aus aller Welt."><span class="tile-icon">&#x1F393;</span><h3>Medizinisches Ausbildungszentrum</h3><span class="tile-tag">Die nächste Generation ausbilden</span></button>
+        <button class="gal-tile i-4" data-icon="&#x1F4A1;" data-title="Innovations- &amp; Kollaborationszentrum" data-desc="Partner und Forschende, die gemeinsam die Zukunft der Gesundheitsversorgung gestalten."><span class="tile-icon">&#x1F4A1;</span><h3>Innovations- &amp; Kollaborationszentrum</h3><span class="tile-tag">Partner gestalten die Zukunft</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUTRO CTA ================= -->
+  <section class="gal-outro" data-reveal>
+    <div class="container">
+      <h2>Überzeugen Sie sich <em>selbst</em></h2>
+      <p>Der Park lässt sich am besten persönlich erleben — geführte Campus-Touren und Beratungsbesuche werden flexibel nach Ihrem Zeitplan arrangiert, inklusive Flughafentransfer.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">Planen Sie Ihren Besuch &rarr;</a>
+        <a href="resort-tour.html" class="btn btn-outline">Resort-Tour entdecken</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Vorschau auf das Campus-Erlebnis" aria-hidden="true">
+    <div class="lb-card">
+      <div class="lb-visual" id="lb-visual"><span class="m-icon" id="lb-icon"></span></div>
+      <div class="lb-body">
+        <h3 id="lb-title"></h3>
+        <p id="lb-desc"></p>
+      </div>
+    </div>
+    <button class="lb-close" id="lb-close" type="button" aria-label="Schließen">&times;</button>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo">&#x25C8; QuantumHealth</span>
-          <p>Innovative Heilung, verwurzelt in der Natur</p>
+          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</span>
+          <p>Indiens Adresse für regenerative Medizin, gesundes Altern und Luxus-Wellness — auf 22 Acres an der Kanakapura Road, Bengaluru.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="X"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="about.html">Über uns</a></li>
-            <li><a href="services.html">Leistungen</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-          </ul>
+          <h4>Schnellzugriff</h4>
+          <a href="index.html">Startseite</a>
+          <a href="about.html">Über den Park</a>
+          <a href="services.html">Unsere Leistungen</a>
+          <a href="therapies.html">Therapien</a>
+          <a href="programs.html">Programme</a>
+          <a href="contact.html">Kontakt</a>
         </div>
         <div class="footer-col">
-          <h4>Sprachen</h4>
-          <ul>
-            <li><a href="../index.html">English</a></li>
-            <li><a href="index.html">Deutsch</a></li>
-            <li><a href="../ar/index.html">العربية</a></li>
-          </ul>
+          <h4>Medizinische Leistungen</h4>
+          <a href="stemcell.html">Regenerative Medizin</a>
+          <a href="services.html#checkups">Präzisionsdiagnostik</a>
+          <a href="therapies.html#therapy-01">Gesundes Altern</a>
+          <a href="services.html#rehab">Schmerz &amp; Rehabilitation</a>
+          <a href="programs.html">Executive Assessment</a>
+          <a href="services.html#alternative">Ernährung &amp; Lifestyle</a>
+        </div>
+        <div class="footer-col">
+          <h4>Forschung &amp; Bildung</h4>
+          <a href="about.html#commit">Biotechnologische Forschung</a>
+          <a href="about.html#commit">Klinische Innovation</a>
+          <a href="about.html#commit">Medizinische Ausbildung</a>
+          <a href="about.html#commit">Training im Gesundheitswesen</a>
+          <a href="contact.html">Kongresszentrum</a>
+        </div>
+        <div class="footer-col">
+          <h4>Wellness &amp; Gastfreundschaft</h4>
+          <a href="wellness.html">Wellness-Erlebnis</a>
+          <a href="resort-tour.html">Resort-Tour</a>
+          <a href="programs.html">Wellness-Retreats</a>
+          <a href="gallery.html">Wellness-Spa</a>
+          <a href="gallery.html">Residenzielle Suiten</a>
+          <a href="gallery.html">Campus-Galerie</a>
+          <a href="contact.html">Planen Sie Ihren Besuch</a>
+        </div>
+        <div class="footer-col">
+          <h4>Internationale Patienten</h4>
+          <a href="contact.html#ip">Beratung zum medizinischen Visum</a>
+          <a href="contact.html#ip">Flughafentransfers</a>
+          <a href="contact.html#ip">Unterkunft &amp; Concierge</a>
+          <a href="contact.html#ip">Mehrsprachige Betreuung</a>
+          <a href="contact.html#ip">Versicherung &amp; Abrechnung</a>
+          <a href="wellness.html">Programmplanung</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <address>
+            Quantum Health Biotech Park<br>
+            Kanakapura Road, Bengaluru<br>
+            Karnataka, Indien
+          </address>
+          <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91-XXXXXXXXXX<br>info@quantumhealthbiotech.com</p>
+          <h4 style="margin-top:20px">Newsletter</h4>
+          <form class="newsletter" id="newsletter-form">
+            <input type="email" placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
+            <button type="submit">Abonnieren</button>
+          </form>
+          <p class="newsletter-note" id="newsletter-note"></p>
+          <div class="map-frame">
+            <iframe title="Karte – Kanakapura Road, Bengaluru" src="https://maps.google.com/maps?q=Kanakapura%20Road%2C%20Bengaluru%2C%20Karnataka&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
+      <div class="brand-statement">
+        Wo Wissenschaft Wellness inspiriert. Wo Natur die Erholung beschleunigt.<br>
+        <span>Wo Luxus auf Gesundheitsversorgung trifft.</span>
+      </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 QuantumHealth. Alle Rechte vorbehalten.</p>
+        <p>&copy; <span id="year">2026</span> Quantum Health Biotech Park. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Datenschutzerklärung</a>
+          <a href="terms.html">AGB</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="../js/main.js"></script>
   <script src="../js/motion.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/navigation.js"></script>
 </body>
 </html>

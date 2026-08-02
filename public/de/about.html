@@ -5,126 +5,495 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>Über uns — QuantumHealth</title>
+  <title>Über uns | Quantum Health Biotech Park, Bengaluru</title>
+  <link rel="canonical" href="https://quantumhealthbiotechpark.com/de/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Über uns | Quantum Health Biotech Park, Bengaluru">
+  <meta property="og:description" content="Über Quantum Health Biotech Park — eines der führenden integrierten Gesundheitsziele Asiens auf einem 22-Acre-Campus an der Kanakapura Road, Bengaluru, das gesundes Altern durch regenerative Medizin, Präzisionsmedizin und Luxus-Wellness neu definiert.">
+  <meta property="og:url" content="https://quantumhealthbiotechpark.com/de/about.html">
+  <meta property="og:site_name" content="Quantum Health Biotech Park">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Über uns | Quantum Health Biotech Park, Bengaluru">
+  <meta name="twitter:description" content="Über Quantum Health Biotech Park — eines der führenden integrierten Gesundheitsziele Asiens auf einem 22-Acre-Campus an der Kanakapura Road, Bengaluru, das gesundes Altern durch regenerative Medizin, Präzisionsmedizin und Luxus-Wellness neu definiert.">
+  <meta name="description" content="Über Quantum Health Biotech Park — eines der führenden integrierten Gesundheitsziele Asiens auf einem 22-Acre-Campus an der Kanakapura Road, Bengaluru, das gesundes Altern durch regenerative Medizin, Präzisionsmedizin und Luxus-Wellness neu definiert.">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/gallery.css">
+  <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
+  <div id="banner-stage" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="../images/poster.jpg">
+      <source src="../videos/hero-banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
+  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+  <div class="preloader" aria-hidden="true">
+    <span class="pl-logo">&#x25C8;</span>
+    <span class="pl-ring"></span>
+  </div>
   <div class="bg-gradient"></div>
-  <nav class="navbar">
+
+  <!-- ================= HEADER ================= -->
+  <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="../index.html" class="logo">&#x25C8; QuantumHealth</a>
+      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</a>
       <ul class="nav-links">
         <li><a href="index.html">Startseite</a></li>
         <li><a href="about.html" class="active">Über uns</a></li>
-        <li><a href="services.html">Leistungen</a></li>
+        <li class="has-mega" id="mega-wrap">
+          <a href="services.html" class="nav-link-mega">Leistungen <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu">
+            <div>
+              <h4>Medizin &amp; Diagnostik</h4>
+              <a href="services.html">Unsere Leistungen <span class="mega-sub">— 8 klinische Bereiche</span></a>
+              <a href="therapies.html">Therapien <span class="mega-sub">— 18 Behandlungsbereiche</span></a>
+              <a href="stemcell.html">Stammzelltherapien <span class="mega-sub">— zelluläre Medizin</span></a>
+              <a href="programs.html">Programme <span class="mega-sub">— stationäre Aufenthalte</span></a>
+            </div>
+            <div>
+              <h4>Wellness &amp; Gastlichkeit</h4>
+              <a href="wellness.html">Wellness-Erlebnis <span class="mega-sub">— Ihre 10-Stufen-Reise</span></a>
+              <a href="resort-tour.html">Resort-Tour <span class="mega-sub">— virtueller Campusrundgang</span></a>
+              <a href="gallery.html">Campus-Galerie <span class="mega-sub">— Anlagen &amp; Suiten</span></a>
+              <a href="about.html">Über den Park <span class="mega-sub">— 22-Acre-Campus</span></a>
+              <a href="contact.html">Kontakt &amp; Besuch <span class="mega-sub">— Führungen &amp; Transfers</span></a>
+            </div>
+            <div>
+              <h4>Warum Quantum</h4>
+              <a href="index.html#why">Warum Quantum wählen</a>
+              <a href="index.html#vision">Unsere Vision</a>
+              <a href="index.html#journey">Ihre Gesundheitsreise</a>
+              <a href="index.html#cta">Beratungstermin vereinbaren</a>
+            </div>
+          </div>
+        </li>
         <li><a href="therapies.html">Therapien</a></li>
         <li><a href="stemcell.html">Stammzellen</a></li>
         <li><a href="programs.html">Programme</a></li>
         <li><a href="gallery.html">Galerie</a></li>
         <li><a href="contact.html">Kontakt</a></li>
       </ul>
-      <button class="mobile-toggle"><span></span><span></span><span></span></button>
+      <button class="mobile-toggle" aria-label="Navigation umschalten"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
-        <span class="lang-current">DE <span class="lang-arrow">▾</span></span>
+        <span class="lang-current">EN <span class="lang-arrow">&#x25BE;</span></span>
         <div class="lang-dropdown">
-          <a href="../about.html">EN</a>
-          <a href="../ar/about.html">AR</a>
+          <a href="index.html">DE</a>
+          <a href="../ar/index.html">AR</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <section data-reveal class="page-hero">
+  <!-- ================= HERO ================= -->
+  <section class="ab-hero" id="main">
+
     <div class="container">
-      <span class="breadcrumb">Startseite &gt; Über uns</span>
-      <h1 class="heading-gradient">Über uns</h1>
+      <nav class="breadcrumb" aria-label="Brotkrumen-Navigation">
+        <a href="index.html">Startseite</a>
+        <span class="sep">&rsaquo;</span>
+        <span>Über uns</span>
+      </nav>
+      <span class="eyebrow">Über Quantum Health Biotech Park</span>
+      <h1>Über <em>Quantum Health Biotech Park</em></h1>
+      <p class="ab-sub">Wir gestalten die Zukunft des Wohlbefindens — durch regenerative Medizin, Präzisionsmedizin, Luxus-Wellness, Forschung und Innovation.</p>
+      <p>Quantum Health Biotech Park ist als eines der führenden integrierten Gesundheitsziele Asiens konzipiert — ein Ort, an dem moderne Medizin, Biotechnologie, regenerative Medizin, präventive Gesundheitsversorgung, Luxus-Wellness, Bildung, Gastlichkeit und Forschung zusammenkommen, um gesundes Altern und lebenslanges Wohlbefinden neu zu definieren.</p>
+      <div class="hero-buttons">
+        <a href="resort-tour.html" class="btn btn-primary">Campus entdecken &rarr;</a>
+        <a href="contact.html" class="btn btn-outline">Kontakt aufnehmen</a>
+      </div>
     </div>
+    <div class="scroll-hint">Scrollen</div>
   </section>
 
-  <section data-reveal class="section">
+  <!-- ================= 1. WER WIR SIND ================= -->
+  <section class="section" data-reveal>
     <div class="container">
-      <span class="eyebrow">Über QuantumHealth</span>
-      <h2 class="heading-gradient">Ihr vertrauenswürdiger Partner für ganzheitliche Heilung</h2>
-      <p class="section-intro">Bei QuantumHealth werden wir von einer einzigen Vision angetrieben: personalisierte, integrative und biologisch basierte Heilung anzubieten, die den ganzen Menschen behandelt – nicht nur die Krankheit. Wir glauben daran, die Ursachen von gesundheitlichen Ungleichgewichten durch fortschrittliche Diagnostik und natürliche, evidenzbasierte Therapien aufzudecken. Unser Ansatz verbindet moderne Medizin mit bewährten Heilungstraditionen und gewährleistet einen ganzheitlichen, individuellen Weg zum Wohlbefinden für jeden Patienten.</p>
-      <a href="contact.html" class="btn btn-primary">Kontaktieren Sie uns</a>
-    </div>
-  </section>
-
-  <section data-reveal class="vision-block section">
-    <div class="container">
-      <span class="eyebrow">QuantumHealth</span>
-      <h2 class="heading-gradient">Unsere Vision</h2>
-      <p class="section-intro">Eine patientenzentrierte Versorgung zu bieten, die biologische Medizin, integrative Diagnostik und natürliche Therapien vereint – mit dem Ziel, Gleichgewicht und Vitalität von innen heraus wiederherzustellen.</p>
-      <a href="contact.html" class="btn btn-primary">Kontaktieren Sie uns</a>
-    </div>
-  </section>
-
-  <section data-reveal class="section">
-    <div class="container">
-      <span class="eyebrow">QuantumHealth</span>
-      <h2 class="heading-gradient">Unser medizinisches Expertenteam</h2>
-      <p class="section-intro">Unser Team vereint jahrzehntelange Erfahrung in der regenerativen Medizin, Kardiologie und Frauengesundheit. Jeder Spezialist ist bestrebt, die höchsten Pflegestandards durch einen personalisierten, patientenzentrierten Ansatz zu bieten.</p>
-      <a href="contact.html" class="btn btn-primary">Kontaktieren Sie uns</a>
-    </div>
-  </section>
-
-  <section data-reveal class="section">
-    <div class="container">
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar">A</div>
-          <h3>Dr. Awatef Nouri</h3>
-          <span class="team-role">Klinikdirektorin</span>
-          <p>Visionäre Führungspersönlichkeit und Verfechterin der integrativen Versorgung. Sie beaufsichtigt alle medizinischen und therapeutischen Programme mit Fokus auf Qualität und Innovation.</p>
+      <span class="eyebrow">Wer wir sind</span>
+      <h2 class="section-title">Wir gestalten die Zukunft des Wohlbefindens</h2>
+      <div class="campus-grid" style="margin-top:44px">
+        <div class="campus-visual">
+          <div class="campus-caption">
+            <strong>22 Acres an der Kanakapura Road</strong>
+            Ein Campus, an dem Medizin, Biotechnologie, Wellness, Forschung und Gastlichkeit zusammenkommen.
+          </div>
         </div>
-        <div class="team-card">
-          <div class="team-avatar">Y</div>
-          <h3>Dr. Yamen Al-Najjar</h3>
-          <span class="team-role">Kardiologie</span>
-          <p>Experte für kardiovaskuläre Versorgung mit Schwerpunkt auf der Verbindung zwischen Herzgesundheit, emotionalem Wohlbefinden und Entgiftungsprotokollen.</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">I</div>
-          <h3>Dr. Isole Semm</h3>
-          <span class="team-role">Gynäkologie &amp; Frauengesundheit</span>
-          <p>Spezialisiert auf Hormonhaushalt, Fruchtbarkeit und ganzheitliche Behandlungen für Frauen jeden Alters.</p>
+        <div>
+          <p class="lead-para">Quantum Health Biotech Park steht für eine neue Generation integrierter Gesundheitsziele, in denen <strong>moderne Medizin, Biotechnologie, regenerative Medizin, präventive Gesundheitsversorgung, Luxus-Wellness, Forschung, Bildung und Gastlichkeit</strong> auf einem einzigen erstklassigen Campus zusammenkommen.</p>
+          <p class="lead-para" style="margin-top:16px">Auf einem wunderschön gestalteten 22-Acre-Campus an der Kanakapura Road, Bengaluru, ist unsere Vision, eine Umgebung zu schaffen, in der Menschen Krankheiten vorbeugen, ihre Gesundheit optimieren, die Genesung beschleunigen und gesundes Altern durch persönlich abgestimmte, evidenzorientierte Gesundheitsversorgung annehmen können.</p>
+          <p class="lead-para" style="margin-top:16px">Unser multidisziplinäres Team vereint Expertise in Präventivmedizin, regenerativer Medizin, Lifestyle-Medizin, Diagnostik, Ernährung, Physiotherapie, Rehabilitation, ästhetischer Medizin, Langlebigkeitsforschung und Wellness-Coaching, um eine umfassende, patientenorientierte Versorgung zu gewährleisten.</p>
+          <p class="lead-para" style="margin-top:16px">Jedes Programm beginnt mit einem tiefgehenden Verständnis des individuellen Gesundheitsprofils, des Lebensstils, der Genetik, der Risikofaktoren und der langfristigen Ziele eines jeden Menschen — so können wir hochgradig personalisierte Programme zur Gesundheitsoptimierung entwickeln.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ================= 2. UNSERE GESCHICHTE ================= -->
+  <section class="section" style="background:var(--ivory)" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unsere Geschichte</span>
+      <h2 class="section-title">Unsere Reise</h2>
+      <p class="section-desc" style="max-width:700px;margin-top:14px">Quantum Health Biotech Park wurde mit der Vision konzipiert, die Gesundheitsversorgung neu zu definieren, indem ein Ort entsteht, an dem Wissenschaft, Technologie, Wellness und Gastlichkeit in vollkommener Harmonie existieren.</p>
+      <p class="section-desc" style="max-width:700px;margin-top:14px">Angesichts der weltweit wachsenden Nachfrage nach präventiver Gesundheitsversorgung, gesundem Altern, regenerativer Medizin und personalisiertem Wellness entwarfen unsere Gründer ein Gesundheitsökosystem, das über traditionelle Krankenhäuser hinausgeht.</p>
+      <p class="section-desc" style="max-width:700px;margin-top:14px">Unser integriertes Modell vereint moderne Diagnostik, ärztlich geführte Versorgung, biotechnologische Innovation, Luxus-Wellness-Erlebnisse, Forschung, Bildung und nachhaltige Infrastruktur, um Menschen in jeder Lebensphase zu begleiten.</p>
+      <div class="timeline" style="margin-top:52px">
+        <div class="tl-step"><span class="tl-num">&#x1F441;&#xFE0F;</span><span class="tl-tag">Meilenstein 01</span><h3>Vision</h3><p>Der Traum von einem integrierten Ort, an dem Heilung, Wissenschaft und Gastlichkeit einander begegnen.</p></div>
+        <div class="tl-step"><span class="tl-num">&#x1F4CB;</span><span class="tl-tag">Meilenstein 02</span><h3>Planung</h3><p>Interdisziplinäre Masterplanung über Medizin, Wellness und Architektur hinweg.</p></div>
+        <div class="tl-step"><span class="tl-num">&#x1F52C;</span><span class="tl-tag">Meilenstein 03</span><h3>Forschung</h3><p>Tiefgehende Analyse der weltweit führenden Institutionen für regenerative Medizin und Langlebigkeit.</p></div>
+        <div class="tl-step"><span class="tl-num">&#x1F3D7;&#xFE0F;</span><span class="tl-tag">Meilenstein 04</span><h3>Campus-Entwicklung</h3><p>22 Acres nachhaltiger Architektur, Gärten und Heilungsräume nehmen Gestalt an.</p></div>
+        <div class="tl-step"><span class="tl-num">&#x1F9E0;</span><span class="tl-tag">Meilenstein 05</span><h3>Innovation im Gesundheitswesen</h3><p>Kliniken, Diagnostik und zelluläre Therapien vereint unter einem Dach.</p></div>
+        <div class="tl-step"><span class="tl-num">&#x1F680;</span><span class="tl-tag">Meilenstein 06</span><h3>Zukünftige Expansion</h3><p>Neue Forschungshorizonte, internationale Partnerschaften und globale Reichweite.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. UNSERE VISION ================= -->
+  <section class="ab-vision" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unsere Vision</span>
+      <div class="ab-vision-head">
+        <span class="ab-vision-ico">&#x1F31F;</span>
+        <h2>Unsere Vision</h2>
+      </div>
+      <p>Quantum Health Biotech Park als eines der angesehensten Ziele Asiens für regenerative Medizin, präventive Gesundheitsversorgung, Luxus-Wellness, biotechnologische Forschung, medizinische Ausbildung, Präzisionsdiagnostik und nachhaltige Gastlichkeit zu etablieren.</p>
+      <p>Unsere Vision ist es, Menschen zu befähigen, durch persönlich abgestimmte, evidenzorientierte Gesundheitsversorgung nach international anerkannten Exzellenzstandards gesünder, länger und erfüllter zu leben.</p>
+    </div>
+  </section>
+
+  <!-- ================= 4. UNSERE MISSION ================= -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unsere Mission</span>
+      <h2 class="section-title">Dafür stehen wir</h2>
+      <div class="mission-grid">
+        <div class="mission-card"><span class="mission-ico">&#x1F91D;</span><h3>Patientenzentrierte Versorgung</h3><p>Persönlich abgestimmte Gesundheitsversorgung, die auf die individuellen Bedürfnisse jedes Einzelnen zugeschnitten ist.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x2695;&#xFE0F;</span><h3>Medizinische Exzellenz</h3><p>Moderne medizinische Wissenschaft mit ganzheitlichem Wellness verbinden.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F343;</span><h3>Gesundes Altern</h3><p>Prävention, Langlebigkeit und lebenslanges Wohlbefinden fördern.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F4A1;</span><h3>Innovation</h3><p>Biotechnologie, regenerative Medizin und KI-gestützte Gesundheitsversorgung vorantreiben.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F9EA;</span><h3>Forschung</h3><p>Wissenschaftliche Entdeckungen und kooperative Forschung unterstützen.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F393;</span><h3>Bildung</h3><p>Gesundheitsfachkräfte durch erstklassige Ausbildung fördern.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F3E8;</span><h3>Luxus-Gastlichkeit</h3><p>Außergewöhnliche Erlebnisse für Patienten und Gäste schaffen.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F331;</span><h3>Nachhaltigkeit</h3><p>Ein ökologisch verantwortungsvolles Gesundheitsziel aufbauen.</p></div>
+        <div class="mission-card"><span class="mission-ico">&#x1F6E1;&#xFE0F;</span><h3>Klinische Governance</h3><p>Höchste Standards in Ethik, Qualität und Patientensicherheit wahren.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. KERNWERTE ================= -->
+  <section class="section" style="background:var(--surface)" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unsere Kernwerte</span>
+      <h2 class="section-title">Was jede Entscheidung leitet</h2>
+      <div class="values-grid">
+        <div class="value-card"><span class="value-ico">&#x1F4A1;</span><h3>Innovation</h3><p>Wir treiben die Medizin mit Mut, Neugier und wissenschaftlicher Strenge voran.</p></div>
+        <div class="value-card"><span class="value-ico">&#x1F49A;</span><h3>Mitgefühl</h3><p>Wir betreuen jeden Gast, als wäre er Teil unserer eigenen Familie.</p></div>
+        <div class="value-card"><span class="value-ico">&#x2696;&#xFE0F;</span><h3>Integrität</h3><p>Wir sind ehrlich darüber, was wirkt — und was wir noch nicht wissen.</p></div>
+        <div class="value-card"><span class="value-ico">&#x2B50;</span><h3>Exzellenz</h3><p>Wir verpflichten uns international anerkannten Versorgungsstandards.</p></div>
+        <div class="value-card"><span class="value-ico">&#x1F309;</span><h3>Zusammenarbeit</h3><p>Wir arbeiten über Fachbereiche, Grenzen und Disziplinen hinweg zusammen.</p></div>
+        <div class="value-card"><span class="value-ico">&#x1F331;</span><h3>Nachhaltigkeit</h3><p>Wir bauen einen Ort, der Menschen heilt und den Planeten respektiert.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. GRÜNDER ================= -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unsere Gründer</span>
+      <h2 class="section-title">Führung mit Vision</h2>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-top">
+            <div class="founder-portrait">VS</div>
+            <div>
+              <h3>Dr. Vikas Singh</h3>
+              <span class="founder-role">Gründer &amp; Geschäftsführer</span>
+              <div class="founder-links">
+                <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="founder-body">
+            <!-- Der nachfolgende Lebenslauf ist Platzhaltertext — bei Vorliegen des offiziellen Gründerprofils ersetzen. -->
+            <p>Dr. Vikas Singh verfügt über mehr als zwei Jahrzehnte Erfahrung in Präventivmedizin, Langlebigkeitsforschung und klinischer Führung. Ausgebildet an führenden Institutionen in Europa und Asien, verbrachte er seine Karriere an der Schnittstelle von evidenzbasierter Medizin und personalisierter Versorgung — er entwickelt Programme, die den Menschen hinter der Patientenakte behandeln.</p>
+            <p>Als Gründer &amp; Geschäftsführer prägt er die klinische Vision des Parks: ein ursachenorientierter Ansatz, bei dem die Messung an erster Stelle steht und kein Behandlungsplan beginnt, bevor die Diagnostik abgeschlossen ist.</p>
+            <h4>Erfolge</h4>
+            <ul class="founder-achieve">
+              <li>Über 20 Jahre in Präventiv- und regenerativer Medizin</li>
+              <li>Leitung klinischer Programme für Patienten aus über 100 Ländern</li>
+              <li>Veröffentlichte Forschung zu gesundem Altern und Lifestyle-Medizin</li>
+              <li>Berater mehrerer Unternehmen im Gesundheits- und Wellnessbereich</li>
+            </ul>
+            <h4>Vision</h4>
+            <p style="font-size:13px">"Ein Institut aufzubauen, an dem Wissenschaft und Mitgefühl einander begegnen — und an dem jeder Gast gesünder abreist, als er angekommen ist."</p>
+            <blockquote class="founder-quote">&ldquo;Der größte Triumph der Medizin wird die Krankheit sein, die nie eintrat.&rdquo;</blockquote>
+            <a href="#" class="btn btn-outline founder-btn">Vollständiges Profil lesen</a>
+          </div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-top">
+            <div class="founder-portrait">PK</div>
+            <div>
+              <h3>Dr. Pushparaj Khanna</h3>
+              <span class="founder-role">Gründer &amp; Geschäftsführer</span>
+              <div class="founder-links">
+                <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="founder-body">
+            <!-- Der nachfolgende Lebenslauf ist Platzhaltertext — bei Vorliegen des offiziellen Gründerprofils ersetzen. -->
+            <p>Dr. Pushparaj Khanna ist Arzt und Architekt der Gesundheitsversorgung, dessen Arbeit klinische Exzellenz, Krankenhausbetrieb und Luxus-Gastlichkeit vereint. Er ist überzeugt, dass die Umgebung, in der Versorgung stattfindet, selbst eine Form von Therapie ist — eine Überzeugung, die jedes Gebäude, jeden Garten und jede Suite im Park geprägt hat.</p>
+            <p>Als Gründer &amp; Geschäftsführer verantwortet er das Campus-Erlebnis, die klinische Governance und die internationalen Partnerschaften, die Quantum Health mit den weltweit führenden Institutionen verbinden.</p>
+            <h4>Führungsphilosophie</h4>
+            <p style="font-size:13px">"Heilung ist ein System, kein Raum. Jeder Korridor, jede Mahlzeit und jedes Gespräch müssen auf Genesung ausgelegt sein."</p>
+            <h4>Klinische Expertise</h4>
+            <ul class="founder-achieve">
+              <li>Integrierte Diagnostik und ärztlich geführte Versorgungspfade</li>
+              <li>Wellness-Hospitality-Design über 22 Acres</li>
+              <li>Klinische Governance und Führung in der Patientensicherheit</li>
+              <li>Globale Partnerschaften in medizinischer Ausbildung und Forschung</li>
+            </ul>
+            <blockquote class="founder-quote">&ldquo;Luxus ist hier keine Schwelgerei. Er ist ein Instrument der Heilung.&rdquo;</blockquote>
+            <a href="#" class="btn btn-outline founder-btn">Vollständiges Profil lesen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. WARUM QUANTUM ================= -->
+  <section class="section" style="background:var(--surface)" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Warum Quantum wählen</span>
+      <h2 class="section-title">Warum Quantum Health Biotech Park wählen</h2>
+      <div class="stats-row">
+        <div class="stat-card"><span class="stat-ico">&#x1F3D8;&#xFE0F;</span><h3 class="stat-title"><span data-count="22">0</span> Acres</h3><p>Integrierter Heilungs-Campus</p></div>
+        <div class="stat-card"><span class="stat-ico">&#x1F3E5;</span><h3 class="stat-title"><span data-count="15">0</span>+ Integrierte Einrichtungen</h3><p>Kliniken, Labore &amp; Wellness-Bereiche</p></div>
+        <div class="stat-card"><span class="stat-ico">&#x2728;</span><h3 class="stat-title"><span data-count="100">0</span>% Personalisierte Versorgung</h3><p>Programme, die auf Ihrem Profil aufbauen</p></div>
+        <div class="stat-card"><span class="stat-ico">&#x1F30D;</span><h3 class="stat-title">Globale Gesundheitsstandards</h3><p>Versorgung nach internationalen Maßstäben</p></div>
+      </div>
+      <div class="why12">
+        <div class="why12-card"><span class="why12-ico">&#x1F3D8;&#xFE0F;</span><h3>Integrierter Campus auf 22 Acres</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F9EC;</span><h3>Regenerative Medizin</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F52C;</span><h3>Moderne Diagnostik</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F6E1;&#xFE0F;</span><h3>Präventive Gesundheitsversorgung</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x2728;</span><h3>Luxus-Wellness-Resort</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F4BC;</span><h3>Executive-Health-Programme</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F30D;</span><h3>Internationale Patientenbetreuung</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F393;</span><h3>Medizinische Ausbildung</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F9EA;</span><h3>Forschungseinrichtungen</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F9E0;</span><h3>Biotechnologische Innovation</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F331;</span><h3>Nachhaltiges Design</h3></div>
+        <div class="why12-card"><span class="why12-ico">&#x1F333;</span><h3>Naturinspirierte Heilung</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. UNSER ÖKOSYSTEM ================= -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unser Ökosystem</span>
+      <h2 class="section-title">Ein Ziel, acht Welten</h2>
+      <div class="eco8">
+        <div class="eco8-card"><span class="eco8-ico">&#x1F3E5;</span><h3>Gesundheitsversorgung</h3><div class="eco8-more"><div><p>Arztgeführte Kliniken, präventive Versorgung und personalisierte Behandlung in 16 Fachbereichen.</p></div></div><a class="eco8-link" href="services.html">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F9D8;&#x200D;&#x2640;&#xFE0F;</span><h3>Wellness</h3><div class="eco8-more"><div><p>Spa, Yoga, Hydrotherapie, Ernährung und Achtsamkeit — eingewoben in jedes Programm.</p></div></div><a class="eco8-link" href="programs.html">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F9EA;</span><h3>Forschung</h3><div class="eco8-more"><div><p>Biotechnologische und translationale Forschung auf dem Campus, gemeinsam mit globalen Partnern.</p></div></div><a class="eco8-link" href="about.html#commit">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F393;</span><h3>Bildung</h3><div class="eco8-more"><div><p>Eine internationale Ausbildungsakademie für Ärzte, Kliniker und Pflegeteams.</p></div></div><a class="eco8-link" href="about.html#commit">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F3E8;</span><h3>Gastlichkeit</h3><div class="eco8-more"><div><p>Cottages, Suiten, Fine Dining und Concierge — Fünf-Sterne-Aufenthalt mit medizinischer Versorgung direkt nebenan.</p></div></div><a class="eco8-link" href="resort-tour.html">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F9EC;</span><h3>Biotechnologie</h3><div class="eco8-more"><div><p>Regenerative Medizin und zelluläre Therapien, die Wissenschaft in Behandlung verwandeln.</p></div></div><a class="eco8-link" href="stemcell.html">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x1F52C;</span><h3>Diagnostik</h3><div class="eco8-more"><div><p>Molekulare, funktionelle und genetische Tests mit Ergebnissen binnen Stunden.</p></div></div><a class="eco8-link" href="services.html">Mehr erfahren &rarr;</a></div>
+        <div class="eco8-card"><span class="eco8-ico">&#x23F3;</span><h3>Gesundes Altern</h3><div class="eco8-more"><div><p>Longevity-Medizin und lebenslange Programme, um in jedem Alter gut zu leben.</p></div></div><a class="eco8-link" href="therapies.html">Mehr erfahren &rarr;</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. CAMPUS-ERLEBNIS ================= -->
+  <section class="section" style="background:var(--surface)" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Campus-Erlebnis</span>
+      <h2 class="section-title">Ein Campus, den man spüren muss</h2>
+      <p class="section-desc" style="max-width:640px;margin-top:12px">Wählen Sie einen Bereich, um ihn näher anzusehen.</p>
+      <div class="masonry">
+        <button class="m-item m-tall m-1" data-icon="&#x1F333;" data-title="Natur" data-desc="Ruhige Landschaften mit stillen Seen, üppigen Wäldern und weitem Himmel — gestaltet, um den Geist zur Ruhe zu bringen und den Körper zu regenerieren."><div class="m-bg"><span class="m-icon">&#x1F333;</span><h3>Natur</h3><p>Das lebendige grüne Herz des Parks</p></div></button>
+        <button class="m-item m-2" data-icon="&#x1F3E1;" data-title="Luxus-Unterkünfte" data-desc="Premium-Wellness-Cottages und Executive-Suiten mit Resort-Komfort und klinischer Versorgung direkt nebenan."><div class="m-bg"><span class="m-icon">&#x1F3E1;</span><h3>Luxus-Unterkünfte</h3><p>Cottages &amp; private Suiten</p></div></button>
+        <button class="m-item m-med m-3" data-icon="&#x1F3E5;" data-title="Medizinische Einrichtungen" data-desc="Modernste Konsultations-Suiten und klinische Umgebungen, die auf den Patienten ausgerichtet sind."><div class="m-bg"><span class="m-icon">&#x1F3E5;</span><h3>Medizinische Einrichtungen</h3><p>Räume für Konsultation &amp; Behandlung</p></div></button>
+        <button class="m-item m-4" data-icon="&#x1F9EA;" data-title="Forschungslabore" data-desc="Eigene Labore, die Biotechnologie und translationale Medizin auf dem Campus voranbringen."><div class="m-bg"><span class="m-icon">&#x1F9EA;</span><h3>Forschungslabore</h3><p>Biotechnologie direkt vor Ort</p></div></button>
+        <button class="m-item m-med m-5" data-icon="&#x1F6C0;" data-title="Spa" data-desc="Ein Wellness-Heiligtum am See mit regenerierenden Therapien und therapeutischen Massagen."><div class="m-bg"><span class="m-icon">&#x1F6C0;</span><h3>Spa</h3><p>Wellness-Oase am See</p></div></button>
+        <button class="m-item m-6" data-icon="&#x1F9D8;" data-title="Yoga" data-desc="Ein Pavillon aus Licht und Ruhe für angeleitetes Yoga, Meditation und Atemarbeit."><div class="m-bg"><span class="m-icon">&#x1F9D8;</span><h3>Yoga</h3><p>Pavillon für Meditation &amp; Atemarbeit</p></div></button>
+        <button class="m-item m-med m-1" data-icon="&#x1F4A7;" data-title="Hydrotherapie" data-desc="Wasserbasierte Therapien für Entspannung, Rehabilitation und Erholung."><div class="m-bg"><span class="m-icon">&#x1F4A7;</span><h3>Hydrotherapie</h3><p>Erholung durch Wasser</p></div></button>
+        <button class="m-item m-2" data-icon="&#x1F3DB;&#xFE0F;" data-title="Konferenzzentrum" data-desc="Ein moderner Veranstaltungsort für medizinische Kongresse, Konferenzen und akademische Programme."><div class="m-bg"><span class="m-icon">&#x1F3DB;&#xFE0F;</span><h3>Konferenzzentrum</h3><p>Konferenzen &amp; Symposien</p></div></button>
+        <button class="m-item m-tall m-3" data-icon="&#x1F30A;" data-title="Privatsee" data-desc="Ein stilles Ufer für Besinnung, Entspannung und sanfte Wasseraktivitäten."><div class="m-bg"><span class="m-icon">&#x1F30A;</span><h3>Privatsee</h3><p>Das stille Herz des Parks</p></div></button>
+        <button class="m-item m-4" data-icon="&#x1F33F;" data-title="Botanische Gärten" data-desc="Landschaftlich gestaltete Gärten mit therapeutischen Pflanzen, die Entspannung und Wohlbefinden fördern."><div class="m-bg"><span class="m-icon">&#x1F33F;</span><h3>Botanische Gärten</h3><p>Therapeutische Pflanzenwelt</p></div></button>
+        <button class="m-item m-med m-5" data-icon="&#x1F332;" data-title="Waldpfade" data-desc="Malerische Pfade für achtsame Bewegung, Sport im Freien und Verbundenheit mit der Natur."><div class="m-bg"><span class="m-icon">&#x1F332;</span><h3>Waldpfade</h3><p>Wege für achtsame Bewegung</p></div></button>
+        <button class="m-item m-6" data-icon="&#x1F3E1;" data-title="Luxus-Cottages" data-desc="Elegante private Unterkünfte für Komfort, Privatsphäre und erholsame Aufenthalte."><div class="m-bg"><span class="m-icon">&#x1F3E1;</span><h3>Luxus-Cottages</h3><p>Private, erholsame Aufenthalte</p></div></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10. GLOBALES ENGAGEMENT ================= -->
+  <section class="ab-global" id="commit" data-reveal>
+    <div class="container">
+      <span class="eyebrow">Unser globales Engagement</span>
+      <h2>Die Zukunft der Gesundheitsversorgung gestalten</h2>
+      <p class="ab-sub">Von Bengaluru in die Welt — und von der Welt nach Bengaluru.</p>
+      <p>Quantum Health Biotech Park setzt sich dafür ein, eine Gesundheitsinstitution von internationaler Bedeutung aufzubauen — eine, die von Zusammenarbeit, Sicherheit, Innovation und Wirkung geprägt ist.</p>
+      <div class="commit-chips">
+        <div class="commit-chip"><span>&#x1F30D;</span> Internationale Kooperationen</div>
+        <div class="commit-chip"><span>&#x2708;&#xFE0F;</span> Medizintourismus</div>
+        <div class="commit-chip"><span>&#x1F91D;</span> Forschungspartnerschaften</div>
+        <div class="commit-chip"><span>&#x1F4A1;</span> Innovation</div>
+        <div class="commit-chip"><span>&#x1F6E1;&#xFE0F;</span> Patientensicherheit</div>
+        <div class="commit-chip"><span>&#x2B50;</span> Qualität in der Gesundheitsversorgung</div>
+        <div class="commit-chip"><span>&#x1F9F3;</span> Wirkung für die Gemeinschaft</div>
+        <div class="commit-chip"><span>&#x1F331;</span> Nachhaltigkeit</div>
+        <div class="commit-chip"><span>&#x1F680;</span> Zukunftsorientierte Gesundheitsversorgung</div>
+      </div>
+      <div class="globe-wrap">
+        <div class="globe" role="img" aria-label="Weltkarte mit Markierungen internationaler Partnerschaften">
+          <span class="g-marker g-1"></span>
+          <span class="g-marker g-2"></span>
+          <span class="g-marker g-3"></span>
+          <span class="g-marker g-4"></span>
+          <span class="g-marker g-5"></span>
+          <span class="g-marker g-6"></span>
+        </div>
+        <ul class="globe-regions">
+          <li>Europa &amp; das Vereinigte Königreich</li>
+          <li>Naher Osten &amp; Golfregion</li>
+          <li>Nordamerika</li>
+          <li>Afrika</li>
+          <li>Asien-Pazifik</li>
+          <li>Süd- &amp; Südostasien</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. CTA ================= -->
+  <section class="section" style="padding-top:20px" data-reveal>
+    <div class="container">
+      <div class="cta-band">
+        <h2>Beginnen Sie Ihre Reise zu besserer Gesundheit</h2>
+        <p>Ob Sie präventive Gesundheitsversorgung, regenerative Medizin, Executive-Health-Checks, Programme für gesundes Altern oder Luxus-Wellness-Erlebnisse suchen: Quantum Health Biotech Park bietet eine persönlich abgestimmte Reise, die um Ihre langfristige Gesundheit und Ihr Wohlbefinden herum gestaltet ist.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Beratungstermin vereinbaren &rarr;</a>
+          <a href="resort-tour.html" class="btn btn-outline">Besuch planen</a>
+          <a href="programs.html" class="btn btn-outline">Unsere Programme entdecken</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Vorschau der Campus-Bereiche">
+    <button class="lb-close" id="lb-close" aria-label="Schließen">&times;</button>
+    <div class="lb-card">
+      <div class="lb-visual m-1" id="lb-visual"><span class="m-icon" id="lb-icon"></span></div>
+      <div class="lb-body">
+        <h3 id="lb-title"></h3>
+        <p id="lb-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo">&#x25C8; QuantumHealth</span>
-          <p>Innovative Heilung, verwurzelt in der Natur</p>
+          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Biotech Park</span>
+          <p>Indiens Adresse für regenerative Medizin, gesundes Altern und Luxus-Wellness — auf 22 Acres an der Kanakapura Road, Bengaluru.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="X"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
+          </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="about.html">Über uns</a></li>
-            <li><a href="services.html">Leistungen</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-          </ul>
+          <h4>Schnellzugriff</h4>
+          <a href="index.html">Startseite</a>
+          <a href="about.html">Über den Park</a>
+          <a href="services.html">Unsere Leistungen</a>
+          <a href="therapies.html">Therapien</a>
+          <a href="programs.html">Programme</a>
+          <a href="contact.html">Kontakt</a>
         </div>
         <div class="footer-col">
-          <h4>Sprachen</h4>
-          <ul>
-            <li><a href="../index.html">English</a></li>
-            <li><a href="index.html">Deutsch</a></li>
-            <li><a href="../ar/index.html">العربية</a></li>
-          </ul>
+          <h4>Medizinische Leistungen</h4>
+          <a href="stemcell.html">Regenerative Medizin</a>
+          <a href="services.html#checkups">Präzisionsdiagnostik</a>
+          <a href="therapies.html#therapy-01">Gesundes Altern</a>
+          <a href="services.html#rehab">Schmerz &amp; Rehabilitation</a>
+          <a href="programs.html">Executive-Assessment</a>
+          <a href="services.html#alternative">Ernährung &amp; Lifestyle</a>
+        </div>
+        <div class="footer-col">
+          <h4>Forschung &amp; Bildung</h4>
+          <a href="about.html#commit">Biotechnologische Forschung</a>
+          <a href="about.html#commit">Klinische Innovation</a>
+          <a href="about.html#commit">Medizinische Ausbildung</a>
+          <a href="about.html#commit">Ausbildung im Gesundheitswesen</a>
+          <a href="contact.html">Konferenzzentrum</a>
+        </div>
+        <div class="footer-col">
+          <h4>Wellness &amp; Gastlichkeit</h4>
+          <a href="wellness.html">Wellness-Erlebnis</a>
+          <a href="resort-tour.html">Resort-Tour</a>
+          <a href="programs.html">Wellness-Retreats</a>
+          <a href="gallery.html">Wellness-Spa</a>
+          <a href="gallery.html">Wohnsuiten</a>
+          <a href="gallery.html">Campus-Galerie</a>
+          <a href="contact.html">Besuch planen</a>
+        </div>
+        <div class="footer-col">
+          <h4>Internationale Patienten</h4>
+          <a href="contact.html#ip">Beratung zu medizinischen Visa</a>
+          <a href="contact.html#ip">Flughafentransfers</a>
+          <a href="contact.html#ip">Unterkunft &amp; Concierge</a>
+          <a href="contact.html#ip">Mehrsprachige Betreuung</a>
+          <a href="contact.html#ip">Versicherung &amp; Abrechnung</a>
+          <a href="wellness.html">Programmplanung</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <address>
+            Quantum Health Biotech Park<br>
+            Kanakapura Road, Bengaluru<br>
+            Karnataka, India
+          </address>
+          <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91-XXXXXXXXXX<br>info@quantumhealthbiotech.com</p>
+          <h4 style="margin-top:20px">Newsletter</h4>
+          <form class="newsletter" id="newsletter-form">
+            <input type="email" placeholder="Ihre E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
+            <button type="submit">Abonnieren</button>
+          </form>
+          <p class="newsletter-note" id="newsletter-note"></p>
+          <div class="map-frame">
+            <iframe title="Karte — Kanakapura Road, Bengaluru" src="https://maps.google.com/maps?q=Kanakapura%20Road%2C%20Bengaluru%2C%20Karnataka&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
+      <div class="brand-statement">
+        Wo Wissenschaft Wellness inspiriert. Wo Natur die Genesung beschleunigt.<br>
+        <span>Wo Luxus auf Gesundheitsversorgung trifft.</span>
+      </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 QuantumHealth. Alle Rechte vorbehalten.</p>
+        <p>&copy; <span id="year">2026</span> Quantum Health Biotech Park. Alle Rechte vorbehalten.</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Datenschutzerklärung</a>
+          <a href="terms.html">AGB</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="../js/main.js"></script>
   <script src="../js/motion.js"></script>
+  <script src="../js/home.js"></script>
+  <script src="../js/navigation.js"></script>
 </body>
 </html>
