@@ -565,13 +565,6 @@ section { padding: 100px 0; }
 
 .check-list li::before { content: '—'; color: var(--brand-blue); font-weight: 400; }
 
-.note-box {
-  background: rgba(30,106,141,0.05);
-  border: 1px solid rgba(30,106,141,0.12);
-  border-radius: var(--radius); padding: 18px 22px; margin-top: 40px;
-  font-size: 13px; color: var(--muted); line-height: 1.7;
-}
-
 @media (max-width: 768px) {
   .check-list { grid-template-columns: 1fr; }
 }
