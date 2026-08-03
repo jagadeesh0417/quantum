@@ -50,6 +50,13 @@
 </head>
 <body>
 
+  <div id="banner-stage" data-persist aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
+      <source src="videos/hero-banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="preloader" aria-hidden="true">
     <span class="pl-logo">&#x25C8;</span>
@@ -166,7 +173,7 @@
       <h2 class="section-title">See Quantum in Motion</h2>
       <p class="lead-para video-lead">Take a visual journey through the park &mdash; from our clinical centre to the wellness sanctuary.</p>
       <div class="video-frame">
-        <video controls playsinline preload="none" poster="images/poster.jpg">
+        <video controls playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
           <source src="videos/hero-banner.mp4" type="video/mp4">
         </video>
       </div>

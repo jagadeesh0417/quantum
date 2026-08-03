@@ -50,6 +50,13 @@
 </head>
 <body>
 
+  <div id="banner-stage" data-persist aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
+      <source src="videos/hero-banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
   <a class="skip-link" href="#main">تخطَّ إلى المحتوى الرئيسي</a>
   <div class="preloader" aria-hidden="true">
     <span class="pl-logo">&#x25C8;</span>
@@ -166,7 +173,7 @@
       <h2 class="section-title">شاهد كوانتم عن قرب</h2>
       <p class="lead-para video-lead">انطلق في رحلة بصرية عبر الحديقة &mdash; من المركز السريري إلى ملاذ العافية.</p>
       <div class="video-frame">
-        <video controls playsinline preload="none" poster="../images/poster.jpg">
+        <video controls playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
           <source src="../videos/hero-banner.mp4" type="video/mp4">
         </video>
       </div>
