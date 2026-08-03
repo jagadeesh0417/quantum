@@ -143,41 +143,22 @@ body { background: var(--ivory); color: var(--ink); }
 .hero-stats .stat-number { color: var(--gold-light); font-size: 30px; font-family: 'Playfair Display', serif; }
 .hero-stats .stat-label { color: var(--on-dark-muted); }
 
-/* ---- Persistent hero video banner ---- */
-/* #banner-stage is mounted once per page and survives pjax navigation
-   (it carries the data-persist flag), so playback never restarts. */
-#banner-stage {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100vh; height: 100dvh;
-  z-index: -1; overflow: hidden;
-  pointer-events: none;
+/* ---- Video showcase (below hero) ---- */
+.video-showcase { padding: 100px 0; }
+.video-lead { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+.video-frame {
+  position: relative;
+  border-radius: 24px; overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0B1713;
+  box-shadow: 0 24px 60px rgba(6,31,23,0.28);
+  aspect-ratio: 16 / 9;
 }
-.hero-video {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; z-index: 0;
-  opacity: 0; transition: opacity 0.8s ease;
+.video-frame video {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover;
 }
-body.video-active .hero-video { opacity: 1; }
-.hero-video-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(180deg, rgba(6,31,23,0.62) 0%, rgba(6,31,23,0.50) 50%, rgba(8,40,31,0.80) 100%);
-  pointer-events: none;
-}
-/* Once the video is confirmed playing, hero sections become transparent
-   so the persistent banner shows through; their gradients remain as the
-   no-video / reduced-motion fallback. */
-body.video-active .hero,
-body.video-active .pg-hero,
-body.video-active .ab-hero,
-body.video-active .wl-hero,
-body.video-active .tour-hero,
-body.video-active .gal-hero,
-body.video-active .ct-hero,
-body.video-active .page-hero { background: transparent; }
-@media (prefers-reduced-motion: reduce) {
-  #banner-stage { display: none; }
-}
+[dir="rtl"] .video-lead { text-align: center; }
 
 /* Glass panel */
 .glass-panel {

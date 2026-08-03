@@ -1,28 +1,12 @@
-/* Quantum Health Biotech Park — persistent video banner + page transitions
+/* Quantum Health Biotech Park — page transitions
    Static-site adaptation of a "video in the root layout" pattern:
-   - #banner-stage (video + overlay) is marked data-persist and is moved
-     aside during content swaps, so the SAME <video> element survives
-     navigation — playback position is preserved, nothing reloads.
    - Link clicks are intercepted and the page body is swapped via fetch;
-     the video element is never touched, so there is no restart/flicker.
+     scroll position resets, scripts re-run on the new DOM.
    - Scripts listen for the 'page:load' event to rebind to the new DOM.
    - Legacy de/ and ar/ locales, external links and anchors do a full
      page load to keep their bespoke behaviour untouched. */
 (function () {
   'use strict';
-
-  /* ---- Persistent banner state ---- */
-  const stage = document.getElementById('banner-stage');
-  const video = stage ? stage.querySelector('video') : null;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (stage && video && !reducedMotion) {
-    /* Gradient heroes stay visible until the video can play: no black flash,
-       and a graceful poster/gradient fallback if autoplay is blocked. */
-    video.addEventListener('canplay', () => document.body.classList.add('video-active'));
-    video.addEventListener('error', () => stage.remove());
-    video.play().catch(() => { /* autoplay blocked: poster + gradients remain */ });
-  }
 
   /* ---- Navigation ---- */
   let fetching = false;
@@ -63,10 +47,8 @@
 
   const swap = (html, url, push) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-    const nextStage = doc.getElementById('banner-stage');
-    if (nextStage) nextStage.remove();
 
-    /* Preserve the banner stage (and JS-created fixed widgets) across the swap */
+    /* Preserve JS-created fixed widgets across the swap */
     const saved = persistEls();
 
     document.title = doc.title || document.title;

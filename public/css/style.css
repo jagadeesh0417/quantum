@@ -71,9 +71,7 @@ ul { list-style: none; }
 .bg-gradient {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   background: var(--bg);
-  /* Below #banner-stage (z-index: -1) so the site backdrop never
-     paints over the persistent hero video */
-  z-index: -2;
+  z-index: -1;
 }
 
 [dir="rtl"] .bg-gradient { left: auto; right: 0; }
