@@ -1,33 +1,41 @@
 /* Quantum Health Biotech Park — hero video + page transitions
    Static-site adaptation of a "video in the root layout" pattern:
-   - #banner-stage (video + overlay) is marked data-persist and is moved
-     aside during content swaps, so the SAME <video> element survives
-     navigation — playback never restarts.
+   - Each page's hero (<section id="main">) contains its own background
+     <video> inside a .hero-bg wrapper (absolute, contained by the hero's
+     overflow:hidden), so playback never bleeds into later sections.
    - Link clicks are intercepted and the page body is swapped via fetch;
-     the video element is never touched.
+     initHeroVideo() re-binds the new page's hero video on every swap.
    - Scripts listen for the 'page:load' event to rebind to the new DOM.
    - Legacy de/ and ar/ locales, external links and anchors do a full
      page load to keep their bespoke behaviour untouched. */
 (function () {
   'use strict';
 
-  /* ---- Hero video: autoplay + full-quality start ---- */
-  const stage = document.getElementById('banner-stage');
-  const video = stage ? stage.querySelector('video') : null;
-
-  if (stage && video) {
+  /* ---- Hero video: autoplay + full-quality start (re-runnable) ---- */
+  const initHeroVideo = () => {
+    const video = document.querySelector('#main > .hero-bg > video.hero-video');
+    if (!video) return;
     const start = () => video.play().catch(() => { /* retry on first interaction */ });
-    /* Gradient heroes stay visible until the video can play: no black flash. */
+    /* Hero gradient stays visible until the video can play: no black flash. */
     video.addEventListener('canplay', () => document.body.classList.add('video-active'));
     /* preload="auto" + faststart means the first frames arrive immediately;
        play() is (re)attempted as soon as data is available. */
     video.addEventListener('loadeddata', start);
-    document.addEventListener('DOMContentLoaded', start);
-    /* Autoplay blocked (some mobile/embedded browsers)? Resume on first tap. */
-    const resume = () => { if (video.paused) start(); };
-    document.addEventListener('pointerdown', resume, { once: true });
-    document.addEventListener('touchstart', resume, { once: true });
-  }
+    start();
+  };
+
+  initHeroVideo();
+  document.addEventListener('page:load', initHeroVideo);
+
+  /* Autoplay blocked (some mobile/embedded browsers)? Resume on first tap. */
+  document.addEventListener('pointerdown', () => {
+    const video = document.querySelector('#main > .hero-bg > video.hero-video');
+    if (video && video.paused) video.play().catch(() => {});
+  }, { once: true });
+  document.addEventListener('touchstart', () => {
+    const video = document.querySelector('#main > .hero-bg > video.hero-video');
+    if (video && video.paused) video.play().catch(() => {});
+  }, { once: true });
 
   /* ---- Navigation ---- */
   let fetching = false;
@@ -68,11 +76,8 @@
 
   const swap = (html, url, push) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-    const nextStage = doc.getElementById('banner-stage');
-    if (nextStage) nextStage.remove();
 
-    /* Preserve the video stage (data-persist) and JS-created fixed
-       widgets across the swap so playback never restarts */
+    /* Preserve JS-created fixed widgets across the swap */
     const saved = persistEls();
 
     document.title = doc.title || document.title;

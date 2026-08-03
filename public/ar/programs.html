@@ -22,14 +22,7 @@
 </head>
 <body>
 
-  <div id="banner-stage" data-persist aria-hidden="true">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
-      <source src="videos/hero-banner.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-  </div>
-
-  <a class="skip-link" href="#main">تخطَّ إلى المحتوى الرئيسي</a>
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى الرئيسي</a>
   <div class="preloader" aria-hidden="true">
     <span class="pl-logo">&#x25C8;</span>
     <span class="pl-ring"></span>
@@ -88,6 +81,12 @@
 
   <!-- ================= HERO ================= -->
   <section class="pg-hero" id="main">
+    <div class="hero-bg" aria-hidden="true">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
+        <source src="../videos/hero-banner.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
 
     <div class="container">
       <nav class="pg-breadcrumb" aria-label="Breadcrumb">

@@ -23,14 +23,7 @@
 </head>
 <body>
 
-  <div id="banner-stage" data-persist aria-hidden="true">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
-      <source src="videos/hero-banner.mp4" type="video/mp4">
-    </video>
-    <div class="hero-video-overlay"></div>
-  </div>
-
-  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+    <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
   <div class="preloader" aria-hidden="true">
     <span class="pl-logo">&#x25C8;</span>
     <span class="pl-ring"></span>
@@ -89,6 +82,12 @@
 
   <!-- ================= 404 ================= -->
   <section class="pg-hero" id="main" style="min-height:74vh">
+    <div class="hero-bg" aria-hidden="true">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate">
+        <source src="../videos/hero-banner.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
     <div class="container" style="text-align:center;margin:0 auto;display:flex;flex-direction:column;align-items:center">
       <div class="err-code">404</div>
       <span class="pg-sub">Seite nicht gefunden</span>
