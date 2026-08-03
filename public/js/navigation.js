@@ -1,41 +1,12 @@
-/* Quantum Health Biotech Park — hero video + page transitions
+/* Quantum Health Biotech Park — page transitions
    Static-site adaptation of a "video in the root layout" pattern:
-   - Each page's hero (<section id="main">) contains its own background
-     <video> inside a .hero-bg wrapper (absolute, contained by the hero's
-     overflow:hidden), so playback never bleeds into later sections.
    - Link clicks are intercepted and the page body is swapped via fetch;
-     initHeroVideo() re-binds the new page's hero video on every swap.
+     scroll position resets, scripts re-run on the new DOM.
    - Scripts listen for the 'page:load' event to rebind to the new DOM.
    - Legacy de/ and ar/ locales, external links and anchors do a full
      page load to keep their bespoke behaviour untouched. */
 (function () {
   'use strict';
-
-  /* ---- Hero video: autoplay + full-quality start (re-runnable) ---- */
-  const initHeroVideo = () => {
-    const video = document.querySelector('#main > .hero-bg > video.hero-video');
-    if (!video) return;
-    const start = () => video.play().catch(() => { /* retry on first interaction */ });
-    /* Hero gradient stays visible until the video can play: no black flash. */
-    video.addEventListener('canplay', () => document.body.classList.add('video-active'));
-    /* preload="auto" + faststart means the first frames arrive immediately;
-       play() is (re)attempted as soon as data is available. */
-    video.addEventListener('loadeddata', start);
-    start();
-  };
-
-  initHeroVideo();
-  document.addEventListener('page:load', initHeroVideo);
-
-  /* Autoplay blocked (some mobile/embedded browsers)? Resume on first tap. */
-  document.addEventListener('pointerdown', () => {
-    const video = document.querySelector('#main > .hero-bg > video.hero-video');
-    if (video && video.paused) video.play().catch(() => {});
-  }, { once: true });
-  document.addEventListener('touchstart', () => {
-    const video = document.querySelector('#main > .hero-bg > video.hero-video');
-    if (video && video.paused) video.play().catch(() => {});
-  }, { once: true });
 
   /* ---- Navigation ---- */
   let fetching = false;
