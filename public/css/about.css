@@ -99,7 +99,7 @@
 .value-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
 /* ---- Founders ---- */
-.founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; }
+.founders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 44px; }
 .founder-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
   overflow: hidden; transition: all 0.3s ease;
@@ -298,3 +298,11 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   text-transform: uppercase; color: var(--gold); margin-top: 44px;
 }
 [dir="rtl"] .founder-closing { letter-spacing: 0; }
+
+
+/* mission statement (brand brief) */
+.mission-statement { max-width: 880px; margin: 0 auto; padding: 28px 32px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 12px; }
+.mission-statement p { font-size: 1.15rem; line-height: 1.85; margin: 0; }
+[dir="rtl"] .mission-statement { border-left: none; border-right: 3px solid var(--accent); }
+.values-closing { text-align: center; margin-top: 44px; }
+.values-closing .values-commit { font-size: 1.05rem; font-weight: 600; color: var(--on-surface); margin-bottom: 14px; }
