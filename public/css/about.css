@@ -306,3 +306,22 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
 [dir="rtl"] .mission-statement { border-left: none; border-right: 3px solid var(--accent); }
 .values-closing { text-align: center; margin-top: 44px; }
 .values-closing .values-commit { font-size: 1.05rem; font-weight: 600; color: var(--on-surface); margin-bottom: 14px; }
+
+
+/* ---- Awards & recognition ---- */
+.aw-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 36px; }
+.aw-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 20px; text-align: center; transition: all 0.25s ease; }
+.aw-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 20px 44px rgba(11,59,46,0.1); }
+.aw-ico { font-size: 28px; }
+.aw-card h4 { font-size: 13.5px; font-weight: 600; color: var(--ink); margin: 12px 0 8px; line-height: 1.5; }
+.aw-year { display: inline-block; font-family: 'Playfair Display', serif; font-size: 12px; color: var(--gold); letter-spacing: 0.12em; background: var(--gold-soft); border-radius: 999px; padding: 4px 12px; }
+.aw-block { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 28px; margin-top: 22px; text-align: center; }
+.aw-block h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--ink); margin-bottom: 14px; }
+.aw-block p { font-size: 13.5px; color: var(--muted); line-height: 1.75; max-width: 740px; margin: 0 auto; }
+.aw-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.aw-chips span { background: var(--emerald-soft); color: var(--forest); border: 1px solid rgba(11,59,46,0.12); font-size: 12.5px; font-weight: 600; padding: 8px 16px; border-radius: 999px; }
+.aw-closing { text-align: center; font-family: 'Playfair Display', serif; font-size: 24px; color: var(--emerald); margin: 44px 0 8px; }
+.aw-values { text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; }
+.aw-sep { color: var(--line); margin: 0 8px; }
+@media (max-width: 1024px) { .aw-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .aw-grid { grid-template-columns: 1fr; } }

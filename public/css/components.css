@@ -422,3 +422,23 @@
 
 .campus-visual { background: #0E201A; }
 .campus-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.72); }
+
+
+/* ---- Regenerative medicine overview ---- */
+.rm-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 26px 0 8px; }
+.rm-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--gold); color: var(--ink); font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 999px; }
+.rm-h3 { text-align: center; font-family: 'Playfair Display', serif; font-size: 22px; color: var(--ink); margin: 44px 0 24px; }
+.rm-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 920px; margin: 0 auto; }
+.rm-chip { background: var(--emerald-soft); color: var(--forest); border: 1px solid rgba(11,59,46,0.12); font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 999px; }
+.rm-promise { background: linear-gradient(135deg, var(--forest) 0%, var(--emerald) 100%); border-radius: var(--radius); padding: 34px 40px; text-align: center; margin-top: 40px; }
+.rm-promise h4 { color: var(--gold-light); font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 10px; letter-spacing: 0.08em; }
+.rm-promise p { color: rgba(255,255,255,0.88); font-size: 14px; line-height: 1.8; max-width: 740px; margin: 0 auto; }
+.rm-note { margin: 26px auto 0; max-width: 840px; font-size: 12.5px; color: var(--muted); line-height: 1.7; background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 18px 22px; }
+.rm-closing { text-align: center; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-top: 34px; letter-spacing: 0.1em; }
+
+/* ---- Executive health ---- */
+.eh-quote { text-align: center; font-family: 'Playfair Display', serif; font-size: 21px; font-style: italic; color: var(--emerald); margin: 8px 0 4px; }
+.eh-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 30px 0 6px; }
+.eh-badge { background: var(--gold-soft); color: var(--gold); border: 1px solid rgba(201,162,39,0.35); font-size: 12.5px; font-weight: 600; padding: 10px 18px; border-radius: 999px; }
+.eh-strap { text-align: center; font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); margin: 40px 0 10px; letter-spacing: 0.12em; }
+@media (max-width: 768px) { .eh-quote { font-size: 17px; } }

@@ -151,7 +151,7 @@ sc-01.jpg stem cell therapy treatment suite · sc-02.jpg cord blood bank facilit
 3. Delete the `.gitkeep` files in each folder when you drop in real images.
 4. Tell the agent — it will re-verify every `src`, serve-test all routes, and deploy.
 
-Total: 74 wired slots (10 hero + 20 gallery + 8 services + 6 programs + 10 wellness + 16 resort + 1 about + 2 index + 1 contact-hero already in hero) + optional extras.
+Total: 76 wired slots (10 hero + 20 gallery + 8 services + 6 programs + 10 wellness + 16 resort + 1 about + 2 index + 1 contact-hero already in hero + 1 dining QR/contact + 1 contact QR) + optional extras.
 
 
 ## Aerial master plan map (new)
@@ -159,3 +159,10 @@ Total: 74 wired slots (10 hero + 20 gallery + 8 services + 6 programs + 10 welln
 - File: public/images/resort/mp-map-01.jpg (16:9, ~1600x900)
 - Style: same master style as above (photorealistic aerial view)
 - Prompt: "Photorealistic aerial master-plan illustration of an ultra-luxury 22-acre wellness resort campus in Bengaluru, India: grand reception building, scattered premium villas with private gardens, modern stem cell & diagnostics centre, spa pavilion, open yoga deck, organic farm plots, a natural lake with walkways, meditation forest, elegant restaurant, research block, training centre, parking areas and a private helipad; lush tropical landscape, winding paths, golden hour light, architectural rendering meets drone photography, 16:9"
+
+
+## QR code — contact page (new)
+
+- File: public/images/contact/qr-01.jpg (square, ~800x800)
+- Note: this slot must hold a REAL scannable QR code pointing to https://www.quantumhealth.co.in (generate with any QR tool, not AI image generation). Keep the layout premium: black-on-white code on an ivory card with a thin emerald-gold border.
+- Prompt (if generating decoratively): "Premium QR code printed on an ivory card with a thin emerald and gold border, sharp high-contrast black modules, soft studio product photography, square 1:1"

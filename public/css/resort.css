@@ -114,3 +114,13 @@
 .acc-high { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .acc-high span { padding: 9px 20px; border-radius: 999px; background: rgba(11,59,46,.06); border: 1px solid rgba(11,59,46,.14); font-size: 13px; font-weight: 600; color: var(--ink); }
 @media (max-width: 1080px) { .mp-strip .mp-pill { margin: 0 8px 8px 0; } }
+
+
+/* ---- Land & infrastructure ---- */
+.infra-table { max-width: 820px; margin: 36px auto 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--surface); }
+.infra-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.infra-row:last-child { border-bottom: 0; }
+.infra-row:nth-child(even) { background: rgba(11,59,46,0.03); }
+.infra-name { color: var(--ink); font-weight: 600; }
+.infra-value { color: var(--gold); font-weight: 600; }
+@media (max-width: 768px) { .infra-row { padding: 12px 16px; font-size: 13px; } }

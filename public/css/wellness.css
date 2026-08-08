@@ -137,3 +137,27 @@
 @media (prefers-reduced-motion: reduce) {
   .wl-hero::before, .wl-hero::after { display: none; }
 }
+
+
+/* ---- Dining experience ---- */
+.dn-head { text-align: center; max-width: 780px; margin: 0 auto 40px; }
+.dn-sep { color: var(--gold); font-weight: 400; margin: 0 8px; }
+.dn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dn-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px; text-align: center; transition: all 0.25s ease; }
+.dn-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 20px 44px rgba(11,59,46,0.1); }
+.dn-ico { font-size: 28px; display: inline-flex; width: 64px; height: 64px; align-items: center; justify-content: center; border-radius: 50%; background: var(--emerald-soft); }
+.dn-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin: 14px 0 8px; }
+.dn-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.dn-strap { text-align: center; font-family: 'Playfair Display', serif; font-size: 21px; color: var(--gold); margin: 46px 0 6px; letter-spacing: 0.12em; }
+.dn-h3 { text-align: center; font-family: 'Playfair Display', serif; font-size: 20px; color: var(--ink); margin: 34px 0 24px; }
+.dn-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1020px; margin: 0 auto; }
+.dn-item { display: flex; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.dn-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 0.1em; flex: none; }
+.dn-item h4 { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.dn-item p { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+.dn-quote { text-align: center; font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic; color: var(--emerald); margin: 44px 0 6px; }
+.dn-philo { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; margin-top: 34px; }
+.dn-philo .dn-h3 { margin: 0 0 22px; }
+.dn-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.dn-chip { background: var(--emerald-soft); color: var(--forest); border: 1px solid rgba(11,59,46,0.12); font-size: 12.5px; font-weight: 600; padding: 9px 16px; border-radius: 999px; }
+@media (max-width: 768px) { .dn-grid, .dn-list { grid-template-columns: 1fr; } .dn-quote { font-size: 19px; } }
