@@ -1,4 +1,4 @@
-# Quantum Health Biotech Park — AI Image Pack
+# Quantum Health Stemcell Resort — AI Image Pack
 
 Complete prompt pack for generating every image the site needs. The site is fully wired to these exact filenames — **save each generated image with the exact filename into the exact folder** under `public/images/`.
 

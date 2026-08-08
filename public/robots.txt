@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quantumhealthbiotechpark.com/sitemap.xml
+Sitemap: https://www.quantumhealthstemcellresort.com/sitemap.xml
