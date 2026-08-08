@@ -99,3 +99,18 @@
 @media (prefers-reduced-motion: reduce) {
   .tour-hero::before, .tour-hero::after, .tour-outro::before { display: none; }
 }
+
+
+/* master plan & luxury accommodation (brand brief) */
+.mp-strip { margin: 28px 0 30px; }
+.mp-strip-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.mp-strip .mp-pill { display: inline-block; margin: 0 10px 10px 0; padding: 10px 18px; border-radius: 999px; background: var(--surface); border: 1px solid rgba(11,59,46,.14); font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.mp-map { margin: 0 0 34px; border-radius: 16px; overflow: hidden; background: #0E201A; aspect-ratio: 16/9; }
+.mp-map img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 28px 0 32px; }
+.feat-item { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 12px; background: #fff; border: 1px solid rgba(11,59,46,.12); font-size: 14px; font-weight: 600; color: var(--ink); }
+.feat-item .feat-tick { color: var(--accent); font-weight: 800; }
+.acc-strap { text-align: center; font-size: clamp(15px, 2.2vw, 20px); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 30px; }
+.acc-high { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.acc-high span { padding: 9px 20px; border-radius: 999px; background: rgba(11,59,46,.06); border: 1px solid rgba(11,59,46,.14); font-size: 13px; font-weight: 600; color: var(--ink); }
+@media (max-width: 1080px) { .mp-strip .mp-pill { margin: 0 8px 8px 0; } }

@@ -758,3 +758,7 @@ body { background: var(--ivory); color: var(--ink); }
 @media (max-width: 767px) {
   .partner-grid, .partner-extra, .partner-strengths-grid { grid-template-columns: 1fr; }
 }
+
+
+/* why-quantum strap (brand brief) */
+.why-strap { margin-top: 38px; text-align: center; font-size: clamp(15px, 2.2vw, 20px); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
