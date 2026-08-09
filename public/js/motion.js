@@ -65,17 +65,9 @@
       }
     }
 
-    const accordions = document.querySelectorAll('.accordion-item');
-    accordions.forEach((item) => {
-      const header = item.querySelector('.accordion-header');
-      if (header) {
-        header.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          accordions.forEach((a) => a.classList.remove('active'));
-          if (!isActive) item.classList.add('active');
-        });
-      }
-    });
+    /* Accordion toggling is handled once in main.js (also binds .accordion-header
+       on page:load); binding a second toggle here would immediately re-close
+       every item (double handler). */
 
     document.querySelectorAll('.hero-stats .stat-number').forEach((el) => {
       const target = parseInt(el.textContent.replace(/[^0-9]/g, ''), 10);

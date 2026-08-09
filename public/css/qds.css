@@ -1372,6 +1372,20 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 .sv-ico svg, .wl-ico svg, .dn-ico svg, .tour-ico svg, .ct-ico svg,
 [class*="-ico"] svg { width: 22px; height: 22px; }
 .sv-ico svg, .wl-ico svg, .dn-ico svg, .tour-ico svg, .ct-ico svg { display: block; }
+
+/* Our Global Commitment — compact strip */
+.ab-global { padding: 22px 0; }
+.ab-global .ab-sub, .ab-global > .container > p, .globe-wrap { display: none; }
+.ab-global h2 { font-size: 24px; margin: 0; white-space: nowrap; }
+.ab-global .eyebrow { margin-bottom: 0; }
+.commit-strip { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.commit-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.commit-chip { padding: 6px 13px; border-radius: 2px; gap: 8px; font-size: 12.5px; }
+.commit-chip:hover { transform: none; }
+.commit-chip svg { width: 15px; height: 15px; }
+@media (max-width: 760px) {
+  .ab-global h2 { white-space: normal; font-size: 20px; }
+}
 .m-item .m-bg { border-radius: 2px; }
 .masonry { gap: 14px; }
 

@@ -27,6 +27,7 @@
         if (!wasActive) {
           item.classList.add('active');
         }
+        this.setAttribute('aria-expanded', String(!wasActive));
       });
     });
 
