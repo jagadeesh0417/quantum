@@ -47,7 +47,7 @@
       bar.setAttribute('data-persist', '');
       bar.innerHTML =
         '<a href="contact.html" class="btn btn-primary">Book a Consultation</a>' +
-        '<a href="tel:+91XXXXXXXXXX" class="btn btn-outline">Call Us</a>';
+        '<a href="tel:+919845025857" class="btn btn-outline">Call Us</a>';
       document.body.appendChild(bar);
     }
 

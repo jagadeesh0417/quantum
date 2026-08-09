@@ -79,9 +79,10 @@ h1, h2, h3, h4, h5, .logo, .heading-gradient, .section-title,
   font-weight: 700;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--emerald);
   font-family: 'Inter', sans-serif;
 }
+.sec-head .eyebrow { color: var(--emerald); }
 
 .section-title { font-size: 42px; line-height: 1.18; color: var(--ink); font-weight: 500; }
 .section-desc, .lead-para { font-size: 16px; color: var(--muted); line-height: 1.85; }
@@ -418,7 +419,7 @@ h1, h2, h3, h4, h5, .logo, .heading-gradient, .section-title,
 
 /* ---- Misc refinements ---- */
 .hero .eyebrow, .ab-hero .eyebrow, .wl-hero .eyebrow, .tour-hero .eyebrow,
-.gal-hero .eyebrow, .ct-hero .eyebrow { color: var(--gold-light); }
+.gal-hero .eyebrow, .ct-hero .eyebrow, .pg-hero .eyebrow { color: var(--gold-light); }
 
 .gal-head h2 { font-size: 36px; font-weight: 500; }
 .tour-head h2 { font-size: 40px; font-weight: 500; }
@@ -458,3 +459,91 @@ h1, h2, h3, h4, h5, .logo, .heading-gradient, .section-title,
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* ==========================================================================
+   AUDIT & REPAIR PASS � visibility, contrast, no-JS fallbacks, media safety
+   ========================================================================== */
+
+/* ---- Contrast: small gold labels must stay readable on light backgrounds ---- */
+:root { --gold-strong: #8A6C33; }
+
+.ct-faq-group, .tl-tag, .why-num, .tour-num, .dn-num, .dn-sep, .gal-num, .aw-year,
+.rm-closing, .eh-strap, .acc-strap, .why-strap, .founder-closing, .aw-values,
+.step-num, .wl-tag, .wl-rail h4, .mega-sub, .mp-strap-label {
+  color: var(--gold-strong);
+}
+.aw-year, .eh-badge { color: var(--gold-strong); }
+
+/* ---- Preloader: CSS-only auto-hide fallback (never blocks the page if JS fails) ---- */
+.preloader { animation: qhPreloaderAutoHide 0.6s ease 2.4s forwards; }
+@keyframes qhPreloaderAutoHide {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader { animation-delay: 0.2s; }
+}
+
+/* ---- No-JS fallbacks: every JS-hidden element is visible without JS ---- */
+.no-js [data-reveal] { opacity: 1 !important; transform: none !important; }
+.no-js .accordion-body { display: block; }
+.no-js .carousel-slides { flex-wrap: wrap; }
+.no-js .t-slide { flex: 1 1 100%; }
+@media (max-width: 767px) {
+  .no-js .nav-links {
+    display: flex; position: static; flex-direction: column;
+    background: var(--forest-deep); padding: 18px 20px;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .no-js .nav-links a { color: var(--on-dark); }
+  .no-js .footer-col a, .no-js .footer-col address,
+  .no-js .footer-col > p:not(.newsletter-note),
+  .no-js .footer-col .newsletter, .no-js .footer-col .map-frame,
+  .no-js .footer-col .newsletter-note { display: block; }
+}
+
+/* ---- Ecosystem cards: hover-only content must be reachable on touch / no-hover ---- */
+.eco8-card:focus-within .eco8-more { grid-template-rows: 1fr; }
+@media (max-width: 767px), (hover: none) {
+  .eco8-more { grid-template-rows: 1fr; }
+}
+
+/* ---- Media fallbacks: no blank bands when images/video are unavailable ---- */
+.card-band, .campus-img, .tile-img {
+  background: linear-gradient(150deg, #17503F 0%, #0B2F28 100%);
+}
+.video-frame, .video-frame video {
+  background: linear-gradient(150deg, #17503F 0%, #0B2F28 100%);
+}
+.video-frame::before {
+  content: '\25B8';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 84px; height: 84px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.28);
+  color: var(--gold-light); font-size: 30px; line-height: 1;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  z-index: 1; pointer-events: none; opacity: 0.9;
+}
+.video-frame video { position: relative; z-index: 2; }
+
+/* ---- Counters: never show "0" when JS is unavailable ---- */
+html:not(.js) [data-count] { color: var(--gold-strong); }
+
+/* ---- Keyboard access: dropdowns currently hover-only must open on focus ---- */
+.has-mega:hover .mega,
+.has-mega:focus-within .mega {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 14px);
+}
+.lang-switcher:hover .lang-dropdown,
+.lang-switcher:focus-within .lang-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.lang-switcher:focus-within .lang-arrow { transform: rotate(180deg); }
+
+/* ---- Mobile hamburger contrast: dark navbar needs light lines ---- */
+@media (max-width: 767px) {
+  .mobile-toggle span, .hamburger span { background: var(--gold-light); }
+  .navbar.scrolled .mobile-toggle span,
+  .navbar.scrolled .hamburger span { background: var(--ink); }
+}
+
