@@ -1,50 +1,7 @@
-/* Awards & Ecosystem interactions — recognition showcase + connected network.
+/* Ecosystem network interactions — connected map.
    Progressive enhancement only: everything degrades gracefully without JS. */
 (function () {
   'use strict';
-
-  var awards = document.getElementById('award-list');
-  var feat = document.getElementById('award-featured');
-  if (awards && feat) {
-    var ft = feat.querySelector('#award-featured-title');
-    var fd = feat.querySelector('#award-featured-desc');
-    var fy = feat.querySelector('#award-featured-year');
-    var items = Array.prototype.slice.call(awards.children);
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function activate(idx, instant) {
-      var target = items[idx];
-      if (!target) return;
-      items.forEach(function (it, i) {
-        var on = i === idx;
-        it.classList.toggle('is-active', on);
-        it.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      if (reduced || instant) {
-        ft.textContent = target.querySelector('h4').textContent;
-        fd.textContent = target.querySelector('p').textContent;
-        fy.textContent = target.querySelector('.award-item-year').textContent;
-      } else {
-        feat.classList.add('is-switching');
-        window.setTimeout(function () {
-          ft.textContent = target.querySelector('h4').textContent;
-          fd.textContent = target.querySelector('p').textContent;
-          fy.textContent = target.querySelector('.award-item-year').textContent;
-          feat.classList.remove('is-switching');
-        }, 260);
-      }
-    }
-
-    items.forEach(function (it, i) {
-      it.addEventListener('click', function () { activate(i); });
-      it.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          activate(i);
-        }
-      });
-    });
-  }
 
   var map = document.getElementById('eco-map');
   if (map) {

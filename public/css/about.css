@@ -3,7 +3,7 @@
    Premium editorial redesign: split cinematic hero, who-we-are panel,
    journey timeline, numbered Vision 01 band, Mission 02 split,
    minimal core-value cards, leadership grid, why-choose stats + 12,
-   awards, ecosystem, campus masonry, global commitment strip, CTA.
+   ecosystem network, campus masonry, global commitment strip, CTA.
    Pure presentation layer: all business content untouched.
    Class names retained for de/ar parity.
    ========================================================================== */
@@ -685,7 +685,7 @@
 [dir="rtl"] .founder-quote { border-left: none; border-right: 2px solid var(--gold); }
 /* ================= WHY CHOOSE — stats + 12 reasons ================= */
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
-.stat-card, .value-card, .why12-card, .aw-card, .eco8-card, .leader-block, .mission-statement, .m-item { min-width: 0; }
+.stat-card, .value-card, .why12-card, .leader-block, .mission-statement, .m-item { min-width: 0; }
 .stat-card {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -731,241 +731,6 @@
 }
 .why12-ico svg { width: 20px; height: 20px; }
 .why12-card h3 { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.45; }
-
-/* ================= AWARDS & RECOGNITION — recognition showcase ================= */
-.ab-awards { background: var(--ivory); }
-
-.awards-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 56px;
-  align-items: end;
-  padding-bottom: 52px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 64px;
-}
-.awards-head .section-title { margin-top: 18px; }
-.awards-head-note {
-  font-size: 15.5px;
-  line-height: 1.85;
-  color: var(--muted);
-  max-width: 42ch;
-  margin-bottom: 10px;
-  padding-bottom: 2px;
-}
-
-.awards-stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
-  gap: 72px;
-  align-items: start;
-}
-
-.award-featured {
-  position: relative;
-  display: grid;
-  grid-template-columns: 224px minmax(0, 1fr);
-  gap: 42px;
-  align-items: center;
-  padding: 46px 44px;
-  background:
-    radial-gradient(130% 150% at 0% 0%, rgba(201,164,92,0.12), transparent 55%),
-    var(--surface);
-  border: 1px solid var(--line);
-  border-top: 2px solid var(--gold);
-  transition: opacity 0.28s ease;
-}
-.award-featured.is-switching { opacity: 0; }
-.award-featured-media { display: flex; justify-content: center; }
-
-.award-seal {
-  width: 204px;
-  height: 204px;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.award-featured:hover .award-seal { transform: scale(1.045); }
-.as-ring-outer { fill: none; stroke: var(--gold); stroke-width: 1.4; opacity: 0.85; }
-.as-ring-mid { fill: none; stroke: var(--gold); stroke-width: 0.75; stroke-dasharray: 2.5 4.5; opacity: 0.55; }
-.as-laurel { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
-.as-core { fill: rgba(201,164,92,0.07); stroke: rgba(201,164,92,0.4); stroke-width: 1; }
-.as-star { fill: var(--gold); opacity: 0.95; }
-.as-mono {
-  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
-  font-size: 14px;
-  letter-spacing: 0.32em;
-  fill: var(--emerald);
-  font-weight: 600;
-}
-.as-year {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.26em;
-  fill: var(--gold-strong);
-  font-weight: 600;
-}
-
-.award-featured-kicker {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold-strong);
-  margin-bottom: 14px;
-}
-.award-featured-copy h3 {
-  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
-  font-size: 29px;
-  line-height: 1.22;
-  color: var(--ink);
-  font-weight: 500;
-  margin-bottom: 16px;
-  max-width: 22ch;
-}
-.award-featured-copy p {
-  font-size: 14.5px;
-  color: var(--muted);
-  line-height: 1.85;
-  max-width: 46ch;
-}
-
-.award-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-.award-list::before {
-  content: '';
-  position: absolute;
-  top: 34px;
-  bottom: 34px;
-  left: 81px;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(201,164,92,0.5), var(--line) 70%);
-}
-.award-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 62px 1fr;
-  gap: 38px;
-  padding: 27px 24px;
-  border-bottom: 1px solid var(--line);
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-.award-item:focus-visible { outline: 2px solid var(--emerald); outline-offset: -2px; }
-.award-item-year {
-  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
-  font-size: 15px;
-  color: var(--gold-strong);
-  letter-spacing: 0.08em;
-  padding-top: 3px;
-}
-.award-item-copy h4 {
-  font-size: 16.5px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-  line-height: 1.4;
-  transition: color 0.3s ease;
-}
-.award-item-copy p { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin: 0; }
-.award-item-dot {
-  position: absolute;
-  left: 81px;
-  top: 32px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--ivory);
-  border: 1.5px solid var(--gold);
-  transform: translateX(-50%);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.award-item.is-active {
-  background: var(--surface);
-  box-shadow: inset 3px 0 0 var(--gold);
-}
-.award-item.is-active .award-item-dot {
-  background: var(--gold);
-  animation: awardDotPulse 3.4s ease-in-out infinite;
-}
-.award-item:hover .award-item-copy h4 { color: var(--emerald); }
-.award-item:hover .award-item-dot { transform: translateX(-50%) scale(1.3); }
-@keyframes awardDotPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201,164,92,0.35); }
-  50% { box-shadow: 0 0 0 6px rgba(201,164,92,0.12); }
-}
-
-.awards-creds {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 72px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-}
-.award-cred { padding: 36px 40px; }
-.award-cred + .award-cred { border-left: 1px solid var(--line); }
-.award-cred h3 {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-strong);
-  margin-bottom: 24px;
-}
-.award-creds-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 28px;
-  row-gap: 14px;
-}
-.award-creds-list li {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.award-creds-list li::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex: none;
-}
-.award-conf {
-  max-width: 720px;
-  margin: 56px auto 0;
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.9;
-}
-.aw-closing {
-  text-align: center;
-  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
-  font-style: italic;
-  font-size: 26px;
-  color: var(--emerald);
-  margin: 56px 0 10px;
-}
-.aw-values {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.26em;
-  color: var(--gold-strong);
-  text-transform: uppercase;
-}
-.aw-sep { color: var(--line); margin: 0 8px; }
-[dir="rtl"] .aw-values { letter-spacing: 0; }
 
 /* ================= OUR ECOSYSTEM — connected network ================= */
 .ab-eco {
@@ -1185,7 +950,6 @@
   margin: 0 auto;
 }
 [dir="rtl"] .eco-lines { transform: scaleX(-1); }
-[dir="rtl"] .award-list::before, [dir="rtl"] .award-item-dot { left: auto; }
 
 /* ================= CAMPUS EXPERIENCE — masonry ================= */
 button.m-item { display: block; width: 100%; border: none; padding: 0; background: none; text-align: left; cursor: pointer; color: #FFFFFF; }
@@ -1349,20 +1113,14 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   .ab-vision-head h2 { font-size: 50px; }
 }
 
-/* ================= AWARDS + ECOSYSTEM — responsive ================= */
+ ================= ECOSYSTEM — responsive ================= */
 @media (max-width: 1180px) {
-  .awards-stage { gap: 48px; }
-  .award-featured { grid-template-columns: 190px minmax(0, 1fr); gap: 34px; padding: 40px 36px; }
-  .award-seal { width: 180px; height: 180px; }
   .eco-node { padding: 22px 20px; }
 }
 
 @media (max-width: 1024px) {
-  .awards-head, .eco-head { grid-template-columns: 1fr; gap: 22px; align-items: start; }
-  .awards-head-note, .eco-head-note { max-width: 60ch; margin-bottom: 4px; }
-  .awards-stage { grid-template-columns: 1fr; gap: 56px; }
-  .award-featured { grid-template-columns: 208px minmax(0, 1fr); gap: 40px; }
-  .award-featured-copy h3 { font-size: 27px; }
+  .eco-head { grid-template-columns: 1fr; gap: 22px; align-items: start; }
+  .eco-head-note { max-width: 60ch; margin-bottom: 4px; }
   .eco-grid { gap: 14px; }
   .eco-node { padding: 20px 18px; min-height: 0; }
   .eco-node-desc { font-size: 12px; }
@@ -1370,20 +1128,7 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
 }
 
 @media (max-width: 768px) {
-  .awards-head, .eco-head { padding-bottom: 36px; margin-bottom: 44px; }
-  .award-featured { grid-template-columns: 1fr; padding: 36px 30px; }
-  .award-featured-media { justify-content: center; }
-  .award-featured-copy h3 { font-size: 24px; }
-  .award-item { grid-template-columns: 54px 1fr; gap: 26px; padding: 22px 18px; }
-  .award-list::before { left: 71px; top: 28px; bottom: 28px; }
-  .award-item-dot { left: 71px; top: 27px; }
-  .award-item-year { font-size: 14px; }
-  .awards-creds { grid-template-columns: 1fr; margin-top: 52px; }
-  .award-cred { padding: 30px 30px; }
-  .award-cred + .award-cred { border-left: none; border-top: 1px solid var(--line); }
-  .award-conf { margin-top: 44px; }
-
-  .eco-head { margin-bottom: 36px; }
+  .eco-head { padding-bottom: 36px; margin-bottom: 36px; }
   .eco-map { padding: 0 10px; }
   .eco-map::before {
     content: '';
@@ -1419,12 +1164,7 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
 }
 
 @media (max-width: 480px) {
-  .awards-head, .eco-head { gap: 18px; }
-  .award-featured { padding: 30px 24px; }
-  .award-seal { width: 164px; height: 164px; }
-  .award-featured-copy h3 { font-size: 22px; }
-  .award-item { padding: 20px 14px; }
-  .award-cred { padding: 26px 24px; }
+  .eco-head { gap: 18px; }
   .eco-node { padding: 18px 18px; gap: 16px; }
   .eco-map { padding: 0 6px; }
 }
@@ -1435,7 +1175,6 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   .ab-hero-visual::after, .ms-visual::after { display: none; }
   .abv-ring-2, .ms-ring, .globe::before, .g-marker::before { animation: none; }
   .leader-block:hover .lb-mono, .value-card:hover::before { transform: none; }
-  .award-seal, .award-item, .award-item-dot, .eco-node, .eco-node-go, .eco-line { transition: none; }
-  .award-item.is-active .award-item-dot { animation: none; }
+  .eco-node, .eco-node-go, .eco-line { transition: none; }
   .eco-lines { animation: none; opacity: 0.55; }
 }
