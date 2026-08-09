@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/redesign.css">
+  <link rel="stylesheet" href="css/qds.css">
 </head>
 <body>
 
@@ -33,43 +34,55 @@
   <div class="bg-gradient"></div>
 
   <!-- ================= HEADER ================= -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Quantum Health</span>
+        <span class="logo-name">Stemcell Resort</span>
+        <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="has-mega" id="mega-wrap">
-          <a href="services.html" class="nav-link-mega">Services <span class="mega-arrow">&#x25BE;</span></a>
+          <a href="services.html" class="nav-link-mega" class="active">Medicine <span class="mega-arrow">&#x25BE;</span></a>
           <div class="mega" id="mega-menu">
             <div>
               <h4>Medicine &amp; Diagnostics</h4>
-              <a href="services.html">Our Services <span class="mega-sub">— 8 clinical divisions</span></a>
-              <a href="therapies.html">Therapies <span class="mega-sub">— 18 treatment areas</span></a>
-              <a href="stemcell.html">Stem Cell Therapies <span class="mega-sub">— cellular medicine</span></a>
-              <a href="programs.html">Programmes <span class="mega-sub">— residential stays</span></a>
+              <a href="services.html">Our Services <span class="mega-sub">8 clinical divisions</span></a>
+              <a href="stemcell.html">Regenerative Medicine <span class="mega-sub">cellular &amp; biological therapies</span></a>
+              <a href="therapies.html">Therapies <span class="mega-sub">18 treatment areas</span></a>
+              <a href="programs.html">Programmes <span class="mega-sub">residential programmes</span></a>
             </div>
             <div>
               <h4>Wellness &amp; Hospitality</h4>
-              <a href="wellness.html">Wellness Experience <span class="mega-sub">— your 10-stage journey</span></a>
-              <a href="resort-tour.html">Resort Tour <span class="mega-sub">— virtual campus journey</span></a>
-              <a href="gallery.html">Campus Gallery <span class="mega-sub">— grounds &amp; suites</span></a>
-              <a href="contact.html">Contact &amp; Visit <span class="mega-sub">— tours &amp; transfers</span></a>
-            </div>
-            <div>
-              <h4>Why Quantum</h4>
-              <a href="index.html#why">Why Choose Quantum</a>
-              <a href="index.html#vision">Our Vision</a>
-              <a href="index.html#journey">Your Health Journey</a>
-              <a href="index.html#cta">Book a Consultation</a>
+              <a href="wellness.html">Wellness Experience <span class="mega-sub">an integrated health ecosystem</span></a>
+              <a href="resort-tour.html">The Campus <span class="mega-sub">virtual journey across 22 acres</span></a>
+              <a href="gallery.html">Campus Gallery <span class="mega-sub">grounds, suites &amp; spaces</span></a>
+              <a href="about.html">About the Park <span class="mega-sub">story, philosophy &amp; people</span></a>
             </div>
           </div>
         </li>
-        <li><a href="therapies.html">Therapies</a></li>
-        <li><a href="stemcell.html">Stem Cell</a></li>
+        <li class="has-mega" id="mega-wrap-2">
+          <a href="wellness.html" class="nav-link-mega">Wellness <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-2">
+            <div>
+              <h4>Wellness</h4>
+              <a href="wellness.html">Wellness Journey <span class="mega-sub">your 10-stage path</span></a>
+              <a href="programs.html">Wellness Retreats <span class="mega-sub">immersive programmes</span></a>
+              <a href="services.html#alternative">Nutrition &amp; Lifestyle <span class="mega-sub">food and habits as medicine</span></a>
+            </div>
+            <div>
+              <h4>The Campus</h4>
+              <a href="resort-tour.html">Resort Tour <span class="mega-sub">architecture &amp; landscape</span></a>
+              <a href="gallery.html">Gallery <span class="mega-sub">spaces &amp; grounds</span></a>
+              <a href="contact.html#ip">International Patients <span class="mega-sub">visa, transfers &amp; concierge</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="resort-tour.html">The Campus</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Begin Your Journey</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
@@ -118,8 +131,8 @@
         <p>A modern approach to natural healing &mdash; evidence-informed, ethical and personalised, focused on healthspan and well-being.</p>
       </div>
       <div class="rm-badges">
-        <span class="rm-badge">&#x1F9EA; Science Backed</span>
-        <span class="rm-badge">&#x1F91D; Personalised Care</span>
+        <span class="rm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 2l.5.5"/><path d="M20 20l.5.5"/><path d="M16.5 22l.5-.5"/></svg> Science Backed</span>
+        <span class="rm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg> Personalised Care</span>
       </div>
       <h3 class="rm-h3">A Modern Approach to Natural Healing</h3>
       <div class="why-grid">
@@ -203,10 +216,10 @@
         <p>Not all stem cells are equal. They differ in <strong>potency</strong> — the range of cell types they can become — and this determines how they are used in medicine.</p>
       </div>
       <div class="sv-grid">
-        <article class="sv-card"><span class="sv-ico">&#x1F331;</span><h3>Totipotent</h3><p>Able to form every cell type plus supporting tissues; exist only at the very earliest stage of development.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9E9;</span><h3>Pluripotent</h3><p>Able to become almost any cell type in the body; embryonic stem cells are the classic example.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9EC;</span><h3>Multipotent</h3><p>Able to become a related family of cell types; mesenchymal stem cells are the most widely used in therapy.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9BE;</span><h3>Progenitor Cells</h3><p>Further specialised, committed toward one particular lineage for rebuilding a specific tissue.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span><h3>Totipotent</h3><p>Able to form every cell type plus supporting tissues; exist only at the very earliest stage of development.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"/></svg></span><h3>Pluripotent</h3><p>Able to become almost any cell type in the body; embryonic stem cells are the classic example.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Multipotent</h3><p>Able to become a related family of cell types; mesenchymal stem cells are the most widely used in therapy.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span><h3>Progenitor Cells</h3><p>Further specialised, committed toward one particular lineage for rebuilding a specific tissue.</p></article>
       </div>
       <div class="lgl-prose">
         <p>A second important distinction is between adult (or somatic) stem cells and other types. Adult stem cells — including the mesenchymal stem cells found in bone marrow, fat, umbilical cord, placenta, and dental pulp — are the mainstay of clinical regenerative therapy because they are accessible, versatile, and have a strong safety record. Their combination of multipotency, powerful signalling, and immune-modulating behaviour is exactly what makes them so useful.</p>
@@ -222,12 +235,12 @@
         <p>It is a common misconception that stem cells work simply by turning into new tissue. In reality, they heal through several complementary mechanisms working together — and for the mesenchymal stem cells most used in therapy, the signalling role is often the most important.</p>
       </div>
       <div class="sv-grid">
-        <article class="sv-card"><span class="sv-ico">&#x1F4E1;</span><h3>Paracrine Signalling</h3><p>Stem cells release a rich mixture of growth factors, cytokines, and exosomes that instruct surrounding cells to repair — the single most important mechanism for MSCs.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F6E1;&#xFE0F;</span><h3>Immunomodulation</h3><p>They sense and rebalance an over- or under-active immune response, calming harmful inflammation.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1FA78;</span><h3>Angiogenesis</h3><p>They promote the formation of new blood vessels, restoring circulation and oxygen to damaged tissue.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9ED;</span><h3>Homing</h3><p>They naturally migrate toward sites of injury and inflammation, concentrating their effect where it is needed.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9EC;</span><h3>Differentiation</h3><p>Where appropriate, they mature into the specific cell types the tissue requires.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9BE;</span><h3>Anti-Fibrotic &amp; Anti-Apoptotic</h3><p>They help reduce scarring and prevent the premature death of stressed cells.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12 7 2"/><path d="m7 12 5-10"/><path d="m12 12 5-10"/><path d="m17 12 5-10"/><path d="M12 22a4 4 0 0 0 4-4c0-2-2-4-4-7-2 3-4 5-4 7a4 4 0 0 0 4 4Z"/></svg></span><h3>Paracrine Signalling</h3><p>Stem cells release a rich mixture of growth factors, cytokines, and exosomes that instruct surrounding cells to repair — the single most important mechanism for MSCs.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Immunomodulation</h3><p>They sense and rebalance an over- or under-active immune response, calming harmful inflammation.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Angiogenesis</h3><p>They promote the formation of new blood vessels, restoring circulation and oxygen to damaged tissue.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg></span><h3>Homing</h3><p>They naturally migrate toward sites of injury and inflammation, concentrating their effect where it is needed.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Differentiation</h3><p>Where appropriate, they mature into the specific cell types the tissue requires.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span><h3>Anti-Fibrotic &amp; Anti-Apoptotic</h3><p>They help reduce scarring and prevent the premature death of stressed cells.</p></article>
       </div>
       <div class="lgl-prose">
         <p>This multi-pathway action is why stem cell therapy can help across such a wide range of conditions: rather than doing one thing, the cells orchestrate a coordinated repair response tailored to the environment they find themselves in.</p>
@@ -271,9 +284,9 @@
         <p>Stem cells collected from the patient's own body.</p>
       </div>
       <div class="sv-grid">
-        <article class="sv-card"><span class="sv-ico">&#x1F9B4;</span><h3>Bone Marrow-Derived (BMSCs)</h3><p>The original and most extensively studied source. Bone marrow contains both haematopoietic (blood-forming) stem cells and mesenchymal stem cells, collected from the pelvic bone. Its long clinical track record makes it a well-understood, trusted source.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F489;</span><h3>Peripheral Blood (PBSCs)</h3><p>Stem cells mobilised out of the bone marrow and into the bloodstream, collected from a blood sample. This offers a less invasive alternative to a marrow harvest while still providing valuable stem cells.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9EB;</span><h3>Adipose Tissue-Derived (ADSCs)</h3><p>Fat tissue is an abundant and accessible reservoir of mesenchymal stem cells, obtained in relatively large numbers through a minor procedure. This ease of access and high yield have made adipose tissue an increasingly popular autologous source.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span><h3>Bone Marrow-Derived (BMSCs)</h3><p>The original and most extensively studied source. Bone marrow contains both haematopoietic (blood-forming) stem cells and mesenchymal stem cells, collected from the pelvic bone. Its long clinical track record makes it a well-understood, trusted source.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span><h3>Peripheral Blood (PBSCs)</h3><p>Stem cells mobilised out of the bone marrow and into the bloodstream, collected from a blood sample. This offers a less invasive alternative to a marrow harvest while still providing valuable stem cells.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Adipose Tissue-Derived (ADSCs)</h3><p>Fat tissue is an abundant and accessible reservoir of mesenchymal stem cells, obtained in relatively large numbers through a minor procedure. This ease of access and high yield have made adipose tissue an increasingly popular autologous source.</p></article>
       </div>
       <p style="color:var(--muted);font-size:14px;margin-top:16px">Because all three come from the patient, they carry essentially no risk of immune rejection.</p>
     </div>
@@ -286,10 +299,10 @@
         <p>Stem cells from carefully screened donor tissue.</p>
       </div>
       <div class="sv-grid">
-        <article class="sv-card"><span class="sv-ico">&#x1F4A7;</span><h3>Amniotic Membrane (AMSCs)</h3><p>Derived from the amniotic membrane surrounding the developing baby, these young cells have notable regenerative and anti-inflammatory properties and are valued for their potency.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F31F;</span><h3>Wharton's Jelly (WJSCs)</h3><p>Sourced from the gelatinous connective tissue of the umbilical cord, these are among the most potent and readily proliferating mesenchymal stem cells. Their youth and vigour make them a highly regarded allogeneic source.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9B7;</span><h3>Dental Pulp (DPSCs)</h3><p>Obtained from the soft pulp inside teeth, dental pulp stem cells are versatile and have shown particular potential for neural and dental tissue.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1FA78;</span><h3>Umbilical Cord Blood (UCBSCs)</h3><p>Collected from the blood of the umbilical cord, these cells are rich in haematopoietic stem cells and have a long, established history of use in cell therapy and transplantation.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Amniotic Membrane (AMSCs)</h3><p>Derived from the amniotic membrane surrounding the developing baby, these young cells have notable regenerative and anti-inflammatory properties and are valued for their potency.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span><h3>Wharton's Jelly (WJSCs)</h3><p>Sourced from the gelatinous connective tissue of the umbilical cord, these are among the most potent and readily proliferating mesenchymal stem cells. Their youth and vigour make them a highly regarded allogeneic source.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg></span><h3>Dental Pulp (DPSCs)</h3><p>Obtained from the soft pulp inside teeth, dental pulp stem cells are versatile and have shown particular potential for neural and dental tissue.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Umbilical Cord Blood (UCBSCs)</h3><p>Collected from the blood of the umbilical cord, these cells are rich in haematopoietic stem cells and have a long, established history of use in cell therapy and transplantation.</p></article>
       </div>
       <p style="color:var(--muted);font-size:14px;margin-top:16px">All donor-derived cells are thoroughly screened, and mesenchymal types are considered low-risk for rejection thanks to their immune-regulating nature.</p>
     </div>
@@ -322,7 +335,7 @@
       </div>
 
       <div class="sv-group">
-        <h3 class="sv-group-title"><span class="sv-ico">&#x1F9EC;</span> Mesenchymal Stem Cells (MSCs)</h3>
+        <h3 class="sv-group-title"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span> Mesenchymal Stem Cells (MSCs)</h3>
         <p class="sv-group-lead">The versatile workhorse of regenerative medicine.</p>
         <div class="lgl-prose">
           <p>MSCs are multipotent adult stem cells capable of becoming bone, cartilage, muscle, and fat cells. They are among the most widely used and studied cells in regenerative medicine because they are versatile, can be obtained from several tissues, and exert broad healing effects. Importantly, most of their benefit comes not from replacing tissue directly but from coordinating the body's own repair.</p>
@@ -341,7 +354,7 @@
       </div>
 
       <div class="sv-group">
-        <h3 class="sv-group-title"><span class="sv-ico">&#x1FAC0;</span> Organ-Based Stem Cell Therapy (SCT)</h3>
+        <h3 class="sv-group-title"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span> Organ-Based Stem Cell Therapy (SCT)</h3>
         <p class="sv-group-lead">Targeted regeneration for a specific organ system.</p>
         <div class="lgl-prose">
           <p>Organ-based stem cell therapy directs regenerative cells to a specific organ or system rather than treating the body generically. The aim is to repair or replace cells lost to disease, injury, or ageing in a focused way — whether the target is neurological, cardiac, pulmonary, hepatic, renal, or musculoskeletal.</p>
@@ -359,7 +372,7 @@
       </div>
 
       <div class="sv-group">
-        <h3 class="sv-group-title"><span class="sv-ico">&#x1F4E6;</span> Exosome Therapy — Enhanced MSCs</h3>
+        <h3 class="sv-group-title"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="m7.5 4.27 9 5.15"/></svg></span> Exosome Therapy — Enhanced MSCs</h3>
         <p class="sv-group-lead">The regenerative power of stem cells, without the cells.</p>
         <div class="lgl-prose">
           <p>Exosomes are tiny lipid-bilayer vesicles — roughly 30 to 150 nanometres across — that cells use to communicate. Those released by MSCs carry proteins, lipids, mRNA, microRNA, and growth factors, reproducing many of the effects of stem cells as a cell-free therapy, with practical advantages.</p>
@@ -376,7 +389,7 @@
       </div>
 
       <div class="sv-group">
-        <h3 class="sv-group-title"><span class="sv-ico">&#x1F3AF;</span> Organ-Specific Progenitor Stem Cells</h3>
+        <h3 class="sv-group-title"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span> Organ-Specific Progenitor Stem Cells</h3>
         <p class="sv-group-lead">Partly specialised cells for rebuilding one target tissue.</p>
         <div class="lgl-prose">
           <p>Progenitor cells sit one step beyond stem cells — already committed toward a particular tissue lineage, such as cardiac, hepatic, pancreatic, or neural. Because they are partially specialised, they can integrate into and regenerate a specific organ more directly than a general-purpose cell.</p>
@@ -446,14 +459,14 @@
         <p>Stem cell therapy is applied across a broad spectrum of conditions spanning the major organ systems. Every case begins with a personalised assessment of whether treatment is suitable and which approach fits best.</p>
       </div>
       <div class="sv-grid">
-        <article class="sv-card"><span class="sv-ico">&#x1F9E0;</span><h3>Brain, Spinal Cord &amp; Neurodegenerative</h3><p>From stroke and spinal-cord injury to Parkinson's, MS, and neuropathy.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1FAC0;</span><h3>Heart &amp; Cardiovascular</h3><p>Including heart failure and coronary and peripheral artery disease.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1FAC1;</span><h3>Lungs &amp; Pulmonary</h3><p>Such as COPD, pulmonary fibrosis, and interstitial lung disease.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F4A7;</span><h3>Liver, Kidney &amp; Pancreas</h3><p>Including cirrhosis, chronic kidney disease, and diabetes.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F6E1;&#xFE0F;</span><h3>Autoimmune &amp; Connective Tissue</h3><p>Such as rheumatoid arthritis, lupus, and scleroderma.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F9B4;</span><h3>Musculoskeletal &amp; Orthopaedic</h3><p>Osteoarthritis, cartilage and tendon injuries, and sports injuries.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x2728;</span><h3>Skin &amp; Wound Healing</h3><p>From chronic wounds and burns to aesthetic rejuvenation.</p></article>
-        <article class="sv-card"><span class="sv-ico">&#x1F3E5;</span><h3>Other Complex Conditions</h3><p>Including eye, reproductive, ENT, endocrine, and blood disorders.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h3>Brain, Spinal Cord &amp; Neurodegenerative</h3><p>From stroke and spinal-cord injury to Parkinson's, MS, and neuropathy.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><h3>Heart &amp; Cardiovascular</h3><p>Including heart failure and coronary and peripheral artery disease.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.081 20C1.53 20 0 16.661 0 13.967V11.5a3.5 3.5 0 0 1 7 0V19.5A.5.5 0 0 1 6.5 20z"/><path d="M7.45 12.5v-2a4 4 0 0 1 4-4M10.55 20v-8.5a4 4 0 0 0-4-4h0"/><path d="M17.919 20C22.47 20 24 16.661 24 13.967V11.5a3.5 3.5 0 0 0-7 0V19.5a.5.5 0 0 0 .5.5z"/><path d="M16.55 12.5v-2a4 4 0 0 0-4-4h0"/><path d="M13.45 20v-8.5a4 4 0 0 1 4-4h0"/></svg></span><h3>Lungs &amp; Pulmonary</h3><p>Such as COPD, pulmonary fibrosis, and interstitial lung disease.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Liver, Kidney &amp; Pancreas</h3><p>Including cirrhosis, chronic kidney disease, and diabetes.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Autoimmune &amp; Connective Tissue</h3><p>Such as rheumatoid arthritis, lupus, and scleroderma.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span><h3>Musculoskeletal &amp; Orthopaedic</h3><p>Osteoarthritis, cartilage and tendon injuries, and sports injuries.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg></span><h3>Skin &amp; Wound Healing</h3><p>From chronic wounds and burns to aesthetic rejuvenation.</p></article>
+        <article class="sv-card"><span class="sv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg></span><h3>Other Complex Conditions</h3><p>Including eye, reproductive, ENT, endocrine, and blood disorders.</p></article>
       </div>
       <p style="text-align:center;color:var(--muted);margin-top:16px">A detailed consultation and diagnostic assessment determine suitability and the most appropriate personalised approach.</p>
     </div>
@@ -467,11 +480,11 @@
         <p>Stem cell therapy is powerful, and delivering it safely depends on rigorous standards at every step. Quality and safety are the foundation of responsible care.</p>
       </div>
       <div class="steps-grid">
-        <div class="step-card"><span class="step-num">&#x1F50D;</span><div><h3>Careful Sourcing and Preparation</h3><p>Cells are obtained and prepared to high standards, and donor material is thoroughly screened for safety.</p></div></div>
-        <div class="step-card"><span class="step-num">&#x2695;&#xFE0F;</span><div><h3>Qualified, Supervised Delivery</h3><p>Treatments are administered by trained practitioners under medical supervision, using the appropriate route and protocol.</p></div></div>
-        <div class="step-card"><span class="step-num">&#x1FA7A;</span><div><h3>Personalised Screening</h3><p>Every treatment is preceded by assessment and, where relevant, testing to confirm suitability and identify anything requiring caution.</p></div></div>
-        <div class="step-card"><span class="step-num">&#x1F4C8;</span><div><h3>Ongoing Monitoring</h3><p>Progress and wellbeing are followed through the course of treatment, and plans are adjusted based on response.</p></div></div>
-        <div class="step-card"><span class="step-num">&#x1F4AC;</span><div><h3>Honest Communication</h3><p>Realistic, transparent discussion of what stem cell therapy can and cannot do, so expectations are grounded and decisions informed.</p></div></div>
+        <div class="step-card"><span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span><div><h3>Careful Sourcing and Preparation</h3><p>Cells are obtained and prepared to high standards, and donor material is thoroughly screened for safety.</p></div></div>
+        <div class="step-card"><span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h5v5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg></span><div><h3>Qualified, Supervised Delivery</h3><p>Treatments are administered by trained practitioners under medical supervision, using the appropriate route and protocol.</p></div></div>
+        <div class="step-card"><span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span><div><h3>Personalised Screening</h3><p>Every treatment is preceded by assessment and, where relevant, testing to confirm suitability and identify anything requiring caution.</p></div></div>
+        <div class="step-card"><span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/></svg></span><div><h3>Ongoing Monitoring</h3><p>Progress and wellbeing are followed through the course of treatment, and plans are adjusted based on response.</p></div></div>
+        <div class="step-card"><span class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><div><h3>Honest Communication</h3><p>Realistic, transparent discussion of what stem cell therapy can and cannot do, so expectations are grounded and decisions informed.</p></div></div>
       </div>
     </div>
   </section>
@@ -599,11 +612,15 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</span>
+          <a href="index.html" class="logo">
+            <span class="logo-mark">Quantum Health</span>
+            <span class="logo-name">Stemcell Resort</span>
+            <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+          </a>
           <p>India's destination for regenerative medicine, healthy ageing and luxury wellness — set on 22 acres along Kanakapura Main Road, Bengaluru.</p>
           <p class="footer-tagline">Rejuvenate &bull; Restore &bull; Regenerate</p>
           <div class="socials">
@@ -614,49 +631,29 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="index.html">Home</a>
+          <h4>Explore</h4>
           <a href="about.html">About the Park</a>
           <a href="services.html">Our Services</a>
           <a href="therapies.html">Therapies</a>
-          <a href="programs.html">Programmes</a>
+          <a href="resort-tour.html">The Campus</a>
+          <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Medical Services</h4>
+          <h4>Medicine</h4>
           <a href="stemcell.html">Regenerative Medicine</a>
           <a href="services.html#checkups">Precision Diagnostics</a>
           <a href="therapies.html#therapy-01">Healthy Ageing</a>
           <a href="services.html#rehab">Pain &amp; Rehab</a>
           <a href="programs.html">Executive Assessment</a>
-          <a href="services.html#alternative">Nutrition &amp; Lifestyle</a>
         </div>
         <div class="footer-col">
-          <h4>Research &amp; Education</h4>
-          <a href="about.html#commit">Biotechnology Research</a>
-          <a href="about.html#commit">Clinical Innovation</a>
-          <a href="about.html#commit">Medical Education</a>
-          <a href="about.html#commit">Healthcare Training</a>
-          <a href="contact.html">Conference Centre</a>
-        </div>
-        <div class="footer-col">
-          <h4>Wellness &amp; Hospitality</h4>
+          <h4>Wellness &amp; Campus</h4>
           <a href="wellness.html">Wellness Experience</a>
-          <a href="resort-tour.html">Resort Tour</a>
           <a href="programs.html">Wellness Retreats</a>
-          <a href="gallery.html">Wellness Spa</a>
-          <a href="gallery.html">Residential Suites</a>
+          <a href="resort-tour.html">Resort Tour</a>
           <a href="gallery.html">Campus Gallery</a>
-          <a href="contact.html">Plan Your Visit</a>
-        </div>
-        <div class="footer-col">
-          <h4>International Patients</h4>
-          <a href="contact.html#ip">Medical Visa Guidance</a>
-          <a href="contact.html#ip">Airport Transfers</a>
-          <a href="contact.html#ip">Accommodation &amp; Concierge</a>
-          <a href="contact.html#ip">Multilingual Care</a>
-          <a href="contact.html#ip">Insurance &amp; Billing</a>
-          <a href="wellness.html">Programme Planning</a>
+          <a href="contact.html#ip">International Patients</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
@@ -666,7 +663,7 @@
             Karnataka, India
           </address>
           <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91 98450 25857<br>info@quantumhealth.co.in</p>
-          <h4 style="margin-top:20px">Newsletter</h4>
+          <h4 style="margin-top:24px">Newsletter</h4>
           <form class="newsletter" id="newsletter-form">
             <input type="email" placeholder="Your email address" aria-label="Email address" required>
             <button type="submit">Subscribe</button>

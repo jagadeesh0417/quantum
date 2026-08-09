@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/redesign.css">
+  <link rel="stylesheet" href="css/qds.css">
   <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
@@ -34,44 +35,55 @@
   <div class="bg-gradient"></div>
 
   <!-- ================= HEADER ================= -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Quantum Health</span>
+        <span class="logo-name">Stemcell Resort</span>
+        <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="has-mega" id="mega-wrap">
-          <a href="services.html" class="nav-link-mega">Services <span class="mega-arrow">&#x25BE;</span></a>
+          <a href="services.html" class="nav-link-mega">Medicine <span class="mega-arrow">&#x25BE;</span></a>
           <div class="mega" id="mega-menu">
             <div>
               <h4>Medicine &amp; Diagnostics</h4>
-              <a href="services.html">Our Services <span class="mega-sub">— 8 clinical divisions</span></a>
-              <a href="therapies.html">Therapies <span class="mega-sub">— 18 treatment areas</span></a>
-              <a href="stemcell.html">Stem Cell Therapies <span class="mega-sub">— cellular medicine</span></a>
-              <a href="programs.html">Programmes <span class="mega-sub">— residential stays</span></a>
+              <a href="services.html">Our Services <span class="mega-sub">8 clinical divisions</span></a>
+              <a href="stemcell.html">Regenerative Medicine <span class="mega-sub">cellular &amp; biological therapies</span></a>
+              <a href="therapies.html">Therapies <span class="mega-sub">18 treatment areas</span></a>
+              <a href="programs.html">Programmes <span class="mega-sub">residential programmes</span></a>
             </div>
             <div>
               <h4>Wellness &amp; Hospitality</h4>
-              <a href="wellness.html">Wellness Experience <span class="mega-sub">— your 10-stage journey</span></a>
-              <a href="resort-tour.html">Resort Tour <span class="mega-sub">— virtual campus journey</span></a>
-              <a href="gallery.html">Campus Gallery <span class="mega-sub">— grounds &amp; suites</span></a>
-              <a href="about.html">About the Park <span class="mega-sub">— 22-acre campus</span></a>
-              <a href="contact.html">Contact &amp; Visit <span class="mega-sub">— tours &amp; transfers</span></a>
-            </div>
-            <div>
-              <h4>Why Quantum</h4>
-              <a href="index.html#why">Why Choose Quantum</a>
-              <a href="index.html#vision">Our Vision</a>
-              <a href="index.html#journey">Your Health Journey</a>
-              <a href="index.html#cta">Book a Consultation</a>
+              <a href="wellness.html">Wellness Experience <span class="mega-sub">an integrated health ecosystem</span></a>
+              <a href="resort-tour.html">The Campus <span class="mega-sub">virtual journey across 22 acres</span></a>
+              <a href="gallery.html">Campus Gallery <span class="mega-sub">grounds, suites &amp; spaces</span></a>
+              <a href="about.html">About the Park <span class="mega-sub">story, philosophy &amp; people</span></a>
             </div>
           </div>
         </li>
-        <li><a href="therapies.html">Therapies</a></li>
-        <li><a href="stemcell.html">Stem Cell</a></li>
+        <li class="has-mega" id="mega-wrap-2">
+          <a href="wellness.html" class="nav-link-mega">Wellness <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-2">
+            <div>
+              <h4>Wellness</h4>
+              <a href="wellness.html">Wellness Journey <span class="mega-sub">your 10-stage path</span></a>
+              <a href="programs.html">Wellness Retreats <span class="mega-sub">immersive programmes</span></a>
+              <a href="services.html#alternative">Nutrition &amp; Lifestyle <span class="mega-sub">food and habits as medicine</span></a>
+            </div>
+            <div>
+              <h4>The Campus</h4>
+              <a href="resort-tour.html">Resort Tour <span class="mega-sub">architecture &amp; landscape</span></a>
+              <a href="gallery.html">Gallery <span class="mega-sub">spaces &amp; grounds</span></a>
+              <a href="contact.html#ip">International Patients <span class="mega-sub">visa, transfers &amp; concierge</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="resort-tour.html" class="active">The Campus</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Begin Your Journey</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
@@ -110,10 +122,10 @@
         <p>Immerse yourself in serene landscapes featuring tranquil lakes, lush forests, botanical healing gardens, cascading waterfalls, and scenic walking trails designed to promote relaxation and wellbeing.</p>
       </div>
       <div class="gal-grid">
-        <button class="gal-tile gal-tall n-1" data-icon="&#x1F30A;" data-title="Tranquil Lakes" data-desc="Private waterfront spaces for reflection, relaxation and gentle water activities."><img class="tile-img" src="images/gallery/gallery-01.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon">&#x1F30A;</span><h3>Tranquil Lakes</h3><span class="tile-tag">Private waterfront &middot; reflection &amp; rest</span></button>
-        <button class="gal-tile n-2" data-icon="&#x1F332;" data-title="Forest Trails" data-desc="Mindful walking paths through lush greenery, designed for exercise and connection with nature."><img class="tile-img" src="images/gallery/gallery-02.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon">&#x1F332;</span><h3>Forest Trails</h3><span class="tile-tag">Mindful walking paths</span></button>
-        <button class="gal-tile n-3" data-icon="&#x1F33F;" data-title="Botanical Healing Gardens" data-desc="Landscaped gardens of therapeutic plants and calming outdoor spaces that promote wellbeing."><img class="tile-img" src="images/gallery/gallery-03.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon">&#x1F33F;</span><h3>Botanical Healing Gardens</h3><span class="tile-tag">Therapeutic plants &amp; calm</span></button>
-        <button class="gal-tile n-4" data-icon="&#x1F4A7;" data-title="Cascading Waterfalls" data-desc="Natural water features that bring soothing soundscapes of recovery to the park."><img class="tile-img" src="images/gallery/gallery-04.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon">&#x1F4A7;</span><h3>Cascading Waterfalls</h3><span class="tile-tag">Soundscapes of recovery</span></button>
+        <button class="gal-tile gal-tall n-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;path d=&quot;M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;path d=&quot;M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;/svg&gt;" data-title="Tranquil Lakes" data-desc="Private waterfront spaces for reflection, relaxation and gentle water activities."><img class="tile-img" src="images/gallery/gallery-01.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><h3>Tranquil Lakes</h3><span class="tile-tag">Private waterfront &middot; reflection &amp; rest</span></button>
+        <button class="gal-tile n-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m12 2 5 8H7l5-8z&quot;/&gt;&lt;path d=&quot;M12 10v12&quot;/&gt;&lt;path d=&quot;M9.5 22h5&quot;/&gt;&lt;/svg&gt;" data-title="Forest Trails" data-desc="Mindful walking paths through lush greenery, designed for exercise and connection with nature."><img class="tile-img" src="images/gallery/gallery-02.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 5 8H7l5-8z"/><path d="M12 10v12"/><path d="M9.5 22h5"/></svg></span><h3>Forest Trails</h3><span class="tile-tag">Mindful walking paths</span></button>
+        <button class="gal-tile n-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M7 20h10&quot;/&gt;&lt;path d=&quot;M12 20v-8&quot;/&gt;&lt;path d=&quot;M12 12a4 4 0 0 0-4-4H5a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4h4z&quot;/&gt;&lt;path d=&quot;M12 12a4 4 0 0 1 4-4h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4h-4z&quot;/&gt;&lt;/svg&gt;" data-title="Botanical Healing Gardens" data-desc="Landscaped gardens of therapeutic plants and calming outdoor spaces that promote wellbeing."><img class="tile-img" src="images/gallery/gallery-03.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M12 20v-8"/><path d="M12 12a4 4 0 0 0-4-4H5a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4h4z"/><path d="M12 12a4 4 0 0 1 4-4h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4h-4z"/></svg></span><h3>Botanical Healing Gardens</h3><span class="tile-tag">Therapeutic plants &amp; calm</span></button>
+        <button class="gal-tile n-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;/svg&gt;" data-title="Cascading Waterfalls" data-desc="Natural water features that bring soothing soundscapes of recovery to the park."><img class="tile-img" src="images/gallery/gallery-04.jpg" alt="" loading="lazy"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Cascading Waterfalls</h3><span class="tile-tag">Soundscapes of recovery</span></button>
       </div>
     </div>
   </section>
@@ -129,10 +141,10 @@
         <p>Experience refined comfort through premium wellness cottages, executive suites, luxury villas, exclusive lounges, world-class spa facilities, and thoughtfully curated hospitality services.</p>
       </div>
       <div class="gal-grid">
-        <button class="gal-tile l-1" data-icon="&#x1F3E1;" data-title="Wellness Cottages" data-desc="Private, restorative stays in premium cottages designed for comfort and recovery."><img class="tile-img" src="images/gallery/gallery-05.jpg" alt="" loading="lazy"><span class="tile-cat">Rooms</span><span class="tile-icon">&#x1F3E1;</span><h3>Wellness Cottages</h3><span class="tile-tag">Private, restorative stays</span></button>
-        <button class="gal-tile gal-tall l-2" data-icon="&#x1F3DB;&#xFE0F;" data-title="Executive Suites &amp; Villas" data-desc="Resort-grade residences with north-facing light and clinical care next door."><img class="tile-img" src="images/gallery/gallery-06.jpg" alt="" loading="lazy"><span class="tile-cat">Rooms</span><span class="tile-icon">&#x1F3DB;&#xFE0F;</span><h3>Executive Suites &amp; Villas</h3><span class="tile-tag">Resort-grade residences</span></button>
-        <button class="gal-tile l-3" data-icon="&#x1F37B;" data-title="Exclusive Lounges" data-desc="Crystal café and lounge spaces for quiet conversation and unhurried time."><img class="tile-img" src="images/gallery/gallery-07.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F37B;</span><h3>Exclusive Lounges</h3><span class="tile-tag">Crystal café &amp; lounge</span></button>
-        <button class="gal-tile l-4" data-icon="&#x1F6C0;" data-title="World-Class Spa" data-desc="A lakeside wellness sanctuary offering restorative therapies and therapeutic massage."><img class="tile-img" src="images/gallery/gallery-08.jpg" alt="" loading="lazy"><span class="tile-cat">Spa</span><span class="tile-icon">&#x1F6C0;</span><h3>World-Class Spa</h3><span class="tile-tag">Lakeside wellness sanctuary</span></button>
+        <button class="gal-tile l-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m3 10 9-7 9 7&quot;/&gt;&lt;path d=&quot;M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9&quot;/&gt;&lt;path d=&quot;M9 21v-6h6v6&quot;/&gt;&lt;/svg&gt;" data-title="Wellness Cottages" data-desc="Private, restorative stays in premium cottages designed for comfort and recovery."><img class="tile-img" src="images/gallery/gallery-05.jpg" alt="" loading="lazy"><span class="tile-cat">Rooms</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/></svg></span><h3>Wellness Cottages</h3><span class="tile-tag">Private, restorative stays</span></button>
+        <button class="gal-tile gal-tall l-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M4 21V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v16&quot;/&gt;&lt;path d=&quot;M8 21v-4h8v4&quot;/&gt;&lt;path d=&quot;M9 8h1M14 8h1M9 12h1M14 12h1&quot;/&gt;&lt;/svg&gt;" data-title="Executive Suites &amp; Villas" data-desc="Resort-grade residences with north-facing light and clinical care next door."><img class="tile-img" src="images/gallery/gallery-06.jpg" alt="" loading="lazy"><span class="tile-cat">Rooms</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v16"/><path d="M8 21v-4h8v4"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1"/></svg></span><h3>Executive Suites &amp; Villas</h3><span class="tile-tag">Resort-grade residences</span></button>
+        <button class="gal-tile l-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M17 8h1a4 4 0 1 1 0 8h-1&quot;/&gt;&lt;path d=&quot;M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z&quot;/&gt;&lt;/svg&gt;" data-title="Exclusive Lounges" data-desc="Crystal café and lounge spaces for quiet conversation and unhurried time."><img class="tile-img" src="images/gallery/gallery-07.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/></svg></span><h3>Exclusive Lounges</h3><span class="tile-tag">Crystal café &amp; lounge</span></button>
+        <button class="gal-tile l-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;path d=&quot;M8 17c2.5-1 4.5-3 5.5-6&quot;/&gt;&lt;/svg&gt;" data-title="World-Class Spa" data-desc="A lakeside wellness sanctuary offering restorative therapies and therapeutic massage."><img class="tile-img" src="images/gallery/gallery-08.jpg" alt="" loading="lazy"><span class="tile-cat">Spa</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/><path d="M8 17c2.5-1 4.5-3 5.5-6"/></svg></span><h3>World-Class Spa</h3><span class="tile-tag">Lakeside wellness sanctuary</span></button>
       </div>
     </div>
   </section>
@@ -148,10 +160,10 @@
         <p>Explore state-of-the-art consultation suites, advanced diagnostic centres, regenerative medicine facilities, executive health clinics, rehabilitation spaces, and personalised healthcare environments.</p>
       </div>
       <div class="gal-grid">
-        <button class="gal-tile gal-tall h-1" data-icon="&#x1F52C;" data-title="Advanced Diagnostics Centre" data-desc="Molecular, functional and imaging technologies delivering answers in hours, not weeks."><img class="tile-img" src="images/gallery/gallery-09.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F52C;</span><h3>Advanced Diagnostics Centre</h3><span class="tile-tag">Molecular, functional &amp; imaging</span></button>
-        <button class="gal-tile h-2" data-icon="&#x1F4BC;" data-title="Executive Health Clinic" data-desc="Comprehensive same-day assessments for leaders with no time to waste."><img class="tile-img" src="images/gallery/gallery-10.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F4BC;</span><h3>Executive Health Clinic</h3><span class="tile-tag">Same-day assessments</span></button>
-        <button class="gal-tile h-3" data-icon="&#x1F9EC;" data-title="Regenerative Medicine Facilities" data-desc="Purpose-built cellular therapy suites for evidence-informed regenerative medicine."><img class="tile-img" src="images/gallery/gallery-11.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F9EC;</span><h3>Regenerative Medicine Facilities</h3><span class="tile-tag">Cellular therapy suites</span></button>
-        <button class="gal-tile h-4" data-icon="&#x1F4AA;" data-title="Rehabilitation Spaces" data-desc="Physiotherapy and recovery environments designed for measurable progress."><img class="tile-img" src="images/gallery/gallery-12.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F4AA;</span><h3>Rehabilitation Spaces</h3><span class="tile-tag">Physiotherapy &amp; recovery</span></button>
+        <button class="gal-tile gal-tall h-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M6 18h8&quot;/&gt;&lt;path d=&quot;M3 22h18&quot;/&gt;&lt;path d=&quot;M14 22a7 7 0 1 0 0-14h-1&quot;/&gt;&lt;path d=&quot;M9 14h2&quot;/&gt;&lt;path d=&quot;M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z&quot;/&gt;&lt;path d=&quot;M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3&quot;/&gt;&lt;/svg&gt;" data-title="Advanced Diagnostics Centre" data-desc="Molecular, functional and imaging technologies delivering answers in hours, not weeks."><img class="tile-img" src="images/gallery/gallery-09.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><h3>Advanced Diagnostics Centre</h3><span class="tile-tag">Molecular, functional &amp; imaging</span></button>
+        <button class="gal-tile h-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;2&quot; y=&quot;7&quot; width=&quot;20&quot; height=&quot;14&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16&quot;/&gt;&lt;/svg&gt;" data-title="Executive Health Clinic" data-desc="Comprehensive same-day assessments for leaders with no time to waste."><img class="tile-img" src="images/gallery/gallery-10.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><h3>Executive Health Clinic</h3><span class="tile-tag">Same-day assessments</span></button>
+        <button class="gal-tile h-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M10 2v7.5L4.7 17a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.5V2&quot;/&gt;&lt;path d=&quot;M8.5 2h7&quot;/&gt;&lt;path d=&quot;M7 16h10&quot;/&gt;&lt;/svg&gt;" data-title="Regenerative Medicine Facilities" data-desc="Purpose-built cellular therapy suites for evidence-informed regenerative medicine."><img class="tile-img" src="images/gallery/gallery-11.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.5L4.7 17a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.5V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Regenerative Medicine Facilities</h3><span class="tile-tag">Cellular therapy suites</span></button>
+        <button class="gal-tile h-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m6.5 6.5 11 11&quot;/&gt;&lt;path d=&quot;m21 21-1-1&quot;/&gt;&lt;path d=&quot;m3 3 1 1&quot;/&gt;&lt;path d=&quot;m18 22 4-4&quot;/&gt;&lt;path d=&quot;m2 6 4-4&quot;/&gt;&lt;path d=&quot;m3 10 7-7&quot;/&gt;&lt;path d=&quot;m14 21 7-7&quot;/&gt;&lt;/svg&gt;" data-title="Rehabilitation Spaces" data-desc="Physiotherapy and recovery environments designed for measurable progress."><img class="tile-img" src="images/gallery/gallery-12.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></span><h3>Rehabilitation Spaces</h3><span class="tile-tag">Physiotherapy &amp; recovery</span></button>
       </div>
     </div>
   </section>
@@ -167,10 +179,10 @@
         <p>Discover dedicated spaces for yoga, meditation, hydrotherapy, nutrition, fitness, mindfulness, and holistic wellness programmes designed to restore balance and vitality.</p>
       </div>
       <div class="gal-grid">
-        <button class="gal-tile w-1" data-icon="&#x1F9D8;" data-title="Yoga &amp; Meditation Pavilion" data-desc="Guided practice, meditation and breathwork in a pavilion of light and calm."><img class="tile-img" src="images/gallery/gallery-13.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F9D8;</span><h3>Yoga &amp; Meditation Pavilion</h3><span class="tile-tag">Guided practice &amp; breathwork</span></button>
-        <button class="gal-tile gal-tall w-2" data-icon="&#x1F4A7;" data-title="Hydrotherapy Centre" data-desc="Water-based therapies supporting relaxation, rehabilitation and recovery."><img class="tile-img" src="images/gallery/gallery-14.jpg" alt="" loading="lazy"><span class="tile-cat">Spa</span><span class="tile-icon">&#x1F4A7;</span><h3>Hydrotherapy Centre</h3><span class="tile-tag">Water-based recovery</span></button>
-        <button class="gal-tile w-3" data-icon="&#x1F957;" data-title="Nutrition &amp; Farm-to-Table" data-desc="Chef-crafted meals built around your personal nutrition plan."><img class="tile-img" src="images/gallery/gallery-15.jpg" alt="" loading="lazy"><span class="tile-cat">Restaurant</span><span class="tile-icon">&#x1F957;</span><h3>Nutrition &amp; Farm-to-Table</h3><span class="tile-tag">Chef-crafted meals</span></button>
-        <button class="gal-tile w-4" data-icon="&#x1F9E0;" data-title="Fitness &amp; Mindfulness" data-desc="Movement science and mental clarity programmes that restore balance and vitality."><img class="tile-img" src="images/gallery/gallery-16.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F9E0;</span><h3>Fitness &amp; Mindfulness</h3><span class="tile-tag">Movement &amp; mental clarity</span></button>
+        <button class="gal-tile w-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot;/&gt;&lt;path d=&quot;M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5&quot;/&gt;&lt;path d=&quot;M12 7.5V9&quot;/&gt;&lt;path d=&quot;M7.5 12H9&quot;/&gt;&lt;path d=&quot;M16.5 12H15&quot;/&gt;&lt;path d=&quot;M12 16.5V15&quot;/&gt;&lt;/svg&gt;" data-title="Yoga &amp; Meditation Pavilion" data-desc="Guided practice, meditation and breathwork in a pavilion of light and calm."><img class="tile-img" src="images/gallery/gallery-13.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/></svg></span><h3>Yoga &amp; Meditation Pavilion</h3><span class="tile-tag">Guided practice &amp; breathwork</span></button>
+        <button class="gal-tile gal-tall w-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;/svg&gt;" data-title="Hydrotherapy Centre" data-desc="Water-based therapies supporting relaxation, rehabilitation and recovery."><img class="tile-img" src="images/gallery/gallery-14.jpg" alt="" loading="lazy"><span class="tile-cat">Spa</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Hydrotherapy Centre</h3><span class="tile-tag">Water-based recovery</span></button>
+        <button class="gal-tile w-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2&quot;/&gt;&lt;path d=&quot;M7 2v20&quot;/&gt;&lt;path d=&quot;M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7&quot;/&gt;&lt;/svg&gt;" data-title="Nutrition &amp; Farm-to-Table" data-desc="Chef-crafted meals built around your personal nutrition plan."><img class="tile-img" src="images/gallery/gallery-15.jpg" alt="" loading="lazy"><span class="tile-cat">Restaurant</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><h3>Nutrition &amp; Farm-to-Table</h3><span class="tile-tag">Chef-crafted meals</span></button>
+        <button class="gal-tile w-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M22 12h-4l-3 9L9 3l-3 9H2&quot;/&gt;&lt;/svg&gt;" data-title="Fitness &amp; Mindfulness" data-desc="Movement science and mental clarity programmes that restore balance and vitality."><img class="tile-img" src="images/gallery/gallery-16.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h3>Fitness &amp; Mindfulness</h3><span class="tile-tag">Movement &amp; mental clarity</span></button>
       </div>
     </div>
   </section>
@@ -186,10 +198,10 @@
         <p>Experience the future of healthcare through biotechnology research, AI-assisted diagnostics, medical education, innovation centres, and collaborative research facilities driving the advancement of regenerative medicine.</p>
       </div>
       <div class="gal-grid">
-        <button class="gal-tile i-1" data-icon="&#x1F9EA;" data-title="Biotechnology Research Labs" data-desc="Translational science on site, advancing regenerative medicine and diagnostics."><img class="tile-img" src="images/gallery/gallery-17.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F9EA;</span><h3>Biotechnology Research Labs</h3><span class="tile-tag">Translational science on site</span></button>
-        <button class="gal-tile i-2" data-icon="&#x1F916;" data-title="AI-Assisted Diagnostics" data-desc="Intelligence behind the analysis — faster, deeper interpretation of your results."><img class="tile-img" src="images/gallery/gallery-18.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F916;</span><h3>AI-Assisted Diagnostics</h3><span class="tile-tag">Intelligence behind analysis</span></button>
-        <button class="gal-tile gal-tall i-3" data-icon="&#x1F393;" data-title="Medical Education Centre" data-desc="Training the next generation of physicians and care teams from around the world."><img class="tile-img" src="images/gallery/gallery-19.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F393;</span><h3>Medical Education Centre</h3><span class="tile-tag">Training the next generation</span></button>
-        <button class="gal-tile i-4" data-icon="&#x1F4A1;" data-title="Innovation &amp; Collaboration Hub" data-desc="Partners and researchers shaping the future of healthcare, together."><img class="tile-img" src="images/gallery/gallery-20.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon">&#x1F4A1;</span><h3>Innovation &amp; Collaboration Hub</h3><span class="tile-tag">Partners shaping the future</span></button>
+        <button class="gal-tile i-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M2 15c6.667-6 13.333 0 20-6&quot;/&gt;&lt;path d=&quot;M9 22c1.798-1.998 2.518-3.995 2.807-5.993&quot;/&gt;&lt;path d=&quot;M15 2c-1.798 1.998-2.518 3.995-2.807 5.993&quot;/&gt;&lt;path d=&quot;M17 6l-2.5-2.5&quot;/&gt;&lt;path d=&quot;M14 8l-1-1&quot;/&gt;&lt;path d=&quot;M7 18l2.5 2.5&quot;/&gt;&lt;path d=&quot;M3.5 14.5l.5.5&quot;/&gt;&lt;path d=&quot;M20 9l.5.5&quot;/&gt;&lt;path d=&quot;M6.5 12.5l1 1&quot;/&gt;&lt;path d=&quot;M16.5 10.5l1 1&quot;/&gt;&lt;path d=&quot;M10 16l1.5 1.5&quot;/&gt;&lt;/svg&gt;" data-title="Biotechnology Research Labs" data-desc="Translational science on site, advancing regenerative medicine and diagnostics."><img class="tile-img" src="images/gallery/gallery-17.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 12.5l1 1"/><path d="M16.5 10.5l1 1"/><path d="M10 16l1.5 1.5"/></svg></span><h3>Biotechnology Research Labs</h3><span class="tile-tag">Translational science on site</span></button>
+        <button class="gal-tile i-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;16&quot; height=&quot;16&quot; rx=&quot;1&quot;/&gt;&lt;rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;6&quot; height=&quot;6&quot;/&gt;&lt;path d=&quot;M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3&quot;/&gt;&lt;/svg&gt;" data-title="AI-Assisted Diagnostics" data-desc="Intelligence behind the analysis — faster, deeper interpretation of your results."><img class="tile-img" src="images/gallery/gallery-18.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span><h3>AI-Assisted Diagnostics</h3><span class="tile-tag">Intelligence behind analysis</span></button>
+        <button class="gal-tile gal-tall i-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M22 10v6M2 10l10-5 10 5-10 5z&quot;/&gt;&lt;path d=&quot;M6 12v5c3 3 9 3 12 0v-5&quot;/&gt;&lt;/svg&gt;" data-title="Medical Education Centre" data-desc="Training the next generation of physicians and care teams from around the world."><img class="tile-img" src="images/gallery/gallery-19.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><h3>Medical Education Centre</h3><span class="tile-tag">Training the next generation</span></button>
+        <button class="gal-tile i-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M9 18h6&quot;/&gt;&lt;path d=&quot;M10 22h4&quot;/&gt;&lt;path d=&quot;M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z&quot;/&gt;&lt;/svg&gt;" data-title="Innovation &amp; Collaboration Hub" data-desc="Partners and researchers shaping the future of healthcare, together."><img class="tile-img" src="images/gallery/gallery-20.jpg" alt="" loading="lazy"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span><h3>Innovation &amp; Collaboration Hub</h3><span class="tile-tag">Partners shaping the future</span></button>
       </div>
     </div>
   </section>
@@ -219,11 +231,15 @@
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</span>
+          <a href="index.html" class="logo">
+            <span class="logo-mark">Quantum Health</span>
+            <span class="logo-name">Stemcell Resort</span>
+            <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+          </a>
           <p>India's destination for regenerative medicine, healthy ageing and luxury wellness — set on 22 acres along Kanakapura Main Road, Bengaluru.</p>
           <p class="footer-tagline">Rejuvenate &bull; Restore &bull; Regenerate</p>
           <div class="socials">
@@ -234,49 +250,29 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="index.html">Home</a>
+          <h4>Explore</h4>
           <a href="about.html">About the Park</a>
           <a href="services.html">Our Services</a>
           <a href="therapies.html">Therapies</a>
-          <a href="programs.html">Programmes</a>
+          <a href="resort-tour.html">The Campus</a>
+          <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Medical Services</h4>
+          <h4>Medicine</h4>
           <a href="stemcell.html">Regenerative Medicine</a>
           <a href="services.html#checkups">Precision Diagnostics</a>
           <a href="therapies.html#therapy-01">Healthy Ageing</a>
           <a href="services.html#rehab">Pain &amp; Rehab</a>
           <a href="programs.html">Executive Assessment</a>
-          <a href="services.html#alternative">Nutrition &amp; Lifestyle</a>
         </div>
         <div class="footer-col">
-          <h4>Research &amp; Education</h4>
-          <a href="about.html#commit">Biotechnology Research</a>
-          <a href="about.html#commit">Clinical Innovation</a>
-          <a href="about.html#commit">Medical Education</a>
-          <a href="about.html#commit">Healthcare Training</a>
-          <a href="contact.html">Conference Centre</a>
-        </div>
-        <div class="footer-col">
-          <h4>Wellness &amp; Hospitality</h4>
+          <h4>Wellness &amp; Campus</h4>
           <a href="wellness.html">Wellness Experience</a>
-          <a href="resort-tour.html">Resort Tour</a>
           <a href="programs.html">Wellness Retreats</a>
-          <a href="gallery.html">Wellness Spa</a>
-          <a href="gallery.html">Residential Suites</a>
+          <a href="resort-tour.html">Resort Tour</a>
           <a href="gallery.html">Campus Gallery</a>
-          <a href="contact.html">Plan Your Visit</a>
-        </div>
-        <div class="footer-col">
-          <h4>International Patients</h4>
-          <a href="contact.html#ip">Medical Visa Guidance</a>
-          <a href="contact.html#ip">Airport Transfers</a>
-          <a href="contact.html#ip">Accommodation &amp; Concierge</a>
-          <a href="contact.html#ip">Multilingual Care</a>
-          <a href="contact.html#ip">Insurance &amp; Billing</a>
-          <a href="wellness.html">Programme Planning</a>
+          <a href="contact.html#ip">International Patients</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
@@ -286,7 +282,7 @@
             Karnataka, India
           </address>
           <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91 98450 25857<br>info@quantumhealth.co.in</p>
-          <h4 style="margin-top:20px">Newsletter</h4>
+          <h4 style="margin-top:24px">Newsletter</h4>
           <form class="newsletter" id="newsletter-form">
             <input type="email" placeholder="Your email address" aria-label="Email address" required>
             <button type="submit">Subscribe</button>

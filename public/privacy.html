@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/redesign.css">
+  <link rel="stylesheet" href="css/qds.css">
 </head>
 <body>
 
@@ -33,43 +34,55 @@
   <div class="bg-gradient"></div>
 
   <!-- ================= HEADER ================= -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Quantum Health</span>
+        <span class="logo-name">Stemcell Resort</span>
+        <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="has-mega" id="mega-wrap">
-          <a href="services.html" class="nav-link-mega">Services <span class="mega-arrow">&#x25BE;</span></a>
+          <a href="services.html" class="nav-link-mega">Medicine <span class="mega-arrow">&#x25BE;</span></a>
           <div class="mega" id="mega-menu">
             <div>
               <h4>Medicine &amp; Diagnostics</h4>
-              <a href="services.html">Our Services <span class="mega-sub">— 8 clinical divisions</span></a>
-              <a href="therapies.html">Therapies <span class="mega-sub">— 18 treatment areas</span></a>
-              <a href="stemcell.html">Stem Cell Therapies <span class="mega-sub">— cellular medicine</span></a>
-              <a href="programs.html">Programmes <span class="mega-sub">— residential stays</span></a>
+              <a href="services.html">Our Services <span class="mega-sub">8 clinical divisions</span></a>
+              <a href="stemcell.html">Regenerative Medicine <span class="mega-sub">cellular &amp; biological therapies</span></a>
+              <a href="therapies.html">Therapies <span class="mega-sub">18 treatment areas</span></a>
+              <a href="programs.html">Programmes <span class="mega-sub">residential programmes</span></a>
             </div>
             <div>
               <h4>Wellness &amp; Hospitality</h4>
-              <a href="wellness.html">Wellness Experience <span class="mega-sub">— your 10-stage journey</span></a>
-              <a href="resort-tour.html">Resort Tour <span class="mega-sub">— virtual campus journey</span></a>
-              <a href="gallery.html">Campus Gallery <span class="mega-sub">— grounds &amp; suites</span></a>
-              <a href="contact.html">Contact &amp; Visit <span class="mega-sub">— tours &amp; transfers</span></a>
-            </div>
-            <div>
-              <h4>Why Quantum</h4>
-              <a href="index.html#why">Why Choose Quantum</a>
-              <a href="index.html#vision">Our Vision</a>
-              <a href="index.html#journey">Your Health Journey</a>
-              <a href="index.html#cta">Book a Consultation</a>
+              <a href="wellness.html">Wellness Experience <span class="mega-sub">an integrated health ecosystem</span></a>
+              <a href="resort-tour.html">The Campus <span class="mega-sub">virtual journey across 22 acres</span></a>
+              <a href="gallery.html">Campus Gallery <span class="mega-sub">grounds, suites &amp; spaces</span></a>
+              <a href="about.html">About the Park <span class="mega-sub">story, philosophy &amp; people</span></a>
             </div>
           </div>
         </li>
-        <li><a href="therapies.html">Therapies</a></li>
-        <li><a href="stemcell.html">Stem Cell</a></li>
+        <li class="has-mega" id="mega-wrap-2">
+          <a href="wellness.html" class="nav-link-mega">Wellness <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-2">
+            <div>
+              <h4>Wellness</h4>
+              <a href="wellness.html">Wellness Journey <span class="mega-sub">your 10-stage path</span></a>
+              <a href="programs.html">Wellness Retreats <span class="mega-sub">immersive programmes</span></a>
+              <a href="services.html#alternative">Nutrition &amp; Lifestyle <span class="mega-sub">food and habits as medicine</span></a>
+            </div>
+            <div>
+              <h4>The Campus</h4>
+              <a href="resort-tour.html">Resort Tour <span class="mega-sub">architecture &amp; landscape</span></a>
+              <a href="gallery.html">Gallery <span class="mega-sub">spaces &amp; grounds</span></a>
+              <a href="contact.html#ip">International Patients <span class="mega-sub">visa, transfers &amp; concierge</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="resort-tour.html">The Campus</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Begin Your Journey</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
@@ -177,11 +190,15 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</span>
+          <a href="index.html" class="logo">
+            <span class="logo-mark">Quantum Health</span>
+            <span class="logo-name">Stemcell Resort</span>
+            <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+          </a>
           <p>India's destination for regenerative medicine, healthy ageing and luxury wellness — set on 22 acres along Kanakapura Main Road, Bengaluru.</p>
           <p class="footer-tagline">Rejuvenate &bull; Restore &bull; Regenerate</p>
           <div class="socials">
@@ -192,49 +209,29 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="index.html">Home</a>
+          <h4>Explore</h4>
           <a href="about.html">About the Park</a>
           <a href="services.html">Our Services</a>
           <a href="therapies.html">Therapies</a>
-          <a href="programs.html">Programmes</a>
+          <a href="resort-tour.html">The Campus</a>
+          <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Medical Services</h4>
+          <h4>Medicine</h4>
           <a href="stemcell.html">Regenerative Medicine</a>
           <a href="services.html#checkups">Precision Diagnostics</a>
           <a href="therapies.html#therapy-01">Healthy Ageing</a>
           <a href="services.html#rehab">Pain &amp; Rehab</a>
           <a href="programs.html">Executive Assessment</a>
-          <a href="services.html#alternative">Nutrition &amp; Lifestyle</a>
         </div>
         <div class="footer-col">
-          <h4>Research &amp; Education</h4>
-          <a href="about.html#commit">Biotechnology Research</a>
-          <a href="about.html#commit">Clinical Innovation</a>
-          <a href="about.html#commit">Medical Education</a>
-          <a href="about.html#commit">Healthcare Training</a>
-          <a href="contact.html">Conference Centre</a>
-        </div>
-        <div class="footer-col">
-          <h4>Wellness &amp; Hospitality</h4>
+          <h4>Wellness &amp; Campus</h4>
           <a href="wellness.html">Wellness Experience</a>
-          <a href="resort-tour.html">Resort Tour</a>
           <a href="programs.html">Wellness Retreats</a>
-          <a href="gallery.html">Wellness Spa</a>
-          <a href="gallery.html">Residential Suites</a>
+          <a href="resort-tour.html">Resort Tour</a>
           <a href="gallery.html">Campus Gallery</a>
-          <a href="contact.html">Plan Your Visit</a>
-        </div>
-        <div class="footer-col">
-          <h4>International Patients</h4>
-          <a href="contact.html#ip">Medical Visa Guidance</a>
-          <a href="contact.html#ip">Airport Transfers</a>
-          <a href="contact.html#ip">Accommodation &amp; Concierge</a>
-          <a href="contact.html#ip">Multilingual Care</a>
-          <a href="contact.html#ip">Insurance &amp; Billing</a>
-          <a href="wellness.html">Programme Planning</a>
+          <a href="contact.html#ip">International Patients</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
@@ -244,7 +241,7 @@
             Karnataka, India
           </address>
           <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91 98450 25857<br>info@quantumhealth.co.in</p>
-          <h4 style="margin-top:20px">Newsletter</h4>
+          <h4 style="margin-top:24px">Newsletter</h4>
           <form class="newsletter" id="newsletter-form">
             <input type="email" placeholder="Your email address" aria-label="Email address" required>
             <button type="submit">Subscribe</button>

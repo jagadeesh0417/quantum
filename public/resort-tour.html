@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/redesign.css">
+  <link rel="stylesheet" href="css/qds.css">
   <link rel="stylesheet" href="css/resort.css">
 </head>
 <body>
@@ -34,44 +35,55 @@
   <div class="bg-gradient"></div>
 
   <!-- ================= HEADER ================= -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</a>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Quantum Health</span>
+        <span class="logo-name">Stemcell Resort</span>
+        <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="has-mega" id="mega-wrap">
-          <a href="services.html" class="nav-link-mega">Services <span class="mega-arrow">&#x25BE;</span></a>
+          <a href="services.html" class="nav-link-mega">Medicine <span class="mega-arrow">&#x25BE;</span></a>
           <div class="mega" id="mega-menu">
             <div>
               <h4>Medicine &amp; Diagnostics</h4>
-              <a href="services.html">Our Services <span class="mega-sub">— 8 clinical divisions</span></a>
-              <a href="therapies.html">Therapies <span class="mega-sub">— 18 treatment areas</span></a>
-              <a href="stemcell.html">Stem Cell Therapies <span class="mega-sub">— cellular medicine</span></a>
-              <a href="programs.html">Programmes <span class="mega-sub">— residential stays</span></a>
+              <a href="services.html">Our Services <span class="mega-sub">8 clinical divisions</span></a>
+              <a href="stemcell.html">Regenerative Medicine <span class="mega-sub">cellular &amp; biological therapies</span></a>
+              <a href="therapies.html">Therapies <span class="mega-sub">18 treatment areas</span></a>
+              <a href="programs.html">Programmes <span class="mega-sub">residential programmes</span></a>
             </div>
             <div>
               <h4>Wellness &amp; Hospitality</h4>
-              <a href="wellness.html">Wellness Experience <span class="mega-sub">— your 10-stage journey</span></a>
-              <a href="resort-tour.html">Resort Tour <span class="mega-sub">— virtual campus journey</span></a>
-              <a href="gallery.html">Campus Gallery <span class="mega-sub">— grounds &amp; suites</span></a>
-              <a href="about.html">About the Park <span class="mega-sub">— 22-acre campus</span></a>
-              <a href="contact.html">Contact &amp; Visit <span class="mega-sub">— tours &amp; transfers</span></a>
-            </div>
-            <div>
-              <h4>Why Quantum</h4>
-              <a href="index.html#why">Why Choose Quantum</a>
-              <a href="index.html#vision">Our Vision</a>
-              <a href="index.html#journey">Your Health Journey</a>
-              <a href="index.html#cta">Book a Consultation</a>
+              <a href="wellness.html">Wellness Experience <span class="mega-sub">an integrated health ecosystem</span></a>
+              <a href="resort-tour.html">The Campus <span class="mega-sub">virtual journey across 22 acres</span></a>
+              <a href="gallery.html">Campus Gallery <span class="mega-sub">grounds, suites &amp; spaces</span></a>
+              <a href="about.html">About the Park <span class="mega-sub">story, philosophy &amp; people</span></a>
             </div>
           </div>
         </li>
-        <li><a href="therapies.html">Therapies</a></li>
-        <li><a href="stemcell.html">Stem Cell</a></li>
+        <li class="has-mega" id="mega-wrap-2">
+          <a href="wellness.html" class="nav-link-mega">Wellness <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-2">
+            <div>
+              <h4>Wellness</h4>
+              <a href="wellness.html">Wellness Journey <span class="mega-sub">your 10-stage path</span></a>
+              <a href="programs.html">Wellness Retreats <span class="mega-sub">immersive programmes</span></a>
+              <a href="services.html#alternative">Nutrition &amp; Lifestyle <span class="mega-sub">food and habits as medicine</span></a>
+            </div>
+            <div>
+              <h4>The Campus</h4>
+              <a href="resort-tour.html">Resort Tour <span class="mega-sub">architecture &amp; landscape</span></a>
+              <a href="gallery.html">Gallery <span class="mega-sub">spaces &amp; grounds</span></a>
+              <a href="contact.html#ip">International Patients <span class="mega-sub">visa, transfers &amp; concierge</span></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="resort-tour.html" class="active">The Campus</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html">Begin Your Journey</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
@@ -109,22 +121,22 @@
         <p>Every space below was designed around a single question — what does a body in recovery need?</p>
       </div>
       <div class="tour-grid">
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-01.jpg" alt="" loading="lazy"><span class="tour-num">01</span><span class="tour-ico">&#x1F3E1;</span><h3>Luxury Wellness Cottages</h3><p>Elegant private accommodations designed to provide comfort, privacy, and restorative stays within a tranquil natural setting.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-02.jpg" alt="" loading="lazy"><span class="tour-num">02</span><span class="tour-ico">&#x1F3CA;&#xFE0F;</span><h3>Infinity Reflection Pool</h3><p>A serene wellness space offering peaceful surroundings for relaxation, mindfulness, and rejuvenation.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-03.jpg" alt="" loading="lazy"><span class="tour-num">03</span><span class="tour-ico">&#x1F4BC;</span><h3>Executive Health Centre</h3><p>A dedicated facility for comprehensive executive health assessments, preventive screenings, and personalised health optimisation programmes.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-04.jpg" alt="" loading="lazy"><span class="tour-num">04</span><span class="tour-ico">&#x1F9EC;</span><h3>Regenerative Medicine Institute</h3><p>A centre focused on evidence-informed regenerative medicine, longevity, and advanced therapeutic approaches.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-05.jpg" alt="" loading="lazy"><span class="tour-num">05</span><span class="tour-ico">&#x1F52C;</span><h3>Advanced Diagnostics Centre</h3><p>Equipped with modern diagnostic technologies to support accurate assessments, early detection, and personalised treatment planning.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-06.jpg" alt="" loading="lazy"><span class="tour-num">06</span><span class="tour-ico">&#x1F33F;</span><h3>Botanical Healing Gardens</h3><p>Beautifully landscaped gardens featuring therapeutic plants and calming outdoor spaces that promote relaxation and wellbeing.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-07.jpg" alt="" loading="lazy"><span class="tour-num">07</span><span class="tour-ico">&#x1F9D8;</span><h3>Yoga &amp; Meditation Pavilion</h3><p>A peaceful environment for guided yoga, meditation, breathing practices, and holistic wellness programmes.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-08.jpg" alt="" loading="lazy"><span class="tour-num">08</span><span class="tour-ico">&#x1F4A7;</span><h3>Hydrotherapy Centre</h3><p>Specialised water-based wellness facilities designed to support relaxation, rehabilitation, and recovery.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-09.jpg" alt="" loading="lazy"><span class="tour-num">09</span><span class="tour-ico">&#x1F486;</span><h3>Luxury Spa</h3><p>A premium wellness sanctuary offering restorative therapies, therapeutic massages, and personalised wellness experiences.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-10.jpg" alt="" loading="lazy"><span class="tour-num">10</span><span class="tour-ico">&#x1F957;</span><h3>Organic Wellness Restaurant</h3><p>A farm-to-table dining experience serving nutritious, chef-crafted meals that support healthy living and personalised wellness goals.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-11.jpg" alt="" loading="lazy"><span class="tour-num">11</span><span class="tour-ico">&#x1F331;</span><h3>Medicinal Plant Garden</h3><p>A curated collection of medicinal herbs and botanical species celebrating traditional knowledge alongside modern wellness practices.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-12.jpg" alt="" loading="lazy"><span class="tour-num">12</span><span class="tour-ico">&#x1F332;</span><h3>Forest Walking Trails</h3><p>Scenic nature trails designed to encourage mindful movement, outdoor exercise, and connection with nature.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-13.jpg" alt="" loading="lazy"><span class="tour-num">13</span><span class="tour-ico">&#x1F3D6;&#xFE0F;</span><h3>Private Lake</h3><p>A tranquil waterfront setting offering a peaceful retreat for reflection, relaxation, and wellness activities.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-14.jpg" alt="" loading="lazy"><span class="tour-num">14</span><span class="tour-ico">&#x1F3DB;&#xFE0F;</span><h3>Conference Centre</h3><p>A modern venue for medical conferences, corporate wellness events, academic programmes, and international collaborations.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-15.jpg" alt="" loading="lazy"><span class="tour-num">15</span><span class="tour-ico">&#x1F9EA;</span><h3>Biotechnology Research Facilities</h3><p>Dedicated research spaces supporting innovation in biotechnology, regenerative medicine, and translational healthcare.</p></div>
-        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-16.jpg" alt="" loading="lazy"><span class="tour-num">16</span><span class="tour-ico">&#x1F393;</span><h3>International Training Academy</h3><p>A centre for professional education, clinical training, workshops, and global knowledge exchange in healthcare and wellness.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-01.jpg" alt="" loading="lazy"><span class="tour-num">01</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><h3>Luxury Wellness Cottages</h3><p>Elegant private accommodations designed to provide comfort, privacy, and restorative stays within a tranquil natural setting.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-02.jpg" alt="" loading="lazy"><span class="tour-num">02</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 4c-1.5 1.5-2.5 2.5-3.5 2.5S13.5 5.5 12 5.5 9.5 6.5 8.5 6.5 6 5 4.5 4"/><path d="M4 9c1.5 1.5 2.5 2.5 3.5 2.5S9.5 10.5 10.5 10.5 12 11.5 13 11.5 15.5 10.5 17 9.5 19.5 8.5 21 8.5"/></svg></span><h3>Infinity Reflection Pool</h3><p>A serene wellness space offering peaceful surroundings for relaxation, mindfulness, and rejuvenation.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-03.jpg" alt="" loading="lazy"><span class="tour-num">03</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="6" width="20" height="14" rx="2"/></svg></span><h3>Executive Health Centre</h3><p>A dedicated facility for comprehensive executive health assessments, preventive screenings, and personalised health optimisation programmes.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-04.jpg" alt="" loading="lazy"><span class="tour-num">04</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Regenerative Medicine Institute</h3><p>A centre focused on evidence-informed regenerative medicine, longevity, and advanced therapeutic approaches.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-05.jpg" alt="" loading="lazy"><span class="tour-num">05</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><h3>Advanced Diagnostics Centre</h3><p>Equipped with modern diagnostic technologies to support accurate assessments, early detection, and personalised treatment planning.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-06.jpg" alt="" loading="lazy"><span class="tour-num">06</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-7L7 2"/><path d="m17 2-5 7"/><path d="M2 12c0-2.5 2-5 5-5"/><path d="M22 12c0-2.5-2-5-5-5"/></svg></span><h3>Botanical Healing Gardens</h3><p>Beautifully landscaped gardens featuring therapeutic plants and calming outdoor spaces that promote relaxation and wellbeing.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-07.jpg" alt="" loading="lazy"><span class="tour-num">07</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20c-4.5 0-8-3-8-7 3 0 6.5 1 8 7Z"/><path d="M12 20c4.5 0 8-3 8-7-3 0-6.5 1-8 7Z"/><path d="M12 20c0-5 0-9 0-11"/><path d="M8.5 14c-1.5-3-4-5-7.5-6 1.5 3 4.5 4.5 7.5 6Z"/><path d="M15.5 14c1.5-3 4-5 7.5-6-1.5 3-4.5 4.5-7.5 6Z"/></svg></span><h3>Yoga &amp; Meditation Pavilion</h3><p>A peaceful environment for guided yoga, meditation, breathing practices, and holistic wellness programmes.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-08.jpg" alt="" loading="lazy"><span class="tour-num">08</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Hydrotherapy Centre</h3><p>Specialised water-based wellness facilities designed to support relaxation, rehabilitation, and recovery.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-09.jpg" alt="" loading="lazy"><span class="tour-num">09</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14"/><path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 13 6 6"/><path d="M22 7V4"/></svg></span><h3>Luxury Spa</h3><p>A premium wellness sanctuary offering restorative therapies, therapeutic massages, and personalised wellness experiences.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-10.jpg" alt="" loading="lazy"><span class="tour-num">10</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><h3>Organic Wellness Restaurant</h3><p>A farm-to-table dining experience serving nutritious, chef-crafted meals that support healthy living and personalised wellness goals.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-11.jpg" alt="" loading="lazy"><span class="tour-num">11</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span><h3>Medicinal Plant Garden</h3><p>A curated collection of medicinal herbs and botanical species celebrating traditional knowledge alongside modern wellness practices.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-12.jpg" alt="" loading="lazy"><span class="tour-num">12</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22v-8"/><path d="M12 2 4 10h4l-3 6h14l-3-6h4z"/></svg></span><h3>Forest Walking Trails</h3><p>Scenic nature trails designed to encourage mindful movement, outdoor exercise, and connection with nature.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-13.jpg" alt="" loading="lazy"><span class="tour-num">13</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12a10.06 10.06 0 0 0-20 0Z"/><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/></svg></span><h3>Private Lake</h3><p>A tranquil waterfront setting offering a peaceful retreat for reflection, relaxation, and wellness activities.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-14.jpg" alt="" loading="lazy"><span class="tour-num">14</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg></span><h3>Conference Centre</h3><p>A modern venue for medical conferences, corporate wellness events, academic programmes, and international collaborations.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-15.jpg" alt="" loading="lazy"><span class="tour-num">15</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 2l.5.5"/><path d="M20 20l.5.5"/><path d="M16.5 22l.5-.5"/></svg></span><h3>Biotechnology Research Facilities</h3><p>Dedicated research spaces supporting innovation in biotechnology, regenerative medicine, and translational healthcare.</p></div>
+        <div class="tour-card"><img class="card-band tour-img" src="images/resort/rt-16.jpg" alt="" loading="lazy"><span class="tour-num">16</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10 2 7 19-7-4m0 0-5-2 7-4"/></svg></span><h3>International Training Academy</h3><p>A centre for professional education, clinical training, workshops, and global knowledge exchange in healthcare and wellness.</p></div>
       </div>
     </div>
   </section>
@@ -144,20 +156,20 @@
       </div>
       <div class="mp-map"><img src="images/resort/mp-map-01.jpg" alt="Aerial master plan of Quantum Health Stemcell Resort with fourteen numbered locations" loading="lazy"></div>
       <div class="tour-grid">
-          <div class="tour-card"><span class="tour-num">01</span><span class="tour-ico">&#x1F6CE;&#xFE0F;</span><h3>Reception</h3><p>Grand welcome lobby with concierge and lounge.</p></div>
-          <div class="tour-card"><span class="tour-num">02</span><span class="tour-ico">&#x1F3E1;</span><h3>Luxury Villas</h3><p>Premium villas with private gardens, modern amenities and serene views.</p></div>
-          <div class="tour-card"><span class="tour-num">03</span><span class="tour-ico">&#x1F52C;</span><h3>Stem Cell Centre</h3><p>Advanced regenerative medicine and stem cell therapy centre.</p></div>
-          <div class="tour-card"><span class="tour-num">04</span><span class="tour-ico">&#x1FA7A;</span><h3>Diagnostics</h3><p>Comprehensive health assessments and advanced diagnostic labs.</p></div>
-          <div class="tour-card"><span class="tour-num">05</span><span class="tour-ico">&#x1F486;</span><h3>Spa</h3><p>Rejuvenating spa therapies for relaxation and healing.</p></div>
-          <div class="tour-card"><span class="tour-num">06</span><span class="tour-ico">&#x1F9D8;</span><h3>Yoga Pavilion</h3><p>Dedicated space for yoga, pranayama and mindfulness.</p></div>
-          <div class="tour-card"><span class="tour-num">07</span><span class="tour-ico">&#x1F331;</span><h3>Organic Farm</h3><p>Chemical-free organic farming for fresh, healthy living.</p></div>
-          <div class="tour-card"><span class="tour-num">08</span><span class="tour-ico">&#x1F30A;</span><h3>Lake</h3><p>Peaceful natural lake with water features and walkways.</p></div>
-          <div class="tour-card"><span class="tour-num">09</span><span class="tour-ico">&#x1F333;</span><h3>Meditation Forest</h3><p>A tranquil forest for meditation, reflection and inner peace.</p></div>
-          <div class="tour-card"><span class="tour-num">10</span><span class="tour-ico">&#x1F37D;&#xFE0F;</span><h3>Restaurant</h3><p>Nutritious gourmet cuisine with farm-to-table experience.</p></div>
-          <div class="tour-card"><span class="tour-num">11</span><span class="tour-ico">&#x1F9EC;</span><h3>Research Block</h3><p>Innovation hub for clinical research and biotechnology.</p></div>
-          <div class="tour-card"><span class="tour-num">12</span><span class="tour-ico">&#x1F393;</span><h3>Training Centre</h3><p>Education and training for doctors and healthcare professionals.</p></div>
-          <div class="tour-card"><span class="tour-num">13</span><span class="tour-ico">&#x1F17F;&#xFE0F;</span><h3>Parking</h3><p>Ample space for guests and visitors.</p></div>
-          <div class="tour-card"><span class="tour-num">14</span><span class="tour-ico">&#x1F681;</span><h3>Helipad</h3><p>Private helipad for emergency and VIP access.</p></div>
+          <div class="tour-card"><span class="tour-num">01</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span><h3>Reception</h3><p>Grand welcome lobby with concierge and lounge.</p></div>
+          <div class="tour-card"><span class="tour-num">02</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><h3>Luxury Villas</h3><p>Premium villas with private gardens, modern amenities and serene views.</p></div>
+          <div class="tour-card"><span class="tour-num">03</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><h3>Stem Cell Centre</h3><p>Advanced regenerative medicine and stem cell therapy centre.</p></div>
+          <div class="tour-card"><span class="tour-num">04</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span><h3>Diagnostics</h3><p>Comprehensive health assessments and advanced diagnostic labs.</p></div>
+          <div class="tour-card"><span class="tour-num">05</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14"/><path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 13 6 6"/><path d="M22 7V4"/></svg></span><h3>Spa</h3><p>Rejuvenating spa therapies for relaxation and healing.</p></div>
+          <div class="tour-card"><span class="tour-num">06</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20c-4.5 0-8-3-8-7 3 0 6.5 1 8 7Z"/><path d="M12 20c4.5 0 8-3 8-7-3 0-6.5 1-8 7Z"/><path d="M12 20c0-5 0-9 0-11"/><path d="M8.5 14c-1.5-3-4-5-7.5-6 1.5 3 4.5 4.5 7.5 6Z"/><path d="M15.5 14c1.5-3 4-5 7.5-6-1.5 3-4.5 4.5-7.5 6Z"/></svg></span><h3>Yoga Pavilion</h3><p>Dedicated space for yoga, pranayama and mindfulness.</p></div>
+          <div class="tour-card"><span class="tour-num">07</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span><h3>Organic Farm</h3><p>Chemical-free organic farming for fresh, healthy living.</p></div>
+          <div class="tour-card"><span class="tour-num">08</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><h3>Lake</h3><p>Peaceful natural lake with water features and walkways.</p></div>
+          <div class="tour-card"><span class="tour-num">09</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span><h3>Meditation Forest</h3><p>A tranquil forest for meditation, reflection and inner peace.</p></div>
+          <div class="tour-card"><span class="tour-num">10</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><h3>Restaurant</h3><p>Nutritious gourmet cuisine with farm-to-table experience.</p></div>
+          <div class="tour-card"><span class="tour-num">11</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Research Block</h3><p>Innovation hub for clinical research and biotechnology.</p></div>
+          <div class="tour-card"><span class="tour-num">12</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m10 2 7 19-7-4m0 0-5-2 7-4"/></svg></span><h3>Training Centre</h3><p>Education and training for doctors and healthcare professionals.</p></div>
+          <div class="tour-card"><span class="tour-num">13</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Parking</h3><p>Ample space for guests and visitors.</p></div>
+          <div class="tour-card"><span class="tour-num">14</span><span class="tour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><h3>Helipad</h3><p>Private helipad for emergency and VIP access.</p></div>
       </div>
     </div>
   </section>
@@ -238,11 +250,15 @@
   </section>
 
 <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</span>
+          <a href="index.html" class="logo">
+            <span class="logo-mark">Quantum Health</span>
+            <span class="logo-name">Stemcell Resort</span>
+            <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+          </a>
           <p>India's destination for regenerative medicine, healthy ageing and luxury wellness — set on 22 acres along Kanakapura Main Road, Bengaluru.</p>
           <p class="footer-tagline">Rejuvenate &bull; Restore &bull; Regenerate</p>
           <div class="socials">
@@ -253,49 +269,29 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="index.html">Home</a>
+          <h4>Explore</h4>
           <a href="about.html">About the Park</a>
           <a href="services.html">Our Services</a>
           <a href="therapies.html">Therapies</a>
-          <a href="programs.html">Programmes</a>
+          <a href="resort-tour.html">The Campus</a>
+          <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4>Medical Services</h4>
+          <h4>Medicine</h4>
           <a href="stemcell.html">Regenerative Medicine</a>
           <a href="services.html#checkups">Precision Diagnostics</a>
           <a href="therapies.html#therapy-01">Healthy Ageing</a>
           <a href="services.html#rehab">Pain &amp; Rehab</a>
           <a href="programs.html">Executive Assessment</a>
-          <a href="services.html#alternative">Nutrition &amp; Lifestyle</a>
         </div>
         <div class="footer-col">
-          <h4>Research &amp; Education</h4>
-          <a href="about.html#commit">Biotechnology Research</a>
-          <a href="about.html#commit">Clinical Innovation</a>
-          <a href="about.html#commit">Medical Education</a>
-          <a href="about.html#commit">Healthcare Training</a>
-          <a href="contact.html">Conference Centre</a>
-        </div>
-        <div class="footer-col">
-          <h4>Wellness &amp; Hospitality</h4>
+          <h4>Wellness &amp; Campus</h4>
           <a href="wellness.html">Wellness Experience</a>
-          <a href="resort-tour.html">Resort Tour</a>
           <a href="programs.html">Wellness Retreats</a>
-          <a href="gallery.html">Wellness Spa</a>
-          <a href="gallery.html">Residential Suites</a>
+          <a href="resort-tour.html">Resort Tour</a>
           <a href="gallery.html">Campus Gallery</a>
-          <a href="contact.html">Plan Your Visit</a>
-        </div>
-        <div class="footer-col">
-          <h4>International Patients</h4>
-          <a href="contact.html#ip">Medical Visa Guidance</a>
-          <a href="contact.html#ip">Airport Transfers</a>
-          <a href="contact.html#ip">Accommodation &amp; Concierge</a>
-          <a href="contact.html#ip">Multilingual Care</a>
-          <a href="contact.html#ip">Insurance &amp; Billing</a>
-          <a href="wellness.html">Programme Planning</a>
+          <a href="contact.html#ip">International Patients</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
@@ -305,7 +301,7 @@
             Karnataka, India
           </address>
           <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91 98450 25857<br>info@quantumhealth.co.in</p>
-          <h4 style="margin-top:20px">Newsletter</h4>
+          <h4 style="margin-top:24px">Newsletter</h4>
           <form class="newsletter" id="newsletter-form">
             <input type="email" placeholder="Your email address" aria-label="Email address" required>
             <button type="submit">Subscribe</button>
