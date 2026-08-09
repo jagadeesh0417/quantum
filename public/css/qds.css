@@ -1067,7 +1067,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
    (every .*-grid / card surface site-wide)
    ========================================================================== */
 .sv-card, .tour-card, .eco-card, .why-card, .stat-card, .value-card, .mission-card,
-.th-card, .step-card, .cmp-card, .wl-card, .dn-card, .aw-card, .eco8-card, .why12-card,
+.th-card, .step-card, .cmp-card, .wl-card, .dn-card, .why12-card,
 .ct-card, .partner-card, .programme-card, .glossary-item, .rm-badge, .journey-step,
 .program-mini-card, .condition-item, .life-item, .pricing-card, .flip-card, .diff-item,
 .team-card, .benefit-item, .sv-group, .partner-list, .accordion-item, .ct-form-card,
@@ -1081,7 +1081,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 }
 .sv-card:hover, .tour-card:hover, .eco-card:hover, .why-card:hover, .stat-card:hover,
 .value-card:hover, .mission-card:hover, .th-card:hover, .step-card:hover, .cmp-card:hover,
-.wl-card:hover, .dn-card:hover, .aw-card:hover, .eco8-card:hover, .why12-card:hover,
+.wl-card:hover, .dn-card:hover, .why12-card:hover,
 .ct-card:hover, .partner-card:hover, .programme-card:hover, .journey-step:hover,
 .program-mini-card:hover, .condition-item:hover, .life-item:hover, .pricing-card:hover,
 .flip-card:hover, .diff-item:hover, .team-card:hover, .benefit-item:hover, .founder-card:hover {
@@ -1097,14 +1097,14 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
   box-shadow: 0 18px 40px rgba(16, 32, 26, 0.07);
 }
 .eco-grid, .why-grid, .sv-grid, .th-grid, .partner-grid, .cmp-grid, .ct-grid,
-.stats-row, .eco8, .why12, .team-grid, .gal-grid, .tour-grid, .aw-grid, .dn-grid,
+.stats-row, .why12, .team-grid, .gal-grid, .tour-grid, .dn-grid,
 .wl-grid, .programme-grid, .journey-grid {
   gap: 22px;
 }
 
 /* Icon chips: quiet, hairline */
 .sv-ico, .tour-ico, .stat-ico, .eco-icon, .value-ico, .mission-ico, .why12-ico,
-.th-ico, .partner-ico, .dn-ico, .aw-ico, .ct-ico, .wl-ico, .eco8-ico, .acc-high {
+.th-ico, .partner-ico, .dn-ico, .ct-ico, .wl-ico, .acc-high {
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -1112,7 +1112,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 }
 .sv-card h3, .th-card h3, .eco-card h3, .why-card h3, .dn-card h3, .ct-card h3,
 .programme-card h3, .journey-step h3, .benefit-item h3, .team-card h3, .diff-item h3,
-.step-card h3, .cmp-card h3, .wl-card h3, .aw-card h3, .eco8-card h3, .why12-card h3 {
+.step-card h3, .cmp-card h3, .wl-card h3, .why12-card h3 {
   font-family: 'Fraunces', 'Playfair Display', serif;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -1120,7 +1120,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 }
 .sv-card p, .th-card p, .eco-card p, .why-card p, .stat-card p, .ct-card p, .dn-card p,
 .programme-card p, .journey-step p, .benefit-item p, .team-card p, .diff-item p,
-.step-card p, .cmp-card p, .wl-card p, .aw-card p, .eco8-card p, .why12-card p {
+.step-card p, .cmp-card p, .wl-card p, .why12-card p {
   color: var(--muted);
   font-size: 14.5px;
   line-height: 1.85;
@@ -1403,7 +1403,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 
 .stats-row .stat-card h3 { font-family: 'Fraunces', serif; font-weight: 500; }
 
-.eco8-link, .ct-faq-more a, .ct-qr-text a, .eco-link, .sv-more, .th-more {
+.ct-faq-more a, .ct-qr-text a, .eco-link, .sv-more, .th-more {
   color: var(--emerald);
   font-size: 12px;
   font-weight: 600;
@@ -1411,7 +1411,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
   text-transform: uppercase;
   text-decoration: none;
 }
-.eco8-link:hover, .ct-faq-more a:hover, .ct-qr-text a:hover, .eco-link:hover, .sv-more:hover, .th-more:hover { color: var(--gold-strong); }
+.ct-faq-more a:hover, .ct-qr-text a:hover, .eco-link:hover, .sv-more:hover, .th-more:hover { color: var(--gold-strong); }
 
 /* Masonry tiles: refined gradients (new green family) */
 .m-1 .m-bg { background: linear-gradient(160deg, #3E7A5F, #17392B); }

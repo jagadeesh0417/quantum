@@ -264,8 +264,8 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 
 /* ---- Cards: unified luxury surface ---- */
 .sv-card, .tour-card, .eco-card, .why-card, .stat-card, .value-card, .mission-card,
-.th-card, .step-card, .cmp-card, .wl-card, .dn-card, .aw-card, .eco8-card, .why12-card,
-.ct-card, .partner-card, .programme-card, .eco8-card, .glossary-item, .rm-badge,
+.th-card, .step-card, .cmp-card, .wl-card, .dn-card, .why12-card,
+.ct-card, .partner-card, .programme-card, .glossary-item, .rm-badge,
 .journey-step, .program-mini-card, .condition-item, .life-item, .pricing-card, .flip-card,
 .diff-item, .team-card, .benefit-item, .sv-group, .partner-list, .accordion-item,
 .ct-form-card, .ct-desk-block, .ct-qr, .ct-map, .infra-table, .dn-philo, .mp-map,
@@ -278,7 +278,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 
 .sv-card:hover, .tour-card:hover, .eco-card:hover, .why-card:hover, .stat-card:hover,
 .value-card:hover, .mission-card:hover, .th-card:hover, .step-card:hover, .cmp-card:hover,
-.wl-card:hover, .dn-card:hover, .aw-card:hover, .eco8-card:hover, .why12-card:hover,
+.wl-card:hover, .dn-card:hover, .why12-card:hover,
 .ct-card:hover, .partner-card:hover, .programme-card:hover, .journey-step:hover,
 .program-mini-card:hover, .condition-item:hover, .life-item:hover, .pricing-card:hover,
 .flip-card:hover, .diff-item:hover, .team-card:hover, .benefit-item:hover, .founder-card:hover {
@@ -289,8 +289,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 
 /* Icon chips */
 .sv-ico, .tour-ico, .stat-ico, .eco-icon, .value-ico, .mission-ico, .why12-ico,
-.th-ico, .partner-ico, .dn-ico, .aw-ico, .ct-ico, .wl-ico, .acc-high,
-.eco8-ico {
+.th-ico, .partner-ico, .dn-ico, .ct-ico, .wl-ico, .acc-high {
   background: var(--emerald-soft);
   border-color: rgba(18,60,50,0.12);
 }
@@ -427,10 +426,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 .footer-bottom p { color: var(--on-dark-muted); }
 
 /* ---- Chips & badges ---- */
-.rm-chip, .dn-chip, .aw-chips span { background: var(--emerald-soft); color: var(--forest); border-color: rgba(18,60,50,0.14); }
+.rm-chip, .dn-chip { background: var(--emerald-soft); color: var(--forest); border-color: rgba(18,60,50,0.14); }
 .rm-badge { border-color: rgba(199,164,93,0.5); }
 .eh-badge { background: var(--gold-soft); color: #8A6C33; border-color: rgba(199,164,93,0.4); }
-.aw-year { color: #8A6C33; background: var(--gold-soft); }
 .founder-role { color: var(--emerald); }
 .founder-achieve li::before, .ct-list li::before, .wl-highlights li::before, .chk-list li::before, .check-list li::before { background: var(--emerald-soft); color: var(--emerald); }
 .founder-quote { border-left-color: var(--gold); background: var(--ivory); }
@@ -465,7 +463,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 .stats-row .stat-card h3 { font-family: 'Fraunces', 'Playfair Display', serif; font-weight: 500; }
 .stat-card p, .eco-card p, .why-card p, .sv-card p, .th-card p, .ct-card p, .dn-card p { color: var(--muted); }
 
-.eco8-link, .ct-faq-more a, .ct-qr-text a { color: var(--emerald); }
+.ct-faq-more a, .ct-qr-text a { color: var(--emerald); }
 
 .ct-strip span { background: linear-gradient(135deg, var(--emerald-soft), var(--gold-soft)); border-color: var(--line); color: var(--ink); }
 
@@ -505,12 +503,12 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 /* ---- Contrast: small gold labels must stay readable on light backgrounds ---- */
 :root { --gold-strong: #8A6C33; }
 
-.ct-faq-group, .tl-tag, .why-num, .tour-num, .dn-num, .dn-sep, .gal-num, .aw-year,
+.ct-faq-group, .tl-tag, .why-num, .tour-num, .dn-num, .dn-sep, .gal-num,
 .rm-closing, .eh-strap, .acc-strap, .why-strap, .founder-closing, .aw-values,
 .step-num, .wl-tag, .wl-rail h4, .mega-sub, .mp-strap-label {
   color: var(--gold-strong);
 }
-.aw-year, .eh-badge { color: var(--gold-strong); }
+.eh-badge { color: var(--gold-strong); }
 
 /* ---- Preloader: CSS-only auto-hide fallback (never blocks the page if JS fails) ---- */
 .preloader { animation: qhPreloaderAutoHide 0.6s ease 2.4s forwards; }
@@ -537,12 +535,6 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
   .no-js .footer-col > p:not(.newsletter-note),
   .no-js .footer-col .newsletter, .no-js .footer-col .map-frame,
   .no-js .footer-col .newsletter-note { display: block; }
-}
-
-/* ---- Ecosystem cards: hover-only content must be reachable on touch / no-hover ---- */
-.eco8-card:focus-within .eco8-more { grid-template-rows: 1fr; }
-@media (max-width: 767px), (hover: none) {
-  .eco8-more { grid-template-rows: 1fr; }
 }
 
 /* ---- Media fallbacks: no blank bands when images/video are unavailable ---- */
