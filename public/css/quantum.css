@@ -218,6 +218,33 @@
 .q-final .btn { padding: 16px 34px; }
 
 /* ==========================================================================
+   SERVICES V3 — jump bar, editorial groups, conditions explorer
+   ========================================================================== */
+.q-jump { padding: 0; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+.q-jump .container { display: flex; flex-wrap: wrap; gap: 4px 34px; padding-top: 20px; padding-bottom: 20px; }
+.q-jump a { font-family: var(--font-sans); font-size: 13.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 6px 0; white-space: nowrap; }
+.q-jump a:hover { color: var(--emerald); }
+@media (max-width: 767px) { .q-jump .container { gap: 2px 20px; } .q-jump a { font-size: 12px; letter-spacing: 0.1em; } }
+
+.q-explore { border-top: 1px solid var(--line); margin-top: 64px; }
+.q-explore details { border-bottom: 1px solid var(--line); }
+.q-explore summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 26px 4px; font-family: var(--font-serif); font-size: 20px; color: var(--ink); transition: color 0.3s ease, padding-inline 0.3s ease; }
+.q-explore summary::-webkit-details-marker { display: none; }
+.q-explore summary:hover { color: var(--emerald); }
+.q-explore summary .qe-n { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.12em; color: var(--gold-strong); white-space: nowrap; }
+.q-explore details[open] summary { color: var(--emerald); }
+.q-explore ul { list-style: none; margin: 0; padding: 2px 4px 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 34px; }
+.q-explore li { font-size: 15px; color: var(--muted); line-height: 1.7; padding-left: 18px; position: relative; }
+.q-explore li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-strong); }
+.q-explore-note { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 720px; margin-top: 28px; }
+@media (max-width: 767px) {
+  .q-explore ul { grid-template-columns: 1fr 1fr; gap: 8px 22px; }
+  .q-explore summary { font-size: 18px; padding: 22px 2px; }
+}
+@media (max-width: 414px) { .q-explore ul { grid-template-columns: 1fr; } }
+@media (max-width: 1023px) { .q-jump { overflow-x: auto; } .q-jump .container { flex-wrap: nowrap; } }
+
+/* ==========================================================================
    FOOTER V3 — premium dark, refined
    ========================================================================== */
 .footer { padding-top: 88px; }
