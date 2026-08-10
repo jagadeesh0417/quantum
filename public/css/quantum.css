@@ -245,6 +245,39 @@
 @media (max-width: 1023px) { .q-jump { overflow-x: auto; } .q-jump .container { flex-wrap: nowrap; } }
 
 /* ==========================================================================
+   LEADERSHIP V3 — individual founder profiles
+   ========================================================================== */
+.ld-page { padding: 120px 0 0; }
+.ld-profile { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+.ld-portrait { position: relative; aspect-ratio: 4 / 5; background: linear-gradient(150deg, var(--surface-2), var(--surface)); border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+.ld-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ld-portrait .ld-initial { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: clamp(96px, 10vw, 160px); color: var(--gold-soft); letter-spacing: 0.05em; }
+.ld-portrait .ld-cap { position: absolute; left: 0; bottom: 0; right: 0; padding: 28px 24px 16px; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-muted); background: linear-gradient(transparent, rgba(8, 34, 28, 0.85)); }
+.ld-body .ld-role { color: var(--gold-strong); }
+.ld-body h1 { font-size: clamp(40px, 4.6vw, 64px); line-height: 1.05; letter-spacing: -0.02em; margin: 10px 0 6px; }
+.ld-body .ld-title { font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+.ld-message { font-size: 17px; line-height: 1.95; color: var(--muted); max-width: 620px; }
+.ld-message p + p { margin-top: 20px; }
+.ld-message strong { color: var(--ink); font-weight: 600; }
+.ld-quote { margin-top: 40px; padding: 26px 0 26px 28px; border-left: 2px solid var(--gold-strong); font-family: var(--font-serif); font-size: clamp(20px, 2vw, 26px); line-height: 1.5; color: var(--ink); font-style: italic; max-width: 600px; }
+.ld-facts { margin-top: 40px; border-top: 1px solid var(--line); }
+.ld-fact { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 18px 4px; border-bottom: 1px solid var(--line); }
+.ld-fact .ld-key { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-strong); padding-top: 4px; }
+.ld-fact .ld-val { font-size: 15.5px; color: var(--muted); line-height: 1.75; }
+.ld-fact .ld-val strong { color: var(--ink); font-weight: 600; }
+.ld-chips { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+.ld-chips span { font-size: 13px; letter-spacing: 0.06em; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 9px 18px; background: var(--surface-2); }
+.ld-back { margin-top: 56px; }
+@media (max-width: 1023px) {
+  .ld-profile { grid-template-columns: 1fr; gap: 36px; }
+  .ld-portrait { max-width: 420px; }
+  .ld-page { padding-top: 88px; }
+}
+@media (max-width: 767px) { .ld-fact { grid-template-columns: 1fr; gap: 6px; } }
+@media (max-width: 414px) { .ld-body h1 { font-size: 36px; } }
+[dir="rtl"] .ld-quote { border-left: none; border-right: 2px solid var(--gold-strong); padding: 26px 28px 26px 0; }
+
+/* ==========================================================================
    FOOTER V3 — premium dark, refined
    ========================================================================== */
 .footer { padding-top: 88px; }
