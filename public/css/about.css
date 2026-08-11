@@ -1113,7 +1113,7 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   .ab-vision-head h2 { font-size: 50px; }
 }
 
- ================= ECOSYSTEM — responsive ================= */
+ /* ================= ECOSYSTEM — responsive ================= */
 @media (max-width: 1180px) {
   .eco-node { padding: 22px 20px; }
 }
@@ -1177,4 +1177,436 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   .leader-block:hover .lb-mono, .value-card:hover::before { transform: none; }
   .eco-node, .eco-node-go, .eco-line { transition: none; }
   .eco-lines { animation: none; opacity: 0.55; }
+}
+
+/* ==========================================================================
+   ABOUT V4 — full content-recovery rebuild (EN)
+   New components: portrait images in leadership, mission pillars,
+   co-founder pillar grid, chairperson record, director expertise,
+   global director expertise/responsibilities, resort experience,
+   commitment intro + regions, leader profile links row.
+   All additions are opt-in classes — de/ar parity untouched.
+   ========================================================================== */
+
+/* ---- Leadership: portrait images (fall back to monogram) ---- */
+.portrait-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+  display: block;
+}
+.lf-portrait { position: relative; }
+.lf-portrait .lf-mono { position: relative; z-index: 0; }
+.lf-portrait .portrait-img + .lf-caption { z-index: 2; }
+.lf-portrait .lf-num { z-index: 2; }
+
+.leaders-note {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--on-dark-muted);
+  max-width: 620px;
+}
+
+/* ---- Leadership: reversed composition (portrait right) ---- */
+.leaders-reverse {
+  grid-template-columns: 1fr minmax(300px, 42%);
+  margin-top: 56px;
+}
+.leaders-reverse .lf-copy { order: 1; }
+.leaders-reverse .lf-portrait { order: 2; }
+
+/* ---- Leadership: chairperson / director showcases ---- */
+.leaders-chair { margin-top: 56px; }
+.leaders-director { margin-top: 56px; }
+
+/* Co-founder pillar grid */
+.pl-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(247, 248, 245, 0.1);
+  border: 1px solid rgba(247, 248, 245, 0.1);
+  margin-top: 30px;
+}
+.pl-pillar {
+  background: rgba(16, 32, 26, 0.75);
+  padding: 26px 26px 26px;
+  min-width: 0;
+}
+.pl-p-num {
+  display: block;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.pl-pillar h4 {
+  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
+  font-size: 16.5px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+.pl-pillar p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--on-dark-muted);
+  margin: 0;
+}
+
+/* Chairperson achievement record */
+.chair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(247, 248, 245, 0.1);
+  border: 1px solid rgba(247, 248, 245, 0.1);
+  margin: 30px 0 10px;
+}
+.chair-item {
+  background: rgba(16, 32, 26, 0.75);
+  padding: 26px 26px;
+  min-width: 0;
+}
+.chair-num {
+  display: block;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.chair-item h4 {
+  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+.chair-item p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--on-dark-muted);
+  margin: 0;
+}
+
+/* Director role chips */
+.rol-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.rol-chip {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 164, 92, 0.4);
+  background: rgba(201, 164, 92, 0.08);
+  padding: 8px 14px;
+}
+[dir="rtl"] .rol-chip { letter-spacing: 0; }
+
+.act-fact {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  border-left: 2px solid var(--gold);
+  padding-left: 14px;
+  margin: 18px 0 4px;
+}
+[dir="rtl"] .act-fact { border-left: none; border-right: 2px solid var(--gold); padding-left: 0; padding-right: 14px; }
+.act-fact strong { color: #FFFFFF; font-weight: 600; }
+
+/* Director expertise list (single column) */
+.ax-list {
+  margin-top: 26px;
+  border-top: 1px solid rgba(247, 248, 245, 0.12);
+}
+.ax-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 15px 4px;
+  border-bottom: 1px solid rgba(247, 248, 245, 0.08);
+}
+.ax-num {
+  flex: none;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  width: 28px;
+}
+.ax-item p { margin: 0; font-size: 14px; color: var(--on-dark-muted); line-height: 1.7; }
+
+/* Global director expertise grid (two columns) */
+.ax-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(247, 248, 245, 0.1);
+  border: 1px solid rgba(247, 248, 245, 0.1);
+  margin: 8px 0 30px;
+}
+.ax-grid .ax-item {
+  background: rgba(16, 32, 26, 0.75);
+  padding: 20px 22px;
+  align-items: flex-start;
+  border-bottom: none;
+}
+.ax-grid .ax-item h4 {
+  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+.ax-grid .ax-item p { font-size: 12px; line-height: 1.7; }
+
+/* Key responsibilities */
+.kresp {
+  list-style: none;
+  margin: 4px 0 30px;
+  padding: 0;
+  counter-reset: kr;
+  border-top: 1px solid rgba(247, 248, 245, 0.12);
+}
+.kresp li {
+  counter-increment: kr;
+  position: relative;
+  padding: 13px 4px 13px 52px;
+  border-bottom: 1px solid rgba(247, 248, 245, 0.08);
+  font-size: 13.5px;
+  color: var(--on-dark-muted);
+  line-height: 1.75;
+}
+.kresp li::before {
+  content: counter(kr, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 13px;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+[dir="rtl"] .kresp li { padding-left: 4px; padding-right: 52px; }
+[dir="rtl"] .kresp li::before { left: auto; right: 0; }
+
+/* Leadership profile links row */
+.leader-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 72px;
+  justify-content: center;
+}
+.leader-links-row .btn { margin: 0; }
+
+/* ---- Mission: nine pillars ---- */
+.ab-mission .container { max-width: 1200px; }
+.mission-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(28, 75, 55, 0.16);
+  border: 1px solid rgba(28, 75, 55, 0.16);
+  margin-top: 56px;
+}
+.ms-pillar {
+  background: var(--paper);
+  padding: 40px 36px 38px;
+  min-width: 0;
+  counter-increment: none;
+  transition: background-color 0.3s ease;
+}
+.ms-pillar:hover { background: var(--ivory); }
+.ms-p-num {
+  display: block;
+  font-family: 'Fraunces', 'Playfair Display', 'Georgia', serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--gold-strong);
+  margin-bottom: 22px;
+}
+.ms-pillar h3 {
+  font-family: 'Playfair Display', 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.ms-pillar p { font-size: 13.5px; color: var(--muted); line-height: 1.8; margin: 0; max-width: 34ch; }
+
+/* ---- Resort experience ---- */
+.ab-resort { background: var(--paper); }
+.resort-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(44px, 6vw, 96px);
+  align-items: center;
+}
+.resort-visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  background: radial-gradient(120% 120% at 30% 20%, #245B43 0%, #1C4B37 55%, #14231B 100%);
+  overflow: hidden;
+  display: block;
+}
+.resort-visual::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    repeating-linear-gradient(45deg, rgba(220,203,159,0.05) 0 2px, transparent 2px 16px),
+    repeating-linear-gradient(-45deg, rgba(220,203,159,0.05) 0 2px, transparent 2px 16px);
+}
+.resort-visual::after {
+  content: '';
+  position: absolute; inset: 14px; z-index: 1; pointer-events: none;
+  border: 1px solid rgba(220, 203, 159, 0.3);
+}
+.resort-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  display: block;
+}
+.resort-tag {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  z-index: 3;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(201, 164, 92, 0.45);
+  background: rgba(16, 32, 26, 0.55);
+  padding: 8px 14px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+[dir="rtl"] .resort-tag { left: auto; right: 22px; }
+.resort-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  padding: 18px 20px;
+  background: rgba(20, 35, 27, 0.72);
+  border: 1px solid rgba(220, 203, 159, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--on-dark-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.resort-caption strong {
+  display: block;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+.resort-copy .section-title { margin-top: 16px; margin-bottom: 20px; }
+.resort-lead {
+  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--emerald);
+  margin-bottom: 16px;
+}
+.resort-copy p { font-size: 14.5px; color: var(--muted); line-height: 1.9; }
+.resort-copy p + p { margin-top: 12px; }
+.resort-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+.resort-chip {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  border: 1px solid rgba(28, 75, 55, 0.3);
+  background: var(--emerald-soft);
+  padding: 8px 14px;
+}
+[dir="rtl"] .resort-chip { letter-spacing: 0; }
+.resort-copy .btn { margin-top: 30px; display: inline-flex; }
+
+/* ---- Commitment: intro + regions ---- */
+.commit-intro {
+  margin-top: 14px;
+  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold-light);
+}
+.commit-text {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--on-dark-muted);
+  max-width: 640px;
+}
+.commit-strip .commit-chips { margin-top: 34px; }
+
+/* ---- Responsive: new components ---- */
+@media (max-width: 1024px) {
+  .leaders-reverse { grid-template-columns: 1fr minmax(260px, 38%); }
+  .mission-pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resort-split { grid-template-columns: 1fr; gap: 44px; }
+  .resort-visual { max-height: 420px; }
+}
+
+@media (max-width: 768px) {
+  .leaders-reverse { grid-template-columns: 1fr; }
+  .leaders-reverse .lf-portrait { order: -1; aspect-ratio: 4 / 3.1; max-height: 380px; }
+  .pl-pillars, .chair-grid, .ax-grid { grid-template-columns: 1fr; }
+  .mission-pillars { grid-template-columns: 1fr; }
+  .ms-pillar { padding: 32px 28px 30px; }
+  .leader-links-row { margin-top: 56px; gap: 10px; }
+  .leader-links-row .btn { padding: 12px 18px; font-size: 12px; }
+  .resort-split { gap: 36px; }
+  .resort-caption { font-size: 12px; padding: 14px 16px; }
+  .ab-global .globe-wrap { margin-top: 36px; }
+}
+
+@media (max-width: 480px) {
+  .pl-pillar, .chair-item, .ax-grid .ax-item { padding: 22px 20px; }
+  .kresp li { padding-left: 46px; }
+  [dir="rtl"] .kresp li { padding-right: 46px; padding-left: 4px; }
+  .leader-links-row { flex-direction: column; align-items: stretch; }
+  .leader-links-row .btn { text-align: center; justify-content: center; }
+  .resort-chip { font-size: 10px; padding: 7px 11px; }
+}
+
+@media (min-width: 1600px) {
+  .resort-copy .section-title { font-size: 40px; }
+}
+
+/* ---- Reduced motion: new components ---- */
+@media (prefers-reduced-motion: reduce) {
+  .ms-pillar, .chair-item { transition: none; }
 }
