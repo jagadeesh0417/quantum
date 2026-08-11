@@ -317,6 +317,57 @@
       window.addEventListener('scroll', onParallax, { passive: true });
     }
 
+    /* Hero carousel: slides, arrows, dots, autoplay (re-runnable) */
+    const hc = document.querySelector('[data-hero-carousel]');
+    if (hc && !hc.dataset.bound) {
+      hc.dataset.bound = '1';
+      const slides = Array.prototype.slice.call(hc.querySelectorAll('.hc-slide'));
+      const dotsWrap = hc.querySelector('.hc-dots');
+      const prevBtn = hc.querySelector('.hc-prev');
+      const nextBtn = hc.querySelector('.hc-next');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let current = slides.findIndex((s) => s.classList.contains('is-active'));
+      if (current < 0) current = 0;
+      let timer = null;
+      const dots = slides.map((s, i) => {
+        const d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'hc-dot';
+        d.setAttribute('role', 'tab');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => {
+          go(i);
+          restart();
+        });
+        dotsWrap.appendChild(d);
+        return d;
+      });
+      const update = () => {
+        slides.forEach((s, i) => {
+          s.classList.toggle('is-active', i === current);
+        });
+        dots.forEach((d, i) => {
+          d.classList.toggle('is-active', i === current);
+          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        });
+      };
+      const go = (i) => {
+        current = (i + slides.length) % slides.length;
+        update();
+      };
+      const restart = () => {
+        if (reduce || !slides.length) return;
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => go(current + 1), 5200);
+      };
+      if (prevBtn) prevBtn.addEventListener('click', () => { go(current - 1); restart(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { go(current + 1); restart(); });
+      hc.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+      hc.addEventListener('mouseleave', restart);
+      update();
+      restart();
+    }
+
     /* Footer year */
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();

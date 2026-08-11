@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
@@ -144,9 +144,25 @@
   <!-- ================= SECTION 02 — RESORT VIDEO / HERO ================= -->
   <section id="main" class="hero">
     <div class="hero-img">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="videos/hero-banner.mp4" type="video/mp4">
-      </video>
+      <div class="hc" data-hero-carousel>
+        <div class="hc-slides">
+          <div class="hc-slide is-active">
+            <img src="images/hero/slide-01.jpg" alt="The Quantum Health campus at dawn" loading="eager" onerror="this.remove()">
+          </div>
+          <div class="hc-slide">
+            <img src="images/hero/slide-02.jpg" alt="Regenerative medicine wing at Quantum Health" loading="eager" onerror="this.remove()">
+          </div>
+          <div class="hc-slide">
+            <img src="images/hero/slide-03.jpg" alt="Luxury wellness cottages and lake at Quantum Health" loading="eager" onerror="this.remove()">
+          </div>
+          <div class="hc-slide">
+            <img src="images/hero/slide-04.jpg" alt="Precision diagnostics laboratory at Quantum Health" loading="eager" onerror="this.remove()">
+          </div>
+        </div>
+        <button class="hc-arrow hc-prev" type="button" aria-label="Previous slide">&#x2039;</button>
+        <button class="hc-arrow hc-next" type="button" aria-label="Next slide">&#x203A;</button>
+        <div class="hc-dots" role="tablist" aria-label="Banner slides"></div>
+      </div>
     </div>
     <div class="container hero-grid" id="hero-grid">
       <div class="hero-content">
@@ -168,7 +184,24 @@
     <div class="scroll-hint">Scroll</div>
   </section>
 
-  <!-- ================= SECTION 02 — PHILOSOPHY ================= -->
+  <!-- ================= SECTION 02b — RESORT FILM ================= -->
+  <section id="resort-film" class="rf" data-reveal>
+    <div class="container">
+      <div class="q-head">
+        <span class="eyebrow">The Resort Film</span>
+        <h2>Twenty-two acres, <em>in motion</em>.</h2>
+        <p>Walk the grounds with us — a short film of the campus, the lake and the light along Kanakapura Main Road.</p>
+      </div>
+      <div class="rf-frame">
+        <video controls playsinline preload="metadata">
+          <source src="videos/hero-banner.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="rf-note">The campus is open for day visits and residential programmes — <a href="contact.html">plan your stay</a>.</p>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 03 — PHILOSOPHY ================= -->
   <section id="philosophy" class="q-philosophy" data-reveal>
     <div class="container">
       <div class="q-head">
@@ -375,7 +408,7 @@
         <p>A modern approach to natural healing — cellular and biological therapies aimed at repair, renewal and recovery, guided by one integrated diagnostic core.</p>
       </div>
       <div class="q-split">
-        <div class="q-statement">The body has its own capacity to heal. Our medicine <em>works with it</em>.</div>
+        <div class="q-statement">The body has its own capacity to heal. <em class="q-statement-accent">Our medicine works with it.</em></div>
         <div>
           <div class="q-list">
             <div class="q-row">

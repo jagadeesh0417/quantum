@@ -19,50 +19,45 @@
     const els = document.querySelectorAll('[data-reveal]');
     if (els.length) {
       /* Content must never stay hidden:
-         - prefers-reduced-motion  -> reveal immediately (no animation)
-         - IntersectionObserver unsupported -> reveal immediately
-         - element already in/above viewport -> reveal immediately
-         - otherwise hide and reveal on intersection. */
+         - hiding is CSS-driven and only armed when JS + IntersectionObserver
+           are available (@media reduced-motion / old engines default to visible)
+         - elements already in/above the viewport are revealed immediately
+         - watchdog reveals anything still hidden after 6s, even if the
+           observer never fires (iframes, preview panes, layout shifts).
+         If ANYTHING fails, the default state of the element is visible. */
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const supportsIO = 'IntersectionObserver' in window;
 
-      const reveal = (el) => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      };
+      if (reduced || !supportsIO) return;
 
-      if (reduced || !supportsIO) {
-        els.forEach(reveal);
-      } else {
-        const ro = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              reveal(entry.target);
-              ro.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+      document.documentElement.classList.add('js-reveal');
 
-        els.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            reveal(el);
-          } else {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-            ro.observe(el);
+      const reveal = (el) => el.classList.add('in-view');
+
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            reveal(entry.target);
+            ro.unobserve(entry.target);
           }
         });
+      }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
 
-        /* Watchdog: if anything is still hidden after 6s (observer lost,
-           layout shifts, edge cases), reveal it — never leave content invisible. */
-        setTimeout(() => {
-          els.forEach((el) => {
-            if (el.style.opacity !== '1') reveal(el);
-          });
-        }, 6000);
-      }
+      els.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          reveal(el);
+        } else {
+          ro.observe(el);
+        }
+      });
+
+      /* Watchdog: never leave content invisible. */
+      setTimeout(() => {
+        els.forEach((el) => {
+          if (!el.classList.contains('in-view')) reveal(el);
+        });
+      }, 6000);
     }
 
     /* Accordion toggling is handled once in main.js (also binds .accordion-header

@@ -387,7 +387,7 @@ html { overflow-x: hidden; }
   font-size: 10.5px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(243, 241, 234, 0.62);
+  color: rgba(243, 241, 234, 0.85);
   white-space: nowrap;
   font-weight: 500;
   position: relative;
@@ -491,8 +491,21 @@ html { overflow-x: hidden; }
 .q-band-dark .q-head h2 { color: var(--on-dark); }
 .q-band-dark .q-head h2 em { color: var(--gold-light); }
 .q-band-dark .q-head p { color: var(--on-dark-muted); }
-.q-band-dark .q-split .q-statement { color: var(--on-dark); }
-.q-band-dark .q-split .q-statement em { color: var(--gold-light); }
+.q-band-dark .q-split .q-statement {
+  color: var(--on-dark);
+  font-size: clamp(38px, 5vw, 74px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.q-band-dark .q-split .q-statement em,
+.q-band-dark .q-split .q-statement .q-statement-accent {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold-light);
+}
 .q-band-dark .q-split .q-body,
 .q-band-dark .q-split .q-row p { color: var(--on-dark-muted); }
 .q-band-dark .q-list { border-top-color: rgba(243, 241, 234, 0.16); }
@@ -500,9 +513,17 @@ html { overflow-x: hidden; }
 .q-band-dark .q-row h3,
 .q-band-dark .q-row h3 a { color: var(--on-dark); }
 .q-band-dark .q-row h3 a:hover { color: var(--gold-light); }
-.q-band-dark .q-row .q-num { color: rgba(230, 206, 143, 0.85); }
-.q-band-dark .q-row:hover { background: rgba(243, 241, 234, 0.05); }
-.q-band-dark .q-link { color: var(--gold-light); }
+.q-band-dark .q-row .q-num { color: var(--gold-light); }
+.q-band-dark .q-row:hover { background: rgba(243, 241, 234, 0.06); }
+.q-band-dark .q-row:hover .q-num { color: var(--gold); }
+.q-band-dark .q-link { color: var(--gold-light); font-weight: 600; }
+.q-band-dark .q-link:hover { color: #FFFFFF; }
+@media (max-width: 767px) {
+  .q-band-dark { padding: 96px 0; }
+  .q-band-dark .q-split .q-statement { font-size: clamp(30px, 8vw, 44px); line-height: 1.16; }
+  .q-band-dark .q-row { padding: 24px 2px; }
+  .q-band-dark .q-row .q-row-meta { padding-top: 2px; }
+}
 
 /* ---- Wellness stage strip + reversed split ---- */
 .q-destination .q-acres { overflow-wrap: anywhere; }
