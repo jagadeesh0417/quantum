@@ -234,7 +234,7 @@
 .ct-form-sec { background: var(--dark-section); border-top: 1px solid rgba(247, 248, 245, 0.08); }
 .ct-form-head { text-align: center; margin-bottom: 64px; }
 .ct-form-head .eyebrow { color: var(--gold-light); justify-content: center; }
-.ct-form-head .section-title { color: var(--on-dark); margin: 18px 0 16px; }
+.ct-form-head .section-title { color: var(--on-dark); margin: 0 0 16px; }
 .ct-form-head .lead-para { margin: 0 auto; color: var(--on-dark-muted); }
 
 .ct-form-grid {

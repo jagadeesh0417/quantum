@@ -81,27 +81,38 @@
       });
     }
 
-    /* Mega menu on mobile (tap to open) */
-    const megaWrap = document.getElementById('mega-wrap');
-    const megaMenu = document.getElementById('mega-menu');
-    if (megaWrap && megaMenu) {
-      const toggle = megaWrap.querySelector('.nav-link-mega');
-      if (toggle) {
-        toggle.addEventListener('click', (e) => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault();
-            megaWrap.classList.toggle('open');
-            megaMenu.classList.toggle('open');
+    /* Mega menus on mobile (tap to open) */
+    const megaItems = document.querySelectorAll('.nav-links li.has-mega');
+    megaItems.forEach((item) => {
+      const megaMenu = item.querySelector('.mega');
+      const toggle = item.querySelector('.nav-link-mega');
+      if (!megaMenu || !toggle) return;
+      toggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const willOpen = !item.classList.contains('open');
+          megaItems.forEach((other) => {
+            other.classList.remove('open');
+            const m = other.querySelector('.mega');
+            if (m) m.classList.remove('open');
+          });
+          if (willOpen) {
+            item.classList.add('open');
+            megaMenu.classList.add('open');
           }
-        });
-      }
-      document.querySelectorAll('.nav-links a').forEach((link) => {
-        link.addEventListener('click', () => {
-          megaWrap.classList.remove('open');
-          megaMenu.classList.remove('open');
+        }
+      });
+    });
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      if (link.classList.contains('nav-link-mega')) return;
+      link.addEventListener('click', () => {
+        megaItems.forEach((item) => {
+          item.classList.remove('open');
+          const megaMenu = item.querySelector('.mega');
+          if (megaMenu) megaMenu.classList.remove('open');
         });
       });
-    }
+    });
 
     /* Animated counters */
     const counters = document.querySelectorAll('[data-count]');
