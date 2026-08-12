@@ -1,0 +1,10 @@
+.git
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+public/WhatsApp*
+
+.vercel
+
+Temp/
