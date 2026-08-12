@@ -3,6 +3,20 @@
 (function () {
   'use strict';
 
+  /* Graceful image fallback: any <img> that fails to load is removed,
+     so no broken-image icons appear while missing slots are being filled. */
+  if (!document.documentElement.hasAttribute('data-qh-imgfb')) {
+    document.documentElement.setAttribute('data-qh-imgfb', '1');
+    document.addEventListener('error', function (e) {
+      var t = e.target;
+      if (t && t.tagName === 'IMG') t.remove();
+    }, true);
+  }
+  // Sweep images that already failed before this script ran.
+  Array.prototype.forEach.call(document.images, function (img) {
+    if (img.complete && img.naturalWidth === 0) img.remove();
+  });
+
   function initMain() {
     // Mobile nav toggle
     const toggle = document.querySelector('.mobile-toggle');
