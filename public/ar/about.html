@@ -87,7 +87,21 @@
 
   <!-- ================= HERO ================= -->
   <section class="ab-hero" id="main">
-    <div class="hero-img"><img src="../images/hero/hero-about.jpg" alt="" fetchpriority="high"></div>
+        <div class="hero-img">
+      <div class="hc" data-hero-carousel>
+        <div class="hc-slides">
+          <div class="hc-slide is-active">
+            <img src="../images/hero/slide-01.jpg" alt="The Quantum Health campus" loading="eager" onerror="this.remove()">
+          </div>
+          <div class="hc-slide">
+            <img src="../images/hero/slide-02.jpg" alt="Quantum Health campus" loading="eager" onerror="this.remove()">
+          </div>
+        </div>
+        <button class="hc-arrow hc-prev" type="button" aria-label="Previous slide">&#x2039;</button>
+        <button class="hc-arrow hc-next" type="button" aria-label="Next slide">&#x203A;</button>
+        <div class="hc-dots" role="tablist" aria-label="Banner slides"></div>
+      </div>
+    </div>
     <div class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">الرئيسية</a>
