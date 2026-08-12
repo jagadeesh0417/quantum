@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/redesign.css">
+  <link rel="stylesheet" href="../css/qds.css">
 </head>
 <body>
 
@@ -33,50 +34,82 @@
   <div class="bg-gradient"></div>
 
   <!-- ================= HEADER ================= -->
-  <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</a>
-      <ul class="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">عن المجمع</a></li>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">Quantum Health</span>
+        <span class="logo-name">Stemcell Resort</span>
+        <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+      </a>
+            <ul class="nav-links">
+        <li><a href="about.html">من نحن</a></li>
         <li class="has-mega" id="mega-wrap">
-          <a href="services.html" class="nav-link-mega">الخدمات <span class="mega-arrow">&#x25BE;</span></a>
+          <a href="services.html" class="nav-link-mega">الطب <span class="mega-arrow">&#x25BE;</span></a>
           <div class="mega" id="mega-menu">
             <div>
               <h4>الطب والتشخيص</h4>
-              <a href="services.html">خدماتنا <span class="mega-sub">— 8 أقسام سريرية</span></a>
-              <a href="therapies.html">العلاجات <span class="mega-sub">— 18 مجالًا علاجيًا</span></a>
-              <a href="stemcell.html">علاجات الخلايا الجذعية <span class="mega-sub">— الطب الخلوي</span></a>
-              <a href="programs.html">البرامج <span class="mega-sub">— الإقامات السكنية</span></a>
+              <a href="services.html">خدماتنا <span class="mega-sub">8 أقسام سريرية</span></a>
+              <a href="services.html#checkups">الفحوصات الطبية <span class="mega-sub">التقييمات ومكافحة الشيخوخة</span></a>
+              <a href="stemcell.html">الطب التجديدي <span class="mega-sub">العلاجات الخلوية والبيولوجية</span></a>
+              <a href="therapies.html">العلاجات <span class="mega-sub">18 مجالًا علاجيًا</span></a>
             </div>
             <div>
-              <h4>العافية والضيافة</h4>
-              <a href="wellness.html">تجربة العافية <span class="mega-sub">— رحلتك المكوّنة من 10 مراحل</span></a>
-              <a href="resort-tour.html">جولة المنتجع <span class="mega-sub">— جولة افتراضية في الحرم الجامعي</span></a>
-              <a href="gallery.html">معرض الحرم الجامعي <span class="mega-sub">— الحدائق والأجنحة</span></a>
-              <a href="contact.html">التواصل والزيارة <span class="mega-sub">— الجولات والانتقالات</span></a>
-            </div>
-            <div>
-              <h4>لماذا Quantum</h4>
-              <a href="index.html#why">لماذا تختار Quantum</a>
-              <a href="index.html#vision">رؤيتنا</a>
-              <a href="index.html#journey">رحلتك الصحية</a>
-              <a href="index.html#cta">احجز استشارة</a>
+              <h4>الطب حسب الحالة</h4>
+              <a href="services.html#organ-specific">العلاجات الموجهة حسب العضو <span class="mega-sub">رعاية تجديدية موجهة</span></a>
+              <a href="services.html#genetics">الاختبارات الجينية <span class="mega-sub">مخاطر الحمض النووي وعلم التغذية الجيني</span></a>
+              <a href="services.html#rehab">الألم وإعادة التأهيل <span class="mega-sub">العلاج الطبيعي</span></a>
+              <a href="programs.html">البرامج <span class="mega-sub">برامج إقامة</span></a>
             </div>
           </div>
         </li>
-        <li><a href="therapies.html">العلاجات</a></li>
-        <li><a href="stemcell.html">الخلايا الجذعية</a></li>
+        <li class="has-mega" id="mega-wrap-2">
+          <a href="wellness.html" class="nav-link-mega">العافية <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-2">
+            <div>
+              <h4>العافية</h4>
+              <a href="wellness.html">تجربة العافية <span class="mega-sub">نظام بيئي صحي متكامل</span></a>
+              <a href="wellness.html#journey">رحلة العافية <span class="mega-sub">مسارك من 10 مراحل</span></a>
+              <a href="programs.html">منتجعات العافية <span class="mega-sub">برامج غامرة</span></a>
+              <a href="wellness.html#doctors">ما يقترحه الأطباء <span class="mega-sub">توجيه بقيادة الأطباء</span></a>
+            </div>
+            <div>
+              <h4>الضيوف والرعاية</h4>
+              <a href="wellness.html#nutrition">التغذية وأسلوب الحياة <span class="mega-sub">الغذاء والعادات كدواء</span></a>
+              <a href="wellness.html#ageing">الشيخوخة الصحية <span class="mega-sub">طول العمر والحيوية</span></a>
+              <a href="wellness.html#international">المرضى الدوليون <span class="mega-sub">التأشيرة والانتقالات وخدمة الكونسيرج</span></a>
+              <a href="wellness.html#stories">قصص الضيوف <span class="mega-sub">بكلماتهم الخاصة</span></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-mega" id="mega-wrap-3">
+          <a href="resort-tour.html" class="nav-link-mega">الحرم الجامعي <span class="mega-arrow">&#x25BE;</span></a>
+          <div class="mega" id="mega-menu-3">
+            <div>
+              <h4>الحرم الجامعي</h4>
+              <a href="resort-tour.html">جولة الحرم الجامعي <span class="mega-sub">رحلة افتراضية عبر 22 فدانًا</span></a>
+              <a href="resort-tour.html#plan">المخطط الرئيسي <span class="mega-sub">14 وجهة في منتزه واحد</span></a>
+              <a href="resort-tour.html#infra">البنية التحتية <span class="mega-sub">الأرض والمرافق والتصميم</span></a>
+              <a href="about.html">عن المنتزه <span class="mega-sub">القصة والفلسفة والأشخاص</span></a>
+            </div>
+            <div>
+              <h4>الإقامة وتناول الطعام</h4>
+              <a href="resort-tour.html#stay">أماكن الإقامة <span class="mega-sub">فيلات وأكواخ العافية</span></a>
+              <a href="resort-tour.html#dine">المطاعم وخدمة الغرف <span class="mega-sub">مأكولات من المزرعة إلى المائدة</span></a>
+              <a href="gallery.html">معرض الحرم الجامعي <span class="mega-sub">الأرض والأجنحة والمساحات</span></a>
+              <a href="resort-tour.html#film">فيلم الحرم الجامعي <span class="mega-sub">22 فدانًا في حركة</span></a>
+            </div>
+          </div>
+        </li>
         <li><a href="programs.html">البرامج</a></li>
-        <li><a href="gallery.html">المعرض</a></li>
         <li><a href="contact.html">تواصل معنا</a></li>
+        <li class="nav-cta"><a href="contact.html">ابدأ رحلتك</a></li>
       </ul>
-      <button class="mobile-toggle" aria-label="تبديل التنقل"><span></span><span></span><span></span></button>
+      <button class="mobile-toggle" aria-label="تبديل القائمة"><span></span><span></span><span></span></button>
       <div class="lang-switcher">
-        <span class="lang-current">EN <span class="lang-arrow">&#x25BE;</span></span>
+        <span class="lang-current">AR <span class="lang-arrow">&#x25BE;</span></span>
         <div class="lang-dropdown">
-          <a href="../de/index.html">DE</a>
-          <a href="index.html">AR</a>
+          <a href="../privacy.html">EN</a>
+          <a href="../de/privacy.html">DE</a>
         </div>
       </div>
     </div>
@@ -85,7 +118,7 @@
   <!-- ================= HERO ================= -->
   <section class="pg-hero" id="main">
     <div class="container">
-      <nav class="pg-breadcrumb" aria-label="Breadcrumb">
+      <nav class="pg-breadcrumb" aria-label="مسار التنقل">
         <a href="index.html">الرئيسية</a>
         <span class="sep">&rsaquo;</span>
         <span class="current">سياسة الخصوصية</span>
@@ -177,13 +210,17 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="logo"><span class="logo-icon">&#x25C8;</span> Quantum Health Stemcell Resort</span>
-          <p>وجهة الهند للطب التجديدي والشيخوخة الصحية والعافية الفاخرة — على مساحة 22 فدانًا على طول طريق كاناكابورا، بنغالور.</p>
-          <p class="footer-tagline">&#1578;&#1580;&#1583;&#1610;&#1583; &bull; &#1575;&#1587;&#1578;&#1593;&#1575;&#1583;&#1577; &bull; &#1573;&#1593;&#1575;&#1583;&#1577; &#1578;&#1608;&#1604;&#1610;&#1583;</p>
+          <a href="index.html" class="logo">
+            <span class="logo-mark">Quantum Health</span>
+            <span class="logo-name">Stemcell Resort</span>
+            <span class="logo-sub">Kanakapura Main Road &middot; Bengaluru</span>
+          </a>
+          <p>وجهة الهند للطب التجديدي والشيخوخة الصحية والعافية الفاخرة – مقامة على 22 فدانًا على طريق كاناكابورا في بنغالور.</p>
+          <p class="footer-tagline">التجدد &bull; الاستعادة &bull; إعادة البناء</p>
           <div class="socials">
             <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.57 0 5.42 3 5.42 6.92V23h-4.52v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.85-2.74 3.77V23H8.34V8.31z"/></svg></a>
             <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
@@ -192,49 +229,37 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>روابط سريعة</h4>
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">عن المجمع</a>
+          <h4>استكشف</h4>
+          <a href="about.html">عن المنتزه</a>
           <a href="services.html">خدماتنا</a>
           <a href="therapies.html">العلاجات</a>
-          <a href="programs.html">البرامج</a>
+          <a href="resort-tour.html">الحرم الجامعي</a>
+          <a href="gallery.html">المعرض</a>
           <a href="contact.html">تواصل معنا</a>
         </div>
         <div class="footer-col">
-          <h4>الخدمات الطبية</h4>
+          <h4>الطب</h4>
+          <a href="services.html#checkups">الفحوصات الطبية</a>
           <a href="stemcell.html">الطب التجديدي</a>
-          <a href="services.html#checkups">التشخيص الدقيق</a>
-          <a href="therapies.html#therapy-01">الشيخوخة الصحية</a>
-          <a href="services.html#rehab">علاج الألم والتأهيل</a>
-          <a href="programs.html">التقييم التنفيذي</a>
-          <a href="services.html#alternative">التغذية ونمط الحياة</a>
+          <a href="services.html#genetics">الاختبارات الجينية</a>
+          <a href="services.html#rehab">الألم وإعادة التأهيل</a>
+          <a href="therapies.html">18 مجالًا علاجيًا</a>
         </div>
         <div class="footer-col">
-          <h4>البحث والتعليم</h4>
-          <a href="about.html#commit">أبحاث التكنولوجيا الحيوية</a>
-          <a href="about.html#commit">الابتكار السريري</a>
-          <a href="about.html#commit">التعليم الطبي</a>
-          <a href="about.html#commit">التدريب الصحي</a>
-          <a href="contact.html">مركز المؤتمرات</a>
-        </div>
-        <div class="footer-col">
-          <h4>العافية والضيافة</h4>
+          <h4>العافية</h4>
           <a href="wellness.html">تجربة العافية</a>
-          <a href="resort-tour.html">جولة المنتجع</a>
-          <a href="programs.html">خلوات العافية</a>
-          <a href="gallery.html">السبا الصحي</a>
-          <a href="gallery.html">الأجنحة السكنية</a>
-          <a href="gallery.html">معرض الحرم الجامعي</a>
-          <a href="contact.html">خطط لزيارتك</a>
+          <a href="programs.html">منتجعات العافية</a>
+          <a href="wellness.html#doctors">ما يقترحه الأطباء</a>
+          <a href="wellness.html#international">المرضى الدوليون</a>
+          <a href="contact.html">تواصل معنا</a>
         </div>
         <div class="footer-col">
-          <h4>المرضى الدوليون</h4>
-          <a href="contact.html">إرشادات التأشيرة الطبية</a>
-          <a href="contact.html">النقل من المطار</a>
-          <a href="contact.html">الإقامة وخدمات الكونسيرج</a>
-          <a href="contact.html">الرعاية متعددة اللغات</a>
-          <a href="contact.html">التأمين والفواتير</a>
-          <a href="wellness.html">التخطيط للبرامج</a>
+          <h4>الحرم الجامعي</h4>
+          <a href="resort-tour.html">جولة الحرم الجامعي</a>
+          <a href="resort-tour.html#stay">أماكن الإقامة</a>
+          <a href="resort-tour.html#dine">المطاعم وخدمة الغرف</a>
+          <a href="gallery.html">معرض الحرم الجامعي</a>
+          <a href="about.html">عن المنتزه</a>
         </div>
         <div class="footer-col">
           <h4>تواصل معنا</h4>
@@ -244,10 +269,10 @@
             كارناتاكا، الهند
           </address>
           <p style="font-size:13px;color:var(--on-dark-muted);margin-top:10px">+91 98450 25857<br>info@quantumhealth.co.in</p>
-          <h4 style="margin-top:20px">النشرة الإخبارية</h4>
+          <h4 style="margin-top:24px">النشرة الإخبارية</h4>
           <form class="newsletter" id="newsletter-form">
             <input type="email" placeholder="عنوان بريدك الإلكتروني" aria-label="عنوان البريد الإلكتروني" required>
-            <button type="submit">اشتراك</button>
+            <button type="submit">اشترك</button>
           </form>
           <p class="newsletter-note" id="newsletter-note"></p>
           <div class="map-frame">
