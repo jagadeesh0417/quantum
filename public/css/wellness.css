@@ -263,3 +263,106 @@
   .wl-dim-grid, .wl-dim-4, .wl-svc-grid, .wl-fac-grid { grid-template-columns: 1fr; }
   .wl-fac { padding: 22px 20px; }
 }
+
+/* ============================================================
+   Wellness Experience v5 — premium redesign
+   ============================================================ */
+
+/* ---- Journey: what shapes your journey (4-card band) ---- */
+.wl-journey-band { margin-top: 72px; }
+.wl-journey-band .q-head { margin-bottom: 40px; }
+.wl-journey-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.wl-journey-card { background: #FFFFFF; border: 1px solid var(--line); border-radius: 18px; padding: 30px 26px; transition: all 0.25s ease; }
+.wl-journey-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 20px 44px rgba(11, 59, 46, 0.1); }
+.wl-journey-card h3 { font-family: 'Fraunces', 'Playfair Display', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.wl-journey-card p { font-size: 13px; line-height: 1.75; color: var(--muted); }
+
+/* ---- Retreats: further programme inventory ---- */
+.wl-prog-inv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+.wl-prog-inv .wl-prog { padding: 28px 26px; }
+.wl-prog-inv .wl-prog h3 { font-size: 18px; }
+.wl-prog-inv .wl-prog > p { font-size: 13px; line-height: 1.75; }
+
+/* ---- Retreats: philosophy panel ---- */
+.wl-philosophy .q-phil-statement { text-align: center; }
+
+/* ---- Doctors: dark authority band ---- */
+.wl-doc-band { margin-top: 56px; padding: 72px 0; border-radius: 26px; }
+.wl-doc-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+.wl-doc-quote { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(243, 241, 234, 0.16); border-radius: 22px; padding: 44px 38px; }
+.wl-doc-quote .qf-quote { font-size: 21px; line-height: 1.65; color: var(--on-dark); }
+.wl-doc-quote .qf-quote em { color: var(--gold-light); }
+.wl-doc-quote .qf-attrib strong { color: var(--on-dark); }
+.wl-doc-quote .qf-attrib span { color: var(--on-dark-muted); }
+.wl-doc-quote .qf-avatar { background: linear-gradient(135deg, var(--emerald), var(--forest-deep)); border: 1px solid rgba(226, 210, 172, 0.4); color: var(--gold-light); }
+.wl-doc-quote .q-link { color: var(--gold-light); }
+.wl-doc-quote .q-link:hover { color: #FFFFFF; }
+.wl-doc-recs { display: grid; gap: 14px; }
+.wl-doc-rec { display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(243, 241, 234, 0.16); border-radius: 18px; padding: 28px 30px; }
+.wl-doc-rec .q-num { color: var(--gold-light); font-family: 'Fraunces', 'Playfair Display', Georgia, serif; font-size: 20px; }
+.wl-doc-rec h3 { color: var(--on-dark); font-size: 15.5px; font-weight: 600; margin-bottom: 6px; }
+.wl-doc-rec p { font-size: 13px; line-height: 1.75; color: var(--on-dark-muted); }
+
+/* ---- Nutrition: coaching grid ---- */
+.wl-nutri-grid { margin-top: 64px; }
+
+/* ---- Lifestyle: habit cards ---- */
+.wl-habit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+.wl-habit { background: #FFFFFF; padding: 34px 28px; transition: background 0.25s ease; }
+.wl-habit:hover { background: var(--gold-soft); }
+.wl-habit .wl-dim-num { font-family: 'Fraunces', 'Playfair Display', Georgia, serif; font-size: 18px; color: var(--gold); margin-bottom: 14px; }
+.wl-habit h3 { font-family: 'Fraunces', 'Playfair Display', Georgia, serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.wl-habit p { font-size: 13px; line-height: 1.75; color: var(--muted); }
+
+/* ---- Lifestyle: ageing inner band ---- */
+.wl-age-inner { border-radius: 26px; padding: 64px 0; margin-top: 72px; }
+
+/* ---- International: 5-step journey ---- */
+.wl-ip { position: relative; margin-top: 48px; }
+.wl-ip-line { position: absolute; top: 22px; left: 9%; right: 9%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); opacity: 0.35; }
+.wl-ip-steps { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+.wl-ip-step { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(243, 241, 234, 0.16); border-radius: 20px; padding: 34px 24px 30px; text-align: center; transition: all 0.25s ease; }
+.wl-ip-step:hover { transform: translateY(-4px); border-color: rgba(226, 210, 172, 0.5); background: rgba(255, 255, 255, 0.08); }
+.wl-ip-num { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--emerald), var(--forest-deep)); border: 1px solid rgba(226, 210, 172, 0.4); color: var(--gold-light); font-family: 'Space Mono', monospace; font-size: 14px; margin-bottom: 16px; }
+.wl-ip-step h3 { color: var(--on-dark); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.wl-ip-step p { font-size: 12.5px; line-height: 1.7; color: var(--on-dark-muted); }
+.wl-ip-desk { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(243, 241, 234, 0.16); border-radius: 18px; padding: 28px 32px; }
+.wl-ip-desk h3 { font-family: 'Fraunces', 'Playfair Display', Georgia, serif; font-size: 18px; color: var(--gold-light); margin-bottom: 6px; }
+.wl-ip-desk p { font-size: 13.5px; line-height: 1.7; color: var(--on-dark-muted); }
+.wl-ip-desk a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.wl-ip-desk a:hover { color: #FFFFFF; }
+.wl-ip-desk .btn { text-decoration: none; }
+
+/* ---- Executive wellness inset (dark panel) ---- */
+.wl-exec { margin-top: 72px; padding: 64px 56px; border-radius: 26px; background: var(--dark-section); }
+.wl-exec .dn-h3 { text-align: left; color: var(--on-dark); }
+.wl-exec .wl-inline-h { color: var(--on-dark); }
+.wl-exec .wl-steps { background: rgba(243, 241, 234, 0.14); border-color: rgba(243, 241, 234, 0.14); }
+.wl-exec .wl-step { background: rgba(255, 255, 255, 0.05); }
+.wl-exec .wl-step-n { color: var(--gold-light); }
+.wl-exec .wl-step h4 { color: var(--on-dark); }
+.wl-exec .wl-step p { color: var(--on-dark-muted); }
+.wl-exec .wl-svc { background: rgba(255, 255, 255, 0.05); border-color: rgba(243, 241, 234, 0.14); }
+.wl-exec .wl-svc h4 { color: var(--gold-light); }
+.wl-exec .chk-list li { color: var(--on-dark-muted); }
+.wl-exec .wl-two-col .dn-h3 { color: var(--gold-light); }
+
+/* ---- Responsive additions ---- */
+@media (max-width: 1024px) {
+  .wl-journey-cards { grid-template-columns: 1fr 1fr; }
+  .wl-prog-inv { grid-template-columns: 1fr 1fr; }
+  .wl-doc-grid { grid-template-columns: 1fr; gap: 32px; }
+  .wl-doc-quote { padding: 32px 28px; }
+  .wl-habit-grid { grid-template-columns: 1fr 1fr; }
+  .wl-ip-steps { grid-template-columns: repeat(3, 1fr); }
+  .wl-ip-line { display: none; }
+  .wl-exec, .wl-age-inner { padding: 48px 40px; }
+  .wl-philosophy { padding: 44px 32px !important; }
+}
+@media (max-width: 768px) {
+  .wl-journey-cards, .wl-prog-inv, .wl-habit-grid { grid-template-columns: 1fr; }
+  .wl-ip-steps { grid-template-columns: 1fr; }
+  .wl-exec, .wl-age-inner { padding: 40px 24px; border-radius: 18px; }
+  .wl-doc-band { padding: 48px 0; border-radius: 18px; }
+  .wl-philosophy { padding: 36px 20px !important; border-radius: 18px !important; }
+}
