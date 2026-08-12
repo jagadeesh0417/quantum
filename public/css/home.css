@@ -210,7 +210,7 @@ body { background: var(--ivory); color: var(--ink); }
 
 /* ---- Shared section styles ---- */
 .section { padding: 100px 0; }
-.section:nth-of-type(even) { background: var(--surface); }
+.section:not(.q-band-dark):nth-of-type(even) { background: var(--surface); }
 
 .eyebrow {
   color: var(--gold); font-size: 12px; font-weight: 600;
