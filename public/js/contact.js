@@ -131,7 +131,7 @@
       resetPanels();
       submitBtn.disabled = true;
       submitBtn.classList.add('is-loading');
-      if (submitLabel) submitLabel.textContent = 'Sending...';
+      if (submitLabel) submitLabel.textContent = 'Sending\u2026';
 
       var hpFilled = hp && String(hp.value || '').trim() !== '';
       var chain = hpFilled
@@ -149,7 +149,7 @@
         successPanel.hidden = true;
       }).finally(function () {
         submitBtn.classList.remove('is-loading');
-        if (submitLabel) submitLabel.textContent = 'Send Message';
+        if (submitLabel) submitLabel.textContent = 'Send Enquiry';
         window.setTimeout(function () { submitBtn.disabled = false; }, 2500);
       });
     }
