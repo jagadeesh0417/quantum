@@ -1719,3 +1719,332 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
 @media (prefers-reduced-motion: reduce) {
   .ms-pillar, .chair-item { transition: none; }
 }
+
+/* ==========================================================================
+   LEADERSHIP & VISION — editorial light redesign (.ab-leadership-v2)
+   Scoped + appended: de/ar pages still use the legacy dark band styles above.
+   ========================================================================== */
+.ab-leadership.ab-leadership-v2 {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+}
+.ab-leadership-v2::before { content: none; }
+.ab-leadership-v2 .container { max-width: 1220px; }
+
+/* ---- Intro ---- */
+.ab-leadership-v2 .ldr-intro { max-width: 780px; margin-bottom: 96px; }
+.ab-leadership-v2 .ldr-intro .eyebrow { margin-bottom: 24px; }
+.ab-leadership-v2 .ldr-intro-note {
+  margin-top: 24px;
+  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---- Profile: alternating split composition ---- */
+.ab-leadership-v2 .ldr-profile {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(48px, 6vw, 88px);
+  align-items: start;
+  padding-bottom: 96px;
+}
+.ab-leadership-v2 .ldr-profile + .ldr-profile {
+  padding-top: 96px;
+  border-top: 1px solid var(--line);
+}
+.ab-leadership-v2 .ldr-profile:last-child { padding-bottom: 0; }
+
+/* Subtle full-bleed background alternation on flipped profiles */
+.ab-leadership-v2 .ldr-profile:nth-of-type(even)::before {
+  content: '';
+  position: absolute;
+  inset: 0 -9999px;
+  background: var(--surface);
+  z-index: 0;
+}
+
+/* ---- Media: portrait + decorative offset frame ---- */
+.ab-leadership-v2 .ldr-media {
+  position: relative;
+  z-index: 1;
+}
+.ab-leadership-v2 .ldr-fig-bg {
+  position: absolute;
+  top: 16px; left: 16px; right: -16px; bottom: -16px;
+  border: 1px solid rgba(201, 164, 92, 0.55);
+  background: var(--gold-soft);
+  z-index: 0;
+}
+.ab-leadership-v2 .ldr-profile--flip .ldr-media { order: 2; }
+.ab-leadership-v2 .ldr-profile--flip .ldr-fig-bg { left: -16px; right: 16px; }
+[dir="rtl"] .ab-leadership-v2 .ldr-profile:not(.ldr-profile--flip) .ldr-fig-bg { left: -16px; right: 16px; }
+[dir="rtl"] .ab-leadership-v2 .ldr-profile--flip .ldr-fig-bg { left: 16px; right: -16px; }
+
+.ab-leadership-v2 .ldr-figure {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  box-shadow: 0 30px 60px -34px rgba(20, 35, 27, 0.4);
+}
+.ab-leadership-v2 .ldr-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+.ab-leadership-v2 .ldr-cap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+}
+.ab-leadership-v2 .ldr-cap::before {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: var(--gold);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-cap { letter-spacing: 0; }
+
+/* ---- Body ---- */
+.ab-leadership-v2 .ldr-body {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+.ab-leadership-v2 .ldr-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+}
+.ab-leadership-v2 .ldr-eyebrow::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-eyebrow { letter-spacing: 0.06em; }
+
+.ab-leadership-v2 .ldr-name {
+  margin: 18px 0 10px;
+  font-size: clamp(40px, 4.2vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ab-leadership-v2 .ldr-role {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-role { letter-spacing: 0.04em; }
+.ab-leadership-v2 .ldr-desc {
+  margin-top: 26px;
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ---- Message block ---- */
+.ab-leadership-v2 .ldr-message {
+  position: relative;
+  margin-top: 34px;
+  padding: 34px 38px 30px;
+  border-left: 2px solid var(--gold);
+  background: var(--surface-2);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-message {
+  border-left: none;
+  border-right: 2px solid var(--gold);
+}
+.ab-leadership-v2 .ldr-msg-mark {
+  position: absolute;
+  top: -18px; left: 22px;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.8;
+  pointer-events: none;
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-msg-mark { left: auto; right: 22px; }
+.ab-leadership-v2 .ldr-msg-head {
+  margin: 0;
+  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--emerald);
+}
+.ab-leadership-v2 .ldr-msg-body p {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* ---- Areas of focus: numbered editorial rows ---- */
+.ab-leadership-v2 .ldr-focus { margin-top: 38px; }
+.ab-leadership-v2 .ldr-focus-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-focus-title { letter-spacing: 0.05em; }
+.ab-leadership-v2 .ldr-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+  transition: transform 0.35s ease;
+}
+.ab-leadership-v2 .ldr-row:hover { transform: translateX(6px); }
+[dir="rtl"] .ab-leadership-v2 .ldr-row:hover { transform: translateX(-6px); }
+.ab-leadership-v2 .ldr-num {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--gold-strong);
+  padding-top: 3px;
+}
+.ab-leadership-v2 .ldr-row-main h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin: 0 0 6px;
+  transition: color 0.3s ease;
+}
+.ab-leadership-v2 .ldr-row:hover h5 { color: var(--emerald); }
+.ab-leadership-v2 .ldr-row-main p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* ---- Quote ---- */
+.ab-leadership-v2 .ldr-quote {
+  margin: 34px 0 0;
+  padding: 2px 0 2px 26px;
+  border-left: 2px solid var(--gold);
+  font-family: 'Playfair Display', 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-quote {
+  padding: 2px 26px 2px 0;
+  border-left: none;
+  border-right: 2px solid var(--gold);
+}
+
+/* ---- Chips (Sunitha) ---- */
+.ab-leadership-v2 .ldr-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.ab-leadership-v2 .ldr-chips span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: var(--emerald-soft);
+  border: 1px solid rgba(28, 75, 55, 0.3);
+  padding: 8px 14px;
+}
+[dir="rtl"] .ab-leadership-v2 .ldr-chips span { letter-spacing: 0.02em; }
+
+/* ---- Key responsibilities list (Alisha) ---- */
+.ab-leadership-v2 .ldr-req {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 28px;
+}
+.ab-leadership-v2 .ldr-req li {
+  position: relative;
+  padding-inline-start: 22px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.ab-leadership-v2 .ldr-req li::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  inset-inline-start: 0;
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: var(--gold);
+}
+
+/* ---- Closing on light ---- */
+.ab-leadership-v2 .founder-closing {
+  color: var(--gold-strong);
+  border-top: 1px solid var(--line);
+  padding-top: 64px;
+  margin-top: 96px;
+}
+
+/* ---- Responsive: leadership v2 ---- */
+@media (max-width: 1023px) {
+  .ab-leadership-v2 .ldr-profile {
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+    gap: 44px;
+  }
+  .ab-leadership-v2 .ldr-message { padding: 28px 28px 24px; }
+}
+
+@media (max-width: 767px) {
+  .ab-leadership-v2 .ldr-intro { margin-bottom: 60px; }
+  .ab-leadership-v2 .ldr-intro-note { font-size: 18px; }
+  .ab-leadership-v2 .ldr-profile {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-bottom: 72px;
+  }
+  .ab-leadership-v2 .ldr-profile + .ldr-profile { padding-top: 72px; }
+  .ab-leadership-v2 .ldr-profile--flip .ldr-media { order: 0; }
+  .ab-leadership-v2 .ldr-name { font-size: clamp(36px, 10vw, 44px); }
+  .ab-leadership-v2 .ldr-fig-bg { top: 10px; left: 10px; right: -10px; bottom: -10px; }
+  .ab-leadership-v2 .ldr-profile--flip .ldr-fig-bg { left: -10px; right: 10px; }
+  [dir="rtl"] .ab-leadership-v2 .ldr-profile:not(.ldr-profile--flip) .ldr-fig-bg { left: -10px; right: 10px; }
+  [dir="rtl"] .ab-leadership-v2 .ldr-profile--flip .ldr-fig-bg { left: 10px; right: -10px; }
+  .ab-leadership-v2 .ldr-row { grid-template-columns: 34px minmax(0, 1fr); }
+  .ab-leadership-v2 .ldr-req { grid-template-columns: 1fr; gap: 10px; }
+  .ab-leadership-v2 .ldr-message { padding: 26px 22px 22px; }
+  .ab-leadership-v2 .ldr-msg-mark { font-size: 36px; top: -14px; }
+  .ab-leadership-v2 .founder-closing { margin-top: 72px; padding-top: 48px; font-size: 18px; }
+}
