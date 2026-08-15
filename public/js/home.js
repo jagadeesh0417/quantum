@@ -382,6 +382,42 @@
     /* Footer year */
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* Video hero: one continuous video banner on every page */
+    heroVideo();
+  }
+
+  /* ---- Sitewide hero banner video (natural footage, no colour grading) ---- */
+  function heroVideo() {
+    const inSub = location.pathname.split('/').filter(Boolean).length > 1;
+    const vSrc = (inSub ? '../' : '') + 'videos/hero-banner.mp4';
+    const inject = (container) => {
+      if (!container || container.querySelector('.hero-video')) return;
+      const img = container.querySelector('img');
+      if (img) img.remove();
+      const v = document.createElement('video');
+      v.className = 'hero-video';
+      v.autoplay = true;
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.preload = 'auto';
+      v.setAttribute('aria-hidden', 'true');
+      v.disablePictureInPicture = true;
+      v.setAttribute('controlslist', 'nodownload noplaybackrate');
+      const s = document.createElement('source');
+      s.src = vSrc;
+      s.type = 'video/mp4';
+      v.appendChild(s);
+      container.appendChild(v);
+    };
+    document.querySelectorAll('#main.pg-hero, #main.wl-hero, #main.gal-hero, #main.tour-hero, #main.ct-hero').forEach((sec) => {
+      if (sec.querySelector(':scope > .hero-img')) return;
+      const bg = document.createElement('div');
+      bg.className = 'hero-img';
+      sec.insertBefore(bg, sec.firstChild);
+    });
+    document.querySelectorAll('#main .hero-img, #main .ab-hero-visual').forEach(inject);
   }
 
   initOnce();
