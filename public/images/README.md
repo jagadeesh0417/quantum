@@ -14,7 +14,7 @@ This site is a **static asset drop-in**: every page references images by exact f
 - `services/` — division card bands (svc-01.jpg … svc-08.jpg)
 - `programs/` — programme card bands (prg-01.jpg … prg-06.jpg)
 - `wellness/` — wellness journey card bands (wl-01.jpg … wl-10.jpg)
-- `resort/` — resort tour card bands (rt-01.jpg … rt-16.jpg)
+- `resort/` — resort tour card bands (rt-01.jpg … rt-14.jpg)
 - `about/` — about page band (ab-vision-01.jpg)
 - `index/` — homepage panels (campus-01.jpg, vision-01.jpg)
 - `therapy/` — optional topic images (th-01.jpg … th-18.jpg)
