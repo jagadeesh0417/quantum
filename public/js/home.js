@@ -411,13 +411,13 @@
       v.appendChild(s);
       container.appendChild(v);
     };
-    document.querySelectorAll('#main.pg-hero, #main.wl-hero, #main.gal-hero, #main.tour-hero, #main.ct-hero').forEach((sec) => {
+    document.querySelectorAll('#main').forEach((sec) => {
       if (sec.querySelector(':scope > .hero-img')) return;
       const bg = document.createElement('div');
       bg.className = 'hero-img';
       sec.insertBefore(bg, sec.firstChild);
     });
-    document.querySelectorAll('#main .hero-img, #main .ab-hero-visual').forEach(inject);
+    document.querySelectorAll('#main > .hero-img').forEach(inject);
   }
 
   initOnce();
