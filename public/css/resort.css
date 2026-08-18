@@ -343,3 +343,244 @@
   .mp-map:hover img { transform: none; }
   .dn-card:hover, .tour-card:hover { transform: none; }
 }
+
+/* ==========================================================================
+   MASTER PLAN JOURNEY — A New Era of Longevity
+   Premium cinematic experience across the 22-acre campus
+   ========================================================================== */
+
+/* ---- Shared editorial primitives ---- */
+.mpj-h2 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.015em; line-height: 1.12; font-size: clamp(30px, 3.4vw, 46px); color: var(--ink); margin: 16px 0 18px; }
+.mpj-h2 em { font-style: italic; color: var(--gold); }
+.mpj-lead { font-size: 18px; line-height: 1.75; color: var(--ink); font-weight: 500; }
+.mpj-copy p { font-size: 15.5px; line-height: 1.85; color: var(--muted); margin-top: 14px; }
+.mpj-copy .eyebrow, .mpj-plan-head .eyebrow { color: var(--gold-strong); }
+.mpj-split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(44px, 6vw, 88px); align-items: center; }
+.mpj-split-flip .mpj-media { order: 2; }
+.mpj-media { position: relative; min-width: 0; }
+.mpj-media img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.mpj-media-3-2 img { aspect-ratio: 3 / 2; }
+.mpj-img-fig { margin: 0; position: relative; overflow: hidden; border-radius: 6px; }
+.mpj-img-fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mpj-img-fig figcaption { position: absolute; left: 18px; bottom: 14px; font-family: 'Space Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45); }
+.mpj-img-wide img { aspect-ratio: 16 / 10; }
+.mpj-img-tall img { aspect-ratio: 4 / 5; }
+.mpj-tagline { margin-top: 26px; font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(19px, 2vw, 24px); color: var(--gold-strong); line-height: 1.5; }
+.mpj-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.mpj-chips span { border: 1px solid rgba(201, 164, 92, 0.5); color: var(--gold-strong); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 13px; }
+.mpj-wordrail { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.mpj-wordrail span { background: rgba(11, 59, 46, 0.05); border: 1px solid rgba(11, 59, 46, 0.12); color: var(--ink); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 14px; }
+
+/* ---- 1. Hero ---- */
+.mpj-hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; background: #101713; }
+.mpj-hero-media, .mpj-cinema-media, .mpj-cta-media { position: absolute; inset: 0; }
+.mpj-hero-media img, .mpj-cinema-media img, .mpj-cta-media img { width: 100%; height: 100%; object-fit: cover; }
+.mpj-hero-scrim, .mpj-cinema-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 18, 16, 0.55) 0%, rgba(12, 18, 16, 0.35) 40%, rgba(10, 15, 13, 0.72) 100%); }
+.mpj-hero-inner { position: relative; z-index: 2; width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
+.mpj-hero h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(44px, 6.6vw, 84px); line-height: 1.02; letter-spacing: -0.02em; color: #F4EEE1; margin: 22px 0 14px; }
+.mpj-hero h1 em { font-style: italic; color: #D9C08B; }
+.mpj-hero-sub { font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(20px, 2.6vw, 30px); color: #EFE7D4; margin: 0 0 18px; }
+.mpj-hero-desc { max-width: 620px; font-size: 15.5px; line-height: 1.85; color: rgba(239, 231, 212, 0.85); margin: 0; }
+.mpj-hero-hint { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; font-family: 'Space Mono', monospace; font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(239, 231, 212, 0.6); }
+
+/* ---- 2. Intro ---- */
+.mpj-intro { background: #FBFAF6; }
+.mpj-intro-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: rgba(11, 59, 46, 0.1); border: 1px solid rgba(11, 59, 46, 0.1); margin-top: 72px; }
+.mpj-intro-grid span { background: #FBFAF6; padding: 20px 18px; font-family: 'Fraunces', serif; font-size: 16px; letter-spacing: 0.02em; color: var(--ink); }
+
+/* ---- 3. Master plan visual ---- */
+.mpj-plan { background: #F3EFE4; }
+.mpj-plan-head { max-width: 780px; margin-bottom: 56px; }
+.mpj-plan-head p { font-size: 16px; line-height: 1.85; color: var(--muted); margin-top: 10px; }
+.mpj-map { margin: 0; }
+.mpj-map img { display: block; width: 100%; border-radius: 6px; border: 1px solid rgba(11, 59, 46, 0.14); }
+.mpj-map figcaption { display: flex; justify-content: flex-end; padding-top: 18px; }
+.mpj-zones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; margin-top: 64px; }
+.mpj-zone { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid rgba(11, 59, 46, 0.12); }
+.mpj-zone-num { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--gold-strong); }
+.mpj-zone h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
+.mpj-zone p { font-size: 14px; line-height: 1.7; color: var(--muted); margin: 5px 0 0; }
+.mpj-zones-note { margin-top: 34px; font-family: 'Space Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* ---- 4 / 10 / 19. Cinematic bands ---- */
+.mpj-cinema { position: relative; min-height: 86vh; display: flex; align-items: center; overflow: hidden; background: #101713; }
+.mpj-cinema-scrim { background: linear-gradient(90deg, rgba(12, 18, 16, 0.78) 0%, rgba(12, 18, 16, 0.42) 55%, rgba(12, 18, 16, 0.18) 100%); }
+.mpj-cinema-inner { position: relative; z-index: 2; width: min(1120px, calc(100% - 64px)); margin: 0 auto; }
+.mpj-cinema h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(38px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.015em; color: #F4EEE1; margin: 20px 0 16px; }
+.mpj-cinema h2 em { font-style: italic; color: #D9C08B; }
+.mpj-cinema-inner .eyebrow { color: #D9C08B; }
+.mpj-cinema-inner p { max-width: 640px; font-size: 16.5px; line-height: 1.85; color: rgba(239, 231, 212, 0.85); margin: 0; }
+.mpj-cinema .mpj-wordrail span { border-color: rgba(217, 192, 139, 0.4); color: #EFE7D4; background: rgba(255, 255, 255, 0.05); }
+
+/* drift — slow cinematic scale */
+.mpj-drift img { animation: mpjDrift 12s ease-out forwards; }
+@keyframes mpjDrift { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+/* 10. entrance */
+.mpj-entrance { min-height: 92vh; }
+.mpj-entrance .mpj-cinema-scrim { background: linear-gradient(180deg, rgba(12, 18, 16, 0.5) 0%, rgba(12, 18, 16, 0.28) 50%, rgba(10, 15, 13, 0.66) 100%); }
+.mpj-entrance-inner { text-align: center; }
+.mpj-mini-tags { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(239, 231, 212, 0.8) !important; }
+
+/* ---- 5. Privacy ---- */
+.mpj-privacy-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); grid-template-areas: "a b" "c c"; gap: 40px; align-items: start; }
+.mpj-privacy-grid .mpj-img-wide { grid-area: a; }
+.mpj-privacy-grid .mpj-img-tall { grid-area: b; }
+.mpj-privacy-grid .mpj-privacy-copy { grid-area: c; max-width: 720px; }
+
+/* ---- 7. Interiors ---- */
+.mpj-interiors { background: #F3EFE4; }
+.mpj-int-gallery { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr); gap: 32px; }
+.mpj-int-gallery .mpj-img-fig img { aspect-ratio: 3 / 2; }
+.mpj-int-gallery .mpj-img-fig:last-child img { aspect-ratio: 3 / 4; }
+
+/* ---- 8. Arrival ---- */
+.mpj-arrival-media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr); gap: 24px; align-items: center; }
+.mpj-arrival-media .mpj-img-fig:first-child img { aspect-ratio: 4 / 3; }
+.mpj-arrival-media .mpj-img-fig:last-child img { aspect-ratio: 4 / 5; }
+.mpj-steps { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.mpj-step { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid rgba(201, 164, 92, 0.45); background: transparent; }
+.mpj-step-num { font-family: 'Space Mono', monospace; font-size: 11.5px; color: var(--gold-strong); }
+.mpj-step span:last-child { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); }
+
+/* ---- 9. Nature ---- */
+.mpj-nature { background: #FBFAF6; }
+
+/* ---- 11. Suvarana ---- */
+.mpj-suvarana { background: #F3EFE4; }
+.mpj-heritage-tint img { filter: sepia(0.18) saturate(0.92); }
+
+/* ---- 12. Stillness ---- */
+.mpj-still-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); grid-template-areas: "a b" "a c"; gap: 32px; align-items: start; }
+.mpj-still-grid .mpj-copy { grid-area: a; position: sticky; top: 120px; }
+.mpj-still-grid .mpj-img-wide { grid-area: b; }
+.mpj-still-grid .mpj-img-fig:last-child { grid-area: c; }
+.mpj-still-grid .mpj-img-fig img { aspect-ratio: 16 / 10; }
+
+/* ---- 13. Cottages ---- */
+.mpj-cot-gallery { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1fr); gap: 24px; }
+.mpj-cot-gallery .mpj-img-fig img { aspect-ratio: 3 / 4; }
+
+/* ---- 14. Retreats ---- */
+.mpj-retreats { background: #101713; }
+.mpj-retreats .mpj-copy p { color: rgba(239, 231, 212, 0.78); }
+.mpj-retreats .mpj-lead { color: #EFE7D4; }
+.mpj-retreats .mpj-h2 { color: #F4EEE1; }
+.mpj-retreats .mpj-h2 em, .mpj-retreats .eyebrow { color: #D9C08B; }
+
+/* ---- 15. Evening / dusk ---- */
+.mpj-even-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); grid-template-areas: "a b" "a c"; gap: 32px; align-items: start; }
+.mpj-even-grid .mpj-copy { grid-area: a; position: sticky; top: 120px; }
+.mpj-even-grid .mpj-img-wide { grid-area: b; }
+.mpj-even-grid .mpj-img-fig:last-child { grid-area: c; }
+.mpj-even-grid .mpj-img-fig img { aspect-ratio: 16 / 10; }
+.mpj-dusk img, .mpj-night img { filter: brightness(0.82) saturate(1.08); }
+.mpj-dusk::after, .mpj-night::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(30, 42, 38, 0) 0%, rgba(30, 42, 38, 0.18) 45%, rgba(16, 24, 21, 0.6) 100%); }
+.mpj-dusk figcaption, .mpj-night figcaption { color: rgba(244, 238, 225, 0.95); }
+
+/* ---- 16. Cottage living ---- */
+.mpj-cottage-living { background: #FBFAF6; }
+
+/* ---- 17. Rest · Restore · Rejuvenate ---- */
+.mpj-words { background: #F3EFE4; text-align: center; padding: 120px 0; }
+.mpj-words .container { display: flex; flex-direction: column; align-items: center; }
+.mpj-word { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 8vw, 96px); line-height: 1.02; letter-spacing: -0.01em; color: var(--ink); }
+.mpj-word:nth-child(2) { color: var(--gold-strong); }
+.mpj-word:nth-child(3) { color: var(--accent); }
+.mpj-words-note { margin-top: 44px; font-size: clamp(15px, 2vw, 18px); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); max-width: 640px; line-height: 2; }
+.mpj-words .mpj-word:nth-child(1) { transition-delay: 0.05s; }
+.mpj-words .mpj-word:nth-child(2) { transition-delay: 0.4s; }
+.mpj-words .mpj-word:nth-child(3) { transition-delay: 0.75s; }
+.mpj-words .mpj-words-note { transition-delay: 1.05s; }
+html.js-reveal .mpj-words .mpj-words-note { transition-delay: 1.05s; }
+.mpj-hero .eyebrow { color: #D9C08B; }
+
+/* ---- 18. Suite ---- */
+.mpj-suite-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(44px, 6vw, 88px); align-items: center; }
+.mpj-suite-grid .mpj-img-wide img { aspect-ratio: 16 / 10; }
+
+/* ---- 19. Forest living ---- */
+.mpj-forest { min-height: 92vh; }
+.mpj-forest-note { font-size: 18px !important; font-family: 'Fraunces', serif; font-style: italic; color: rgba(239, 231, 212, 0.92) !important; }
+
+/* ---- 20. After dusk ---- */
+.mpj-dusk-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); grid-template-areas: "a a" "b c"; gap: 32px; align-items: start; }
+.mpj-dusk-grid .mpj-img-wide { grid-area: a; }
+.mpj-dusk-grid .mpj-img-wide img { aspect-ratio: 21 / 9; }
+.mpj-dusk-grid .mpj-copy { grid-area: b; }
+.mpj-dusk-grid .mpj-img-fig:last-child { grid-area: c; }
+.mpj-dusk-grid .mpj-img-fig img { aspect-ratio: 4 / 5; }
+
+/* ---- 21. Sanctuary ---- */
+.mpj-sanctuary { background: #F3EFE4; }
+
+/* ---- 22. Journey rail ---- */
+.mpj-journey { background: #101713; }
+.mpj-journey .eyebrow { color: #D9C08B; }
+.mpj-journey .mpj-h2 { color: #F4EEE1; }
+.mpj-journey .mpj-h2 em { color: #D9C08B; }
+.mpj-rail { display: flex; flex-direction: column; align-items: center; gap: 0; margin-top: 56px; }
+.mpj-rail-step { display: flex; align-items: center; gap: 22px; padding: 20px 0; position: relative; }
+.mpj-rail-step::after { content: ''; position: absolute; left: 8px; top: 100%; width: 1px; height: 34px; background: rgba(217, 192, 139, 0.35); }
+.mpj-rail-step:last-child::after { display: none; }
+.mpj-rail-num { font-family: 'Space Mono', monospace; font-size: 12px; color: #D9C08B; }
+.mpj-rail-word { font-family: 'Fraunces', serif; font-size: clamp(30px, 4.6vw, 52px); font-weight: 400; letter-spacing: 0.02em; color: #F4EEE1; }
+
+/* ---- 23. Final CTA ---- */
+.mpj-cta { position: relative; min-height: 84vh; display: flex; align-items: center; overflow: hidden; background: #101713; }
+.mpj-cta-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 18, 16, 0.62) 0%, rgba(10, 15, 13, 0.78) 100%); }
+.mpj-cta-inner { position: relative; z-index: 2; width: min(960px, calc(100% - 48px)); margin: 0 auto; text-align: center; padding: 96px 0; }
+.mpj-cta-inner h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 4.6vw, 60px); line-height: 1.08; letter-spacing: -0.015em; color: #F4EEE1; }
+.mpj-cta-inner h2 em { font-style: italic; color: #D9C08B; }
+.mpj-cta-inner p { max-width: 620px; margin: 20px auto 34px; font-size: 16.5px; line-height: 1.85; color: rgba(239, 231, 212, 0.85); }
+.mpj-cta-inner .cta-buttons { justify-content: center; }
+.mpj-cta-inner .btn-outline { border-color: #D9C08B; color: #EFE7D4; }
+.mpj-cta-inner .btn-outline:hover { background: rgba(217, 192, 139, 0.12); color: #F4EEE1; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1080px) {
+  .mpj-cot-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mpj-cot-a { grid-column: 1 / -1; }
+  .mpj-cot-a img { aspect-ratio: 21 / 9 !important; }
+}
+@media (max-width: 1024px) {
+  .mpj-split, .mpj-suite-grid { gap: 44px; }
+  .mpj-intro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mpj-zones { gap: 0 36px; }
+  .mpj-privacy-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .mpj-split { grid-template-columns: 1fr; }
+  .mpj-split-flip .mpj-media { order: 0; }
+  .mpj-privacy-grid { grid-template-columns: 1fr; grid-template-areas: "a" "c" "b"; }
+  .mpj-privacy-grid .mpj-img-tall img { aspect-ratio: 16 / 10; }
+  .mpj-int-gallery { grid-template-columns: 1fr; }
+  .mpj-int-gallery .mpj-img-fig:last-child img { aspect-ratio: 3 / 2; }
+  .mpj-arrival-media { grid-template-columns: 1fr; }
+  .mpj-arrival-media .mpj-img-fig:last-child img { aspect-ratio: 4 / 3; }
+  .mpj-still-grid { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; }
+  .mpj-still-grid .mpj-copy, .mpj-even-grid .mpj-copy { position: static; }
+  .mpj-even-grid { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; }
+  .mpj-dusk-grid { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c"; }
+  .mpj-suite-grid { grid-template-columns: 1fr; }
+  .mpj-cinema-inner p { max-width: 100%; }
+}
+@media (max-width: 767px) {
+  .mpj-hero, .mpj-cinema, .mpj-cta { min-height: 78vh; }
+  .mpj-hero-inner, .mpj-cinema-inner { width: calc(100% - 44px); }
+  .mpj-zones { grid-template-columns: 1fr; margin-top: 48px; }
+  .mpj-intro-grid { margin-top: 48px; }
+  .mpj-intro-grid span { padding: 16px 14px; font-size: 14.5px; }
+  .mpj-cot-gallery { grid-template-columns: 1fr; }
+  .mpj-cot-a { grid-column: auto; }
+  .mpj-cot-a img { aspect-ratio: 3 / 4 !important; }
+  .mpj-words { padding: 84px 0; }
+  .mpj-word { font-size: clamp(38px, 11vw, 60px); }
+  .mpj-rail-step { gap: 16px; padding: 14px 0; }
+  .mpj-rail-step::after { height: 26px; }
+  .mpj-cta-inner { padding: 72px 0; }
+  .mpj-dusk-grid .mpj-img-wide img { aspect-ratio: 16 / 10; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mpj-drift img { animation: none; transform: none; }
+}
