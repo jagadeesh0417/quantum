@@ -389,78 +389,54 @@
 }
 
 /* ============================================================
-   LEADERSHIP — premium 2-column grid
+   LEADERSHIP — premium editorial 40/60 alternating split
    ============================================================ */
 .page-about .ab-leadership-v2 { background: var(--ab-ivory); }
 .page-about .ab-leadership-v2::before { content: none; }
-.page-about .ab-leadership-v2 .container { max-width: 1200px; }
-.page-about .ab-leadership-v2 .ldr-intro { max-width: 760px; margin-bottom: 72px; }
+.page-about .ab-leadership-v2 .container { max-width: 1240px; }
+.page-about .ab-leadership-v2 .ldr-intro { max-width: 780px; margin-bottom: 88px; }
 .page-about .ab-leadership-v2 .ldr-intro-note {
   font-size: 17px;
   color: var(--ab-muted);
   line-height: 1.9;
-  max-width: 620px;
+  max-width: 640px;
   margin-top: 22px;
 }
 
-.page-about .ldr-grid {
+.page-about .ldr-grid { display: block; }
+
+.page-about .ab-leadership-v2 .ldr-profile {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 56px 48px;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  gap: clamp(56px, 7vw, 104px);
   align-items: start;
+  padding: 88px 0;
+  border-top: 1px solid var(--ab-line);
 }
+.page-about .ab-leadership-v2 .ldr-profile:first-child { padding-top: 0; border-top: 0; }
+.page-about .ab-leadership-v2 .ldr-profile:last-child { padding-bottom: 0; }
+.page-about .ab-leadership-v2 .ldr-profile::before,
+.page-about .ab-leadership-v2 .ldr-profile:nth-of-type(even)::before { content: none; }
+.page-about .ab-leadership-v2 .ldr-profile--flip .ldr-media { order: 2; }
 
-.page-about .ldr-card {
-  display: block;
-  position: relative;
-  background: var(--ab-surface);
-  border: 1px solid var(--ab-line);
-  box-shadow: none;
-  padding: 0;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease;
-}
-.page-about .ldr-card::before { content: none; }
-.page-about .ldr-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--ab-gold-line);
-  box-shadow: 0 34px 64px -34px rgba(28, 39, 51, 0.3);
-}
-
-.page-about .ldr-card .ldr-media { padding: 0; margin: 0; }
-.page-about .ldr-card .ldr-fig-bg { display: none; }
-.page-about .ldr-card .ldr-figure {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-}
-.page-about .ldr-card .ldr-img {
+.page-about .ab-leadership-v2 .ldr-media { position: relative; min-width: 0; }
+.page-about .ab-leadership-v2 .ldr-fig-bg { display: none; }
+.page-about .ab-leadership-v2 .ldr-figure { margin: 0; box-shadow: none; }
+.page-about .ab-leadership-v2 .ldr-img {
   display: block;
   width: 100%;
-  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center top;
+  border-radius: 6px;
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.page-about .ldr-card:hover .ldr-img { transform: scale(1.035); }
-.page-about .ldr-card .ldr-cap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  margin: 0;
-  padding: 40px 26px 18px;
-  background: linear-gradient(0deg, rgba(20, 30, 37, 0.78) 0%, rgba(20, 30, 37, 0) 100%);
-  color: #EFE7D4;
-  font-family: 'Space Mono', monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
+.page-about .ab-leadership-v2 .ldr-profile:hover .ldr-img { transform: scale(1.02); }
 
-.page-about .ldr-card .ldr-body { padding: 40px 40px 44px; }
-.page-about .ldr-card .ldr-eyebrow {
-  display: flex;
+.page-about .ab-leadership-v2 .ldr-body { min-width: 0; }
+.page-about .ab-leadership-v2 .ldr-eyebrow {
+  display: inline-flex;
   align-items: center;
   gap: 14px;
   font-family: 'Space Mono', monospace;
@@ -470,162 +446,104 @@
   text-transform: uppercase;
   color: var(--ab-gold-deep);
 }
-.page-about .ldr-card .ldr-eyebrow::after {
+.page-about .ab-leadership-v2 .ldr-eyebrow::after {
   content: '';
   width: 40px;
   height: 1px;
   background: var(--ab-gold-line);
 }
-.page-about .ldr-card .ldr-name {
+.page-about .ab-leadership-v2 .ldr-name {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(27px, 2.4vw, 33px);
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
   color: var(--ab-ink);
-  margin: 16px 0 8px;
+  margin: 18px 0 10px;
 }
-.page-about .ldr-card .ldr-role {
-  font-size: 14.5px;
+.page-about .ab-leadership-v2 .ldr-role {
+  font-size: 15px;
   color: var(--ab-muted);
   line-height: 1.6;
   letter-spacing: 0.02em;
   margin: 0;
 }
-.page-about .ldr-card .ldr-desc {
-  font-size: 16px;
-  color: var(--ab-ink-2);
-  line-height: 1.85;
-  margin: 18px 0 0;
-}
-
-.page-about .ldr-card .ldr-message {
-  margin-top: 28px;
-  background: var(--ab-cream);
-  border-left: 2px solid var(--ab-gold);
-  padding: 26px 28px;
-  position: relative;
-}
-.page-about .ldr-card .ldr-msg-mark {
-  display: block;
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 62px;
-  line-height: 0.6;
-  color: var(--ab-gold);
-  margin-bottom: 14px;
-}
-.page-about .ldr-card .ldr-msg-head {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 19px;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--ab-ink);
-  margin-bottom: 12px;
-}
-.page-about .ldr-card .ldr-msg-body p {
-  font-size: 14.5px;
-  color: var(--ab-muted);
-  line-height: 1.85;
-}
-.page-about .ldr-card .ldr-msg-body p + p { margin-top: 10px; }
-
-.page-about .ldr-card .ldr-focus {
-  margin-top: 34px;
-  border-top: 1px solid var(--ab-line);
-  padding-top: 28px;
-}
-.page-about .ldr-card .ldr-focus-title {
-  font-family: 'Space Mono', monospace;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ab-muted);
-  margin: 0 0 16px;
-}
-.page-about .ldr-card .ldr-row {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
-  padding: 14px 0;
-  border-bottom: 1px dashed var(--ab-line-2);
-  transform: none;
-}
-.page-about .ldr-card .ldr-row:last-child { border-bottom: 0; }
-.page-about .ldr-card .ldr-row:hover { transform: none; }
-.page-about .ldr-card .ldr-num {
-  font-family: 'Space Mono', monospace;
-  font-size: 13px;
-  color: var(--ab-gold-deep);
-  padding-top: 3px;
-}
-.page-about .ldr-card .ldr-row-main { min-width: 0; }
-.page-about .ldr-card .ldr-row-main h5 {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--ab-ink);
-  margin: 0;
-  transition: color 0.3s ease;
-}
-.page-about .ldr-card .ldr-row:hover h5 { color: var(--ab-gold-deep); }
-.page-about .ldr-card .ldr-row-main p {
-  font-size: 14px;
-  color: var(--ab-muted);
-  line-height: 1.75;
-  margin: 4px 0 0;
-}
-
-.page-about .ldr-card .ldr-chips {
+.page-about .ab-leadership-v2 .ldr-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 18px 0 0;
+  margin: 16px 0 0;
 }
-.page-about .ldr-card .ldr-chips span {
+.page-about .ab-leadership-v2 .ldr-chips span {
   border: 1px solid var(--ab-gold-line);
-  background: transparent;
   color: var(--ab-gold-deep);
   font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 7px 12px;
 }
-
-.page-about .ldr-card .ldr-req {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.page-about .ab-leadership-v2 .ldr-desc {
+  font-size: 16.5px;
+  color: var(--ab-ink-2);
+  line-height: 1.8;
+  margin: 22px 0 0;
+  max-width: 58ch;
 }
-.page-about .ldr-card .ldr-req li {
-  position: relative;
-  padding-left: 22px;
-  font-size: 14px;
+
+.page-about .ab-leadership-v2 .ldr-focus { margin-top: 40px; }
+.page-about .ab-leadership-v2 .ldr-focus + .ldr-focus {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--ab-line);
+}
+.page-about .ab-leadership-v2 .ldr-focus-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ab-muted);
+  margin: 0 0 6px;
+}
+.page-about .ab-leadership-v2 .ldr-row {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ab-line);
+}
+.page-about .ab-leadership-v2 .ldr-row:last-child { border-bottom: 0; }
+.page-about .ab-leadership-v2 .ldr-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--ab-gold-deep);
+  padding-top: 2px;
+}
+.page-about .ab-leadership-v2 .ldr-row-main { min-width: 0; }
+.page-about .ab-leadership-v2 .ldr-row-main h5 {
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ab-ink);
+  margin: 0;
+}
+.page-about .ab-leadership-v2 .ldr-row-main p {
+  font-size: 14.5px;
   color: var(--ab-muted);
   line-height: 1.75;
-}
-.page-about .ldr-card .ldr-req li + li { margin-top: 8px; }
-.page-about .ldr-card .ldr-req li::before {
-  content: '';
-  position: absolute;
-  left: 2px;
-  top: 0.68em;
-  width: 9px;
-  height: 1px;
-  background: var(--ab-gold);
+  margin: 5px 0 0;
 }
 
-.page-about .ldr-card .ldr-quote {
-  margin: 30px 0 0;
-  padding: 22px 26px;
+.page-about .ab-leadership-v2 .ldr-quote {
+  margin: 34px 0 0;
+  padding-left: 26px;
   border-left: 2px solid var(--ab-gold);
   font-family: 'Fraunces', Georgia, serif;
-  font-size: 18px;
+  font-size: 19px;
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ab-ink-2);
-  background: transparent;
 }
 
 .page-about .leader-links-row {
@@ -1121,7 +1039,7 @@
   .page-about .ab-vm-num-n { font-size: 44px; }
   .page-about .values-intro { grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .page-about .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .page-about .ldr-grid { grid-template-columns: 1fr; }
+  .page-about .ab-leadership-v2 .ldr-profile { gap: 44px; }
   .page-about .ab-global-grid, .page-about .ab-bio-grid { grid-template-columns: 1fr; gap: 40px; }
   .page-about .resort-split { grid-template-columns: 1fr; gap: 44px; }
   .page-about .eco-head { grid-template-columns: 1fr; gap: 16px; }
@@ -1136,8 +1054,17 @@
   .page-about .section { padding: 76px 0; }
   .page-about .ab-vm, .page-about .ab-global, .page-about .ab-bio { padding: 76px 0; }
   .page-about .ab-cta { padding: 40px 0 76px; }
-  .page-about .ldr-card .ldr-body { padding: 30px 24px 34px; }
-  .page-about .ldr-card .ldr-msg-mark { font-size: 52px; }
+  .page-about .ab-leadership-v2 .ldr-profile {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 64px 0;
+  }
+  .page-about .ab-leadership-v2 .ldr-profile--flip .ldr-media { order: 0; }
+  .page-about .ab-leadership-v2 .ldr-media { max-width: 520px; }
+  .page-about .ab-leadership-v2 .ldr-name { font-size: clamp(27px, 6vw, 33px); }
+  .page-about .ab-leadership-v2 .ldr-row { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 16px 0; }
+  .page-about .ab-leadership-v2 .ldr-quote { font-size: 17px; }
+  .page-about .ab-leadership-v2 .ldr-intro { margin-bottom: 56px; }
   .page-about .cta-band { padding: 56px 26px; }
   .page-about .q-facts { grid-template-columns: 1fr; gap: 24px; }
   .page-about .q-fact { border-left: 0; padding-left: 0; padding-top: 24px; border-top: 1px solid var(--ab-line); }
@@ -1166,7 +1093,7 @@
    MOTION — subtle, respects prefers-reduced-motion
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  .page-about .ldr-card,
+  .page-about .ldr-profile,
   .page-about .eco-box,
   .page-about .qa-item,
   .page-about .ldr-img,
