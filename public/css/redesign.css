@@ -153,17 +153,17 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 .hero .btn-outline:hover { border-color: var(--gold-light); color: #FFFFFF; background: rgba(220,203,159,0.1); }
 
 /* ---- Header / nav ---- */
-.navbar { padding: 22px 0; }
+.navbar { padding: 22px 0; background: rgba(20,35,27,0.97); }
 .navbar.scrolled {
-  background: rgba(247,248,245,0.92);
+  background: rgba(20,35,27,0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 10px 30px rgba(20,35,27,0.07);
+  border-bottom: 1px solid rgba(220,203,159,0.28);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 }
 
 .navbar .logo { font-size: 21px; letter-spacing: 0.01em; color: var(--on-dark); }
-.navbar.scrolled .logo { color: var(--ink); }
+.navbar.scrolled .logo { color: var(--on-dark); }
 
 .logo-icon { font-size: 24px; color: var(--gold); }
 
@@ -175,7 +175,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
   text-transform: uppercase;
   position: relative;
   padding: 6px 0;
+  color: var(--on-dark);
 }
+.navbar .nav-links a:hover, .navbar .nav-links a.active { color: var(--gold-light); }
 .nav-links a::after {
   content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--gold-light));
@@ -185,14 +187,14 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 [dir="rtl"] .nav-links a::after { transform-origin: right; }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 
-.navbar.scrolled .nav-links a:hover, .navbar.scrolled .nav-links a.active { color: var(--emerald); }
+.navbar.scrolled .nav-links a:hover, .navbar.scrolled .nav-links a.active { color: var(--gold-light); }
 
 .navbar .lang-current {
   border-color: rgba(220,203,159,0.4);
   background: rgba(220,203,159,0.1);
   color: var(--gold-light);
 }
-.navbar.scrolled .lang-current { border-color: rgba(201,164,92,0.35); background: rgba(201,164,92,0.08); color: var(--emerald); }
+.navbar.scrolled .lang-current { border-color: rgba(220,203,159,0.4); background: rgba(220,203,159,0.1); color: var(--gold-light); }
 
 .mega {
   width: 660px;
@@ -212,8 +214,7 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 @media (max-width: 768px) {
   .navbar { background: rgba(20,35,27,0.97); }
   .navbar .nav-links { background: rgba(20,35,27,0.99); border-bottom: 1px solid var(--border-dark); }
-  .navbar.scrolled { background: rgba(247,248,245,0.98); }
-  .navbar.scrolled .nav-links { background: rgba(247,248,245,0.98); border-bottom: 1px solid var(--line); }
+  .navbar .mobile-toggle span, .navbar .hamburger span { background: var(--on-dark); }
 }
 
 /* ---- Home hero ---- */
