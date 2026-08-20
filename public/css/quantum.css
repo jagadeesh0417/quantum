@@ -379,6 +379,8 @@ html { overflow-x: hidden; }
   animation: q-marquee-scroll 46s linear infinite;
 }
 .q-marquee-group { display: flex; align-items: center; }
+a.q-marquee-item { text-decoration: none; }
+.q-marquee-group[aria-hidden="true"] { pointer-events: none; }
 .q-marquee-item {
   display: inline-flex;
   align-items: baseline;

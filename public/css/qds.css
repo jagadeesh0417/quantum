@@ -906,7 +906,7 @@ img[src*="svg"], img[src*="png"], img[src*="webp"], img[src*="jpg"], img[src*="j
 /* ==========================================================================
    SECTION 12 — STORIES (verified-testimonial placeholder carousel)
    ========================================================================== */
-.q-stories .carousel-track { overflow: visible; }
+.q-stories .carousel-track { overflow: hidden; }
 .q-stories .t-card {
   border-radius: 2px;
   border: 1px solid var(--line);

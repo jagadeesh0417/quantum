@@ -46,7 +46,7 @@
       bar.setAttribute('aria-label', 'Quick actions');
       bar.setAttribute('data-persist', '');
       bar.innerHTML =
-        '<a href="contact.html" class="btn btn-primary">Book a Consultation</a>' +
+        '<a href="tel:+919845025857" class="btn btn-primary">Book a Consultation</a>' +
         '<a href="tel:+919845025857" class="btn btn-outline">Call Us</a>';
       document.body.appendChild(bar);
     }
@@ -401,7 +401,7 @@
       v.muted = true;
       v.loop = true;
       v.playsInline = true;
-      v.preload = 'auto';
+      v.preload = 'metadata';
       v.setAttribute('aria-hidden', 'true');
       v.disablePictureInPicture = true;
       v.setAttribute('controlslist', 'nodownload noplaybackrate');
@@ -418,6 +418,15 @@
       sec.insertBefore(bg, sec.firstChild);
     });
     document.querySelectorAll('#main > .hero-img').forEach(inject);
+    /* Mobile playback fallback: retry once on first user gesture */
+    document.querySelectorAll('.hero-video').forEach((v) => {
+      const attempt = () => { const p = v.play(); if (p) p.catch(() => {}); };
+      v.addEventListener('canplay', attempt, { once: true });
+      attempt();
+      const gesture = () => { attempt(); document.removeEventListener('touchstart', gesture); document.removeEventListener('click', gesture); };
+      document.addEventListener('touchstart', gesture, { once: true });
+      document.addEventListener('click', gesture, { once: true });
+    });
   }
 
   initOnce();

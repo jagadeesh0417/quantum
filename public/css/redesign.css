@@ -205,6 +205,9 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 .mega a { font-size: 13.5px; color: var(--ink-soft); }
 .mega a:hover { color: var(--emerald); }
 .mega-sub { color: var(--muted); font-size: 11px; }
+@media (max-width: 1280px) { .mega { width: min(660px, calc(100vw - 48px)); } }
+[dir="rtl"] .mega { left: auto; right: 0; transform: translate(0, 10px); }
+[dir="rtl"] .has-mega:hover .mega { transform: translate(0, 14px); }
 
 @media (max-width: 768px) {
   .navbar { background: rgba(20,35,27,0.97); }
@@ -513,6 +516,12 @@ html.js-reveal [data-reveal].in-view {
 }
 @media (prefers-reduced-motion: reduce) {
   html.js-reveal [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---- Sitewide guards: no horizontal scroll on any viewport ---- */
+html { overflow-x: hidden; }
+@media (max-width: 767px) {
+  .navbar .logo { max-width: 58vw; overflow: hidden; }
 }
 
 /* ==========================================================================

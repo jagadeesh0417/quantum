@@ -133,6 +133,7 @@ body { background: var(--ivory); color: var(--ink); }
 
 /* ---- Video hero background (natural footage, no colour grading) ---- */
 .hero-img { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: none; }
+.hero-img video, .hero-video { pointer-events: none; }
 .hero-img video {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
