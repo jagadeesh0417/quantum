@@ -397,6 +397,7 @@
       if (img) img.remove();
       const v = document.createElement('video');
       v.className = 'hero-video';
+      v.setAttribute('data-sitewide-hero', '');
       v.autoplay = true;
       v.muted = true;
       v.loop = true;

@@ -51,6 +51,12 @@
     /* Preserve JS-created fixed widgets across the swap */
     const saved = persistEls();
 
+    /* Preserve the sitewide hero video so it never restarts on navigation.
+       Detaching keeps its currentTime (and paused state); we reattach + play
+       it after the new body is in place. */
+    const heroVideo = document.querySelector('.hero-video[data-sitewide-hero]');
+    if (heroVideo && heroVideo.parentNode) heroVideo.parentNode.removeChild(heroVideo);
+
     document.title = doc.title || document.title;
     const meta = document.querySelector('meta[name="description"]');
     const nextMeta = doc.querySelector('meta[name="description"]');
@@ -61,6 +67,21 @@
 
     document.body.innerHTML = doc.body.innerHTML;
     saved.forEach((el) => document.body.appendChild(el));
+
+    /* Reattach the preserved hero video into the new page's hero layer.
+       This must happen before page:load so heroVideo() sees it and does not
+       create a duplicate. Reusing the same element keeps currentTime, so the
+       video continues instead of restarting from 0:00. */
+    if (heroVideo) {
+      const host = document.querySelector('#main > .hero-img') || document.getElementById('main');
+      if (host && host !== heroVideo.parentNode) host.appendChild(heroVideo);
+      if (heroVideo.paused) {
+        const p = heroVideo.play();
+        if (p && p.catch) p.catch(() => {});
+      }
+      const attempt = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+      heroVideo.addEventListener('canplay', attempt, { once: true });
+    }
 
     const preloader = document.querySelector('.preloader');
     if (preloader) preloader.classList.add('done');

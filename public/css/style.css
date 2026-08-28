@@ -332,7 +332,7 @@ section { padding: 100px 0; }
 
 .stat-label { font-size: 12px; color: var(--on-dark-muted); margin-top: 4px; }
 
-.conditions-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.conditions-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 
 .condition-item {
   background: var(--surface); border: 1px solid var(--border);
@@ -376,7 +376,7 @@ section { padding: 100px 0; }
 .program-mini-card h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
 .program-mini-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-.life-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.life-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 
 .life-item {
   background: var(--surface); border: 1px solid var(--border);
