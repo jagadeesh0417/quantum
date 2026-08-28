@@ -4,14 +4,8 @@
   'use strict';
 
   function initMain() {
-    // Mobile nav toggle
-    const toggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (toggle) {
-      toggle.addEventListener('click', function () {
-        navLinks.classList.toggle('open');
-      });
-    }
+    // Mobile nav toggle is handled in motion.js (toggle + close-on-link-click),
+    // so it is NOT bound here to avoid double-toggle (open->closed) per click.
 
     // Accordion
     document.querySelectorAll('.accordion-header').forEach(function (header) {
