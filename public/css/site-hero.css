@@ -1,0 +1,92 @@
+/* ==========================================================================
+   SITE HERO — consistent hero-video media layer
+   ==========================================================================
+   Loaded LAST on pages that use a cinematic hero. It normalises ONLY the
+   injected video media layer (created by home.js: an absolute `.hero-img`
+   containing one `.hero-video`), so the sitewide video frames identically
+   across every cinematic hero.
+
+   It deliberately targets ONLY the real cinematic hero classes and their
+   direct `.hero-img` child:
+     .hero          -> index (EN / DE / AR)
+     .pg-hero       -> privacy, terms, 404, programs, services, therapies, stemcell
+     .wl-hero       -> wellness
+     .tour-hero     -> resort-tour
+     .gal-hero      -> gallery
+     .ab-hero       -> about
+
+   It NEVER touches:
+     - `.ct-hero`   -> the contact page's intentional calm, solid hero
+     - bare `#main` -> leadership / content pages, where #main is a real
+                       content section, not a hero
+     - `min-height`, `display`, `align-items`, or any per-page `::before` /
+       `::after` decorative accents (each page keeps its own height/art).
+
+   The hero classes already declare position:relative + overflow:hidden and
+   a `<div class="hero-img">` is injected as position:absolute; inset:0 by
+   the global stylesheets, so these rules only guarantee uniform framing.
+   ========================================================================== */
+
+/* ---- One media layer that frames the video identically on every cinematic hero ---- */
+.hero > .hero-img,
+.pg-hero > .hero-img,
+.wl-hero > .hero-img,
+.tour-hero > .hero-img,
+.gal-hero > .hero-img,
+.ab-hero > .hero-img,
+.hero .hero-img,
+.pg-hero .hero-img,
+.wl-hero .hero-img,
+.tour-hero .hero-img,
+.gal-hero .hero-img,
+.ab-hero .hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* ---- One consistent framing for the injected video (never letterboxes) ---- */
+.hero .hero-img .hero-video,
+.pg-hero .hero-img .hero-video,
+.wl-hero .hero-img .hero-video,
+.tour-hero .hero-img .hero-video,
+.gal-hero .hero-img .hero-video,
+.ab-hero .hero-img .hero-video,
+.hero .hero-img video,
+.pg-hero .hero-img video,
+.wl-hero .hero-img video,
+.tour-hero .hero-img video,
+.gal-hero .hero-img video,
+.ab-hero .hero-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  pointer-events: none;
+}
+
+/* ---- Content always sits above the media layer on cinematic heroes ---- */
+.hero > .container,
+.pg-hero > .container,
+.wl-hero > .container,
+.tour-hero > .container,
+.gal-hero > .container,
+.ab-hero > .container,
+.hero .container,
+.pg-hero .container,
+.wl-hero .container,
+.tour-hero .container,
+.gal-hero .container,
+.ab-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- No horizontal scroll from full-bleed media on cinematic heroes ---- */
+.hero, .pg-hero, .wl-hero, .tour-hero, .gal-hero, .ab-hero {
+  overflow: hidden;
+}
