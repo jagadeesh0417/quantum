@@ -1,0 +1,51 @@
+/* =====================================================================
+   image-frames.css — Quantum Health
+   Reusable premium image-frame layer.
+   Loaded LAST on every page to unify the framing of all editorial /
+   gallery imagery: a subtle 1px line border + soft radius around the
+   media, plus an object-fit:cover guarantee so every display image
+   sits neatly inside its frame (no stretching, no ragged natural size).
+
+   Deliberately excludes full-bleed hero / cinematic background media
+   (`.hero-img`, `.mpj-hero-media`, `.mpj-cinema-media`, `.mpj-cta-media`,
+   `.hc-slide`, `.q-media`) which are intentionally edge-to-edge.
+   ===================================================================== */
+
+:root {
+  --img-frame: 1px solid rgba(28, 75, 55, 0.20);
+}
+
+/* 1) Resort / editorial split media — frame the container (imgs are
+      inset/cover and clipped by `overflow:hidden`, so the border must
+      live on the wrapper to be visible). */
+.mpj-img-fig,
+.mpj-media {
+  border: var(--img-frame);
+}
+
+/* 2) Campus + gallery masonry tiles — frame the tile (parent), since the
+      `.tile-img` is absolutely positioned inset:0 and clipped. */
+.gal-tile {
+  border: var(--img-frame);
+}
+
+/* 3) Photo cards shared across Wellness & Programmes (`.wl-img`,
+      `.sv-img`) — the photo itself gets its own frame inside the card. */
+.card-band {
+  border: var(--img-frame);
+}
+
+/* 4) About leadership portraits. */
+.page-about .ab-leadership-v2 .ldr-img {
+  border: var(--img-frame);
+}
+
+/* object-fit:cover guarantee for every framed display image. */
+.mpj-img-fig img,
+.mpj-media img,
+.tile-img,
+.card-band,
+.page-about .ab-leadership-v2 .ldr-img {
+  object-fit: cover;
+  object-position: center;
+}
