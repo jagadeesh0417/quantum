@@ -489,7 +489,7 @@ body { background: var(--ivory); color: var(--ink); }
 .footer-col a { display: block; color: var(--on-dark-muted); font-size: 13px; padding: 5px 0; transition: color 0.2s ease; }
 .footer-col a:hover { color: var(--gold-light); }
 .footer-col address { font-style: normal; color: var(--on-dark-muted); font-size: 13px; line-height: 2; }
-.footer-col p, .footer-col address { overflow-wrap: anywhere; }
+.footer-col p, .footer-col address { overflow-wrap: break-word; }
 
 .newsletter { margin-top: 20px; display: flex; border: 1px solid var(--border-dark); border-radius: 10px; overflow: hidden; background: rgba(255,255,255,0.05); }
 .newsletter input {

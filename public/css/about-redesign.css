@@ -642,7 +642,7 @@
   color: var(--ab-ink);
   margin-bottom: 6px;
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .page-about .stat-title span[data-count] { color: var(--ab-gold-deep); }
 .page-about .stat-card p {
@@ -650,7 +650,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ab-muted);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 /* ============================================================

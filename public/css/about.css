@@ -1190,7 +1190,7 @@ button.m-item { display: block; width: 100%; border: none; padding: 0; backgroun
   .values-divider { margin-top: 64px; }
   .campus-grid { grid-template-columns: 1fr; gap: 40px; }
   .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stat-card h3, .stat-card p { overflow-wrap: anywhere; }
+  .stat-card h3, .stat-card p { overflow-wrap: break-word; }
   .mission-split { margin-top: 44px; }
   .mission-statement p { font-size: 20px; }
   .leaders-featured { grid-template-columns: 1fr; }
