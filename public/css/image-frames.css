@@ -40,12 +40,33 @@
   border: var(--img-frame);
 }
 
-/* object-fit:cover guarantee for every framed display image. */
+/* object-fit:cover guarantee for every framed display image —
+   crops cleanly instead of stretching, and never exceeds the frame. */
 .mpj-img-fig img,
 .mpj-media img,
 .tile-img,
 .card-band,
 .page-about .ab-leadership-v2 .ldr-img {
+  display: block;
+  max-width: 100%;
   object-fit: cover;
+}
+
+/* Landscape / gallery media: keep the subject centred. */
+.mpj-img-fig img,
+.mpj-media img,
+.tile-img,
+.card-band {
   object-position: center;
+}
+
+/* Portraits: anchor to the top so faces are never cropped out. */
+.page-about .ab-leadership-v2 .ldr-img {
+  object-position: center top;
+}
+
+/* Reserve layout space (anti layout-shift) for framed media whose
+   wrapper relies on a fixed pixel height rather than aspect-ratio. */
+.card-band {
+  height: 172px;
 }
