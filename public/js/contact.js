@@ -27,7 +27,7 @@
       'cf-name': [byId('cf-name'), byId('cf-name-err'), 'Please enter your full name.', function (v) { return v.length >= 2; }],
       'cf-email': [byId('cf-email'), byId('cf-email-err'), 'Please enter a valid email address.', function (v) { return emailRe.test(v); }],
       'cf-phone': [byId('cf-phone'), byId('cf-phone-err'), 'Please enter a valid phone number.', function (v) { return v.replace(/\D/g, '').length >= 7; }],
-      'cf-subject': [byId('cf-subject'), byId('cf-subject-err'), 'Please choose a subject.', function (v) { return v !== ''; }],
+      'cf-subject': [byId('cf-subject'), byId('cf-subject-err'), 'Please choose your area of interest.', function (v) { return v !== ''; }],
       'cf-message': [message, byId('cf-message-err'), 'Please tell us how we can help.', function (v) { return v.trim().length > 0; }]
     };
 
@@ -78,7 +78,13 @@
         fullname: String(byId('cf-name').value || '').trim(),
         email: String(byId('cf-email').value || '').trim(),
         phone: String(byId('cf-phone').value || '').trim(),
+        country: String(byId('cf-country').value || '').trim(),
+        city: String(byId('cf-city').value || '').trim(),
+        preferredContactMethod: String(byId('cf-method').value || '').trim(),
         subject: String(byId('cf-subject').value || '').trim(),
+        preferredDate: String(byId('cf-date').value || '').trim(),
+        preferredTime: String(byId('cf-time').value || '').trim(),
+        numberGuests: String(byId('cf-guests').value || '').trim(),
         message: String(message.value || '').trim()
       };
     }
@@ -131,7 +137,7 @@
       resetPanels();
       submitBtn.disabled = true;
       submitBtn.classList.add('is-loading');
-      if (submitLabel) submitLabel.textContent = 'Sending\u2026';
+      if (submitLabel) submitLabel.textContent = 'SUBMITTING\u2026';
 
       var hpFilled = hp && String(hp.value || '').trim() !== '';
       var chain = hpFilled
@@ -149,7 +155,7 @@
         successPanel.hidden = true;
       }).finally(function () {
         submitBtn.classList.remove('is-loading');
-        if (submitLabel) submitLabel.textContent = 'Send Enquiry';
+        if (submitLabel) submitLabel.textContent = 'SUBMIT ENQUIRY \u2192';
         window.setTimeout(function () { submitBtn.disabled = false; }, 2500);
       });
     }

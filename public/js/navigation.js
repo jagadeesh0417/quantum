@@ -71,16 +71,26 @@
     /* Reattach the preserved hero video into the new page's hero layer.
        This must happen before page:load so heroVideo() sees it and does not
        create a duplicate. Reusing the same element keeps currentTime, so the
-       video continues instead of restarting from 0:00. */
+       video continues instead of restarting from 0:00. If the destination
+       page opts out of the sitewide video (calm hero with an empty
+       .ct-hero-media, e.g. the contact page), discard the video instead. */
     if (heroVideo) {
-      const host = document.querySelector('#main > .hero-img') || document.getElementById('main');
-      if (host && host !== heroVideo.parentNode) host.appendChild(heroVideo);
-      if (heroVideo.paused) {
-        const p = heroVideo.play();
-        if (p && p.catch) p.catch(() => {});
+      const optOut = document.querySelector('#main > .ct-hero-media');
+      if (optOut) {
+        heroVideo.pause();
+        heroVideo.removeAttribute('src');
+        heroVideo.load();
+        heroVideo.remove();
+      } else {
+        const host = document.querySelector('#main > .hero-img') || document.getElementById('main');
+        if (host && host !== heroVideo.parentNode) host.appendChild(heroVideo);
+        if (heroVideo.paused) {
+          const p = heroVideo.play();
+          if (p && p.catch) p.catch(() => {});
+        }
+        const attempt = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
+        heroVideo.addEventListener('canplay', attempt, { once: true });
       }
-      const attempt = () => { const p = heroVideo.play(); if (p && p.catch) p.catch(() => {}); };
-      heroVideo.addEventListener('canplay', attempt, { once: true });
     }
 
     const preloader = document.querySelector('.preloader');
