@@ -28,6 +28,408 @@
   <link rel="stylesheet" href="css/site-hero.css">
 
 <link rel="stylesheet" href="css/image-frames.css">
+
+  <style>
+    /* ===================================================================
+       THE CAMPUS · Campus Tour (resort-tour.html) — section-level styles
+       Scoped with .ct- to match the site's editorial design system.
+       =================================================================== */
+    :root {
+      --ct-green: #1a2e1a;
+      --ct-green-2: #22422a;
+      --ct-cream: #f7f2e7;
+      --ct-ivory: #fffdf7;
+      --ct-gold: #b99a5b;
+      --ct-muted: #6b6f63;
+      --ct-ink: #18231a;
+      --ct-serif: var(--font-serif, 'Fraunces', Georgia, serif);
+      --ct-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    #main { scroll-margin-top: 80px; }
+    .ct-section { padding-block: 110px; }
+
+    /* ---------- HERO ---------- */
+    .ct-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0c1a10;
+      color: #fff;
+    }
+    .ct-hero-media { position: absolute; inset: 0; }
+    .ct-hero-media video,
+    .ct-hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ct-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.55) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.55) 100%);
+    }
+    .ct-hero-inner {
+      position: relative; z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 120px 24px 140px;
+    }
+    .ct-eyebrow {
+      font-family: var(--ct-sans);
+      font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--ct-gold); font-weight: 600; margin-bottom: 26px;
+    }
+    .ct-hero h1 {
+      font-family: var(--ct-serif);
+      font-weight: 400; line-height: 1.08;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      color: #fff; margin-bottom: 26px;
+    }
+    .ct-hero h1 em { font-style: italic; color: var(--ct-gold); }
+    .ct-hero-sub {
+      font-family: var(--ct-sans);
+      font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.82); margin-bottom: 40px;
+    }
+    .ct-hero-cta { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+    .ct-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--ct-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.06em;
+      padding: 16px 30px; border-radius: 2px; cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid transparent; text-decoration: none;
+    }
+    .ct-btn-primary { background: var(--ct-cream); color: var(--ct-ink); }
+    .ct-btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+    .ct-btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); }
+    .ct-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .ct-btn-dark-fill { background: var(--ct-cream); color: var(--ct-ink); }
+    .ct-btn-dark-fill:hover { background: #fff; transform: translateY(-2px); }
+
+    .ct-scroll-indicator {
+      position: absolute; left: 50%; bottom: 200px; transform: translateX(-50%);
+      z-index: 2; text-align: center;
+    }
+    .ct-scroll-line { width: 1px; height: 56px; margin: 0 auto 10px; background: rgba(255,255,255,0.5); overflow: hidden; position: relative; }
+    .ct-scroll-line::after {
+      content: ""; position: absolute; left: 0; top: -50%; width: 100%; height: 50%;
+      background: #fff; animation: ct-scroll 1.8s ease infinite;
+    }
+    @keyframes ct-scroll { 0% { top: -50%; } 100% { top: 110%; } }
+    .ct-scroll-label { font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+    .ct-hero-stats {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+      display: flex; justify-content: center; gap: 0;
+      background: linear-gradient(180deg, rgba(10,24,14,0) 0%, rgba(10,24,14,0.82) 100%);
+      padding: 30px 20px 34px;
+    }
+    .ct-hero-stat { text-align: center; padding: 0 34px; }
+    .ct-hero-stat + .ct-hero-stat { border-left: 1px solid rgba(255,255,255,0.22); }
+    .ct-hero-stat-b { display: block; font-family: var(--ct-serif); font-size: 1.5rem; color: #fff; line-height: 1; }
+    .ct-hero-stat-b small { font-family: var(--ct-serif); font-size: 0.7em; color: var(--ct-gold); }
+    .ct-hero-stat-l { display: block; margin-top: 8px; font-family: var(--ct-sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.74); }
+
+    @media (max-width: 767px) {
+      .ct-hero-inner { padding: 120px 20px 170px; }
+      .ct-scroll-indicator { bottom: 150px; }
+      .ct-hero-stats { flex-direction: column; gap: 14px; padding-bottom: 132px; }
+      .ct-hero-stat { padding: 8px 0; }
+      .ct-hero-stat + .ct-hero-stat { border-left: 0; }
+    }
+    @media (max-width: 480px) {
+      .ct-hero-cta { flex-direction: column; align-items: stretch; }
+    }
+
+    /* ---------- ORIENTATION STRIP ---------- */
+    .ct-orient {
+      background: var(--ct-cream);
+      border-block: 1px solid rgba(26,46,26,0.08);
+      padding: 26px 20px;
+      text-align: center;
+      font-family: var(--ct-sans);
+      font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--ct-green);
+      white-space: nowrap; overflow: hidden;
+    }
+    .ct-orient-inner { display: inline-flex; align-items: center; gap: 22px; }
+    .ct-orient .ct-diam { color: var(--ct-gold); letter-spacing: 0; }
+
+    /* ---------- PHILOSOPHY ---------- */
+    .ct-philo { text-align: center; }
+    .ct-philo .ct-philo-col { max-width: 680px; margin: 0 auto; }
+    .ct-philo h2 {
+      font-family: var(--ct-serif); font-weight: 400;
+      font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.15; color: var(--ct-ink); margin-bottom: 30px;
+    }
+    .ct-philo h2 em { font-style: italic; color: var(--ct-green); }
+    .ct-philo p.ct-body { font-size: 1.08rem; line-height: 1.85; color: #3c4139; margin: 0 auto 34px; }
+    .ct-philo .ct-pull {
+      font-family: var(--ct-serif); font-style: italic; font-weight: 400;
+      font-size: 1.35rem; line-height: 1.6; color: var(--ct-green);
+    }
+
+    /* ---------- MASTER PLAN ---------- */
+    .ct-plan { background: var(--ct-ivory); }
+    .ct-plan-head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+    .ct-plan-head h2 { font-family: var(--ct-serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 3rem); color: var(--ct-ink); margin-bottom: 18px; }
+    .ct-plan-head h2 em { font-style: italic; color: var(--ct-green); }
+    .ct-plan-head p { font-size: 1.05rem; line-height: 1.8; color: var(--ct-muted); }
+
+    .ct-map-wrap {
+      position: relative;
+      border: 1px solid rgba(26,46,26,0.12);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #e8e2d2;
+    }
+    .ct-map-img { width: 100%; height: 100%; min-height: 520px; object-fit: cover; display: block; }
+    .ct-map-hotspot {
+      position: absolute;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: var(--ct-green);
+      color: #fff;
+      font-family: var(--ct-sans); font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, background 0.3s ease;
+      z-index: 5;
+    }
+    .ct-map-hotspot:hover, .ct-map-hotspot.is-active { background: var(--ct-gold); transform: translate(-50%, -50%) scale(1.15); }
+    .ct-map-tip {
+      position: absolute; z-index: 6;
+      width: 300px; max-width: 82vw;
+      background: #fff;
+      border: 1px solid rgba(26,46,26,0.14);
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+      padding: 22px 22px 20px;
+      opacity: 0; visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+      pointer-events: none;
+    }
+    .ct-map-tip.is-visible { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+    .ct-map-tip .ct-tip-n { font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ct-gold); margin-bottom: 8px; }
+    .ct-map-tip .ct-tip-ic { width: 30px; height: 30px; color: var(--ct-green); margin-bottom: 10px; display: block; }
+    .ct-map-tip .ct-tip-t { font-family: var(--ct-serif); font-size: 1.05rem; color: var(--ct-ink); margin-bottom: 8px; }
+    .ct-map-tip .ct-tip-d { font-size: 0.9rem; line-height: 1.65; color: var(--ct-muted); }
+
+    /* Destination cards row */
+    .ct-dest-cards {
+      margin-top: 40px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 190px;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 6px 2px 22px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .ct-dest-card {
+      scroll-snap-align: start;
+      border: 1px solid rgba(26,46,26,0.12);
+      border-radius: 4px;
+      background: #fff;
+      padding: 20px 18px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+    .ct-dest-card:hover, .ct-dest-card.is-active {
+      transform: translateY(-4px);
+      border-color: var(--ct-gold);
+      box-shadow: 0 16px 34px rgba(26,46,26,0.10);
+      background: var(--ct-cream);
+    }
+    .ct-dest-card .ct-dc-n { font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.18em; color: var(--ct-gold); font-weight: 600; }
+    .ct-dest-card .ct-dc-ic { width: 26px; height: 26px; color: var(--ct-green); margin: 12px 0 10px; display: block; }
+    .ct-dest-card .ct-dc-t { font-family: var(--ct-serif); font-size: 1rem; line-height: 1.35; color: var(--ct-ink); }
+
+    /* ---------- INFRASTRUCTURE ---------- */
+    .ct-infra { background: var(--ct-green); color: #fff; }
+    .ct-infra .ct-plan-head h2 { color: #fff; }
+    .ct-infra .ct-plan-head h2 em { color: var(--ct-gold); }
+    .ct-infra .ct-plan-head p { color: rgba(255,255,255,0.72); }
+    .ct-infra .ct-eyebrow { color: var(--ct-gold); }
+    .ct-infra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .ct-infra-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 6px;
+      padding: 30px 26px;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+    .ct-infra-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.22); }
+    .ct-infra-card .ct-ic-emoj { font-size: 1.9rem; line-height: 1; margin-bottom: 18px; display: block; }
+    .ct-infra-card h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+    .ct-infra-card p { font-family: var(--ct-sans); font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.72); }
+    .ct-infra-strip {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .ct-infra-strip figure { margin: 0; position: relative; overflow: hidden; border-radius: 4px; }
+    .ct-infra-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: transform 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .ct-infra-strip figure:hover img { transform: scale(1.06); }
+
+    @media (max-width: 900px) { .ct-infra-grid { grid-template-columns: repeat(2, 1fr); } .ct-infra-strip { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .ct-infra-grid, .ct-infra-strip { grid-template-columns: 1fr; } }
+
+    /* ---------- STAY ---------- */
+    .ct-stay { background: var(--ct-ivory); }
+    .ct-stay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 52px; }
+    .ct-stay-card {
+      border: 1px solid rgba(26,46,26,0.10);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ct-stay-card:hover { transform: translateY(-5px); box-shadow: 0 22px 50px rgba(26,46,26,0.12); }
+    .ct-stay-card figure { margin: 0; overflow: hidden; aspect-ratio: 16 / 10; }
+    .ct-stay-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .ct-stay-card:hover img { transform: scale(1.05); }
+    .ct-stay-body { padding: 30px 28px 32px; }
+    .ct-stay-body h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 1.6rem; color: var(--ct-ink); margin-bottom: 12px; }
+    .ct-stay-body > p { font-size: 0.98rem; line-height: 1.75; color: var(--ct-muted); margin-bottom: 20px; }
+    .ct-stay-feats { list-style: none; margin: 0 0 4px; padding: 0; }
+    .ct-stay-feats li {
+      position: relative; padding: 7px 0 7px 26px;
+      font-family: var(--ct-sans); font-size: 0.92rem; color: #2f342c;
+    }
+    .ct-stay-feats li::before {
+      content: ""; position: absolute; left: 2px; top: 15px;
+      width: 8px; height: 8px; border: 1.5px solid var(--ct-gold); border-radius: 50%;
+    }
+    .ct-stay-cta { text-align: center; margin-top: 44px; }
+
+    @media (max-width: 860px) { .ct-stay-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- DINING ---------- */
+    .ct-dine { background: var(--ct-cream); }
+    .ct-dine-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 40px; }
+    .ct-dine-img { margin: 0; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 70px rgba(26,46,26,0.18); }
+    .ct-dine-img img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+    .ct-dine-row { display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(26,46,26,0.10); align-items: flex-start; }
+    .ct-dine-row:first-of-type { border-top: 0; }
+    .ct-dine-ic { font-size: 1.5rem; line-height: 1; margin-top: 2px; }
+    .ct-dine-row h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 1.25rem; color: var(--ct-ink); margin-bottom: 6px; }
+    .ct-dine-row p { font-size: 0.95rem; line-height: 1.7; color: var(--ct-muted); }
+    .ct-dine-quote {
+      font-family: var(--ct-serif); font-style: italic; font-weight: 400;
+      font-size: 1.5rem; line-height: 1.5; color: var(--ct-green);
+      margin: 34px 0 34px;
+    }
+    @media (max-width: 860px) { .ct-dine-split { grid-template-columns: 1fr; gap: 34px; } }
+
+    /* ---------- CAMPUS FILM ---------- */
+    .ct-film { background: #0b150d; color: #fff; text-align: center; }
+    .ct-film .ct-eyebrow { color: var(--ct-gold); }
+    .ct-film h2 { font-family: var(--ct-serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 3rem); color: #fff; margin-bottom: 40px; }
+    .ct-film h2 em { font-style: italic; color: var(--ct-gold); }
+    .ct-film-stage {
+      position: relative; max-width: 1100px; margin: 0 auto;
+      aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px;
+      background: #000; cursor: pointer;
+    }
+    .ct-film-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ct-film-play {
+      position: absolute; inset: 0; z-index: 3;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.30);
+      transition: background 0.3s ease;
+    }
+    .ct-film-stage:hover .ct-film-play { background: rgba(0,0,0,0.18); }
+    .ct-play-btn {
+      width: 92px; height: 92px; border-radius: 50%;
+      background: var(--ct-cream); color: var(--ct-ink);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease;
+    }
+    .ct-film-stage:hover .ct-play-btn { transform: scale(1.08); }
+    .ct-film-caption { margin-top: 26px; font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.72); }
+    .ct-film-note { margin-top: 10px; font-family: var(--ct-sans); font-size: 13px; color: rgba(255,255,255,0.5); }
+
+    /* ---------- GALLERY TEASER ---------- */
+    .ct-gallery { background: var(--ct-ivory); }
+    .ct-gal-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+      height: 560px;
+    }
+    .ct-gal-item { position: relative; overflow: hidden; border-radius: 5px; display: block; }
+    .ct-gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .ct-gal-item:hover img { transform: scale(1.05); }
+    .ct-gal-item .ct-gal-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: rgba(0,0,0,0); display: flex; align-items: flex-end; padding: 22px;
+      transition: background 0.3s ease;
+    }
+    .ct-gal-item:hover .ct-gal-overlay { background: rgba(0,0,0,0.28); }
+    .ct-gal-arrow {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #fff; color: var(--ct-ink);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .ct-gal-item:hover .ct-gal-arrow { opacity: 1; transform: translateY(0); }
+    .ct-gal-item-a { grid-column: 1 / 2; grid-row: 1 / 3; }
+    .ct-gal-cta { text-align: center; margin-top: 44px; }
+    @media (max-width: 720px) { .ct-gal-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; } .ct-gal-item { height: 300px; } .ct-gal-item-a { height: 420px; } }
+
+    /* ---------- LOCATION ---------- */
+    .ct-location { background: var(--ct-cream); }
+    .ct-loc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: stretch; margin-top: 44px; }
+    .ct-loc-map { margin: 0; border-radius: 6px; overflow: hidden; min-height: 420px; background: #dcd6c6; }
+    .ct-loc-map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+    .ct-address { margin-bottom: 30px; }
+    .ct-address h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 1.4rem; color: var(--ct-ink); margin-bottom: 10px; }
+    .ct-address p { font-size: 1rem; line-height: 1.8; color: var(--ct-muted); }
+    .ct-transfer { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-top: 1px solid rgba(26,46,26,0.10); }
+    .ct-transfer:first-of-type { border-top: 0; }
+    .ct-transfer .ct-tf-ic { font-size: 1.25rem; margin-top: 2px; }
+    .ct-transfer p { font-size: 0.95rem; line-height: 1.6; color: #2f342c; }
+    .ct-transfer p small { display: block; color: var(--ct-muted); }
+    @media (max-width: 860px) { .ct-loc-split { grid-template-columns: 1fr; } }
+
+    /* ---------- CLOSING CTA ---------- */
+    .ct-close { background: var(--ct-green); color: #fff; text-align: center; }
+    .ct-close h2 {
+      font-family: var(--ct-serif); font-weight: 400;
+      font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.15; color: #fff; margin-bottom: 22px;
+    }
+    .ct-close h2 em { font-style: italic; color: var(--ct-gold); }
+    .ct-close p.ct-close-sub { font-family: var(--ct-sans); font-size: 1.05rem; color: #e8e0ce; margin-bottom: 38px; }
+    .ct-close .ct-hero-cta { justify-content: center; }
+
+    /* Reveal animation (mirrors site motion) */
+    .ct-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .ct-reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .ct-reveal { opacity: 1 !important; transform: none !important; transition: none; }
+      .ct-hero-scroll { display: none; }
+    }
+    @media (min-width: 768px) { .ct-map-img { min-height: 560px; } }
+  </style>
 </head>
 <body>
 
@@ -115,726 +517,365 @@
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
-  <section class="tour-hero" id="main">
-    <div class="hero-img"><img src="images/gallery/Screenshot%202026-08-15%20150558.png" alt="The entrance building at Quantum Health Stemcell Resort" fetchpriority="high" onerror="this.remove()"></div>
-    <div class="tour-hero-scrim" aria-hidden="true"></div>
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="sep">&rsaquo;</span>
-        <span>The Campus</span>
-      </nav>
-      <span class="eyebrow">The Campus &middot; Virtual Journey</span>
-      <h1>Discover an <em>Extraordinary</em> Wellness Destination</h1>
-      <p>Experience a thoughtfully designed healthcare and wellness ecosystem where advanced medical science, regenerative medicine, luxury hospitality, and nature come together to create an environment dedicated to healing, rejuvenation, and healthy ageing.</p>
-      <p>Take a virtual journey through Quantum Health Stemcell Resort and explore the exceptional facilities that make it one of India's most distinctive integrated wellness destinations.</p>
-      <div class="tour-stats" data-reveal>
-        <div class="tour-stat"><span class="ts-big"><span data-count="22">0</span><em>AC</em></span><span class="ts-label">Landscaped Campus</span></div>
-        <div class="tour-stat"><span class="ts-big"><span data-count="14">0</span></span><span class="ts-label">Destinations, One Park</span></div>
-        <div class="tour-stat"><span class="ts-big"><span data-count="15">0</span></span><span class="ts-label">Premium Villas</span></div>
-        <div class="tour-stat"><span class="ts-big"><span data-count="40">0</span><em>MIN</em></span><span class="ts-label">From Intl. Airport</span></div>
-      </div>
-      <div class="scroll-hint" aria-hidden="true">Scroll</div>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- ================= THE LAND ================= -->
-  <section class="section cp-story" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <figure class="mpj-img-fig mpj-media-43 rt-fig-caption">
-          <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The private lake at Quantum Health Stemcell Resort, framed by trees" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption><strong>22 Acres of Healing</strong> &mdash; lakes, orchards and gardens in the green lung of Bengaluru.</figcaption>
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">The Land</span>
-          <h2 class="mpj-h2">A private environment designed around care, recovery and research.</h2>
-          <p class="mpj-lead">Lakes, orchards and gardens in the green lung of Bengaluru &mdash; 40 minutes from the international airport.</p>
-          <p>Fourteen destinations sit within the park &mdash; from reception and luxury villas to a private lake, research block and helipad. The resort environment is not a backdrop; it is part of the protocol.</p>
-          <p>Cottages, suites, fine dining and concierge &mdash; a five-star stay with medical care next door. Spa, yoga, hydrotherapy, nutrition and mindfulness are woven into every programme.</p>
-          <div class="rt-attr">
-            <span><span class="rt-attr-i">01</span>Nature &amp; Gardens</span>
-            <span><span class="rt-attr-i">02</span>Lakeside Spa</span>
-            <span><span class="rt-attr-i">03</span>Yoga &amp; Meditation</span>
-            <span><span class="rt-attr-i">04</span>Hydrotherapy</span>
-            <span><span class="rt-attr-i">05</span>Farm-to-Table Dining</span>
-            <span><span class="rt-attr-i">06</span>Cottages &amp; Suites</span>
+    <!-- ===================================================================
+         1. HERO · full viewport, autoplay video with poster fallback
+    =================================================================== -->
+    <section class="ct-hero">
+      <div class="ct-hero-media" aria-hidden="true">
+        <video id="ctHeroVideo" autoplay muted loop playsinline
+               poster="images/campus/hero-poster.jpg">
+          <source src="videos/campus-hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="ct-hero-overlay" aria-hidden="true"></div>
+
+      <div class="ct-hero-inner">
+        <p class="ct-eyebrow">Quantum Health Stemcell Resort</p>
+        <h1>Twenty-two acres, <em>one living destination</em>.</h1>
+        <p class="ct-hero-sub">Kanakapura Main Road &middot; Bengaluru &middot; 40 minutes from international airport</p>
+        <div class="ct-hero-cta">
+          <a href="#plan" class="ct-btn ct-btn-primary">Walk the Campus &rarr;</a>
+          <a href="tel:+919845025857" class="ct-btn ct-btn-outline">Begin Your Journey</a>
+        </div>
+      </div>
+
+      <div class="ct-scroll-indicator ct-hero-scroll" aria-hidden="true">
+        <div class="ct-scroll-line"></div>
+        <span class="ct-scroll-label">Scroll</span>
+      </div>
+
+      <div class="ct-hero-stats">
+        <div class="ct-hero-stat">
+          <span class="ct-hero-stat-b"><small>22</small> Acres</span>
+          <span class="ct-hero-stat-l">Landscaped Campus</span>
+        </div>
+        <div class="ct-hero-stat">
+          <span class="ct-hero-stat-b"><small>16 &times;</small> Clinics</span>
+          <span class="ct-hero-stat-l">Specialised Clinics</span>
+        </div>
+        <div class="ct-hero-stat">
+          <span class="ct-hero-stat-b"><small>14</small> Destinations</span>
+          <span class="ct-hero-stat-l">One Park</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         2. ORIENTATION STRIP · single line, cream background
+    =================================================================== -->
+    <div class="ct-orient" aria-hidden="true">
+      <div class="ct-orient-inner">
+        <span>Regenerative Medicine</span><span class="ct-diam">&#9670;</span>
+        <span>Luxury Wellness</span><span class="ct-diam">&#9670;</span>
+        <span>Precision Diagnostics</span><span class="ct-diam">&#9670;</span>
+        <span>Healthy Ageing</span><span class="ct-diam">&#9670;</span>
+        <span>Bengaluru, India</span>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         3. PHILOSOPHY · narrow centered paragraph
+    =================================================================== -->
+    <section class="ct-section ct-philo">
+      <div class="container">
+        <div class="ct-philo-col ct-reveal">
+          <p class="ct-eyebrow">The Campus</p>
+          <h2>A place designed around <em>the whole of you</em>.</h2>
+          <p class="ct-body">Most places treat health and hospitality as separate things. Quantum was built around a single idea: that where you are shapes what you can become. Every path, every building, every view was positioned to work with your body &mdash; not around it.</p>
+          <p class="ct-pull">&ldquo;Twenty-two acres of landscape, water and architecture &mdash; built for healing and lifelong wellbeing.&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         4. MASTER PLAN · #plan · interactive 14-hotspot map + destination row
+    =================================================================== -->
+    <section class="ct-section ct-plan" id="plan">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">The Master Plan</p>
+          <h2>Fourteen destinations, <em>one park</em>.</h2>
+          <p>Every building serves the whole &mdash; medicine, science, hospitality and landscape, arranged around your health.</p>
+        </div>
+
+        <div class="ct-map-wrap" id="ctMapWrap">
+          <img class="ct-map-img" id="ctMapImg" src="images/campus/master-plan.jpg" alt="Illustrated master plan of the twenty-two acre Quantum Health Stemcell Resort campus showing fourteen numbered destinations">
+          <div class="ct-map-tip" id="ctMapTip" role="tooltip" aria-hidden="true">
+            <span class="ct-tip-n" id="ctTipN"></span>
+            <span class="ct-tip-ic" id="ctTipIc"></span>
+            <span class="ct-tip-t" id="ctTipT"></span>
+            <span class="ct-tip-d" id="ctTipD"></span>
+          </div>
+          <div id="ctHotspots"></div>
+        </div>
+
+        <div class="ct-dest-cards" id="ctDestCards" aria-label="Fourteen destinations on the Quantum campus"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         5. INFRASTRUCTURE · #infra · feature cards + image strip
+    =================================================================== -->
+    <section class="ct-section ct-infra" id="infra">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">Infrastructure</p>
+          <h2>Built for <em>serious medicine</em>, designed for comfort.</h2>
+          <p>Every system on campus is engineered to make your recovery faster, quieter and more complete.</p>
+        </div>
+
+        <div class="ct-infra-grid">
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#127807;</span>
+            <h3>22 Landscaped Acres</h3>
+            <p>Lakes, orchards, gardens and walking paths in Bengaluru's green lung.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#127973;</span>
+            <h3>16 Specialised Clinics</h3>
+            <p>Every clinic shares one diagnostic core &mdash; no transfers, no repetition.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#128300;</span>
+            <h3>Molecular Laboratory</h3>
+            <p>On-site cellular processing and biomarker testing &mdash; results in hours.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#128174;</span>
+            <h3>Private Accommodation</h3>
+            <p>Wellness cottages and executive villas set within the grounds.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#127807;&#65039;</span>
+            <h3>Farm-to-Table Cuisine</h3>
+            <p>A clinical kitchen where food is prescribed as precisely as medicine.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#9992;&#65039;</span>
+            <h3>40 Min from Airport</h3>
+            <p>Private transfers from Kempegowda International Airport, Bengaluru.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#127754;</span>
+            <h3>Private Lake</h3>
+            <p>A natural water body at the centre of the campus &mdash; calm by design.</p>
+          </div>
+          <div class="ct-infra-card ct-reveal">
+            <span class="ct-ic-emoj">&#128267;</span>
+            <h3>Sustainability</h3>
+            <p>Solar energy, rainwater harvesting and zero-waste kitchen practices.</p>
+          </div>
+        </div>
+
+        <div class="ct-infra-strip">
+          <figure><img src="images/campus/infra-01.jpg" alt="Landscaped grounds across the Quantum campus" loading="lazy"></figure>
+          <figure><img src="images/campus/infra-02.jpg" alt="Water and gardens across the campus" loading="lazy"></figure>
+          <figure><img src="images/campus/infra-03.jpg" alt="Architecture and facilities on the campus" loading="lazy"></figure>
+          <figure><img src="images/campus/infra-04.jpg" alt="Forest and walking trails across the campus" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         6. STAY · #stay · two accommodation cards
+    =================================================================== -->
+    <section class="ct-section ct-stay" id="stay">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">Accommodation</p>
+          <h2>Your room is not a room. <em>It is part of the treatment.</em></h2>
+          <p>Every accommodation type at Quantum was designed with your health programme in mind &mdash; natural light, clean air, silence and space measured as carefully as any prescription.</p>
+        </div>
+
+        <div class="ct-stay-grid">
+          <article class="ct-stay-card ct-reveal">
+            <figure><img src="images/campus/cottage-01.jpg" alt="Wellness cottage at Quantum Health Stemcell Resort" loading="lazy"></figure>
+            <div class="ct-stay-body">
+              <h3>Wellness Cottages</h3>
+              <p>Private garden cottages woven into the landscape &mdash; natural materials, curated silence and therapeutic lighting throughout.</p>
+              <ul class="ct-stay-feats">
+                <li>Private garden or courtyard</li>
+                <li>Circadian lighting system</li>
+                <li>Air purification with botanical filtration</li>
+                <li>In-room nutrition menu by clinical dietitian</li>
+                <li>In-room therapy options available</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="ct-stay-card ct-reveal">
+            <figure><img src="images/campus/villa-01.jpg" alt="Executive villa at Quantum Health Stemcell Resort" loading="lazy"></figure>
+            <div class="ct-stay-body">
+              <h3>Executive Villas</h3>
+              <p>Spacious suites for guests seeking privacy, comfort and an elevated level of concierge care &mdash; clinical and hospitality teams integrated seamlessly.</p>
+              <ul class="ct-stay-feats">
+                <li>Private outdoor terrace or plunge pool</li>
+                <li>Dedicated health concierge</li>
+                <li>On-demand diagnostics and physician calls</li>
+                <li>Personal chef and nutritionist service</li>
+                <li>Secure meeting facilities for working guests</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="ct-stay-cta ct-reveal">
+          <a href="tel:+919845025857" class="ct-btn ct-btn-primary">Enquire About Accommodation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         7. DINING · #dine · split image + content
+    =================================================================== -->
+    <section class="ct-section ct-dine" id="dine">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">Dining &amp; Room Service</p>
+          <h2>Food, <em>used as medicine</em>.</h2>
+          <p>At Quantum, the kitchen reports to the clinical team &mdash; every meal on campus is reviewed by a dietitian and adjusted to your programme. Farm-to-table is not a philosophy here. It is a clinical standard.</p>
+        </div>
+
+        <div class="ct-dine-split">
+          <figure class="ct-dine-img ct-reveal"><img src="images/campus/dining-01.jpg" alt="Farm-to-table dining at Quantum Health Stemcell Resort" loading="lazy"></figure>
+          <div class="ct-dine-content ct-reveal">
+            <div class="ct-dine-row">
+              <span class="ct-dine-ic">&#127806;</span>
+              <div>
+                <h3>Farm-to-Table</h3>
+                <p>Produce from our campus orchards and local organic farms, prepared daily.</p>
+              </div>
+            </div>
+            <div class="ct-dine-row">
+              <span class="ct-dine-ic">&#128203;</span>
+              <div>
+                <h3>Clinically Curated Menus</h3>
+                <p>Every dish is reviewed by a registered dietitian and aligned to your programme.</p>
+              </div>
+            </div>
+            <div class="ct-dine-row">
+              <span class="ct-dine-ic">&#128682;</span>
+              <div>
+                <h3>In-Room Dining</h3>
+                <p>Full room service available throughout the day &mdash; menus adjusted to your health plan.</p>
+              </div>
+            </div>
+            <p class="ct-dine-quote">&ldquo;Eating well here is not an option. It is part of the protocol.&rdquo;</p>
+            <a href="wellness.html#nutrition" class="ct-btn ct-btn-dark-fill">View Dining Experience &rarr;</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= MEDICINE & RESEARCH ================= -->
-  <section class="section mpj-retreats" data-reveal>
-    <div class="container">
-      <div class="mpj-split mpj-split-flip">
-        <figure class="mpj-img-fig mpj-media-43 rt-fig-caption">
-          <img src="images/gallery/Screenshot%202026-08-15%20150444.png" alt="The Advanced Diagnostics Centre at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption><strong>Medicine of Precision</strong> &mdash; molecular, functional and imaging technologies, on campus.</figcaption>
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">Medicine &amp; Research</span>
-          <h2 class="mpj-h2">Clinical science, <em>on campus</em>.</h2>
-          <p class="mpj-lead">Every programme begins with a complete, physician-led picture of your health.</p>
-          <p>An Advanced Diagnostics Centre delivers molecular, functional and imaging technologies with most answers returning within hours from our on-campus laboratory &mdash; not days. The Regenerative Medicine Institute houses purpose-built cellular therapy suites for evidence-informed regenerative medicine.</p>
-          <p>An Executive Health Centre offers comprehensive assessments, preventive screenings and personalised health optimisation programmes &mdash; while on-campus biotechnology and translational research with global partners, and a training academy for physicians and care teams, extend the campus beyond the clinic.</p>
-          <ul class="cp-list">
-            <li>Advanced Diagnostics Centre</li>
-            <li>Regenerative Medicine Institute</li>
-            <li>Executive Health Centre</li>
-            <li>Biotechnology Research Facilities</li>
-            <li>International Training Academy</li>
-          </ul>
+    <!-- ===================================================================
+         8. CAMPUS FILM · #film · click-to-play video
+    =================================================================== -->
+    <section class="ct-section ct-film" id="film">
+      <div class="container">
+        <p class="ct-eyebrow ct-reveal">Campus Film</p>
+        <h2 class="ct-reveal">Twenty-two acres, <em>in motion</em>.</h2>
+
+        <div class="ct-film-stage ct-reveal" id="ctFilmStage">
+          <video class="ct-film-video" id="ctFilmVideo" preload="metadata" playsinline poster="images/campus/film-poster.jpg">
+            <source src="videos/campus-film.mp4" type="video/mp4">
+          </video>
+          <div class="ct-film-play" id="ctFilmPlay"><span class="ct-play-btn">&#9654;</span></div>
+        </div>
+
+        <p class="ct-film-caption ct-reveal">A private environment designed around care, recovery, research and wellbeing &mdash; Kanakapura Main Road, Bengaluru.</p>
+        <p class="ct-film-note ct-reveal">3 minutes &middot; No sound required</p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         9. GALLERY TEASER · 3-image mosaic linking to gallery.html
+    =================================================================== -->
+    <section class="ct-section ct-gallery">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">Campus Gallery</p>
+          <h2>The grounds, <em>in detail</em>.</h2>
+        </div>
+
+        <div class="ct-gal-grid">
+          <a class="ct-gal-item ct-gal-item-a ct-reveal" href="gallery.html" aria-label="View the full campus gallery">
+            <img src="images/gallery/campus-wide.jpg" alt="Wide view across the Quantum campus" loading="lazy">
+            <span class="ct-gal-overlay"><span class="ct-gal-arrow">&rarr;</span></span>
+          </a>
+          <a class="ct-gal-item ct-reveal" href="gallery.html" aria-label="View the campus gallery">
+            <img src="images/gallery/campus-spa.jpg" alt="The lakeside spa at Quantum" loading="lazy">
+            <span class="ct-gal-overlay"><span class="ct-gal-arrow">&rarr;</span></span>
+          </a>
+          <a class="ct-gal-item ct-reveal" href="gallery.html" aria-label="View the campus gallery">
+            <img src="images/gallery/campus-lake.jpg" alt="The private lake at Quantum" loading="lazy">
+            <span class="ct-gal-overlay"><span class="ct-gal-arrow">&rarr;</span></span>
+          </a>
+        </div>
+
+        <div class="ct-gal-cta ct-reveal">
+          <a href="gallery.html" class="ct-btn ct-btn-primary">View Full Gallery &rarr;</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= WELLNESS DESTINATIONS ================= -->
-  <section class="section cp-story" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <figure class="mpj-img-fig mpj-media-43 rt-fig-caption">
-          <img src="images/gallery/Screenshot%202026-08-15%20150501.png" alt="The yoga and meditation pavilion at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption><strong>The Wellness Quarter</strong> &mdash; yoga pavilion, hydrotherapy, spa, organic restaurant and forest trails.</figcaption>
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">Wellness Destinations</span>
-          <h2 class="mpj-h2">Nature-led recovery, <em>woven into every stay</em>.</h2>
-          <p class="mpj-lead">Wellness at Quantum is not an amenity &mdash; it is the protocol.</p>
-          <p>An infinity reflection pool, botanical healing gardens and a medicinal plant garden frame the park, while a yoga and meditation pavilion hosts guided practice, breathing work and holistic programmes. The hydrotherapy centre and lakeside luxury spa support relaxation, rehabilitation and recovery.</p>
-          <p>Forest walking trails encourage mindful movement, and the private lake offers a tranquil waterfront for reflection and gentle wellness activities &mdash; every space designed around a single question: what does a body in recovery need?</p>
-          <ul class="cp-list">
-            <li>Infinity Reflection Pool</li>
-            <li>Yoga &amp; Meditation Pavilion</li>
-            <li>Hydrotherapy Centre</li>
-            <li>Luxury Spa</li>
-            <li>Botanical &amp; Medicinal Gardens</li>
-            <li>Forest Trails &amp; Private Lake</li>
-          </ul>
+    <!-- ===================================================================
+         10. LOCATION · map embed + address + transfers
+    =================================================================== -->
+    <section class="ct-section ct-location">
+      <div class="container">
+        <div class="ct-plan-head ct-reveal">
+          <p class="ct-eyebrow">Find Us</p>
+          <h2>Forty minutes from anywhere, <em>a world away from everything</em>.</h2>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= INFRASTRUCTURE ================= -->
-  <section class="section cp-infra" id="infra" data-reveal>
-    <div class="container">
-      <span class="eyebrow">Land &amp; Infrastructure</span>
-      <h2 class="section-title">A Destination Built for Healing</h2>
-      <p class="section-desc">Twenty-two acres of carefully planned wellness infrastructure &mdash; every facility designed around your recovery, comfort and wellbeing.</p>
-      <div class="infra-table">
-        <div class="infra-row"><span class="infra-name">Total Land</span><span class="infra-value">22 Acres</span></div>
-        <div class="infra-row"><span class="infra-name">Luxury Cottages</span><span class="infra-value">6</span></div>
-        <div class="infra-row"><span class="infra-name">Reception</span><span class="infra-value">1</span></div>
-        <div class="infra-row"><span class="infra-name">Restaurant</span><span class="infra-value">1</span></div>
-        <div class="infra-row"><span class="infra-name">Yoga Pavilion</span><span class="infra-value">1</span></div>
-        <div class="infra-row"><span class="infra-name">Panchakarma Centre</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Stem Cell Clinic</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">IV Therapy Lounge</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Luxury Spa</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Swimming Pool</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Organic Farm</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Herbal Garden</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Meditation Garden</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Walking Track</span><span class="infra-value">Yes</span></div>
-        <div class="infra-row"><span class="infra-name">Parking</span><span class="infra-value">60 Vehicles</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MASTER PLAN — A NEW ERA OF LONGEVITY ================= -->
-
-  <!-- 1. MASTER PLAN HERO -->
-  <section class="mpj-hero" id="film" data-reveal>
-    <div class="mpj-hero-media"><img src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Panorama of the Quantum Health Stemcell Resort campus" fetchpriority="high" onerror="this.remove()"></div>
-    <div class="mpj-hero-scrim" aria-hidden="true"></div>
-    <div class="mpj-hero-inner">
-      <span class="eyebrow">The Campus &middot; 22 Acres</span>
-      <h1>A New Era of <em>Longevity</em></h1>
-      <p class="mpj-hero-sub">Private Wellness in Nature</p>
-      <p class="mpj-hero-desc">A 22-acre wellness destination where regenerative medicine, longevity, nature and refined hospitality come together in a private sanctuary designed for living, healing and renewal.</p>
-    </div>
-    <div class="mpj-hero-hint" aria-hidden="true">Scroll</div>
-  </section>
-
-  <!-- 2. THE 22-ACRE WELLNESS DESTINATION -->
-  <section class="section mpj-intro" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <div class="mpj-copy">
-          <span class="eyebrow">The Destination</span>
-          <h2 class="mpj-h2">The 22-Acre Wellness Destination</h2>
-          <p class="mpj-lead">The campus is conceived as a single integrated environment &mdash; one place where the many disciplines of human wellbeing are gathered and allowed to work together.</p>
-          <p>Regenerative medicine, longevity programmes, wellness, nature, hospitality, privacy, architecture and restoration &mdash; each has its own home within the park, and each belongs to a whole. The resort is not simply a resort. It is a destination designed around the complete experience of human wellbeing.</p>
-          <div class="mpj-tagline">&ldquo;This is not simply a resort. This is a new way of living.&rdquo;</div>
-        </div>
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The private lake at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-      </div>
-      <div class="rt-attr rt-attr-4">
-        <span>Regenerative Medicine</span>
-        <span>Longevity Programmes</span>
-        <span>Wellness</span>
-        <span>Nature</span>
-        <span>Hospitality</span>
-        <span>Privacy</span>
-        <span>Architecture</span>
-        <span>Restoration</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. MASTER PLAN VISUAL -->
-  <section class="section mpj-plan" id="plan" data-reveal>
-    <div class="container">
-      <header class="mpj-plan-head">
-        <span class="eyebrow">The Master Plan</span>
-        <h2 class="mpj-h2">Designed as a <em>Living Ecosystem</em></h2>
-        <p>Fourteen destinations arranged within a living landscape &mdash; each zone placed with intention, for privacy, light, movement and restoration.</p>
-      </header>
-      <figure class="mpj-map">
-        <img src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Panoramic overview of the twenty-two acre Quantum Health Stemcell Resort campus" loading="lazy" decoding="async" onerror="this.remove()">
-        <figcaption>
-          <button type="button" class="mp-expand" id="map-expand" aria-haspopup="dialog" aria-expanded="false">View Full Plan <span aria-hidden="true">&nearr;</span></button>
-        </figcaption>
-      </figure>
-      <div class="mpj-zones">
-        <div class="mpj-zone"><span class="mpj-zone-num">01</span><div><h3>Grand Entrance</h3><p>Arrival through a landscaped gateway into the sanctuary.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">02</span><div><h3>Arrival &amp; Reception</h3><p>Welcome, orientation and the first transition into nature.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">03</span><div><h3>Suvarana Wellness Heritage</h3><p>Indian wellness traditions, honoured with contemporary refinement.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">04</span><div><h3>Nature as Medicine</h3><p>Forest, water and gardens as part of every programme.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">05</span><div><h3>Private Forest Cottages</h3><p>Six cottages set among the trees, with forest views.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">06</span><div><h3>Executive &amp; Corporate Retreats</h3><p>Discreet spaces for leadership renewal and private groups.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">07</span><div><h3>Private Suites</h3><p>Premium villas with gardens, light and personal space.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">08</span><div><h3>Tropical Sanctuary</h3><p>Lush planting, natural shade, water and walkways.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">09</span><div><h3>Landscapes for Stillness</h3><p>Quiet gardens and clearings designed for room to breathe.</p></div></div>
-        <div class="mpj-zone"><span class="mpj-zone-num">10</span><div><h3>Wellness &amp; Regenerative Spaces</h3><p>Spa, yoga pavilion, diagnostics and regenerative medicine centre.</p></div></div>
-      </div>
-      <p class="mpj-zones-note">Beyond the journey &mdash; Research Block &middot; Training Centre &middot; Parking &amp; Arrival Court &middot; Helipad.</p>
-    </div>
-  </section>
-
-  <!-- 4. A NEW ERA OF LONGEVITY -->
-  <section class="mpj-cinema" data-reveal>
-    <div class="mpj-cinema-media"><img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="Forest and walking trails at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()"></div>
-    <div class="mpj-cinema-scrim" aria-hidden="true"></div>
-    <div class="mpj-cinema-inner">
-      <span class="eyebrow">01 &middot; Longevity</span>
-      <h2>A New Era of <em>Longevity</em></h2>
-      <p>Longevity is not a programme you join. It is a way of life &mdash; preventive wellness, regenerative approaches and healthy ageing woven into every day, in a setting that makes them effortless.</p>
-      <div class="mpj-wordrail">
-        <span>Preventive Wellness</span><span>Regenerative Approaches</span><span>Healthy Ageing</span><span>Nature &amp; Movement</span><span>Nutrition</span><span>Rest &amp; Recovery</span><span>Personalised Wellbeing</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. PRIVATE WELLNESS IN NATURE -->
-  <section class="section mpj-privacy" data-reveal>
-    <div class="container">
-      <div class="mpj-privacy-grid">
-        <figure class="mpj-img-fig mpj-img-wide">
-          <img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="Meditation forest at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-        <figure class="mpj-img-fig mpj-img-tall">
-          <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="Private lake at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-        <div class="mpj-privacy-copy">
-          <span class="eyebrow">Private Wellness in Nature</span>
-          <h2 class="mpj-h2">Private Wellness in <em>Nature</em></h2>
-          <p class="mpj-lead">A sanctuary where the boundaries between wellness and the natural world begin to disappear.</p>
-          <p>Forest, water, paths and tropical planting are not decoration here &mdash; they are the architecture of calm. Every space is placed for privacy, every view composed for stillness, every path a quiet invitation to reconnect.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. THE RESORT -->
-  <section class="section mpj-resort" data-reveal>
-    <div class="container">
-      <div class="mpj-split mpj-split-flip">
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/gallery/Screenshot%202026-08-15%20150402.png" alt="Luxury villas at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-        <div class="mpj-copy">
-          <span class="eyebrow">The Resort</span>
-          <h2 class="mpj-h2">A Resort Designed Around <em>Renewal</em></h2>
-          <p class="mpj-lead">Not a hotel with a spa attached &mdash; a private longevity retreat.</p>
-          <p>Wellness, hospitality and regenerative care share one address. Luxury accommodation opens onto nature, every stay is shaped around restoration, and privacy is treated as a fundamental amenity &mdash; the setting itself becomes part of the programme.</p>
-          <div class="rt-attr rt-attr-2">
-            <span><span class="rt-attr-i">01</span>Private Longevity Retreat</span>
-            <span><span class="rt-attr-i">02</span>Restoration as a Stay</span>
-            <span><span class="rt-attr-i">03</span>Privacy as Amenity</span>
-            <span><span class="rt-attr-i">04</span>Nature at the Door</span>
+        <div class="ct-loc-split">
+          <figure class="ct-loc-map ct-reveal">
+            <iframe title="Map — Quantum Health Stemcell Resort, Kanakapura Main Road, Bengaluru" src="https://maps.google.com/maps?q=Kanakapura%20Main%20Road%2C%20Bengaluru%2C%20Karnataka&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+          <div class="ct-loc-info ct-reveal">
+            <div class="ct-address">
+              <h3>Quantum Health Stemcell Resort</h3>
+              <p>Kanakapura Main Road<br>Bengaluru, Karnataka, India</p>
+            </div>
+            <div class="ct-transfer">
+              <span class="ct-tf-ic">&#9992;&#65039;</span>
+              <p>Airport transfers from Kempegowda International<small>Approximately 40 minutes</small></p>
+            </div>
+            <div class="ct-transfer">
+              <span class="ct-tf-ic">&#128663;</span>
+              <p>Private car or cab<small>Road directions available</small></p>
+            </div>
+            <div class="ct-transfer">
+              <span class="ct-tf-ic">&#128222;</span>
+              <p>Concierge assistance<small>+91 98450 25857</small></p>
+            </div>
+            <div style="margin-top:30px">
+              <a href="tel:+919845025857" class="ct-btn ct-btn-dark-fill">Plan Your Arrival &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 7. HERITAGE LUXURY INTERIORS -->
-  <section class="section mpj-interiors" data-reveal>
-    <div class="container">
-      <header class="mpj-plan-head">
-        <span class="eyebrow">Interiors</span>
-        <h2 class="mpj-h2">Heritage Luxury <em>Interiors</em></h2>
-        <p>Indian heritage in a contemporary language &mdash; warm wood, stone, brass and handcrafted detail; soft light, traditional texture and modern comfort. Timeless. Warm. Sophisticated. Quietly luxurious.</p>
-      </header>
-      <div class="mpj-int-gallery">
-        <figure class="mpj-img-fig">
-          <img src="images/gallery/Screenshot%202026-08-15%20150541.png" alt="Interiors at the restaurant of Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-          <figcaption>Warm interiors, natural light</figcaption>
-        </figure>
-        <figure class="mpj-img-fig">
-          <img src="images/gallery/Screenshot%202026-08-15%20150453.png" alt="Luxury spa at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-          <figcaption>Calm surfaces, quiet luxury</figcaption>
-        </figure>
-      </div>
-      <div class="mpj-chips">
-        <span>Warm Wood</span><span>Stone</span><span>Brass</span><span>Handcrafted Detail</span><span>Soft Lighting</span><span>Traditional Textures</span><span>Modern Comfort</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. ARRIVAL & RECEPTION -->
-  <section class="section mpj-arrival" data-reveal>
-    <div class="container">
-      <div class="mpj-suite-grid">
-        <figure class="mpj-img-fig mpj-img-wide">
-          <img src="images/gallery/Screenshot%202026-08-15%20150345.png" alt="The arrival drive and reception at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()">
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">Arrival</span>
-          <h2 class="mpj-h2">Arrival &amp; <em>Reception</em></h2>
-          <p class="mpj-lead">The approach is ceremonial and calm.</p>
-          <p>A grand driveway, landscaped grounds, architecture that holds the forest and warm light at the threshold. You arrive. You are welcomed. You are oriented. And slowly &mdash; you transition into nature.</p>
-          <ol class="rt-steps">
-            <li><span class="rt-step-num">01</span><span>Arrival</span></li>
-            <li><span class="rt-step-num">02</span><span>Welcome</span></li>
-            <li><span class="rt-step-num">03</span><span>Orientation</span></li>
-            <li><span class="rt-step-num">04</span><span>Transition into Nature</span></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. NATURE AS MEDICINE -->
-  <section class="section mpj-nature" data-reveal>
-    <div class="container">
-      <div class="mpj-split mpj-split-flip">
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Organic farm at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-        <div class="mpj-copy">
-          <span class="eyebrow">The Philosophy</span>
-          <h2 class="mpj-h2">Nature as <em>Medicine</em></h2>
-          <p class="mpj-lead">Every landscape is designed to encourage stillness, movement, connection and restoration.</p>
-          <p>Nature is not scenery here &mdash; it is part of the experience of the campus itself. Forest walks, gardens, water, natural shade and fresh air are woven through the park as everyday invitations to wellness.</p>
-          <div class="mpj-wordrail">
-            <span>Forest Walks</span><span>Gardens</span><span>Water</span><span>Natural Shade</span><span>Fresh Air</span><span>Quiet Spaces</span><span>Outdoor Wellness</span><span>Meditation Areas</span><span>Walking Trails</span>
+    <!-- ===================================================================
+         11. CLOSING CTA · dark green banner
+    =================================================================== -->
+    <section class="ct-section ct-close">
+      <div class="container">
+        <div class="ct-reveal">
+          <h2>Your journey begins with <em>one conversation</em>.</h2>
+          <p class="ct-close-sub">A senior physician responds within 24 hours &mdash; no obligation, handled in complete confidence.</p>
+          <div class="ct-hero-cta">
+            <a href="tel:+919845025857" class="ct-btn ct-btn-dark-fill">Begin Your Journey</a>
+            <a href="services.html" class="ct-btn ct-btn-outline">Explore Our Medicine &rarr;</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 10. THE GRAND ENTRANCE -->
-  <section class="mpj-cinema mpj-entrance" data-reveal>
-    <div class="mpj-cinema-media mpj-drift"><img src="images/gallery/Screenshot%202026-08-15%20150558.png" alt="The grand entrance building of Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()"></div>
-    <div class="mpj-cinema-scrim" aria-hidden="true"></div>
-    <div class="mpj-cinema-inner mpj-entrance-inner">
-      <span class="eyebrow">The Gateway</span>
-      <h2>The Grand <em>Entrance</em></h2>
-      <p class="mpj-mini-tags">Arrival &middot; Privacy &middot; Heritage &middot; Grandeur &middot; Calm</p>
-    </div>
-  </section>
-
-  <!-- 11. SUVARANA WELLNESS HERITAGE -->
-  <section class="section mpj-suvarana" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <div class="mpj-copy">
-          <span class="eyebrow">Wellness Heritage</span>
-          <h2 class="mpj-h2">Suvarana Wellness <em>Heritage</em></h2>
-          <p class="mpj-lead">Indian wellness traditions carried into a contemporary longevity destination.</p>
-          <p>Ritual, craftsmanship and natural materials are honoured with restraint and refined with care &mdash; a heritage concept that belongs not to the past, but to the way this campus heals, serves and welcomes.</p>
-          <div class="mpj-chips">
-            <span>Indian Wellness Traditions</span><span>Ritual</span><span>Craftsmanship</span><span>Natural Materials</span><span>Contemporary Luxury</span><span>Cultural Identity</span>
-          </div>
-        </div>
-        <div class="mpj-media mpj-media-3-2 mpj-heritage-tint">
-          <img src="images/gallery/Screenshot%202026-08-15%20150501.png" alt="Yoga pavilion at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12. LANDSCAPES FOR STILLNESS -->
-  <section class="section mpj-stillness" data-reveal>
-    <div class="container">
-      <div class="mpj-still-grid">
-        <div class="mpj-copy">
-          <span class="eyebrow">Stillness</span>
-          <h2 class="mpj-h2">Landscapes for <em>Stillness</em></h2>
-          <p class="mpj-lead">Spaces designed not to fill your day, but to give you room to breathe.</p>
-          <p>Quiet gardens, forest clearings, water, seating, meditation spaces and walking paths &mdash; private pockets of landscape placed where the mind needs them most.</p>
-        </div>
-        <figure class="mpj-img-fig mpj-img-wide">
-          <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Gardens at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-        <figure class="mpj-img-fig">
-          <img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="Forest clearing for meditation at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- 13. PRIVATE FOREST COTTAGES -->
-  <section class="section mpj-cottages" data-reveal>
-    <div class="container">
-      <header class="mpj-plan-head">
-        <span class="eyebrow">Accommodation</span>
-        <h2 class="mpj-h2">Private Forest <em>Cottages</em></h2>
-        <p>Six private cottages set among the trees &mdash; personal space, quiet and luxury in equal measure, with forest views and indoor-outdoor living.</p>
-      </header>
-      <div class="mpj-cot-gallery">
-        <figure class="mpj-img-fig mpj-cot-a">
-          <img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="The forest canopy surrounding the cottage neighbourhood" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption>Forest canopy, cottage country</figcaption>
-        </figure>
-        <figure class="mpj-img-fig mpj-cot-b">
-          <img src="images/gallery/Screenshot%202026-08-15%20150402.png" alt="Premium villas among the trees at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption>Villas among the trees</figcaption>
-        </figure>
-        <figure class="mpj-img-fig mpj-cot-c">
-          <img src="images/gallery/Screenshot%202026-08-15%20150501.png" alt="Outdoor wellness space next to the cottages" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption>Outdoor wellness at your door</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- 14. EXECUTIVE & CORPORATE RETREATS -->
-  <section class="section mpj-retreats" data-reveal>
-    <div class="container">
-      <div class="mpj-split mpj-split-flip">
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/resort/rt-11.jpg" alt="Research block at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-        <div class="mpj-copy">
-          <span class="eyebrow">Private Groups</span>
-          <h2 class="mpj-h2">Executive &amp; Corporate <em>Retreats</em></h2>
-          <p class="mpj-lead">A discreet destination for leadership renewal.</p>
-          <p>Leadership retreats, executive wellness, corporate wellbeing and private strategy sessions &mdash; held in complete privacy, away from interruption, in a setting designed for clarity, recovery and better decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 15. EVENINGS OF TRANQUILITY -->
-  <section class="section mpj-evening" data-reveal>
-    <div class="container">
-      <div class="mpj-even-grid">
-        <div class="mpj-copy">
-          <span class="eyebrow">Evening</span>
-          <h2 class="mpj-h2">Evenings of <em>Tranquility</em></h2>
-          <p class="mpj-lead">As the light leaves the treetops, the campus softens.</p>
-          <p>Warm architectural lighting, pathway glow, firelight, water reflections and quiet resort spaces &mdash; the day dissolves gently into evening, and the campus becomes another world entirely.</p>
-        </div>
-        <figure class="mpj-img-fig mpj-img-wide mpj-dusk">
-          <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The lake at dusk at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-        <figure class="mpj-img-fig mpj-dusk">
-          <img src="images/gallery/Screenshot%202026-08-15%20150501.png" alt="Yoga pavilion in evening light" loading="lazy" onerror="this.remove()">
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- 16. PREMIUM COTTAGE LIVING -->
-  <section class="section mpj-cottage-living" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <div class="mpj-copy">
-          <span class="eyebrow">Living</span>
-          <h2 class="mpj-h2">Premium Cottage <em>Living</em></h2>
-          <p class="mpj-lead">Spacious private accommodation in natural materials.</p>
-          <p>Comfort, privacy and personal wellness space, surrounded by forest &mdash; refined interiors with room to move, rest and return to yourself.</p>
-        </div>
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/gallery/Screenshot%202026-08-15%20150541.png" alt="Restaurant interior at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 17. REST · RESTORE · REJUVENATE -->
-  <section class="section mpj-words">
-    <div class="container">
-      <span class="mpj-word" data-reveal>Rest</span>
-      <span class="mpj-word" data-reveal>Restore</span>
-      <span class="mpj-word" data-reveal>Rejuvenate</span>
-      <p class="mpj-words-note" data-reveal>A slower rhythm. A deeper sense of wellbeing. A renewed relationship with life.</p>
-    </div>
-  </section>
-
-  <!-- 18. THE PRIVATE SUITE EXPERIENCE -->
-  <section class="section mpj-suite" data-reveal>
-    <div class="container">
-      <div class="mpj-suite-grid">
-        <figure class="mpj-img-fig mpj-img-wide">
-          <img src="images/gallery/Screenshot%202026-08-15%20150402.png" alt="Private suites at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">The Suites</span>
-          <h2 class="mpj-h2">The Private Suite <em>Experience</em></h2>
-          <p class="mpj-lead">Privacy, personal space and premium interiors, in quiet surroundings with nature views.</p>
-          <p>Each suite is a private world &mdash; personalised hospitality, unhurried time, and a threshold between indoor comfort and the living landscape outside.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 19. IMMERSIVE FOREST LIVING -->
-  <section class="mpj-cinema mpj-forest" data-reveal>
-    <div class="mpj-cinema-media mpj-drift"><img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="Immersive forest landscape at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()"></div>
-    <div class="mpj-cinema-scrim" aria-hidden="true"></div>
-    <div class="mpj-cinema-inner">
-      <span class="eyebrow">Forest Living</span>
-      <h2>Immersive <em>Forest Living</em></h2>
-      <p class="mpj-forest-note">Wake among trees. Walk through living landscapes. Return to spaces designed for stillness.</p>
-    </div>
-  </section>
-
-  <!-- 20. THE RESORT AFTER DUSK -->
-  <section class="section mpj-dusk" data-reveal>
-    <div class="container">
-      <div class="mpj-dusk-grid">
-        <figure class="mpj-img-fig mpj-img-wide mpj-night">
-          <img src="images/gallery/Screenshot%202026-08-15%20150558.png" alt="The resort building illuminated after sunset" loading="lazy" onerror="this.remove()">
-          <figcaption>Warm light at the heart of the campus</figcaption>
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">After Sunset</span>
-          <h2 class="mpj-h2">The Resort After <em>Dusk</em></h2>
-          <p class="mpj-lead">Private. Warm. Serene. Exclusive.</p>
-          <p>Illuminated pathways, glowing cottage windows, trees, water and outdoor spaces &mdash; after sunset the campus reveals its quieter architecture, held in warm light.</p>
-        </div>
-        <figure class="mpj-img-fig mpj-night">
-          <img src="images/gallery/Screenshot%202026-08-15%20150345.png" alt="Reception glowing in the evening at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-          <figcaption>Reception, in the evening</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- 21. THE TROPICAL SANCTUARY -->
-  <section class="section mpj-sanctuary" data-reveal>
-    <div class="container">
-      <div class="mpj-split mpj-split-flip">
-        <div class="mpj-media mpj-media-3-2">
-          <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Tropical gardens at Quantum Health Stemcell Resort" loading="lazy" onerror="this.remove()">
-        </div>
-        <div class="mpj-copy">
-          <span class="eyebrow">The Landscape</span>
-          <h2 class="mpj-h2">The Tropical <em>Sanctuary</em></h2>
-          <p class="mpj-lead">The landscape is an essential part of the destination, not its decoration.</p>
-          <p>Trees, tropical planting, natural shade, water, walkways, private gardens and forest spaces &mdash; a living environment that shelters, cools and calms the entire campus.</p>
-          <div class="mpj-wordrail">
-            <span>Trees</span><span>Tropical Planting</span><span>Natural Shade</span><span>Water</span><span>Walkways</span><span>Private Gardens</span><span>Forest Spaces</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 22. THE MASTER PLAN JOURNEY -->
-  <section class="section mpj-journey">
-    <div class="container">
-      <span class="eyebrow">The Journey</span>
-      <h2 class="mpj-h2">Your Path Through the <em>Campus</em></h2>
-      <div class="mpj-rail">
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">01</span><span class="mpj-rail-word">Arrive</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">02</span><span class="mpj-rail-word">Discover</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">03</span><span class="mpj-rail-word">Rest</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">04</span><span class="mpj-rail-word">Restore</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">05</span><span class="mpj-rail-word">Regenerate</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">06</span><span class="mpj-rail-word">Rejuvenate</span></div>
-        <div class="mpj-rail-step" data-reveal><span class="mpj-rail-num">07</span><span class="mpj-rail-word">Redefine Life</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 23. FINAL CTA -->
-  <section class="mpj-cta" data-reveal>
-    <div class="mpj-cta-media"><img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="" loading="lazy" onerror="this.remove()"></div>
-    <div class="mpj-cta-scrim" aria-hidden="true"></div>
-    <div class="mpj-cta-inner">
-      <h2>Regenerate. Revitalize. <em>Redefine Life.</em></h2>
-      <p>Discover a new approach to longevity, wellness and living &mdash; within a private 22-acre sanctuary created for renewal.</p>
-      <div class="cta-buttons">
-        <a href="resort-tour.html#plan" class="btn btn-primary">Explore the Campus &rarr;</a>
-        <a href="tel:+919845025857" class="btn btn-outline">Begin Your Journey</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ACCOMMODATION ================= -->
-  <section class="section cp-stay" id="stay" data-reveal>
-    <div class="container">
-      <div class="mpj-split">
-        <figure class="mpj-img-fig mpj-media-43 rt-fig-caption">
-          <img src="images/gallery/Screenshot%202026-08-15%20150402.png" alt="Executive suites and villas at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()">
-          <figcaption><strong>Stay, Heal, Restore</strong> &mdash; resort-grade residences with clinical care next door.</figcaption>
-        </figure>
-        <div class="mpj-copy">
-          <span class="eyebrow">Luxury Accommodation</span>
-          <h2 class="mpj-h2">15 Premium Villas. <em>One private world.</em></h2>
-          <p class="mpj-lead">Discover unparalleled comfort and elegance in our 15 premium villas, thoughtfully designed to offer a perfect blend of luxury, privacy and nature.</p>
-          <p>Premium villas come with private gardens, modern amenities and serene views &mdash; alongside six elegant wellness cottages designed for comfort, privacy and restorative stays within a tranquil natural setting.</p>
-          <div class="feat-grid">
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>King Size Bed</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Luxury Bathroom</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Forest View</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Smart TV</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Jacuzzi <em>(Selected Villas)</em></span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Balcony</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>Butler Service</span></div>
-              <div class="feat-item"><span class="feat-tick">&#10003;</span><span>High Speed WiFi</span></div>
-          </div>
-          <p class="acc-strap">Where every stay is a journey of wellness and indulgence.</p>
-          <div class="acc-high">
-              <span>Private &amp; Exclusive</span>
-              <span>Nature Immersion</span>
-              <span>World-Class Amenities</span>
-              <span>Personalized Experience</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= DINING & ROOM SERVICE ================= -->
-  <section class="section cp-dine" id="dine" data-reveal>
-    <div class="container">
-      <div class="dn-head">
-        <span class="eyebrow">Dining &amp; Room Service</span>
-        <h2 class="section-title">Nourish <span class="dn-sep">|</span> Heal <span class="dn-sep">|</span> Thrive</h2>
-        <p class="section-desc">A journey of taste and wellness &mdash; our culinary philosophy brings together organic, nutrient-dense cuisine with world-class hospitality, transforming every meal into a step towards better health.</p>
-      </div>
-      <div class="dn-grid">
-        <div class="dn-card"><h3>Organic Restaurant</h3><p>Chef-crafted, farm-to-table gourmet cuisine using fresh organic produce from our own farm.</p></div>
-        <div class="dn-card"><h3>Healthy Kitchen</h3><p>A kitchen where every dish is prepared with wellness in mind &mdash; low salt, low sugar, nutrient-rich and flavour-first.</p></div>
-        <div class="dn-card"><h3>Nutrition Centre</h3><p>Personalised dietary plans and medical nutrition guidance that support your treatment and health goals.</p></div>
-      </div>
-      <h3 class="dn-h3">Healing Cuisine, Inspired by Nature</h3>
-      <div class="dn-list">
-        <div class="dn-item"><span class="dn-num">01</span><div><h4>Farm to Table</h4><p>Fresh from the field to your plate, every single day.</p></div></div>
-        <div class="dn-item"><span class="dn-num">02</span><div><h4>Organic Vegetables</h4><p>Grown in season, without chemicals.</p></div></div>
-        <div class="dn-item"><span class="dn-num">03</span><div><h4>Healthy Juices</h4><p>Cold-pressed, rich in vitamins and enzymes.</p></div></div>
-        <div class="dn-item"><span class="dn-num">04</span><div><h4>Detox Meals</h4><p>Light, cleansing dishes that restore energy.</p></div></div>
-        <div class="dn-item"><span class="dn-num">05</span><div><h4>International Cuisine</h4><p>Global flavours, tailored to your needs.</p></div></div>
-        <div class="dn-item"><span class="dn-num">06</span><div><h4>Medical Nutrition</h4><p>Therapeutic nutrition as part of your care plan.</p></div></div>
-      </div>
-      <p class="dn-quote">&ldquo;Good Food Is the Foundation of True Healing.&rdquo;</p>
-      <div class="dn-philo">
-        <h3 class="dn-h3">From the Garden to Your Door</h3>
-        <p class="dn-note">Personal chefs and nutritionists shape every plate &mdash; served in the crystal café and lounge at the park's heart, or brought to your villa by butler and concierge.</p>
-        <div class="dn-chips">
-          <span class="dn-chip">100% Organic Ingredients</span>
-          <span class="dn-chip">Gluten Free &amp; Natural Options</span>
-          <span class="dn-chip">No Preservatives</span>
-          <span class="dn-chip">No Additives</span>
-          <span class="dn-chip">Made With Love and Intention</span>
-          <span class="dn-chip">Food That Heals Body, Mind &amp; Soul</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CAMPUS GALLERY ================= -->
-  <section class="section cp-gallery" data-reveal>
-    <div class="container">
-      <div class="q-head">
-        <span class="eyebrow">The Campus Gallery</span>
-        <h2>See it for <em>yourself</em></h2>
-        <p>Select any space to view it closer &mdash; nature, luxury, healthcare, wellness and innovation across 22 acres.</p>
-      </div>
-      <div class="gal-grid">
-        <button class="gal-tile gal-tall n-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;path d=&quot;M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;path d=&quot;M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1&quot;/&gt;&lt;/svg&gt;" data-title="Tranquil Lakes" data-desc="Private waterfront spaces for reflection, relaxation and gentle water activities."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The private lake at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><h3>Tranquil Lakes</h3><span class="tile-tag">Private waterfront &middot; reflection &amp; rest</span></button>
-        <button class="gal-tile n-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m12 2 5 8H7l5-8z&quot;/&gt;&lt;path d=&quot;M12 10v12&quot;/&gt;&lt;path d=&quot;M9.5 22h5&quot;/&gt;&lt;/svg&gt;" data-title="Forest Trails" data-desc="Mindful walking paths through lush greenery, designed for exercise and connection with nature."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="Forest trails through the campus greenery" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 5 8H7l5-8z"/><path d="M12 10v12"/><path d="M9.5 22h5"/></svg></span><h3>Forest Trails</h3><span class="tile-tag">Mindful walking paths</span></button>
-        <button class="gal-tile n-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M7 20h10&quot;/&gt;&lt;path d=&quot;M12 20v-8&quot;/&gt;&lt;path d=&quot;M12 12a4 4 0 0 0-4-4H5a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4h4z&quot;/&gt;&lt;path d=&quot;M12 12a4 4 0 0 1 4-4h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4h-4z&quot;/&gt;&lt;/svg&gt;" data-title="Botanical Healing Gardens" data-desc="Landscaped gardens of therapeutic plants and calming outdoor spaces that promote wellbeing."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Landscaped healing gardens at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 20h10"/><path d="M12 20v-8"/><path d="M12 12a4 4 0 0 0-4-4H5a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4h4z"/><path d="M12 12a4 4 0 0 1 4-4h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4h-4z"/></svg></span><h3>Botanical Healing Gardens</h3><span class="tile-tag">Therapeutic plants &amp; calm</span></button>
-        <button class="gal-tile n-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;/svg&gt;" data-title="Cascading Waterfalls" data-desc="Natural water features that bring soothing soundscapes of recovery to the park."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Water and landscape across the twenty-two acre campus" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Nature</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Cascading Waterfalls</h3><span class="tile-tag">Soundscapes of recovery</span></button>
-        <button class="gal-tile l-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m3 10 9-7 9 7&quot;/&gt;&lt;path d=&quot;M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9&quot;/&gt;&lt;path d=&quot;M9 21v-6h6v6&quot;/&gt;&lt;/svg&gt;" data-title="Wellness Cottages" data-desc="Private, restorative stays in premium cottages designed for comfort and recovery."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150402.png" alt="Wellness cottages at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Rooms</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M9 21v-6h6v6"/></svg></span><h3>Wellness Cottages</h3><span class="tile-tag">Private, restorative stays</span></button>
-        <button class="gal-tile gal-tall l-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M4 21V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v16&quot;/&gt;&lt;path d=&quot;M8 21v-4h8v4&quot;/&gt;&lt;path d=&quot;M9 8h1M14 8h1M9 12h1M14 12h1&quot;/&gt;&lt;/svg&gt;" data-title="Executive Suites &amp; Villas" data-desc="Resort-grade residences with north-facing light and clinical care next door."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150717.png" alt="Executive suites and villas at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Rooms</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v16"/><path d="M8 21v-4h8v4"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1"/></svg></span><h3>Executive Suites &amp; Villas</h3><span class="tile-tag">Resort-grade residences</span></button>
-        <button class="gal-tile l-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M17 8h1a4 4 0 1 1 0 8h-1&quot;/&gt;&lt;path d=&quot;M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z&quot;/&gt;&lt;/svg&gt;" data-title="Exclusive Lounges" data-desc="Crystal café and lounge spaces for quiet conversation and unhurried time."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150541.png" alt="The crystal cafe and lounge interior" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/></svg></span><h3>Exclusive Lounges</h3><span class="tile-tag">Crystal café &amp; lounge</span></button>
-        <button class="gal-tile l-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;path d=&quot;M8 17c2.5-1 4.5-3 5.5-6&quot;/&gt;&lt;/svg&gt;" data-title="World-Class Spa" data-desc="A lakeside wellness sanctuary offering restorative therapies and therapeutic massage."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150453.png" alt="The lakeside spa at Quantum Health Stemcell Resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Spa</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/><path d="M8 17c2.5-1 4.5-3 5.5-6"/></svg></span><h3>World-Class Spa</h3><span class="tile-tag">Lakeside wellness sanctuary</span></button>
-        <button class="gal-tile gal-tall h-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M6 18h8&quot;/&gt;&lt;path d=&quot;M3 22h18&quot;/&gt;&lt;path d=&quot;M14 22a7 7 0 1 0 0-14h-1&quot;/&gt;&lt;path d=&quot;M9 14h2&quot;/&gt;&lt;path d=&quot;M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z&quot;/&gt;&lt;path d=&quot;M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3&quot;/&gt;&lt;/svg&gt;" data-title="Advanced Diagnostics Centre" data-desc="Molecular, functional and imaging technologies delivering answers in hours, not weeks."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150444.png" alt="The Advanced Diagnostics Centre on campus" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><h3>Advanced Diagnostics Centre</h3><span class="tile-tag">Molecular, functional &amp; imaging</span></button>
-        <button class="gal-tile h-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;2&quot; y=&quot;7&quot; width=&quot;20&quot; height=&quot;14&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16&quot;/&gt;&lt;/svg&gt;" data-title="Executive Health Clinic" data-desc="Comprehensive same-day assessments for leaders with no time to waste."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150345.png" alt="The Executive Health Centre at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><h3>Executive Health Clinic</h3><span class="tile-tag">Same-day assessments</span></button>
-        <button class="gal-tile h-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M10 2v7.5L4.7 17a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.5V2&quot;/&gt;&lt;path d=&quot;M8.5 2h7&quot;/&gt;&lt;path d=&quot;M7 16h10&quot;/&gt;&lt;/svg&gt;" data-title="Regenerative Medicine Facilities" data-desc="Purpose-built cellular therapy suites for evidence-informed regenerative medicine."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150431.png" alt="The Regenerative Medicine Institute" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.5L4.7 17a2 2 0 0 0 1.7 3h11.2a2 2 0 0 0 1.7-3L14 9.5V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg></span><h3>Regenerative Medicine Facilities</h3><span class="tile-tag">Cellular therapy suites</span></button>
-        <button class="gal-tile h-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;m6.5 6.5 11 11&quot;/&gt;&lt;path d=&quot;m21 21-1-1&quot;/&gt;&lt;path d=&quot;m3 3 1 1&quot;/&gt;&lt;path d=&quot;m18 22 4-4&quot;/&gt;&lt;path d=&quot;m2 6 4-4&quot;/&gt;&lt;path d=&quot;m3 10 7-7&quot;/&gt;&lt;path d=&quot;m14 21 7-7&quot;/&gt;&lt;/svg&gt;" data-title="Rehabilitation Spaces" data-desc="Physiotherapy and recovery environments designed for measurable progress."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150606.png" alt="Rehabilitation and recovery spaces at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></span><h3>Rehabilitation Spaces</h3><span class="tile-tag">Physiotherapy &amp; recovery</span></button>
-        <button class="gal-tile w-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot;/&gt;&lt;path d=&quot;M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5&quot;/&gt;&lt;path d=&quot;M12 7.5V9&quot;/&gt;&lt;path d=&quot;M7.5 12H9&quot;/&gt;&lt;path d=&quot;M16.5 12H15&quot;/&gt;&lt;path d=&quot;M12 16.5V15&quot;/&gt;&lt;/svg&gt;" data-title="Yoga &amp; Meditation Pavilion" data-desc="Guided practice, meditation and breathwork in a pavilion of light and calm."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150501.png" alt="The yoga and meditation pavilion" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="M7.5 12H9"/><path d="M16.5 12H15"/><path d="M12 16.5V15"/></svg></span><h3>Yoga &amp; Meditation Pavilion</h3><span class="tile-tag">Guided practice &amp; breathwork</span></button>
-        <button class="gal-tile gal-tall w-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z&quot;/&gt;&lt;/svg&gt;" data-title="Hydrotherapy Centre" data-desc="Water-based therapies supporting relaxation, rehabilitation and recovery."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150656.png" alt="The hydrotherapy centre" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Spa</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span><h3>Hydrotherapy Centre</h3><span class="tile-tag">Water-based recovery</span></button>
-        <button class="gal-tile w-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2&quot;/&gt;&lt;path d=&quot;M7 2v20&quot;/&gt;&lt;path d=&quot;M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7&quot;/&gt;&lt;/svg&gt;" data-title="Nutrition &amp; Farm-to-Table" data-desc="Chef-crafted meals built around your personal nutrition plan."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150615.png" alt="The organic farm and farm-to-table kitchen" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Restaurant</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span><h3>Nutrition &amp; Farm-to-Table</h3><span class="tile-tag">Chef-crafted meals</span></button>
-        <button class="gal-tile w-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M22 12h-4l-3 9L9 3l-3 9H2&quot;/&gt;&lt;/svg&gt;" data-title="Fitness &amp; Mindfulness" data-desc="Movement science and mental clarity programmes that restore balance and vitality."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150550.png" alt="Fitness and mindfulness spaces at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h3>Fitness &amp; Mindfulness</h3><span class="tile-tag">Movement &amp; mental clarity</span></button>
-        <button class="gal-tile i-1" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M2 15c6.667-6 13.333 0 20-6&quot;/&gt;&lt;path d=&quot;M9 22c1.798-1.998 2.518-3.995 2.807-5.993&quot;/&gt;&lt;path d=&quot;M15 2c-1.798 1.998-2.518 3.995-2.807 5.993&quot;/&gt;&lt;path d=&quot;M17 6l-2.5-2.5&quot;/&gt;&lt;path d=&quot;M14 8l-1-1&quot;/&gt;&lt;path d=&quot;M7 18l2.5 2.5&quot;/&gt;&lt;path d=&quot;M3.5 14.5l.5.5&quot;/&gt;&lt;path d=&quot;M20 9l.5.5&quot;/&gt;&lt;path d=&quot;M6.5 12.5l1 1&quot;/&gt;&lt;path d=&quot;M16.5 10.5l1 1&quot;/&gt;&lt;path d=&quot;M10 16l1.5 1.5&quot;/&gt;&lt;/svg&gt;" data-title="Biotechnology Research Labs" data-desc="Translational science on site, advancing regenerative medicine and diagnostics."><img class="tile-img" src="images/gallery/resort/rt-11.jpg" alt="The biotechnology research block on campus" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5-2.5"/><path d="M14 8l-1-1"/><path d="M7 18l2.5 2.5"/><path d="M3.5 14.5l.5.5"/><path d="M20 9l.5.5"/><path d="M6.5 12.5l1 1"/><path d="M16.5 10.5l1 1"/><path d="M10 16l1.5 1.5"/></svg></span><h3>Biotechnology Research Labs</h3><span class="tile-tag">Translational science on site</span></button>
-        <button class="gal-tile i-2" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect x=&quot;4&quot; y=&quot;4&quot; width=&quot;16&quot; height=&quot;16&quot; rx=&quot;1&quot;/&gt;&lt;rect x=&quot;9&quot; y=&quot;9&quot; width=&quot;6&quot; height=&quot;6&quot;/&gt;&lt;path d=&quot;M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3&quot;/&gt;&lt;/svg&gt;" data-title="AI-Assisted Diagnostics" data-desc="Intelligence behind the analysis — faster, deeper interpretation of your results."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150624.png" alt="AI-assisted diagnostics technology at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span><h3>AI-Assisted Diagnostics</h3><span class="tile-tag">Intelligence behind analysis</span></button>
-        <button class="gal-tile gal-tall i-3" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M22 10v6M2 10l10-5 10 5-10 5z&quot;/&gt;&lt;path d=&quot;M6 12v5c3 3 9 3 12 0v-5&quot;/&gt;&lt;/svg&gt;" data-title="Medical Education Centre" data-desc="Training the next generation of physicians and care teams from around the world."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150707.png" alt="The medical education and training centre" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><h3>Medical Education Centre</h3><span class="tile-tag">Training the next generation</span></button>
-        <button class="gal-tile i-4" data-icon="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M9 18h6&quot;/&gt;&lt;path d=&quot;M10 22h4&quot;/&gt;&lt;path d=&quot;M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z&quot;/&gt;&lt;/svg&gt;" data-title="Innovation &amp; Collaboration Hub" data-desc="Partners and researchers shaping the future of healthcare, together."><img class="tile-img" src="images/gallery/Screenshot%202026-08-15%20150558.png" alt="The innovation and collaboration hub at the resort" loading="lazy" decoding="async" onerror="this.remove()"><span class="tile-cat">Resort</span><span class="tile-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span><h3>Innovation &amp; Collaboration Hub</h3><span class="tile-tag">Partners shaping the future</span></button>
-      </div>
-      <p class="gal-note">The park is best experienced in person &mdash; guided campus tours and consultation visits are arranged around your schedule, with airport transfers included. <a href="gallery.html">Visit the full gallery &rarr;</a></p>
-    </div>
-  </section>
-
-  <!-- ================= OUTRO ================= -->
-  <section class="tour-outro" data-reveal>
-    <div class="container">
-      <span class="eyebrow">Experience the Destination</span>
-      <h2>One campus. <em>Every element of recovery.</em></h2>
-      <p>From luxury accommodation and advanced healthcare facilities to immersive wellness experiences and world-class research infrastructure, every aspect of Quantum Health Stemcell Resort is designed to support healthier ageing, recovery, learning, and long-term wellbeing in a truly integrated environment.</p>
-    </div>
-  </section>
-
-<!-- ================= CTA ================= -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <div class="cta-band">
-        <div class="container">
-          <h2>Begin Your Journey Towards <em>Better Health</em></h2>
-          <p>Every programme begins with a thorough assessment. Contact us to discuss which check-up, therapy or programme fits your health goals.</p>
-          <div class="cta-buttons">
-            <a href="tel:+919845025857" class="btn btn-primary">Book Consultation &rarr;</a>
-            <a href="programs.html" class="btn btn-outline">Explore Programmes</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MASTER PLAN OVERLAY ================= -->
-  <div class="map-overlay" id="map-overlay" role="dialog" aria-modal="true" aria-label="Campus master plan" aria-hidden="true">
-    <div class="map-overlay-card">
-      <span class="map-overlay-tag">Master Plan &middot; 14 Locations</span>
-      <img src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Panoramic overview of the twenty-two acre Quantum Health Stemcell Resort campus" onerror="this.remove()">
-    </div>
-    <button class="map-overlay-close" id="map-overlay-close" type="button" aria-label="Close plan">&times;</button>
-  </div>
-
-  <!-- ================= LIGHTBOX ================= -->
-  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Campus experience preview" aria-hidden="true">
-    <div class="lb-card">
-      <div class="lb-visual" id="lb-visual"><span class="m-icon" id="lb-icon"></span></div>
-      <div class="lb-body">
-        <h3 id="lb-title"></h3>
-        <p id="lb-desc"></p>
-      </div>
-    </div>
-    <button class="lb-close" id="lb-close" type="button" aria-label="Close">&times;</button>
-  </div>
+  </main>
 
   <!-- ================= FOOTER ================= -->
     <footer class="footer">
@@ -918,6 +959,247 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /* ===================================================================
+       THE CAMPUS — Campus Tour interactions
+       (14 destinations · map hotspots · graceful asset fallbacks · film)
+    =================================================================== */
+    (function () {
+      'use strict';
+
+      /* ---- 14 destinations data ---- */
+      var DESTINATIONS = [
+        { n: '01', name: 'Executive Health Centre', desc: 'Comprehensive medical assessment and same-day diagnostics for leaders.', x: 76, y: 34, icon: 'M8 3l1.8 3.8L14 7.4l-3.4 2.9.9 4L8 12.4 4.5 14.3l.9-4L2 7.4l4.2-.6L8 3z' },
+        { n: '02', name: 'Regenerative Medicine Suite', desc: 'Cellular therapy rooms, stem cell processing and molecular laboratory.', x: 82, y: 52, icon: 'M12 3v9l5.5 3.2-5.5 3.2L6.5 15.2 12 12' },
+        { n: '03', name: 'Precision Diagnostics Hub', desc: 'Advanced imaging, genomics lab and integrated health records.', x: 68, y: 22, icon: 'M3 3h18v14H3zM3 17h18M8 21h8M12 17v4' },
+        { n: '04', name: 'Wellness Spa & Hydrotherapy', desc: 'Lakeside spa with floatation, hydrotherapy pools and treatment rooms.', x: 34, y: 76, icon: 'M7 21c0-2.2-2-3.5-2-6 0-3.9 3.6-5 3.6-9M17 21c0-2.2-2-3.5-2-6 0-3.9 3.6-5 3.6-9' },
+        { n: '05', name: 'Physiotherapy & Rehabilitation', desc: 'Movement science studios, functional training and recovery suites.', x: 60, y: 60, icon: 'M12 3c1 2 2.5 3 4.5 3M12 3c-1 2-2.5 3-4.5 3M5 9l7 5 7-5' },
+        { n: '06', name: 'Nutrition & Lifestyle Kitchen', desc: 'Farm-to-table dining room with clinical dietitian oversight.', x: 40, y: 30, icon: 'M4 4h16v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V4zM12 12v8M8 21h8' },
+        { n: '07', name: 'Wellness Cottages', desc: 'Private accommodation in landscaped garden settings.', x: 26, y: 44, icon: 'M3 10l9-6 9 6M5 9v11h14V9M10 20v-6h4v6' },
+        { n: '08', name: 'Executive Villas', desc: 'Premium residential suites with private outdoor spaces.', x: 24, y: 60, icon: 'M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6' },
+        { n: '09', name: 'Private Lake & Waterfront Walk', desc: 'Therapeutic nature trail along the resort\u2019s natural lake.', x: 14, y: 76, icon: 'M2 15c2.5-2 5-2 7.5 0s5 2 7.5 0 4-1.5 5-1M2 19c2.5-2 5-2 7.5 0s5 2 7.5 0 4-1.5 5-1M2 11c2.5-2 5-2 7.5 0s5 2 7.5 0 4-1.5 5-1' },
+        { n: '10', name: 'Medicinal Orchards & Gardens', desc: 'Curated herb, fruit and Ayurvedic plant gardens.', x: 30, y: 22, icon: 'M12 21c0-6 1-9 4-12-2 3-3 5-3 8M12 9C12 4 10 2 5 3c6 0 7 4 7 6M12 9c0-5 2-7 7-6-6 0-7 4-7 6' },
+        { n: '11', name: 'Movement & Yoga Pavilion', desc: 'Open-air pavilion for yoga, breathwork and guided meditation.', x: 48, y: 78, icon: 'M12 7c-1.7-2-5-2-6.5 0M12 7v8M4 18c1.8-1 3.4-1 5 0M13 15l4 3M12 11l3-2' },
+        { n: '12', name: 'Biotech Research Campus', desc: 'Clinical research hub, seminars and collaboration centre.', x: 66, y: 84, icon: 'M9 3v18M15 3v18M5 9H3M5 15H3M9 9L6 12l3 3M15 9l3 3-3 3M21 9h-2M21 15h-2' },
+        { n: '13', name: 'Education & Conference Centre', desc: 'Medical summits, wellness workshops and clinician training.', x: 56, y: 12, icon: 'M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-5 0V8M20 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 5 0V8' },
+        { n: '14', name: 'Arrival Pavilion & Concierge', desc: 'First point of contact \u2014 check-in, orientation and private transfers.', x: 60, y: 30, icon: 'M4 20V8l8-5 8 5v12M9 20v-6h6v6' }
+      ];
+
+      var NUM = {
+        '01': 'images/resort/rt-01.jpg', '02': 'images/resort/rt-02.jpg', '03': 'images/resort/rt-03.jpg',
+        '04': 'images/resort/rt-04.jpg', '05': 'images/resort/rt-05.jpg', '06': 'images/resort/rt-06.jpg',
+        '07': 'images/resort/rt-07.jpg', '08': 'images/resort/rt-08.jpg', '09': 'images/resort/rt-09.jpg',
+        '10': 'images/resort/rt-10.jpg', '11': 'images/resort/rt-11.jpg', '12': 'images/resort/rt-12.jpg',
+        '13': 'images/resort/rt-13.jpg', '14': 'images/resort/rt-14.jpg'
+      };
+
+      /* ---- Icon helper ---- */
+      function makeIcon(path) {
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '1.5');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+        var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        p.setAttribute('d', path);
+        svg.appendChild(p);
+        return svg;
+      }
+
+      /* ---- Render hotspots on the map ---- */
+      var hostWrap = document.getElementById('ctHotspots');
+      var mapWrap = document.getElementById('ctMapWrap');
+      var tip = document.getElementById('ctMapTip');
+      var tipN = document.getElementById('ctTipN');
+      var tipIc = document.getElementById('ctTipIc');
+      var tipT = document.getElementById('ctTipT');
+      var tipD = document.getElementById('ctTipD');
+      var cards = document.getElementById('ctDestCards');
+
+      function setTip(d) {
+        tipN.textContent = 'Destination ' + d.n;
+        tipIc.innerHTML = '';
+        tipIc.appendChild(makeIcon(d.icon));
+        tipT.textContent = d.name;
+        tipD.textContent = d.desc;
+      }
+
+      var cardsArr = [];
+
+      DESTINATIONS.forEach(function (d) {
+        /* hotspot button */
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ct-map-hotspot';
+        b.style.left = d.x + '%';
+        b.style.top = d.y + '%';
+        b.setAttribute('aria-label', 'Destination ' + d.n + ' \u2014 ' + d.name);
+        b.textContent = d.n;
+        b.addEventListener('click', function (e) {
+          e.stopPropagation();
+          select(d, b);
+        });
+        b.addEventListener('mouseenter', function () {
+          positionTip(d);
+          setTip(d);
+          tip.classList.add('is-visible');
+          tip.setAttribute('aria-hidden', 'false');
+        });
+        b.addEventListener('mouseleave', function () {
+          tip.classList.remove('is-visible');
+          tip.setAttribute('aria-hidden', 'true');
+        });
+        hostWrap.appendChild(b);
+
+        /* destination card */
+        var card = document.createElement('div');
+        card.className = 'ct-dest-card';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Destination ' + d.n + ' \u2014 ' + d.name);
+        card.innerHTML =
+          '<span class="ct-dc-n">Destination ' + d.n + '</span>' +
+          '<span class="ct-dc-ic"></span>' +
+          '<span class="ct-dc-t">' + d.name + '</span>';
+        card.querySelector('.ct-dc-ic').appendChild(makeIcon(d.icon));
+        card.addEventListener('click', function () { select(d, card); });
+        card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(d, card); } });
+        cards.appendChild(card);
+        cardsArr.push({ d: d, el: card, hot: b });
+      });
+
+      function positionTip(d) {
+        var r = mapWrap.getBoundingClientRect();
+        var leftPct = d.x;
+        var topPct = d.y;
+        var tipW = 300;
+        var left = (leftPct / 100) * r.width;
+        var top = (topPct / 100) * r.height;
+        if (left + tipW + 12 > r.width) left = left - tipW - 40;
+        else left = left + 24;
+        if (left < 8) left = 8;
+        var tipTop = top - 60;
+        if (tipTop < 8) tipTop = 8;
+        tip.style.left = left + 'px';
+        tip.style.top = tipTop + 'px';
+      }
+
+      function select(d, el) {
+        cardsArr.forEach(function (c) {
+          c.el.classList.remove('is-active');
+          c.hot.classList.remove('is-active');
+        });
+        if (el.classList) {
+          cardsArr.filter(function (c) { return c.el === el || c.hot === el; })
+            .forEach(function (c) { c.el.classList.add('is-active'); c.hot.classList.add('is-active'); });
+        }
+        setTip(d);
+        positionTip(d);
+        tip.classList.add('is-visible');
+        tip.setAttribute('aria-hidden', 'false');
+        if (el.scrollIntoView && el.parentNode === cards) { el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }
+      }
+
+      mapWrap.addEventListener('click', function () {
+        tip.classList.remove('is-visible');
+        tip.setAttribute('aria-hidden', 'true');
+        cardsArr.forEach(function (c) { c.el.classList.remove('is-active'); c.hot.classList.remove('is-active'); });
+      });
+
+      window.addEventListener('resize', function () { if (tip.classList.contains('is-visible')) positionTip(activeD || DESTINATIONS[0]); });
+      window.addEventListener('scroll', function () { if (tip.classList.contains('is-visible') && tip.style.left) positionTip(activeD || DESTINATIONS[0]); }, { passive: true });
+      var activeD = null;
+
+      /* ---- Campus film: click to play ---- */
+      var stage = document.getElementById('ctFilmStage');
+      var video = document.getElementById('ctFilmVideo');
+      var play = document.getElementById('ctFilmPlay');
+      function playFilm() {
+        if (video.paused) {
+          video.controls = true;
+          video.play();
+          play.style.display = 'none';
+        }
+      }
+      stage.addEventListener('click', function () {
+        if (video.paused) playFilm();
+      });
+      video.addEventListener('play', function () { play.style.display = 'none'; video.controls = true; });
+      video.addEventListener('pause', function () { if (!video.ended) { if (video.currentTime > 0) video.controls = true; play.style.display = ''; } });
+      video.addEventListener('ended', function () { play.style.display = ''; video.controls = true; });
+
+      /* ---- Graceful asset fallbacks ----
+         Spec files (images/campus/*, videos/campus-*.mp4) may not exist yet.
+         On error, swap to known-good real assets so nothing appears broken. */
+      var FALLBACK_IMG = {
+        'images/campus/hero-poster.jpg': 'images/gallery/Screenshot%202026-08-15%20150558.png',
+        'images/campus/master-plan.jpg': 'images/gallery/Screenshot%202026-08-15%20150635.png',
+        'images/campus/infra-01.jpg': 'images/gallery/Screenshot%202026-08-15%20150511.png',
+        'images/campus/infra-02.jpg': 'images/gallery/Screenshot%202026-08-15%20150520.png',
+        'images/campus/infra-03.jpg': 'images/gallery/Screenshot%202026-08-15%20150558.png',
+        'images/campus/infra-04.jpg': 'images/gallery/Screenshot%202026-08-15%20150530.png',
+        'images/campus/cottage-01.jpg': 'images/gallery/Screenshot%202026-08-15%20150501.png',
+        'images/campus/villa-01.jpg': 'images/gallery/Screenshot%202026-08-15%20150402.png',
+        'images/campus/dining-01.jpg': 'images/gallery/Screenshot%202026-08-15%20150541.png',
+        'images/campus/film-poster.jpg': 'images/gallery/Screenshot%202026-08-15%20150635.png',
+        'images/gallery/campus-wide.jpg': 'images/gallery/Screenshot%202026-08-15%20150635.png',
+        'images/gallery/campus-spa.jpg': 'images/gallery/Screenshot%202026-08-15%20150453.png',
+        'images/gallery/campus-lake.jpg': 'images/gallery/Screenshot%202026-08-15%20150520.png'
+      };
+      var swapped = {};
+      document.querySelectorAll('img[src]').forEach(function (img) {
+        var src = (img.getAttribute('src') || '').split('?')[0];
+        var fb = FALLBACK_IMG[src];
+        if (!fb) return;
+        img.addEventListener('error', function handler() {
+          img.removeEventListener('error', handler);
+          if (swapped[src]) return;
+          swapped[src] = true;
+          img.setAttribute('src', fb);
+        });
+      });
+
+      /* Hero video fallback: if campus-hero.mp4 cannot load, use existing hero-banner.mp4 */
+      var heroVideo = document.getElementById('ctHeroVideo');
+      var heroSrc = heroVideo.querySelector('source');
+      var vf = false;
+      heroSrc.addEventListener('error', function () {
+        if (vf) return; vf = true;
+        heroSrc.setAttribute('src', 'videos/hero-banner.mp4');
+        heroVideo.load();
+        heroVideo.play().catch(function () {});
+      });
+      heroVideo.addEventListener('error', function () {
+        if (vf) return; vf = true;
+        if (!heroVideo.getAttribute('data-fb')) {
+          heroVideo.setAttribute('data-fb', '1');
+          heroVideo.innerHTML = '<source src="videos/hero-banner.mp4" type="video/mp4">';
+          heroVideo.load();
+          heroVideo.play().catch(function () {});
+        }
+      });
+      /* Show poster image until video metadata is ready */
+      heroVideo.addEventListener('loadedmetadata', function () { heroVideo.style.opacity = 1; });
+
+      /* ---- Reveal on scroll (lightweight, mirrors site motion without home.js deps) ---- */
+      var reveals = document.querySelectorAll('.ct-reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.12 });
+        reveals.forEach(function (r) { io.observe(r); });
+      } else {
+        reveals.forEach(function (r) { r.classList.add('in-view'); });
+      }
+
+      activeD = DESTINATIONS[0];
+    })();
+  </script>
 
   <script src="js/main.js"></script>
   <script src="js/motion.js"></script>
