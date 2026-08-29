@@ -413,7 +413,7 @@
       container.appendChild(v);
     };
     document.querySelectorAll('#main').forEach((sec) => {
-      if (sec.querySelector(':scope > .hero-img, :scope > .ct-hero-media')) return;
+      if (sec.querySelector(':scope > .hero-img, :scope > .ct-hero-media, :scope > [data-hero-optout]')) return;
       const bg = document.createElement('div');
       bg.className = 'hero-img';
       sec.insertBefore(bg, sec.firstChild);
