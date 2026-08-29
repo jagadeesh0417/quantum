@@ -126,46 +126,51 @@
     }
 
     /* ================================================================
-       1. HERO — split editorial layout (text 35–45% / image 55–65%)
+       1. HERO — full-screen cinematic video
        ================================================================ */
+    /* ---- Global image-ratio system ----
+       Every photograph is composed onto a defined aspect ratio so that
+       images within any grid share identical dimensions (no distortion). */
+    .ratio-169 { aspect-ratio: 16 / 9; }
+    .ratio-219 { aspect-ratio: 21 / 9; }
+    .ratio-43  { aspect-ratio: 4 / 3; }
+    .ratio-32  { aspect-ratio: 3 / 2; }
+    .ratio-11  { aspect-ratio: 1 / 1; }
+    .ratio-45  { aspect-ratio: 4 / 5; }
+
     .ct-hero {
-      position: relative; background: var(--ct-ink); color: #fff;
-      padding: clamp(120px, 14vw, 168px) 0 clamp(72px, 8vw, 110px);
-      overflow: hidden;
+      position: relative; color: #fff; min-height: 100svh; height: 100svh;
+      display: flex; align-items: flex-end; overflow: hidden;
+      background: var(--ct-ink);
     }
-    .ct-hero-grid {
-      display: grid; grid-template-columns: 42% 1fr; gap: clamp(32px, 5vw, 84px);
-      align-items: center;
+    .ct-hero-video { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; background: var(--ct-ink); }
+    .ct-hero-overlay {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(180deg, rgba(18,21,16,0.62) 0%, rgba(18,21,16,0.22) 34%, rgba(18,21,16,0.28) 55%, rgba(18,21,16,0.9) 100%);
     }
-    .ct-hero-copy { position: relative; z-index: 2; }
+    .ct-hero-inner { position: relative; z-index: 2; width: 100%; padding: 0 0 clamp(72px, 8vw, 110px); }
     .ct-hero-eyebrow { color: var(--ct-gold); margin-bottom: 26px; }
     .ct-hero h1 {
       font-family: var(--ct-serif); font-weight: 400; line-height: 1.02;
-      font-size: clamp(46px, 5.6vw, 84px); color: #fff; max-width: 12ch;
+      font-size: clamp(44px, 6vw, 92px); color: #fff; max-width: 14ch;
     }
     .ct-hero h1 em { font-style: italic; color: var(--ct-gold-soft); }
     .ct-hero-lead {
-      font-family: var(--ct-sans); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.75;
-      color: rgba(255,255,255,0.8); max-width: 52ch; margin-top: 30px;
+      font-family: var(--ct-sans); font-size: clamp(16px, 1.35vw, 19px); line-height: 1.75;
+      color: rgba(255,255,255,0.82); max-width: 54ch; margin-top: 28px;
     }
-    .ct-hero-cta { display: flex; gap: 14px; margin-top: 42px; flex-wrap: wrap; }
-    .ct-hero-media {
-      position: relative; z-index: 1; border-radius: 10px; aspect-ratio: 3 / 2;
-      overflow: hidden; background: var(--ct-pine);
-      box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6);
-    }
-    .ct-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .ct-hero-caption {
-      position: absolute; right: 18px; bottom: 18px; z-index: 2; color: #fff;
-      font-family: var(--ct-sans); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
-      background: rgba(18,21,16,0.62); backdrop-filter: blur(4px); padding: 8px 14px; border-radius: 2px;
-      border: 1px solid rgba(255,255,255,0.16);
-    }
+    .ct-hero-cta { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
     .ct-hero-note {
-      margin-top: 48px; display: flex; align-items: center; gap: 18px;
-      font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55);
+      margin-top: 46px; display: flex; align-items: center; gap: 18px;
+      font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.6);
     }
     .ct-hero-note::before { content: ""; width: 46px; height: 1px; background: var(--ct-gold); flex: none; }
+    @keyframes ct-scrollhint { 0% { transform: translate(-50%, 0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(-50%, 26px); opacity: 0; } }
+    .ct-scroll-hint {
+      position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 3;
+      width: 1px; height: 56px; overflow: hidden;
+    }
+    .ct-scroll-hint::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; animation: ct-scrollhint 2.2s ease-in-out infinite; }
 
     /* ================================================================
        2. EXPLORE THE CAMPUS — editorial introduction
@@ -375,8 +380,8 @@
        RESPONSIVE
        ================================================================ */
     @media (max-width: 1024px) {
-      .ct-hero-grid { grid-template-columns: 45% 1fr; gap: 36px; }
-      .ct-hero h1 { font-size: clamp(40px, 6vw, 60px); }
+      .ct-hero { min-height: 92svh; }
+      .ct-hero h1 { font-size: clamp(42px, 7vw, 64px); }
       .ct-purpose-grid { grid-template-columns: 1fr; gap: 30px; }
       .ct-purpose h2 { position: static; }
       .ct-arch-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -393,12 +398,11 @@
     }
     @media (max-width: 760px) {
       .ct-wrap { padding: 0 22px; }
-      .ct-hero { padding: 120px 0 72px; }
-      .ct-hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .ct-hero h1 { font-size: clamp(38px, 11vw, 52px); }
+      .ct-hero { min-height: 92svh; padding-bottom: 0; }
+      .ct-hero h1 { font-size: clamp(36px, 11vw, 50px); }
+      .ct-hero-lead { max-width: 46ch; }
       .ct-hero-cta { flex-direction: column; align-items: stretch; }
       .ct-hero-cta .ct-btn { width: 100%; }
-      .ct-hero-media { aspect-ratio: 4 / 3; }
       .ct-intro { padding: 90px 0 40px; }
       .ct-pano .ct-media { height: 340px; }
       .ct-purpose { padding: 90px 0; }
@@ -517,29 +521,26 @@
   <main id="main">
 
     <!-- ================================================================
-         1. HERO — split editorial layout
+         1. HERO — full-screen cinematic video
      ================================================================ -->
     <section class="ct-hero" data-hero-optout="">
-      <div class="ct-wrap ct-hero-grid">
-        <div class="ct-hero-copy">
-          <span class="ct-eyebrow ct-hero-eyebrow ct-reveal">The Campus</span>
-          <h1 class="ct-reveal" data-d="1">Designed Around <em>the Human</em></h1>
-          <p class="ct-hero-lead ct-reveal" data-d="2">Across 22 acres of landscaped grounds, Quantum brings together longevity medicine, wellness, recovery, nature, hospitality and advanced health technology &mdash; in a single, restful destination designed around how you live, rest and recover.</p>
-          <div class="ct-hero-cta ct-reveal" data-d="3">
-            <a href="#destinations" class="ct-btn ct-btn--gold">Explore the Campus <span class="arr" aria-hidden="true">&rarr;</span></a>
-            <a href="tel:+919845025857" class="ct-btn ct-btn--ghost">Begin Your Journey</a>
-          </div>
+      <video class="ct-hero-video" autoplay muted loop playsinline preload="metadata"
+             aria-hidden="true" disablepictureinpicture
+             poster="images/gallery/Screenshot%202026-08-15%20150558.png">
+        <source src="videos/hero-banner.mp4" type="video/mp4">
+      </video>
+      <div class="ct-hero-overlay" aria-hidden="true"></div>
+      <div class="ct-hero-inner ct-wrap">
+        <span class="ct-eyebrow ct-hero-eyebrow ct-reveal">The Campus</span>
+        <h1 class="ct-reveal" data-d="1">Designed Around <em>the Human</em></h1>
+        <p class="ct-hero-lead ct-reveal" data-d="2">Across 22 acres of landscaped grounds, Quantum brings together longevity medicine, wellness, recovery, nature, hospitality and advanced health technology &mdash; in a single, restful destination designed around how you live, rest and recover.</p>
+        <div class="ct-hero-cta ct-reveal" data-d="3">
+          <a href="#destinations" class="ct-btn ct-btn--gold">Explore the Campus <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a href="tel:+919845025857" class="ct-btn ct-btn--ghost">Begin Your Journey</a>
         </div>
-        <figure class="ct-hero-media ct-reveal" data-d="1">
-          <img src="images/gallery/Screenshot%202026-08-15%20150558.png"
-               alt="The arrival architecture of Quantum Health Stemcell Resort" fetchpriority="high"
-               onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#223027,#121510)';">
-          <figcaption class="ct-hero-caption">Arrival Architecture</figcaption>
-        </figure>
-      </div>
-      <div class="ct-wrap">
         <div class="ct-hero-note" aria-hidden="true">Kanakapura Main Road &middot; Bengaluru</div>
       </div>
+      <div class="ct-scroll-hint" aria-hidden="true"></div>
     </section>
 
     <!-- ================================================================
