@@ -24,425 +24,495 @@
 
   <style>
     /* ===================================================================
-       THE CAMPUS · Resort Tour (resort-tour.html) — premium editorial rebuild
-       Luxury longevity-resort editorial: deep green, warm ivory, gold accent.
-       Scoped with .ct- · no external layout dependencies.
+       THE CAMPUS · Resort Tour (resort-tour.html)
+       Editorial architecture / luxury-wellness journal.
+       Deep forest green canvas · oversized negative space · asymmetric
+       three-zone grid · small editorial photography · refined typography.
+       Scoped with .qh- to avoid external layout dependencies.
        =================================================================== */
     :root {
-      --ct-ink:      #121510;   /* deep green-black   */
-      --ct-ink-2:    #1A1E18;   /* secondary dark     */
-      --ct-pine:     #223027;   /* deep pine green    */
-      --ct-ivory:    #F5F2EA;   /* warm ivory         */
-      --ct-cream:    #ECE8DC;   /* soft cream         */
-      --ct-gold:     #B89A5A;   /* accent gold        */
-      --ct-gold-soft:#D6C294;
-      --ct-muted:    #5C5F57;   /* body text on light */
-      --ct-muted-2:  #A9A99F;   /* muted on dark      */
-      --ct-hairline: rgba(18,21,16,0.14);
-      --ct-hairline-dark: rgba(255,255,255,0.14);
-      --ct-serif: 'Fraunces', Georgia, serif;
-      --ct-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --ct-container: 1400px;
+      --qh-green:    #0B4F32;   /* deep forest green — page canvas   */
+      --qh-green-2:  #0E5B3A;   /* slightly lighter green for devices */
+      --qh-green-3:  #08391F;   /* deepest green for depth            */
+      --qh-ink:      #062A18;   /* near-black green                   */
+      --qh-ivory:    #E8E2D2;   /* soft warm ivory — primary text     */
+      --qh-ivory-2:  #C9C1AB;   /* muted warm text                    */
+      --qh-muted:    #A9B39B;   /* muted text on green                */
+      --qh-line:     rgba(232,226,210,0.18);  /* thin hairline        */
+      --qh-line-2:   rgba(232,226,210,0.34);
+      --qh-gold:     #D8C9A6;   /* subtle warm accent (sparingly)     */
+      --qh-serif: 'Fraunces', Georgia, serif;
+      --qh-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --qh-gut: clamp(16px, 4vw, 64px);       /* outer horizontal margin */
     }
 
-    /* ---- Reset this page against the global homepage hero rules ----
-       home.css sets #main{display:flex;align-items:center;min-height} for the
-       homepage hero. This is a linear editorial document → plain block flow. */
+    /* ---- Reset against global homepage hero rules -------------------- */
+    html { scroll-behavior: smooth; }
     #main {
       display: block;
       min-height: 0;
-      align-items: stretch;
-      align-content: stretch;
-      background: var(--ct-ivory);
-      overflow: hidden;
+      background: var(--qh-green);
+      overflow-x: hidden;
     }
     #main::before, #main::after { content: none; }
     #main .container { padding: 0; }
-    #main > section { z-index: 1; }
-    html { scroll-behavior: smooth; }
-    #main { scroll-margin-top: 84px; }
+    body { background: var(--qh-green); color: var(--qh-ivory); font-family: var(--qh-sans); }
 
-    /* ---- Container -------------------------------------------------- */
-    .ct-wrap {
-      max-width: var(--ct-container);
-      margin: 0 auto;
+    /* ---- Full-width editorial canvas --------------------------------- */
+    .qh-wrap {
       width: 100%;
-      padding: 0 clamp(24px, 4vw, 72px);
-    }
-    .ct-wide { max-width: 1600px; }
-    .ct-center { text-align: center; }
-
-    /* ---- Typography primitives -------------------------------------- */
-    .ct-eyebrow {
-      display: inline-flex; align-items: center; gap: 14px;
-      font-family: var(--ct-sans); font-size: 11.5px; font-weight: 600;
-      letter-spacing: 0.34em; text-transform: uppercase; color: var(--ct-gold);
-    }
-    .ct-eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.6; }
-    .ct-eyebrow--center::after { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.6; }
-    .ct-h2 {
-      font-family: var(--ct-serif); font-weight: 400; line-height: 1.08;
-      font-size: clamp(40px, 5vw, 70px); color: var(--ct-ink);
-    }
-    .ct-h2 em, .ct-h3 em { font-style: italic; color: var(--ct-gold); }
-    .ct-lede { font-family: var(--ct-sans); font-size: 18px; line-height: 1.85; color: var(--ct-muted); max-width: 62ch; }
-    .ct-sec-label { font-family: var(--ct-sans); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ct-muted); }
-
-    /* ---- Buttons ----------------------------------------------------- */
-    .ct-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-      font-family: var(--ct-sans); font-size: 13px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 17px 32px; cursor: pointer; text-decoration: none;
-      border: 1px solid transparent; border-radius: 2px;
-      transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-    }
-    .ct-btn .arr { display: inline-block; transition: transform 0.35s ease; }
-    .ct-btn:hover .arr { transform: translateX(5px); }
-    .ct-btn--gold { background: var(--ct-gold); color: var(--ct-ink); }
-    .ct-btn--gold:hover { background: var(--ct-gold-soft); transform: translateY(-2px); }
-    .ct-btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
-    .ct-btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-    .ct-btn--dark { background: var(--ct-ink); color: #fff; }
-    .ct-btn--dark:hover { transform: translateY(-2px); background: #0a0c09; }
-    .ct-btn--ink-outline { background: transparent; color: var(--ct-ink); border-color: rgba(18,21,16,0.4); }
-    .ct-btn--ink-outline:hover { border-color: var(--ct-ink); transform: translateY(-2px); }
-
-    /* ---- Reveal on scroll (transform + opacity only) ---------------- */
-    .ct-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
-    .ct-reveal.in-view { opacity: 1; transform: translateY(0); }
-    .ct-reveal[data-d="1"] { transition-delay: 0.08s; }
-    .ct-reveal[data-d="2"] { transition-delay: 0.16s; }
-    .ct-reveal[data-d="3"] { transition-delay: 0.24s; }
-
-    .ct-media { overflow: hidden; position: relative; background: var(--ct-cream); }
-    .ct-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
-    .ct-media:hover img { transform: scale(1.04); }
-    .ct-tag {
-      position: absolute; left: 16px; bottom: 16px; z-index: 2; color: #fff;
-      font-family: var(--ct-sans); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
-      background: rgba(18,21,16,0.6); backdrop-filter: blur(4px); padding: 8px 14px; border-radius: 2px;
-      border: 1px solid rgba(255,255,255,0.16);
+      padding: 0 var(--qh-gut);
+      box-sizing: border-box;
     }
 
-    /* ================================================================
-       1. HERO — full-screen cinematic video
-       ================================================================ */
-    /* ---- Global image-ratio system ----
-       Every photograph is composed onto a defined aspect ratio so that
-       images within any grid share identical dimensions (no distortion). */
-    .ratio-169 { aspect-ratio: 16 / 9; }
-    .ratio-219 { aspect-ratio: 21 / 9; }
-    .ratio-43  { aspect-ratio: 4 / 3; }
-    .ratio-32  { aspect-ratio: 3 / 2; }
-    .ratio-11  { aspect-ratio: 1 / 1; }
-    .ratio-45  { aspect-ratio: 4 / 5; }
-
-    .ct-hero {
-      position: relative; color: #fff; min-height: 100svh; height: 100svh;
-      display: flex; align-items: flex-end; overflow: hidden;
-      background: var(--ct-ink);
+    /* ---- Typography primitives ---------------------------------------- */
+    .qh-eyebrow {
+      display: block;
+      font-family: var(--qh-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--qh-ivory-2);
+      margin: 0 0 22px;
     }
-    .ct-hero-video { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; background: var(--ct-ink); }
-    .ct-hero-overlay {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(180deg, rgba(18,21,16,0.62) 0%, rgba(18,21,16,0.22) 34%, rgba(18,21,16,0.28) 55%, rgba(18,21,16,0.9) 100%);
+    .qh-eyebrow--gold { color: var(--qh-gold); }
+    .qh-display {
+      font-family: var(--qh-serif);
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--qh-ivory);
+      font-size: clamp(34px, 4.4vw, 72px);
+      letter-spacing: -0.01em;
+      margin: 0;
+      text-wrap: balance;
     }
-    .ct-hero-inner { position: relative; z-index: 2; width: 100%; padding: 0 0 clamp(72px, 8vw, 110px); }
-    .ct-hero-eyebrow { color: var(--ct-gold); margin-bottom: 26px; }
-    .ct-hero h1 {
-      font-family: var(--ct-serif); font-weight: 400; line-height: 1.02;
-      font-size: clamp(44px, 6vw, 92px); color: #fff; max-width: 14ch;
+    .qh-display em { font-style: italic; color: var(--qh-gold); }
+    .qh-lead {
+      font-family: var(--qh-sans);
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--qh-ivory-2);
+      margin: 0;
     }
-    .ct-hero h1 em { font-style: italic; color: var(--ct-gold-soft); }
-    .ct-hero-lead {
-      font-family: var(--ct-sans); font-size: clamp(16px, 1.35vw, 19px); line-height: 1.75;
-      color: rgba(255,255,255,0.82); max-width: 54ch; margin-top: 28px;
+    .qh-body {
+      font-family: var(--qh-sans);
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: var(--qh-ivory-2);
+      margin: 0;
     }
-    .ct-hero-cta { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
-    .ct-hero-note {
-      margin-top: 46px; display: flex; align-items: center; gap: 18px;
-      font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.6);
-    }
-    .ct-hero-note::before { content: ""; width: 46px; height: 1px; background: var(--ct-gold); flex: none; }
-    @keyframes ct-scrollhint { 0% { transform: translate(-50%, 0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(-50%, 26px); opacity: 0; } }
-    .ct-scroll-hint {
-      position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 3;
-      width: 1px; height: 56px; overflow: hidden;
-    }
-    .ct-scroll-hint::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; animation: ct-scrollhint 2.2s ease-in-out infinite; }
-
-    /* ================================================================
-       2. EXPLORE THE CAMPUS — editorial introduction
-       ================================================================ */
-    .ct-intro { background: var(--ct-ivory); padding: clamp(110px, 12vw, 150px) 0 clamp(48px, 6vw, 80px); }
-    .ct-intro .ct-inner { max-width: 880px; }
-    .ct-intro .ct-eyebrow { color: var(--ct-ink); margin-bottom: 28px; }
-    .ct-intro h2 { margin-top: 0; }
-    .ct-intro .ct-lede { margin-top: 30px; font-size: 19px; }
-    .ct-intro-meta { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 12px 40px; }
-    .ct-intro-meta span {
-      font-family: var(--ct-sans); font-size: 11.5px; font-weight: 600; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--ct-muted); display: inline-flex; align-items: center; gap: 10px;
-    }
-    .ct-intro-meta span::before { content: ""; width: 20px; height: 1px; background: var(--ct-gold); }
-
-    /* ---- Large campus panorama (breaks up intro→purpose) ----------- */
-    .ct-pano { background: var(--ct-ivory); padding: 0 0 clamp(70px, 8vw, 110px); }
-    .ct-pano .ct-media { height: clamp(360px, 52vw, 620px); border-radius: 10px; }
-    .ct-pano .ct-media::after {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(180deg, rgba(18,21,16,0) 55%, rgba(18,21,16,0.28) 100%);
+    .qh-body + .qh-body { margin-top: 18px; }
+    .qh-note {
+      font-family: var(--qh-sans);
+      font-size: 11px;
+      line-height: 1.7;
+      letter-spacing: 0.06em;
+      color: var(--qh-muted);
+      margin: 0;
     }
 
-    /* ================================================================
-       3. A CAMPUS OF PURPOSE — 40/60 editorial split
-       ================================================================ */
-    .ct-purpose { background: var(--ct-cream); padding: clamp(110px, 12vw, 150px) 0; }
-    .ct-purpose-grid { display: grid; grid-template-columns: 40% 1fr; gap: clamp(40px, 6vw, 110px); align-items: start; }
-    .ct-purpose .ct-eyebrow { color: var(--ct-ink); margin-bottom: 28px; }
-    .ct-purpose h2 { position: sticky; top: 110px; }
-    .ct-purpose-copy .ct-lede { font-size: 17px; }
-    .ct-purpose-copy p { margin-bottom: 22px; }
-    .ct-purpose-list { margin-top: 34px; border-top: 1px solid var(--ct-hairline); }
-    .ct-purpose-item { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--ct-hairline); align-items: start; }
-    .ct-purpose-item .n { font-family: var(--ct-serif); font-style: italic; font-size: 18px; color: var(--ct-gold); }
-    .ct-purpose-item h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 23px; color: var(--ct-ink); margin-bottom: 6px; }
-    .ct-purpose-item p { font-family: var(--ct-sans); font-size: 15px; line-height: 1.7; color: var(--ct-muted); max-width: 54ch; }
+    /* ---- Thin hairline ------------------------------------------------- */
+    .qh-rule { height: 1px; background: var(--qh-line); border: none; margin: 0; }
 
-    /* ================================================================
-       4 + 5. FOURTEEN SPACES — editorial card grid
-       ================================================================ */
-    .ct-spaces { background: var(--ct-ivory); padding: clamp(110px, 12vw, 150px) 0 clamp(90px, 10vw, 130px); }
-    .ct-spaces-head { max-width: 760px; margin-bottom: clamp(50px, 6vw, 76px); }
-    .ct-spaces-head .ct-eyebrow { color: var(--ct-ink); margin-bottom: 26px; }
-    .ct-spaces-head p { margin-top: 26px; }
+    /* ===================================================================
+       GLOBAL NAVIGATION — floating premium bar on green
+       =================================================================== */
+    /* Restyle shared navbar into a floating, minimal editorial bar. */
+    .qh-page .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(6,42,24,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--qh-line);
+      z-index: 2000;
+    }
+    .qh-page .navbar .container { padding: 0 var(--qh-gut); }
+    .qh-page .navbar .nav-container { padding: 0 var(--qh-gut); }
+    .qh-page .navbar .logo { color: var(--qh-ivory); }
+    .qh-page .navbar .logo-mark { color: var(--qh-ivory); }
+    .qh-page .navbar .nav-links > li > a,
+    .qh-page .navbar .nav-links > li > a.nav-link-mega {
+      color: var(--qh-ivory-2);
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .qh-page .navbar .nav-links > li > a:hover { color: var(--qh-ivory); }
+    .qh-page .navbar .nav-links > li > a.active,
+    .qh-page .navbar .nav-links > li > a.nav-link-mega.active { color: var(--qh-ivory); }
+    .qh-page .navbar .nav-links > li > a.active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -7px;
+      height: 1px; background: var(--qh-gold);
+    }
+    .qh-page .navbar .nav-cta a { border: 1px solid var(--qh-line-2); padding: 11px 22px; border-radius: 2px; }
+    .qh-page .navbar .nav-cta a:hover { background: rgba(232,226,210,0.08); color: var(--qh-ivory); }
+    .qh-page .mobile-toggle span { background: var(--qh-ivory); }
+    .qh-page .lang-current, .qh-page .lang-switcher { color: var(--qh-ivory-2); }
+    .qh-page .mega, .qh-page .mega * { color: var(--qh-ivory); }
+    body.qh-scrolled .qh-page .navbar { background: rgba(6,42,24,0.85); }
 
-    .ct-dest-grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; grid-auto-flow: dense;
+    /* ===================================================================
+       EDITORIAL HERO — asymmetric, left-aligned, no background
+       =================================================================== */
+    .qh-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: clamp(120px, 22vh, 25vh) var(--qh-gut) 0;
+      box-sizing: border-box;
     }
-    .ct-card {
-      position: relative; grid-column: span 4; border-radius: 8px; overflow: hidden;
-      background: var(--ct-ink); color: #fff; display: flex; align-items: flex-end;
-      min-height: 320px; aspect-ratio: 4 / 5;
+    .qh-hero .qh-hero-eyebrow { margin-bottom: 34px; }
+    .qh-hero .qh-display {
+      max-width: 22vw;
+      font-size: clamp(44px, 6vw, 92px);
     }
-    .ct-card--wide { grid-column: span 6; }
-    .ct-card--feature { grid-column: span 6; grid-row: span 2; min-height: 100%; aspect-ratio: auto; }
-    .ct-card--small { grid-column: span 3; aspect-ratio: 3 / 4; }
-    .ct-card .ct-media { position: absolute; inset: 0; }
-    .ct-card .ct-media img { position: absolute; inset: 0; }
-    .ct-card .ct-card-veil {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, rgba(18,21,16,0) 40%, rgba(18,21,16,0.78) 100%);
-      transition: opacity 0.5s ease;
+    .qh-hero .qh-hero-copy {
+      margin-top: clamp(34px, 4vh, 56px);
+      max-width: 340px;
     }
-    .ct-card:hover .ct-card-veil { opacity: 0.85; }
-    .ct-card-body { position: relative; z-index: 2; padding: 26px; width: 100%; }
-    .ct-card-cat {
-      font-family: var(--ct-sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.26em;
-      text-transform: uppercase; color: var(--ct-gold-soft); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+    .qh-hero .qh-hero-copy .qh-body { color: var(--qh-ivory-2); }
+    .qh-hero .qh-hero-meta {
+      margin-top: clamp(48px, 7vh, 90px);
+      display: flex; flex-wrap: wrap; gap: 10px 28px;
     }
-    .ct-card-cat::before { content: ""; width: 22px; height: 1px; background: var(--ct-gold); }
-    .ct-card-num {
-      position: absolute; top: 22px; right: 24px; z-index: 2;
-      font-family: var(--ct-serif); font-style: italic; font-size: 15px; color: rgba(255,255,255,0.9);
+    .qh-hero .qh-hero-meta span {
+      font-family: var(--qh-sans); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--qh-muted);
     }
-    .ct-card-body h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 26px; line-height: 1.12; color: #fff; }
-    .ct-card-body p {
-      font-family: var(--ct-sans); font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.82);
-      margin-top: 12px; max-width: 44ch; opacity: 0; transform: translateY(8px); transition: all 0.45s ease;
-    }
-    .ct-card:hover .ct-card-body p { opacity: 1; transform: translateY(0); }
-    .ct-card--inverse { align-items: center; justify-content: center; text-align: center; }
-    .ct-card--inverse { background: var(--ct-pine); }
+    .qh-hero .qh-hero-meta span b { color: var(--qh-ivory-2); font-weight: 500; }
 
-    /* ================================================================
-       6. ARCHITECTURE & NATURE — 55–65% image / 35–45% text
-       ================================================================ */
-    .ct-arch { background: var(--ct-cream); padding: clamp(110px, 12vw, 150px) 0; }
-    .ct-arch-grid { display: grid; grid-template-columns: 58% 1fr; gap: clamp(40px, 5vw, 90px); align-items: center; }
-    .ct-arch-media { position: relative; border-radius: 10px; aspect-ratio: 4 / 3; overflow: hidden; }
-    .ct-arch-copy .ct-eyebrow { color: var(--ct-ink); margin-bottom: 26px; }
-    .ct-arch-copy h2 { margin-bottom: 28px; }
-    .ct-arch-copy p { font-family: var(--ct-sans); font-size: 16.5px; line-height: 1.8; color: var(--ct-muted); max-width: 50ch; }
-    .ct-arch-stats { display: flex; gap: 0; margin-top: 44px; border-top: 1px solid var(--ct-hairline); }
-    .ct-arch-stat { flex: 1; padding: 26px 22px 0 0; }
-    .ct-arch-stat + .ct-arch-stat { padding-left: 24px; border-left: 1px solid var(--ct-hairline); }
-    .ct-arch-stat .v { font-family: var(--ct-serif); font-size: clamp(30px, 3vw, 44px); color: var(--ct-ink); }
-    .ct-arch-stat .k { font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ct-muted); margin-top: 8px; }
-
-    /* ================================================================
-       7. ARRIVAL EXPERIENCE — Stage 01
-       ================================================================ */
-    .ct-arrival { background: var(--ct-ink); color: #fff; padding: clamp(110px, 12vw, 150px) 0; overflow: hidden; }
-    .ct-arrival-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); align-items: center; }
-    .ct-arrival-media { position: relative; border-radius: 10px; aspect-ratio: 4 / 3; overflow: hidden; }
-    .ct-arrival-stage { display: inline-flex; align-items: center; gap: 14px; color: var(--ct-gold); font-family: var(--ct-sans);
-      font-size: 11.5px; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; margin-bottom: 26px; }
-    .ct-arrival-stage::before { content: ""; width: 34px; height: 1px; background: var(--ct-gold); opacity: 0.6; }
-    .ct-arrival h2 { color: #fff; font-size: clamp(34px, 4vw, 56px); }
-    .ct-arrival p { font-family: var(--ct-sans); font-size: 16.5px; line-height: 1.8; color: var(--ct-muted-2); margin-top: 26px; max-width: 52ch; }
-    .ct-arrival-list { margin-top: 34px; }
-    .ct-arrival-item { display: flex; gap: 14px; align-items: flex-start; padding: 13px 0; border-top: 1px solid var(--ct-hairline-dark); font-family: var(--ct-sans); font-size: 15px; color: rgba(255,255,255,0.85); }
-    .ct-arrival-item:last-child { border-bottom: 1px solid var(--ct-hairline-dark); }
-    .ct-arrival-item b { color: var(--ct-gold); font-weight: 600; margin-right: 4px; }
-
-    /* ================================================================
-       8 + 9 + 10. YOUR JOURNEY — steps + timeline
-       ================================================================ */
-    .ct-journey { background: var(--ct-ivory); padding: clamp(110px, 12vw, 150px) 0; }
-    .ct-journey-head { max-width: 680px; margin: 0 auto 80px; text-align: center; }
-    .ct-journey-head .ct-eyebrow { color: var(--ct-ink); margin-bottom: 26px; justify-content: center; }
-    .ct-journey-head p { margin: 24px auto 0; }
-    .ct-timeline { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
-    .ct-timeline::before {
-      content: ""; position: absolute; top: 15px; left: 4%; right: 4%; height: 1px; background: rgba(18,21,16,0.16);
+    /* ===================================================================
+       THREE-ZONE ASYMMETRIC EDITORIAL GRID
+       =================================================================== */
+    .qh-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr 1fr;
+      column-gap: clamp(24px, 5vw, 90px);
+      row-gap: clamp(48px, 8vh, 120px);
+      align-items: start;
     }
-    .ct-step { position: relative; padding-top: 0; text-align: left; }
-    .ct-step-dot {
-      width: 31px; height: 31px; border-radius: 50%; background: var(--ct-ivory); border: 1px solid var(--ct-gold);
-      display: grid; place-items: center; color: var(--ct-gold); font-family: var(--ct-serif); font-style: italic; font-size: 14px;
-      margin-bottom: 26px; position: relative; z-index: 2; box-shadow: 0 0 0 5px var(--ct-ivory);
-    }
-    .ct-step-n { font-family: var(--ct-sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ct-gold); margin-bottom: 10px; }
-    .ct-step h3 { font-family: var(--ct-serif); font-weight: 400; font-size: 24px; color: var(--ct-ink); margin-bottom: 10px; }
-    .ct-step p { font-family: var(--ct-sans); font-size: 14.5px; line-height: 1.65; color: var(--ct-muted); max-width: 34ch; }
-    .ct-journey-cta { text-align: center; margin-top: 70px; }
+    .qh-grid > * { min-width: 0; }
 
-    /* ================================================================
-       11. GALLERY — stable editorial masonry
-       ================================================================ */
-    .ct-gallery { background: var(--ct-ink); color: #fff; padding: clamp(110px, 12vw, 150px) 0; }
-    .ct-gallery-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: clamp(44px, 5vw, 64px); }
-    .ct-gallery-head .ct-eyebrow { color: var(--ct-gold); }
-    .ct-gallery-head h2 { color: #fff; max-width: 14ch; margin-top: 22px; }
-    .ct-gallery-head p { font-family: var(--ct-sans); font-size: 16px; line-height: 1.75; color: var(--ct-muted-2); max-width: 40ch; }
-    .ct-gal-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 112px; gap: 14px; grid-auto-flow: dense; }
-    .ct-tile { position: relative; border-radius: 6px; overflow: hidden; cursor: pointer; background: var(--ct-ink-2); }
-    .ct-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s cubic-bezier(0.16,1,0.3,1); }
-    .ct-tile:hover img { transform: scale(1.05); }
-    .ct-tile .lab {
-      position: absolute; left: 14px; bottom: 12px; z-index: 2; font-family: var(--ct-sans); font-size: 10.5px;
-      letter-spacing: 0.24em; text-transform: uppercase; color: #fff; opacity: 0; transform: translateY(6px);
-      transition: all 0.4s ease; text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-    }
-    .ct-tile:hover .lab { opacity: 1; transform: translateY(0); }
-    .ct-tile.t-primary { grid-column: span 7; grid-row: span 2; }
-    .ct-tile.t-med    { grid-column: span 5; grid-row: span 2; }
-    .ct-tile.t-small  { grid-column: span 4; grid-row: span 2; }
-    .ct-tile.t-wide   { grid-column: span 8; grid-row: span 2; }
-    .ct-tile.t-tall   { grid-column: span 4; grid-row: span 3; }
+    /* ---- Zone top offsets (key asymmetry) ------------------------------ */
+    .qh-zone-left   { margin-top: 0; }
+    .qh-zone-center { margin-top: 40vh; padding-top: 40px; }
+    .qh-zone-right  { margin-top: 22vh; }
 
-    /* ---- Lightbox --------------------------------------------------- */
-    .ct-lb {
-      position: fixed; inset: 0; z-index: 9999; background: rgba(18,21,16,0.96); display: flex; flex-direction: column;
-      align-items: center; justify-content: center; padding: 40px 20px;
-      opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-    .ct-lb.open { opacity: 1; visibility: visible; }
-    .ct-lb figure { max-width: min(1180px, 92vw); width: 100%; margin: 0; position: relative; }
-    .ct-lb img { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
-    .ct-lb figcaption { text-align: center; margin-top: 18px; font-family: var(--ct-sans); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ct-muted-2); }
-    .ct-lb-close, .ct-lb-prev, .ct-lb-next {
-      position: absolute; z-index: 5; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
-      color: #fff; cursor: pointer; font-family: var(--ct-sans); font-size: 18px; display: grid; place-items: center; transition: background 0.3s, border-color 0.3s;
-    }
-    .ct-lb-close { top: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; }
-    .ct-lb-prev, .ct-lb-next { top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%; }
-    .ct-lb-prev { left: 16px; } .ct-lb-next { right: 16px; }
-    .ct-lb-close:hover, .ct-lb-prev:hover, .ct-lb-next:hover { background: rgba(184,154,90,0.3); border-color: var(--ct-gold); }
-    .ct-lb-count { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); font-family: var(--ct-sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ct-muted-2); }
+    .qh-zone-left .qh-display { max-width: 320px; font-size: clamp(34px, 3.4vw, 54px); }
+    .qh-zone-left .qh-body { max-width: 300px; margin-top: 28px; }
 
-    /* ================================================================
-       12. FINAL CTA
-       ================================================================ */
-    .ct-final { position: relative; overflow: hidden; color: #fff; padding: clamp(110px, 13vw, 160px) 24px; text-align: center; background: var(--ct-ink); }
-    .ct-final-bg { position: absolute; inset: 0; }
-    .ct-final-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .ct-final-ov { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,21,16,0.72) 0%, rgba(18,21,16,0.4) 45%, rgba(18,21,16,0.86) 100%); }
-    .ct-final-inner { position: relative; z-index: 3; max-width: 760px; margin: 0 auto; }
-    .ct-final-eyebrow { font-family: var(--ct-sans); font-size: 11.5px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ct-gold); margin-bottom: 28px; }
-    .ct-final h2 { font-family: var(--ct-serif); font-weight: 400; font-size: clamp(40px, 5.4vw, 74px); line-height: 1.06; color: #fff; }
-    .ct-final h2 em { font-style: italic; color: var(--ct-gold-soft); }
-    .ct-final p { font-family: var(--ct-sans); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.82); margin: 28px auto 0; max-width: 54ch; }
-    .ct-final-cta { display: flex; gap: 14px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
-
-    /* ================================================================
-       Navigation active state (gold underline — site convention)
-       ================================================================ */
-    .navbar .nav-links > li > a.active,
-    .navbar .nav-links > li > a.nav-link-mega.active { color: #fff; position: relative; }
-    .navbar .nav-links > li > a.active::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--ct-gold);
+    /* ---- Center editorial figure (small offset image) ------------------ */
+    .qh-figure { margin: 0; position: relative; }
+    .qh-media {
+      position: relative;
+      overflow: hidden;
+      background: var(--qh-green-3);
+    }
+    .qh-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .qh-figure .qh-fig  {
+      position: relative; width: 300px; max-width: 100%;
+      transform: translateX(6px);
+    }
+    .qh-figure .qh-fig.qh-media { aspect-ratio: 3 / 2; }
+    .qh-figure .qh-fig--offset {
+      position: absolute; top: 160px; right: -90px; width: 260px; max-width: 60vw;
+      z-index: 2;
+    }
+    .qh-figure .qh-fig--offset.qh-media { aspect-ratio: 3 / 2; }
+    .qh-figcap {
+      margin-top: 14px;
+      font-family: var(--qh-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--qh-muted);
     }
 
-    /* ================================================================
+    /* ---- Center stage block -------------------------------------------- */
+    .qh-stage { margin-top: 60px; }
+    .qh-stage .qh-eyebrow { margin-bottom: 18px; color: var(--qh-muted); }
+    .qh-stage .qh-display { max-width: 340px; font-size: clamp(32px, 3.2vw, 52px); line-height: 1.02; }
+    .qh-stage .qh-display span { display: block; }
+    .qh-stage .qh-display span + span { margin-top: 8px; }
+    .qh-stage .qh-body { max-width: 320px; margin-top: 24px; }
+
+    /* ---- Right long-form zone ------------------------------------------ */
+    .qh-zone-right .qh-eyebrow { margin-bottom: 24px; }
+    .qh-zone-right .qh-display { max-width: 360px; font-size: clamp(32px, 3.2vw, 52px); line-height: 1.02; }
+    .qh-zone-right .qh-display span { display: block; }
+    .qh-zone-right .qh-display span + span { margin-top: 8px; }
+    .qh-zone-right .qh-body { max-width: 340px; }
+    .qh-zone-right .qh-bodywrap { max-width: 340px; }
+    .qh-zone-right .qh-bodywrap .qh-body { max-width: 340px; }
+    .qh-zone-right .qh-bodywrap .qh-body + .qh-body { margin-top: 20px; }
+
+    /* ===================================================================
+       STANDALONE EDITORIAL CHAPTERS
+       =================================================================== */
+    .qh-chapter {
+      position: relative;
+      padding: clamp(140px, 22vh, 260px) 0;
+    }
+    /* Asymmetric two/three-offset chapter: image + wide text */
+    .qh-asym {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      column-gap: clamp(32px, 6vw, 120px);
+      align-items: start;
+    }
+    .qh-asym .qh-figure { margin-top: 6vh; }
+    .qh-asym .qh-fig { width: 320px; max-width: 100%; }
+    .qh-asym .qh-fig.qh-media { aspect-ratio: 4 / 3; }
+    .qh-asym .qh-copy { max-width: 430px; }
+    .qh-asym .qh-copy .qh-eyebrow { margin-bottom: 24px; }
+    .qh-asym .qh-copy .qh-display { font-size: clamp(32px, 3.4vw, 56px); max-width: 430px; }
+    .qh-asym .qh-copy .qh-body { margin-top: 26px; max-width: 380px; }
+
+    /* Full-bleed image band (used sparingly for landscape/night chapters) */
+    .qh-band {
+      position: relative; margin: 0;
+      width: 100vw; margin-left: calc(-1 * var(--qh-gut));
+      box-sizing: border-box;
+    }
+    .qh-band .qh-media { aspect-ratio: 21 / 9; }
+    .qh-band--tall .qh-media { aspect-ratio: 16 / 9; }
+    .qh-bandcap {
+      margin: 16px var(--qh-gut) 0;
+      font-family: var(--qh-sans); font-size: 10px;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--qh-muted);
+    }
+    .qh-bandwrap { display: flex; justify-content: flex-end; }
+
+    /* ---- Centered statement (philosophy / stillness / final) ------------ */
+    .qh-statement {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 var(--qh-gut);
+    }
+    .qh-statement .qh-display { font-size: clamp(28px, 3.4vw, 54px); line-height: 1.12; }
+    .qh-statement .qh-eyebrow { margin-bottom: 30px; }
+
+    /* ---- Chapter numbering --------------------------------------------- */
+    .qh-chapter-no {
+      position: absolute; top: clamp(120px, 18vh, 200px); right: var(--qh-gut);
+      font-family: var(--qh-serif); font-style: italic;
+      font-size: clamp(40px, 7vw, 110px); line-height: 1;
+      color: var(--qh-green-2); pointer-events: none; z-index: 0;
+    }
+
+    /* ===================================================================
+       MASTER PLAN / WELLNESS SPACES — 14-destination index
+       =================================================================== */
+    .qh-index {
+      list-style: none; margin: 0; padding: 0;
+      border-top: 1px solid var(--qh-line);
+    }
+    .qh-index li {
+      display: flex; align-items: baseline; gap: 20px;
+      padding: 18px 4px;
+      border-bottom: 1px solid var(--qh-line);
+    }
+    .qh-index .qh-idx-no {
+      font-family: var(--qh-serif); font-style: italic;
+      font-size: 15px; color: var(--qh-muted); width: 34px; flex: none;
+    }
+    .qh-index .qh-idx-name { font-family: var(--qh-serif); font-size: 20px; color: var(--qh-ivory); }
+    .qh-index .qh-idx-tag { margin-left: auto; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--qh-muted); }
+
+    /* ===================================================================
+       REVEAL ANIMATION (subtle, once)
+       =================================================================== */
+    .qh-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 1s ease, transform 1.1s cubic-bezier(0.2,0.6,0.25,1);
+      will-change: opacity, transform;
+    }
+    .qh-reveal.in-view { opacity: 1; transform: translateY(0); }
+    .no-js .qh-reveal { opacity: 1; transform: none; }
+    .qh-reveal[data-d="1"] { transition-delay: 0.1s; }
+    .qh-reveal[data-d="2"] { transition-delay: 0.2s; }
+    .qh-reveal[data-d="3"] { transition-delay: 0.3s; }
+    .qh-reveal--img { transform: translateY(34px); transition-duration: 1.4s, 1.4s; }
+    .qh-reveal--slow { transition-duration: 1.6s, 1.8s; }
+    .qh-media { overflow: hidden; }
+    .qh-media img { transition: transform 0.9s ease; }
+    .qh-figure:hover .qh-media img, .qh-asym:hover .qh-media img, .qh-band:hover .qh-media img { transform: scale(1.02); }
+
+    /* ===================================================================
+       LIGHTBOX
+       =================================================================== */
+    .qh-lb {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(6,28,16,0.96);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 40px 20px;
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .qh-lb.open { opacity: 1; visibility: visible; }
+    .qh-lb figure { max-width: min(1100px, 92vw); width: 100%; margin: 0; position: relative; }
+    .qh-lb img { width: 100%; max-height: 80vh; object-fit: contain; display: block; }
+    .qh-lb figcaption { text-align: center; margin-top: 16px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--qh-muted); }
+    .qh-lb-close, .qh-lb-prev, .qh-lb-next {
+      position: absolute; z-index: 5; background: transparent;
+      border: 1px solid var(--qh-line-2); color: var(--qh-ivory);
+      cursor: pointer; font-size: 16px; display: grid; place-items: center;
+      transition: background 0.3s;
+    }
+    .qh-lb-close { top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; }
+    .qh-lb-prev, .qh-lb-next { top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; }
+    .qh-lb-prev { left: 16px; } .qh-lb-next { right: 16px; }
+    .qh-lb-close:hover, .qh-lb-prev:hover, .qh-lb-next:hover { background: rgba(232,226,210,0.12); }
+    .qh-lb-count { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: 0.2em; color: var(--qh-muted); }
+
+    /* ===================================================================
+       GALLERY — small editorial image index
+       =================================================================== */
+    .qh-gal {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 3vw, 40px);
+      margin-top: clamp(48px, 8vh, 90px);
+    }
+    .qh-gal-tile {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--qh-sans);
+    }
+    .qh-gal-media {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: var(--qh-green-3);
+      aspect-ratio: 3 / 2;
+    }
+    .qh-gal .qh-gal-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.9s ease;
+    }
+    .qh-gal-tile:hover .qh-gal-media img { transform: scale(1.03); }
+    .qh-gal-tile .qh-figcap { margin-top: 12px; }
+    .qh-gal-tile:focus-visible { outline: 1px solid var(--qh-gold); outline-offset: 4px; }
+
+    /* ===================================================================
+       JOURNEY — editorial five-stage rail
+       =================================================================== */
+    .qh-journey { max-width: 460px; margin-top: clamp(24px, 4vh, 40px); }
+    .qh-jny-row {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: baseline;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid var(--qh-line);
+    }
+    .qh-jny-row:last-child { border-bottom: 1px solid var(--qh-line); }
+    .qh-jny-no {
+      font-family: var(--qh-serif); font-style: italic;
+      font-size: 15px; color: var(--qh-muted);
+    }
+    .qh-jny-t {
+      display: block;
+      font-family: var(--qh-serif); font-size: 20px; color: var(--qh-ivory);
+      margin-bottom: 6px;
+    }
+    .qh-jny-body p { margin: 0; font-size: 12.5px; line-height: 1.7; color: var(--qh-ivory-2); }
+
+    /* ===================================================================
+       CTA BUTTON — quiet ghost
+       =================================================================== */
+    .qh-btn {
+      display: inline-block;
+      font-family: var(--qh-sans);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--qh-ivory);
+      text-decoration: none;
+      border: 1px solid var(--qh-line-2);
+      padding: 15px 30px;
+      border-radius: 2px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .qh-btn:hover { background: rgba(232,226,210,0.08); color: var(--qh-ivory); }
+
+    /* ===================================================================
+       FOOTER — keep site styling but match green canvas
+       =================================================================== */
+    .qh-page .footer { background: var(--qh-green-3); }
+
+    /* ===================================================================
        RESPONSIVE
-       ================================================================ */
-    @media (max-width: 1024px) {
-      .ct-hero { min-height: 92svh; }
-      .ct-hero h1 { font-size: clamp(42px, 7vw, 64px); }
-      .ct-purpose-grid { grid-template-columns: 1fr; gap: 30px; }
-      .ct-purpose h2 { position: static; }
-      .ct-arch-grid { grid-template-columns: 1fr; gap: 44px; }
-      .ct-arch-media { order: -1; }
-      .ct-arrival-grid { grid-template-columns: 1fr; gap: 40px; }
-      .ct-arrival-media { order: -1; }
-      .ct-timeline { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
-      .ct-timeline::before { display: none; }
-      .ct-dest-grid { grid-template-columns: repeat(6, 1fr); }
-      .ct-card { grid-column: span 3; }
-      .ct-card--wide, .ct-card--feature { grid-column: span 6; }
-      .ct-card--small { grid-column: span 3; }
-      .ct-gal-grid { grid-auto-rows: 100px; }
+       =================================================================== */
+    @media (max-width: 1199px) {
+      /* two editorial zones; move the third below */
+      .qh-grid { grid-template-columns: 1fr 1fr; column-gap: clamp(28px, 5vw, 60px); }
+      .qh-zone-right { grid-column: 1 / -1; margin-top: 0; }
+      .qh-zone-right .qh-bodywrap { max-width: 560px; }
+      .qh-asym { grid-template-columns: 1fr 1fr; column-gap: clamp(28px, 5vw, 70px); }
+      .qh-gal { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 760px) {
-      .ct-wrap { padding: 0 22px; }
-      .ct-hero { min-height: 92svh; padding-bottom: 0; }
-      .ct-hero h1 { font-size: clamp(36px, 11vw, 50px); }
-      .ct-hero-lead { max-width: 46ch; }
-      .ct-hero-cta { flex-direction: column; align-items: stretch; }
-      .ct-hero-cta .ct-btn { width: 100%; }
-      .ct-intro { padding: 90px 0 40px; }
-      .ct-pano .ct-media { height: 340px; }
-      .ct-purpose { padding: 90px 0; }
-      .ct-purpose-item { grid-template-columns: 1fr; gap: 10px; }
-      .ct-dest-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .ct-card { grid-column: span 1; min-height: 300px; aspect-ratio: auto; }
-      .ct-card--wide, .ct-card--feature, .ct-card--small { grid-column: span 2; min-height: 250px; aspect-ratio: auto; }
-      .ct-card-body p { opacity: 1; transform: none; }
-      .ct-arrival { padding: 90px 0; }
-      .ct-journey { padding: 90px 0; }
-      .ct-timeline { grid-template-columns: 1fr; gap: 0; }
-      .ct-step { border-left: 1px solid var(--ct-hairline); padding: 0 0 40px 34px; position: relative; }
-      .ct-step-dot { position: absolute; left: 0; top: 0; transform: translateX(-50%); margin: 0; }
-      .ct-step p { max-width: none; }
-      .ct-gallery-head { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .ct-gal-grid { grid-auto-rows: 118px; gap: 10px; }
-      .ct-tile.t-primary, .ct-tile.t-med, .ct-tile.t-small, .ct-tile.t-wide { grid-column: span 12; grid-row: span 2; }
-      .ct-tile.t-tall { grid-column: span 12; grid-row: span 3; }
-      .ct-final { padding: 100px 22px; }
-      .ct-final-cta { flex-direction: column; align-items: stretch; }
-      .ct-final-cta .ct-btn { width: 100%; }
-      .ct-lb-prev { left: 8px; } .ct-lb-next { right: 8px; }
+    @media (max-width: 900px) {
+      .qh-hero .qh-display { max-width: 60vw; }
+      .qh-zone-center { margin-top: 10vh; }
+      .qh-zone-right { margin-top: 6vh; }
+      .qh-figure .qh-fig--offset { position: static; margin-top: 30px; width: 280px; max-width: 80vw; transform: none; }
+      .qh-band { margin-left: 0; width: 100%; }
+      .qh-band .qh-media { aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 767px) {
+      /* single vertical editorial column — story not stacked cards */
+      .qh-grid { grid-template-columns: 1fr; }
+      .qh-zone-center, .qh-zone-right { margin-top: 0; }
+      .qh-asym { grid-template-columns: 1fr; gap: 40px; }
+      .qh-asym .qh-copy { order: 2; }
+      .qh-figure .qh-fig { width: 82vw; max-width: 82vw; transform: none; }
+      .qh-hero .qh-display { max-width: 92vw; font-size: clamp(38px, 11vw, 54px); }
+      .qh-hero { padding-top: clamp(120px, 18vh, 20vh); }
+      .qh-chapter { padding: clamp(90px, 16vh, 130px) 0; }
+      .qh-chapter-no { font-size: clamp(48px, 20vw, 80px); top: 60px; }
+      .qh-zone-left .qh-display { font-size: clamp(34px, 9vw, 48px); }
+      .qh-band--tall .qh-media { aspect-ratio: 4 / 3; }
+      .qh-index .qh-idx-tag { display: none; }
+      .qh-gal { grid-template-columns: 1fr; }
     }
     @media (max-width: 420px) {
-      .ct-hero h1 { font-size: clamp(34px, 10vw, 44px); }
-      .ct-h2 { font-size: clamp(34px, 9vw, 42px); }
+      :root { --qh-gut: 20px; }
     }
 
-    /* ================================================================
+    /* ===================================================================
        REDUCED MOTION
-       ================================================================ */
+       =================================================================== */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-      .ct-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .ct-media img, .ct-card .ct-media img { transform: none !important; }
-      .ct-card-body p { opacity: 1 !important; transform: none !important; }
+      .qh-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .qh-media img { transform: none !important; }
     }
   </style>
 </head>
-<body>
+<body class="qh-page">
 
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
@@ -493,7 +563,7 @@
             <div>
               <h4>The Campus</h4>
               <a href="resort-tour.html">Campus Tour <span class="mega-sub">virtual journey across 22 acres</span></a>
-              <a href="resort-tour.html#map">Master Plan <span class="mega-sub">14 destinations, one park</span></a>
+              <a href="resort-tour.html#plan">Master Plan <span class="mega-sub">14 destinations, one park</span></a>
               <a href="about.html">About the Park <span class="mega-sub">story, philosophy &amp; people</span></a>
             </div>
             <div>
@@ -520,194 +590,269 @@
 
   <main id="main">
 
-    <!-- ================================================================
-         1. HERO — full-screen cinematic video
-     ================================================================ -->
-    <section class="ct-hero" data-hero-optout="">
-      <video class="ct-hero-video" autoplay muted loop playsinline preload="metadata"
-             aria-hidden="true" disablepictureinpicture
-             poster="images/gallery/Screenshot%202026-08-15%20150558.png">
-        <source src="videos/hero-banner.mp4" type="video/mp4">
-      </video>
-      <div class="ct-hero-overlay" aria-hidden="true"></div>
-      <div class="ct-hero-inner ct-wrap">
-        <span class="ct-eyebrow ct-hero-eyebrow ct-reveal">The Campus</span>
-        <h1 class="ct-reveal" data-d="1">Designed Around <em>the Human</em></h1>
-        <p class="ct-hero-lead ct-reveal" data-d="2">Across 22 acres of landscaped grounds, Quantum brings together longevity medicine, wellness, recovery, nature, hospitality and advanced health technology &mdash; in a single, restful destination designed around how you live, rest and recover.</p>
-        <div class="ct-hero-cta ct-reveal" data-d="3">
-          <a href="#destinations" class="ct-btn ct-btn--gold">Explore the Campus <span class="arr" aria-hidden="true">&rarr;</span></a>
-          <a href="tel:+919845025857" class="ct-btn ct-btn--ghost">Begin Your Journey</a>
-        </div>
-        <div class="ct-hero-note" aria-hidden="true">Kanakapura Main Road &middot; Bengaluru</div>
+    <!-- ==================================================================
+         0. HERO — editorial introduction (asymmetric, left-aligned)
+     ================================================================== -->
+    <header class="qh-hero" data-hero-optout="">
+      <span class="qh-eyebrow qh-hero-eyebrow qh-reveal">The Campus</span>
+      <h1 class="qh-display qh-reveal" data-d="1">Built with<br>Intention</h1>
+      <div class="qh-hero-copy qh-reveal" data-d="2">
+        <p class="qh-body">Every element of the campus has been considered as part of a larger ecosystem &mdash; a place where architecture, nature and human wellbeing exist in quiet dialogue.</p>
       </div>
-      <div class="ct-scroll-hint" aria-hidden="true"></div>
+      <div class="qh-hero-meta qh-reveal" data-d="3">
+        <span><b>22</b> &nbsp;Acres</span>
+        <span><b>14</b> &nbsp;Destinations</span>
+        <span><b>01</b> &nbsp;Integrated Estate</span>
+      </div>
+    </header>
+
+    <!-- ==================================================================
+         1. THE CAMPUS — three-zone asymmetric editorial canvas
+     ================================================================== -->
+    <section class="qh-chapter" id="chapter-1">
+      <span class="qh-chapter-no" aria-hidden="true">01</span>
+      <div class="qh-wrap">
+        <div class="qh-grid">
+
+          <!-- LEFT — BUILT WITH INTENTION -->
+          <div class="qh-zone-left qh-reveal">
+            <span class="qh-eyebrow">Built with Intention</span>
+            <h2 class="qh-display">An estate<br>considered</h2>
+            <p class="qh-body">The campus is composed rather than built &mdash; light, water, stone and planting arranged to support rest, recovery and a return to balance.</p>
+          </div>
+
+          <!-- CENTER — first architecture image + stage -->
+          <div class="qh-zone-center">
+            <figure class="qh-figure qh-reveal qh-reveal--img">
+              <div class="qh-fig qh-media">
+                <img src="images/gallery/Screenshot%202026-08-15%20150558.png" alt="Arrival architecture framed by landscaped water" loading="lazy"
+                     onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
+              </div>
+              <figcaption class="qh-figcap">Architecture &amp; Nature</figcaption>
+            </figure>
+            <div class="qh-stage qh-reveal" data-d="1">
+              <span class="qh-eyebrow">Stage 01 &middot; Arrive</span>
+              <h3 class="qh-display"><span>The first</span><span>impression.</span></h3>
+              <p class="qh-body">Your stay begins the moment you arrive &mdash; not with paperwork and corridors, but with a calm, private orientation designed to slow you down and ease the mind.</p>
+            </div>
+          </div>
+
+          <!-- RIGHT — long-form editorial -->
+          <div class="qh-zone-right qh-reveal" data-d="1">
+            <span class="qh-eyebrow">A Visit Is a Journey</span>
+            <h2 class="qh-display"><span>A visit is</span><span>a journey.</span></h2>
+            <div class="qh-bodywrap">
+              <p class="qh-body">Coming to the campus is more than an appointment. It is a complete, choreographed experience &mdash; a steady passage from arrival and assessment, through treatment and recovery, to renewal.</p>
+              <p class="qh-body">Nothing here is incidental. Each space is placed to support a specific stage of your stay, and the campus itself carries you quietly from one moment to the next.</p>
+              <p class="qh-body">The result is not a sequence of separate buildings, but one continuous environment in which the day unfolds &mdash; unhurried, considered and yours.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- ================================================================
-         2. EXPLORE THE CAMPUS — editorial introduction
-     ================================================================ -->
-    <section class="ct-intro">
-      <div class="ct-wrap ct-inner">
-        <span class="ct-eyebrow ct-reveal">Explore the Campus</span>
-        <h2 class="ct-h2 ct-reveal" data-d="1">A Complete Health &amp; <em>Wellbeing Journey</em></h2>
-        <p class="ct-lede ct-reveal" data-d="2">The Quantum campus is not a conventional clinical environment. It is designed as a complete health and wellbeing journey &mdash; a single integrated estate where advanced regenerative medicine, wellness, recovery, nature and hospitality work together as one continuous experience. Every building, path and garden exists to support a specific stage of that journey.</p>
-        <div class="ct-intro-meta ct-reveal" data-d="3">
-          <span>22 Acres</span>
-          <span>14 Destinations</span>
-          <span>Integrated Longevity</span>
-          <span>Nature &amp; Architecture</span>
+    <!-- ==================================================================
+         2 &amp; 3. MOVEMENT THROUGH THE CAMPUS — asymmetric chapter
+     ================================================================== -->
+    <section class="qh-chapter" id="chapter-2">
+      <span class="qh-chapter-no" aria-hidden="true">02</span>
+      <div class="qh-wrap qh-asym">
+        <figure class="qh-figure qh-reveal qh-reveal--img">
+          <div class="qh-fig qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150530.png" alt="A pathway through forest and water across the campus" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
+          </div>
+          <figcaption class="qh-figcap">Movement through the Campus</figcaption>
+        </figure>
+        <div class="qh-copy qh-reveal" data-d="1">
+          <span class="qh-eyebrow">Movement Through the Campus</span>
+          <h2 class="qh-display">A rhythm<br>of place</h2>
+          <p class="qh-body">Paths, gardens and open lawn guide you from the arrival pavilion to the lake, the hydrotherapy centre and the wellness spa. Each journey across the estate is itself part of the therapy &mdash; a chance to slow the pace, breathe and arrive rested.</p>
         </div>
       </div>
     </section>
 
-    <section class="ct-pano">
-      <div class="ct-wrap">
-        <figure class="ct-media ct-reveal">
-          <img src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Panoramic view across the 22-acre Quantum campus" loading="lazy"
-               onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#223027,#121510)';">
-          <figcaption class="ct-tag">Twenty-two acres &mdash; Kanakapura Main Road, Bengaluru</figcaption>
+    <!-- ==================================================================
+         4. THE DESTINATION / MASTER PLAN — 14 spaces index
+     ================================================================== -->
+    <section class="qh-chapter" id="plan">
+      <span class="qh-chapter-no" aria-hidden="true">03</span>
+      <div class="qh-wrap">
+        <div class="qh-asym">
+          <div class="qh-copy qh-reveal">
+            <span class="qh-eyebrow">The Destination</span>
+            <h2 class="qh-display">Fourteen<br>spaces</h2>
+            <p class="qh-body">The campus is composed of fourteen destinations &mdash; from the first arrival to the biotech research campus &mdash; each supporting a different stage of the Quantum experience. Together they form one park.</p>
+          </div>
+          <ul class="qh-index qh-reveal" data-d="1" id="qhPlanIndex"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         5. LANDSCAPE — full-bleed editorial band
+     ================================================================== -->
+    <section class="qh-chapter" id="chapter-3">
+      <span class="qh-chapter-no" aria-hidden="true">04</span>
+      <div class="qh-wrap">
+        <figure class="qh-band qh-reveal qh-reveal--img">
+          <div class="qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150635.png" alt="Panoramic landscape across the twenty-two acre campus" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
+          </div>
+        </figure>
+        <div class="qh-bandwrap">
+          <figcaption class="qh-bandcap qh-reveal" data-d="1">The Landscape &middot; Kanakapura Main Road, Bengaluru</figcaption>
+        </div>
+      </div>
+      <div class="qh-wrap qh-landscape-note qh-reveal" data-d="1">
+        <div class="qh-landscape-copy">
+          <span class="qh-eyebrow">Landscape</span>
+          <h3 class="qh-display" style="max-width:6ch">Landscape, allowed to breathe.</h3>
+          <p class="qh-body" style="max-width:360px">Lakes, orchards, medicinal gardens and forest fold around the architecture. The land is the foundation of the experience &mdash; a living environment that shelters, cools and calms the entire campus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         6. MEDICINE &amp; WELLNESS — asymmetric chapter
+     ================================================================== -->
+    <section class="qh-chapter" id="chapter-4">
+      <span class="qh-chapter-no" aria-hidden="true">05</span>
+      <div class="qh-wrap qh-asym">
+        <div class="qh-copy qh-reveal">
+          <span class="qh-eyebrow">Medicine &amp; Wellness</span>
+          <h2 class="qh-display">Science,<br>calmly applied</h2>
+          <p class="qh-body">Advanced regenerative medicine, precision diagnostics and careful wellness &mdash; delivered with the discretion and calm of a private estate. Cellular therapy and longitudinal care sit beside hydrotherapy, spa and nutrition in a single, restful landscape.</p>
+        </div>
+        <figure class="qh-figure qh-reveal qh-reveal--img" style="margin-top:6vh">
+          <div class="qh-fig qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150444.png" alt="The diagnostics and medicine spaces at Quantum" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
+          </div>
+          <figcaption class="qh-figcap">Medicine &amp; Research</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ================================================================
-         3. A CAMPUS OF PURPOSE — 40/60 editorial split
-     ================================================================ -->
-    <section class="ct-purpose" id="purpose">
-      <div class="ct-wrap ct-purpose-grid">
-        <div class="ct-purpose-head">
-          <span class="ct-eyebrow ct-reveal">A Campus of Purpose</span>
-          <h2 class="ct-h2 ct-reveal" data-d="1">Built With <em>Intention</em></h2>
-        </div>
-        <div class="ct-purpose-copy">
-          <p class="ct-lede ct-reveal">Every element of the estate &mdash; the architecture, the landscape, the light, the placement of each pavilion &mdash; is intentional. Nothing here is incidental. Each space is composed to support rest, recovery, movement and the return to balance.</p>
-          <div class="ct-purpose-list">
-            <div class="ct-purpose-item ct-reveal"><div class="n">01</div><div><h3>Intentional Architecture</h3><p>Spaces shaped around natural light, privacy and calm &mdash; designed to feel open yet entirely secure.</p></div></div>
-            <div class="ct-purpose-item ct-reveal"><div class="n">02</div><div><h3>Nature &amp; Privacy</h3><p>Lakes, orchards and gardens offer quiet places to withdraw, rest and reconnect &mdash; never a suggestion of a ward.</p></div></div>
-            <div class="ct-purpose-item ct-reveal"><div class="n">03</div><div><h3>Longevity &amp; Restoration</h3><p>Every facility serves a single aim &mdash; to slow ageing and restore vitality through medicine and recovery.</p></div></div>
-            <div class="ct-purpose-item ct-reveal"><div class="n">04</div><div><h3>Movement &amp; Medical Excellence</h3><p>World-class clinical science paired with movement and wellness that make care feel like a way of living.</p></div></div>
+    <!-- ==================================================================
+         7. STILLNESS — centered statement, calm
+     ================================================================== -->
+    <section class="qh-chapter" id="stillness">
+      <span class="qh-chapter-no" aria-hidden="true">06</span>
+      <div class="qh-statement qh-reveal qh-reveal--slow">
+        <span class="qh-eyebrow">Stillness</span>
+        <p class="qh-display">Be still, and let the place work.</p>
+        <p class="qh-body" style="max-width:440px;margin:26px auto 0">A forest path, the sound of water, the absence of hurry. Some of the most important moments of a recovery are silent ones.</p>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         8. WELLNESS SPACES — asymmetric chapter
+     ================================================================== -->
+    <section class="qh-chapter" id="destinations">
+      <span class="qh-chapter-no" aria-hidden="true">07</span>
+      <div class="qh-wrap qh-asym">
+        <figure class="qh-figure qh-reveal qh-reveal--img">
+          <div class="qh-fig qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The private lake and waterfront at the heart of the campus" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         4 + 5. FOURTEEN SPACES — editorial card grid
-     ================================================================ -->
-    <section class="ct-spaces" id="destinations">
-      <div class="ct-wrap">
-        <div class="ct-spaces-head">
-          <span class="ct-eyebrow ct-reveal">The Destinations</span>
-          <h2 class="ct-h2 ct-reveal" data-d="1">Fourteen Spaces, <em>One Journey</em></h2>
-          <p class="ct-lede ct-reveal" data-d="2">The campus is composed of fourteen carefully designed destinations, each supporting a different stage of the Quantum Health experience &mdash; from the first arrival to the biotech research campus. Move through them to see how medicine, wellness and nature are woven together.</p>
-        </div>
-        <div class="ct-dest-grid" id="ctDestGrid"></div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         6. ARCHITECTURE & NATURE — 58% image / 42% text
-     ================================================================ -->
-    <section class="ct-arch">
-      <div class="ct-wrap ct-arch-grid">
-        <figure class="ct-arch-media ct-media ct-reveal">
-          <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Architecture shaped around landscaped water and natural light" loading="lazy"
-               onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#223027,#121510)';">
-          <figcaption class="ct-tag">Architecture &amp; Nature</figcaption>
+          <figcaption class="qh-figcap">Wellness Spaces</figcaption>
         </figure>
-        <div class="ct-arch-copy">
-          <span class="ct-eyebrow ct-reveal">Architecture &amp; Nature</span>
-          <h2 class="ct-h2 ct-reveal" data-d="1">Architecture in Service of <em>Wellbeing</em></h2>
-          <p class="ct-reveal" data-d="2">Natural light, private courtyards and a landscape of water, trees and open lawn shape every space. Architecture here is neither spectacle nor ornament &mdash; it is a quiet instrument for rest, recovery and a return to balance. Greenery is not decorative; it is therapeutic, drawn in to encourage stillness and connection.</p>
-          <div class="ct-arch-stats ct-reveal" data-d="3">
-            <div class="ct-arch-stat"><div class="v">22</div><div class="k">Acres</div></div>
-            <div class="ct-arch-stat"><div class="v">14</div><div class="k">Destinations</div></div>
-            <div class="ct-arch-stat"><div class="v">01</div><div class="k">Integrated Campus</div></div>
-            <div class="ct-arch-stat"><div class="v">2&times;</div><div class="k">Nature + Science</div></div>
-          </div>
+        <div class="qh-copy qh-reveal" data-d="1">
+          <span class="qh-eyebrow">Wellness Spaces</span>
+          <h2 class="qh-display">Places for<br>stillness</h2>
+          <p class="qh-body">A lakeside spa, floatation and hydrotherapy pools, a movement pavilion, a meditation forest. Each space is deliberately modest in scale, so that calm &mdash; not spectacle &mdash; remains the prevailing atmosphere.</p>
         </div>
       </div>
     </section>
 
-    <!-- ================================================================
-         7. ARRIVAL EXPERIENCE — Stage 01
-     ================================================================ -->
-    <section class="ct-arrival" id="arrival">
-      <div class="ct-wrap ct-arrival-grid">
-        <div class="ct-arrival-copy">
-          <span class="ct-arrival-stage ct-reveal">Stage 01 &middot; Arrive</span>
-          <h2 class="ct-reveal" data-d="1">The First <em>Impression</em></h2>
-          <p class="ct-reveal" data-d="2">Your stay begins the moment you arrive &mdash; not with paperwork and corridors, but with a calm, private orientation. The transition from the outside world into the campus is designed to slow you down, ease the mind and set the tone for everything that follows.</p>
-          <div class="ct-arrival-list ct-reveal" data-d="3">
-            <div class="ct-arrival-item"><b>Welcome</b>&nbsp;A warm, unhurried arrival at the pavilion.</div>
-            <div class="ct-arrival-item"><b>Transfer</b>&nbsp;Private, seamless transport onto the estate.</div>
-            <div class="ct-arrival-item"><b>Orient</b>&nbsp;A calm introduction to the grounds and your stay.</div>
-            <div class="ct-arrival-item"><b>Transition</b>&nbsp;Leaving the outside world behind, completely.</div>
-          </div>
+    <!-- ==================================================================
+         9. CONNECTION WITH NATURE — asymmetric chapter
+     ================================================================== -->
+    <section class="qh-chapter" id="chapter-5">
+      <span class="qh-chapter-no" aria-hidden="true">08</span>
+      <div class="qh-wrap qh-asym">
+        <div class="qh-copy qh-reveal">
+          <span class="qh-eyebrow">Connection with Nature</span>
+          <h2 class="qh-display">Herbs, gardens<br>&amp; forest</h2>
+          <p class="qh-body">Herbal gardens, medicinal planting and Ayurvedic wisdom sit beside the newest science of longevity. Nature here is not a backdrop &mdash; it is the oldest medicine we know, tended deliberately and woven into every programme.</p>
         </div>
-        <figure class="ct-arrival-media ct-media ct-reveal" data-d="1">
-          <img src="images/gallery/Screenshot%202026-08-15%20150345.png" alt="The arrival pavilion and concierge entrance at Quantum" loading="lazy"
-               onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#223027,#121510)';">
-          <figcaption class="ct-tag">Arrival Pavilion</figcaption>
+        <figure class="qh-figure qh-reveal qh-reveal--img" style="margin-top:8vh">
+          <div class="qh-fig qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="Botanical and herb gardens across the estate" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#08391F';">
+          </div>
+          <figcaption class="qh-figcap">The Gardens</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ================================================================
-         8 + 9 + 10. YOUR JOURNEY — steps + timeline
-     ================================================================ -->
-    <section class="ct-journey" id="journey">
-      <div class="ct-wrap">
-        <div class="ct-journey-head">
-          <span class="ct-eyebrow ct-eyebrow--center ct-reveal">Your Journey Begins Here</span>
-          <h2 class="ct-h2 ct-reveal" data-d="1">A Visit as a <em>Journey</em></h2>
-          <p class="ct-lede ct-reveal" data-d="2">Coming to the campus is more than an appointment. It is a complete, choreographed experience &mdash; from arrival and assessment through treatment, recovery and renewal &mdash; designed around you.</p>
-        </div>
-        <div class="ct-timeline">
-          <div class="ct-step ct-reveal"><div class="ct-step-dot">01</div><div class="ct-step-n">Step 01</div><h3>Arrive</h3><p>Welcomed at the pavilion with private transfers and a calm orientation.</p></div>
-          <div class="ct-step ct-reveal" data-d="1"><div class="ct-step-dot">02</div><div class="ct-step-n">Step 02</div><h3>Understand</h3><p>Comprehensive diagnostics and a physician-led evaluation shape your plan.</p></div>
-          <div class="ct-step ct-reveal" data-d="2"><div class="ct-step-dot">03</div><div class="ct-step-n">Step 03</div><h3>Restore</h3><p>Hydrotherapy, spa and nutrition begin the work of restoration.</p></div>
-          <div class="ct-step ct-reveal" data-d="3"><div class="ct-step-dot">04</div><div class="ct-step-n">Step 04</div><h3>Rebalance</h3><p>Advanced therapies and movement science rebuild function and vitality.</p></div>
-          <div class="ct-step ct-reveal" data-d="3"><div class="ct-step-dot">05</div><div class="ct-step-n">Step 05</div><h3>Renew</h3><p>Leave with a longevity roadmap to carry wellbeing home and forward.</p></div>
-        </div>
-        <div class="ct-journey-cta ct-reveal">
-          <a href="programs.html" class="ct-btn ct-btn--dark">Discover Our Programs <span class="arr" aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
-         11. GALLERY — stable editorial masonry + lightbox
-     ================================================================ -->
-    <section class="ct-gallery" id="gallery">
-      <div class="ct-wrap">
-        <div class="ct-gallery-head">
-          <div>
-            <span class="ct-eyebrow ct-reveal">Gallery</span>
-            <h2 class="ct-h2 ct-reveal" data-d="1">A Glimpse of the <em>Campus</em></h2>
+    <!-- ==================================================================
+         10. EVENING / AFTER SUNSET — full-bleed band, darker
+     ================================================================== -->
+    <section class="qh-chapter" id="after-sunset">
+      <span class="qh-chapter-no" aria-hidden="true">09</span>
+      <div class="qh-wrap">
+        <figure class="qh-band qh-band--tall qh-reveal qh-reveal--img">
+          <div class="qh-media">
+            <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The campus lake in the evening light" loading="lazy"
+                 onerror="this.style.display='none';this.parentNode.style.background='#062A18';">
           </div>
-          <p class="ct-reveal" data-d="2">Architecture, nature, interiors and treatment spaces &mdash; a few quiet views of the grounds and its people. Select any image to view it in full.</p>
+        </figure>
+      </div>
+      <div class="qh-wrap" style="margin-top:6vh">
+        <div class="qh-statement qh-reveal" data-d="1">
+          <span class="qh-eyebrow">After Sunset</span>
+          <p class="qh-display">The campus,<br>after dark.</p>
+          <p class="qh-body" style="max-width:440px;margin:26px auto 0">A deeper, quieter atmosphere settles over the grounds &mdash; the same calm brand, in distinctly nocturnal light.</p>
         </div>
-        <div class="ct-gal-grid" id="ctGalGrid"></div>
       </div>
     </section>
 
-    <!-- ================================================================
-         12. FINAL CTA
-     ================================================================ -->
-    <section class="ct-final">
-      <div class="ct-final-bg" aria-hidden="true">
-        <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="" loading="lazy"
-             onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#223027,#121510)';">
+    <!-- ==================================================================
+         11. THE JOURNEY — asymmetric chapter, five stages
+     ================================================================== -->
+    <section class="qh-chapter" id="journey">
+      <span class="qh-chapter-no" aria-hidden="true">10</span>
+      <div class="qh-wrap qh-asym">
+        <div class="qh-copy qh-reveal">
+          <span class="qh-eyebrow">The Journey</span>
+          <h2 class="qh-display">A visit as<br>a continuum</h2>
+          <p class="qh-body">Five movements carry you through the estate &mdash; from arrival and understanding, through restoration and rebalancing, to renewal. Each is quiet, considered and designed around you.</p>
+        </div>
+        <div class="qh-journey qh-reveal" data-d="1" id="qhJourney"></div>
       </div>
-      <div class="ct-final-ov" aria-hidden="true"></div>
-      <div class="ct-final-inner">
-        <div class="ct-final-eyebrow ct-reveal">Your Journey Begins Here</div>
-        <h2 class="ct-reveal" data-d="1">Step Into the Future of <em>Health</em></h2>
-        <p class="ct-reveal" data-d="2">Begin with a conversation. Our care team will shape a private, personalised stay across the campus &mdash; from the first assessment to the day you return home renewed.</p>
-        <div class="ct-final-cta ct-reveal" data-d="3">
-          <a href="tel:+919845025857" class="ct-btn ct-btn--gold">Begin Your Journey</a>
-          <a href="programs.html" class="ct-btn ct-btn--ghost">Explore Programs</a>
+    </section>
+
+    <!-- ==================================================================
+         12. GALLERY — small editorial image index
+     ================================================================== -->
+    <section class="qh-chapter" id="gallery">
+      <span class="qh-chapter-no" aria-hidden="true">11</span>
+      <div class="qh-wrap">
+        <div class="qh-copy qh-reveal" style="max-width:420px">
+          <span class="qh-eyebrow">Gallery</span>
+          <h2 class="qh-display">Quiet views</h2>
+          <p class="qh-body">A few observations of the grounds &mdash; architecture, nature, interiors and treatment spaces. Select any image to view it in full.</p>
+        </div>
+        <div class="qh-gal qh-reveal" data-d="1" id="qhGal"></div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         13. FINAL CAMPUS STATEMENT
+     ================================================================== -->
+    <section class="qh-chapter" id="final">
+      <span class="qh-chapter-no" aria-hidden="true">12</span>
+      <div class="qh-statement qh-reveal qh-reveal--slow">
+        <span class="qh-eyebrow">Quantum Health</span>
+        <p class="qh-display">Where science inspires wellness.<br><em>Where luxury meets healthcare.</em></p>
+        <p class="qh-body" style="max-width:460px;margin:34px auto 0">&ldquo;A campus is not merely a campus. It is a slow, considered argument for the way forward.&rdquo;</p>
+        <div class="qh-stmt-cta qh-reveal" data-d="1" style="margin-top:44px">
+          <a href="tel:+919845025857" class="qh-btn qh-btn--ghost">Begin Your Journey</a>
         </div>
       </div>
     </section>
@@ -758,7 +903,7 @@
         <div class="footer-col">
           <h4>The Campus</h4>
           <a href="resort-tour.html">Campus Tour</a>
-          <a href="resort-tour.html#map">Master Plan</a>
+          <a href="resort-tour.html#plan">Master Plan</a>
           <a href="resort-tour.html#destinations">Destinations</a>
           <a href="resort-tour.html#gallery">Campus Gallery</a>
           <a href="about.html">About the Park</a>
@@ -797,15 +942,15 @@
   </footer>
 
   <!-- Lightbox -->
-  <div class="ct-lb" id="ctLightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
-    <button class="ct-lb-close" id="ctLbClose" aria-label="Close">&times;</button>
-    <button class="ct-lb-prev" id="ctLbPrev" aria-label="Previous">&larr;</button>
-    <button class="ct-lb-next" id="ctLbNext" aria-label="Next">&rarr;</button>
+  <div class="qh-lb" id="qhLightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="qh-lb-close" id="qhLbClose" aria-label="Close">&times;</button>
+    <button class="qh-lb-prev" id="qhLbPrev" aria-label="Previous">&larr;</button>
+    <button class="qh-lb-next" id="qhLbNext" aria-label="Next">&rarr;</button>
     <figure>
-      <img id="ctLbImg" src="" alt="">
-      <figcaption id="ctLbCap"></figcaption>
+      <img id="qhLbImg" src="" alt="">
+      <figcaption id="qhLbCap"></figcaption>
     </figure>
-    <div class="ct-lb-count" id="ctLbCount"></div>
+    <div class="qh-lb-count" id="qhLbCount"></div>
   </div>
 
   <script>
@@ -814,20 +959,20 @@
 
       /* ---------------- DATA ---------------- */
       var DESTINATIONS = [
-        { n: '01', name: 'Executive Health Centre', cat: 'Medical',     desc: 'Comprehensive assessment and same-day diagnostics.', img: 'images/resort/rt-01.jpg' },
-        { n: '02', name: 'Regenerative Medicine Suite', cat: 'Medical', desc: 'Cellular therapy rooms and stem cell processing.', img: 'images/resort/rt-02.jpg' },
-        { n: '03', name: 'Precision Diagnostics Hub', cat: 'Medical',    desc: 'Advanced imaging, genomics and integrated records.', img: 'images/resort/rt-03.jpg' },
-        { n: '04', name: 'Wellness Spa & Hydrotherapy', cat: 'Wellness', desc: 'Lakeside spa, floatation and hydrotherapy pools.', img: 'images/resort/rt-04.jpg' },
-        { n: '05', name: 'Rehabilitation & Recovery', cat: 'Recovery',   desc: 'Movement science, functional training and recovery suites.', img: 'images/resort/rt-05.jpg' },
-        { n: '06', name: 'Nutrition & Lifestyle Kitchen', cat: 'Nutrition', desc: 'Farm-to-table dining with clinical dietitian oversight.', img: 'images/resort/rt-06.jpg' },
-        { n: '07', name: 'Wellness Cottages', cat: 'Private Spaces',     desc: 'Private accommodation in landscaped garden settings.', img: 'images/resort/rt-07.jpg' },
-        { n: '08', name: 'Executive Villas', cat: 'Private Spaces',      desc: 'Premium residential suites with private outdoor spaces.', img: 'images/resort/rt-08.jpg' },
-        { n: '09', name: 'Private Lake & Waterfront', cat: 'Nature',     desc: 'A therapeutic trail along the resort\u2019s natural lake.', img: 'images/resort/rt-09.jpg' },
-        { n: '10', name: 'Orchards & Gardens', cat: 'Nature',            desc: 'Curated herb, fruit and Ayurvedic plant gardens.', img: 'images/resort/rt-10.jpg' },
-        { n: '11', name: 'Movement & Yoga Pavilion', cat: 'Movement',    desc: 'An open-air pavilion for yoga, breathwork and meditation.', img: 'images/resort/rt-11.jpg' },
-        { n: '12', name: 'Biotech Research Campus', cat: 'Longevity',    desc: 'Clinical research hub and collaboration centre.', img: 'images/resort/rt-12.jpg' },
-        { n: '13', name: 'Education & Conference Centre', cat: 'Longevity', desc: 'Medical summits, workshops and clinician training.', img: 'images/resort/rt-13.jpg' },
-        { n: '14', name: 'Arrival Pavilion & Concierge', cat: 'Arrival', desc: 'The first point of contact \u2014 check-in, orientation and private transfers.', img: 'images/resort/rt-14.jpg' }
+        { n: '01', name: 'Executive Health Centre', cat: 'Medical' },
+        { n: '02', name: 'Regenerative Medicine Suite', cat: 'Medical' },
+        { n: '03', name: 'Precision Diagnostics Hub', cat: 'Medical' },
+        { n: '04', name: 'Wellness Spa & Hydrotherapy', cat: 'Wellness' },
+        { n: '05', name: 'Rehabilitation & Recovery', cat: 'Recovery' },
+        { n: '06', name: 'Nutrition & Lifestyle Kitchen', cat: 'Nutrition' },
+        { n: '07', name: 'Wellness Cottages', cat: 'Stay' },
+        { n: '08', name: 'Executive Villas', cat: 'Stay' },
+        { n: '09', name: 'Private Lake & Waterfront', cat: 'Nature' },
+        { n: '10', name: 'Orchards & Gardens', cat: 'Nature' },
+        { n: '11', name: 'Movement & Yoga Pavilion', cat: 'Movement' },
+        { n: '12', name: 'Biotech Research Campus', cat: 'Longevity' },
+        { n: '13', name: 'Education & Conference Centre', cat: 'Longevity' },
+        { n: '14', name: 'Arrival Pavilion & Concierge', cat: 'Arrival' }
       ];
 
       var GALLERY = [
@@ -840,72 +985,76 @@
         { src: 'images/gallery/Screenshot%202026-08-15%20150501.png', label: 'Wellness Interiors' },
         { src: 'images/gallery/Screenshot%202026-08-15%20150530.png', label: 'Forest Trails' },
         { src: 'images/gallery/Screenshot%202026-08-15%20150550.png', label: 'Movement & Fitness' },
-        { src: 'images/gallery/Screenshot%202026-08-15%20150635.png', label: 'Campus Panorama' }
-      ];
-
-      /* Editorial mosaic composition over a 12-column grid.
-         The 14 destinations fill a magazine-style rhythm:
-         feature(6) + small(3) + med(4) + wide(6) + small(3) + ... */
-      var MOSAIC = [
-        { n: '14', cls: 'feature' },
-        { n: '03', cls: 'small' },
-        { n: '04', cls: 'med' },
-        { n: '02', cls: 'wide' },
-        { n: '01', cls: 'small' },
-        { n: '05', cls: 'med' },
-        { n: '11', cls: 'med' },
-        { n: '09', cls: 'wide' },
-        { n: '10', cls: 'med' },
-        { n: '06', cls: 'med' },
-        { n: '07', cls: 'med' },
-        { n: '08', cls: 'wide' },
-        { n: '12', cls: 'med' },
-        { n: '13', cls: 'med' }
+        { src: 'images/gallery/Screenshot%202026-08-15%20150635.png', label: 'Campus Panorama' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150345.png', label: 'Arrival Pavilion' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150431.png', label: 'Stem Cell Centre' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150444.png', label: 'Diagnostics' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150615.png', label: 'Interior Detail' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150624.png', label: 'Evening Light' },
+        { src: 'images/gallery/Screenshot%202026-08-15%20150656.png', label: 'Landscape' }
       ];
 
       function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-      function findDest(n) { for (var i = 0; i < DESTINATIONS.length; i++) if (DESTINATIONS[i].n === n) return DESTINATIONS[i]; return DESTINATIONS[0]; }
 
       /* ---------------- Reveal on scroll ---------------- */
-      var reveals = document.querySelectorAll('.ct-reveal');
+      var reveals = document.querySelectorAll('.qh-reveal');
       var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
         entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }) : null;
+      }, { threshold: 0.1, rootMargin: '0px 0px -4% 0px' }) : null;
       function observe(el) { if (io) io.observe(el); else el.classList.add('in-view'); }
       reveals.forEach(observe);
 
-      /* ---------------- Destination cards ---------------- */
-      var grid = document.getElementById('ctDestGrid');
-      MOSAIC.forEach(function (t) {
-        var d = findDest(t.n);
-        var card = document.createElement('article');
-        card.className = 'ct-card ct-card--' + t.cls + ' ct-reveal';
-        card.innerHTML =
-          '<div class="ct-media"><img src="' + d.img + '" alt="' + esc(d.name) + ' at the Quantum campus" loading="lazy"></div>' +
-          '<span class="ct-card-veil"></span>' +
-          '<span class="ct-card-num" aria-hidden="true">' + d.n + '</span>' +
-          '<div class="ct-card-body"><div class="ct-card-cat">' + esc(d.cat) + '</div><h3>' + esc(d.name) + '</h3><p>' + esc(d.desc) + '</p></div>';
-        grid.appendChild(card);
-        observe(card);
-      });
+      /* ---------------- Master plan index ---------------- */
+      var index = document.getElementById('qhPlanIndex');
+      if (index) {
+        DESTINATIONS.forEach(function (d) {
+          var li = document.createElement('li');
+          li.className = 'qh-reveal';
+          li.innerHTML = '<span class="qh-idx-no">' + d.n + '</span><span class="qh-idx-name">' + esc(d.name) + '</span><span class="qh-idx-tag">' + esc(d.cat) + '</span>';
+          index.appendChild(li);
+          observe(li);
+        });
+      }
 
-      /* ---------------- Gallery tiles + lightbox ---------------- */
-      var galGrid = document.getElementById('ctGalGrid');
-      var spanClasses = ['t-primary', 't-small', 't-med', 't-wide', 't-small', 't-med', 't-tall', 't-med', 't-wide', 't-small'];
-      GALLERY.forEach(function (g, i) {
-        var tile = document.createElement('button');
-        tile.className = 'ct-tile ' + spanClasses[i];
-        tile.setAttribute('data-index', i);
-        tile.setAttribute('aria-label', g.label);
-        tile.innerHTML = '<img src="' + g.src + '" alt="' + esc(g.label) + '" loading="lazy"><span class="lab">' + esc(g.label) + '</span>';
-        tile.addEventListener('click', function () { showLightbox(i); });
-        galGrid.appendChild(tile);
-      });
+      /* ---------------- Journey rail (editorial, offset) ---------------- */
+      var journey = document.getElementById('qhJourney');
+      if (journey) {
+        var stages = [
+          { n: '01', t: 'Arrive',     d: 'A calm orientation at the pavilion.' },
+          { n: '02', t: 'Understand', d: 'Diagnostics and a physician-led evaluation.' },
+          { n: '03', t: 'Restore',    d: 'Hydrotherapy, spa and nutrition.' },
+          { n: '04', t: 'Rebalance',  d: 'Advanced therapy and movement science.' },
+          { n: '05', t: 'Renew',      d: 'A longevity roadmap to carry forward.' }
+        ];
+        stages.forEach(function (s) {
+          var row = document.createElement('div');
+          row.className = 'qh-jny-row qh-reveal';
+          row.innerHTML = '<span class="qh-jny-no">' + s.n + '</span><div class="qh-jny-body"><span class="qh-jny-t">' + esc(s.t) + '</span><p>' + esc(s.d) + '</p></div>';
+          journey.appendChild(row);
+          observe(row);
+        });
+      }
 
-      var lb = document.getElementById('ctLightbox');
-      var lbImg = document.getElementById('ctLbImg');
-      var lbCap = document.getElementById('ctLbCap');
-      var lbCount = document.getElementById('ctLbCount');
+      /* ---------------- Gallery + lightbox ---------------- */
+      var gal = document.getElementById('qhGal');
+      var galCount = 0;
+      if (gal) {
+        GALLERY.forEach(function (g, i) {
+          var btn = document.createElement('button');
+          btn.className = 'qh-gal-tile qh-reveal';
+          btn.setAttribute('aria-label', g.label);
+          btn.innerHTML = '<span class="qh-gal-media"><img src="' + g.src + '" alt="' + esc(g.label) + '" loading="lazy"></span><span class="qh-figcap">' + esc(g.label) + '</span>';
+          (function (idx) { btn.addEventListener('click', function () { showLightbox(idx); }); })(i);
+          gal.appendChild(btn);
+          observe(btn);
+          galCount++;
+        });
+      }
+
+      var lb = document.getElementById('qhLightbox');
+      var lbImg = document.getElementById('qhLbImg');
+      var lbCap = document.getElementById('qhLbCap');
+      var lbCount = document.getElementById('qhLbCount');
       var lbIdx = 0;
       function showLightbox(i) {
         lbIdx = (i + GALLERY.length) % GALLERY.length;
@@ -916,14 +1065,14 @@
         lb.classList.add('open');
         lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-        var c = document.getElementById('ctLbClose');
+        var c = document.getElementById('qhLbClose');
         if (c) c.focus();
       }
       function closeLightbox() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
       function stepLightbox(d) { showLightbox(lbIdx + d); }
-      document.getElementById('ctLbClose').addEventListener('click', closeLightbox);
-      document.getElementById('ctLbPrev').addEventListener('click', function () { stepLightbox(-1); });
-      document.getElementById('ctLbNext').addEventListener('click', function () { stepLightbox(1); });
+      document.getElementById('qhLbClose').addEventListener('click', closeLightbox);
+      document.getElementById('qhLbPrev').addEventListener('click', function () { stepLightbox(-1); });
+      document.getElementById('qhLbNext').addEventListener('click', function () { stepLightbox(1); });
       document.addEventListener('keydown', function (e) {
         if (!lb.classList.contains('open')) return;
         if (e.key === 'Escape') closeLightbox();
