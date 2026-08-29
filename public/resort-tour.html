@@ -257,29 +257,46 @@
 
     /* ---------- 7+8+9. CAMPUS DESTINATIONS (editorial grid) ---------- */
     .ct-dests { background: var(--ct-ivory); padding: 140px 0 40px; }
-    .ct-dests-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 80px; }
+    .ct-dests-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 60px; }
     .ct-dests-head .ct-eyebrow { color: var(--ct-ink); } .ct-dests-head .ct-eyebrow::before { background: var(--ct-ink); }
-    .ct-dests-head .ct-h2 { color: var(--ct-ink); margin-top: 20px; }
+    .ct-dests-head .ct-h2 { color: var(--ct-ink); margin-top: 20px; max-width: 14ch; }
     .ct-dests-head p { font-family: var(--ct-sans); font-size: 16px; line-height: 1.75; color: var(--ct-muted); max-width: 40ch; }
 
-    .ct-ero-row { display: grid; gap: 26px; margin-bottom: 26px; }
-    .ct-ero-row--6535  { grid-template-columns: 65% 1fr; }
-    .ct-ero-row--3565  { grid-template-columns: 1fr 65%; }
-    .ct-fig { position: relative; border-radius: 8px; overflow: hidden; background: var(--ct-cream); cursor: pointer; }
+    /* Asymmetric mosaic destination gallery */
+    .ct-mosaic { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 108px; grid-auto-flow: dense; gap: 18px; }
+    .ct-fig { position: relative; border-radius: 8px; overflow: hidden; background: var(--ct-cream); cursor: pointer;
+      grid-column: span 4; grid-row: span 2; }
     .ct-fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.1s cubic-bezier(0.16,1,0.3,1); }
-    .ct-fig .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17,19,18,0) 40%, rgba(17,19,18,0.62) 100%); opacity: 0.85; transition: opacity 0.5s ease; }
-    .ct-fig .cap { position: absolute; left: 26px; right: 26px; bottom: 24px; z-index: 2; color: #fff; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
-    .ct-fig .cap .nm { font-family: var(--ct-serif); font-weight: 400; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.05; transform: translateY(6px); transition: transform 0.5s ease; }
-    .ct-fig .cap .nm sub { font-family: var(--ct-serif); font-style: italic; font-size: 15px; color: var(--ct-gold); display: block; margin-bottom: 6px; }
-    .ct-fig .cap .go { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); display: grid; place-items: center; flex: none;
-      opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+    .ct-fig .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17,19,18,0) 42%, rgba(17,19,18,0.66) 100%); opacity: 0.9; transition: opacity 0.5s ease; }
+    .ct-fig .cap { position: absolute; left: 22px; right: 22px; bottom: 20px; z-index: 2; color: #fff; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+    .ct-fig .cap .nm { font-family: var(--ct-serif); font-weight: 400; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.05; transform: translateY(6px); transition: transform 0.5s ease; }
+    .ct-fig .cap .nm sub { font-family: var(--ct-serif); font-style: italic; font-size: 14px; color: var(--ct-gold); display: block; margin-bottom: 6px; letter-spacing: 0.02em; }
+    .ct-fig .cap .go { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); display: grid; place-items: center; flex: none;
+      opacity: 0; transform: translateY(10px); transition: all 0.5s ease; font-size: 17px; }
     .ct-fig:hover img { transform: scale(1.04); }
     .ct-fig:hover .veil { opacity: 1; }
     .ct-fig:hover .cap .nm { transform: translateY(0); }
     .ct-fig:hover .cap .go { opacity: 1; transform: translateY(0); }
-    .ct-fig--tall { height: clamp(420px, 50vw, 620px); }
-    .ct-fig--med { height: clamp(300px, 36vw, 460px); }
-    .ct-fig--wide { height: clamp(360px, 44vw, 560px); }
+    .ct-fig--xl  { grid-column: span 7; grid-row: span 2; }
+    .ct-fig--lg  { grid-column: span 6; grid-row: span 2; }
+    .ct-fig--sm  { grid-column: span 3; grid-row: span 1; }
+    .ct-fig--md  { grid-column: span 4; grid-row: span 1; }
+    .ct-fig--tall{ grid-column: span 4; grid-row: span 3; }
+    .ct-fig--tall2{ grid-column: span 3; grid-row: span 2; }
+    @media (max-width: 1080px) and (min-width: 761px) {
+      .ct-fig--xl, .ct-fig--lg { grid-column: span 6; }
+      .ct-fig--md { grid-column: span 4; }
+      .ct-fig--sm { grid-column: span 4; }
+      .ct-fig--tall { grid-column: span 6; grid-row: span 2; }
+      .ct-fig--tall2 { grid-column: span 4; grid-row: span 2; }
+      .ct-mosaic { grid-auto-rows: 96px; }
+    }
+    @media (max-width: 760px) {
+      .ct-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 12px; }
+      .ct-fig, .ct-fig--xl, .ct-fig--lg, .ct-fig--sm, .ct-fig--md, .ct-fig--tall, .ct-fig--tall2 { grid-column: span 1; grid-row: span 1; }
+      .ct-fig--xl, .ct-fig--lg { grid-column: span 2; grid-row: span 2; }
+      .ct-fig .cap .nm { font-size: 20px; }
+    }
 
     /* ---------- 10. CINEMATIC BAND ---------- */
     .ct-cine { position: relative; min-height: 72vh; display: flex; align-items: center; justify-content: center; text-align: center;
@@ -309,6 +326,25 @@
     .ct-arch-stat + .ct-arch-stat { padding-left: 26px; border-left: 1px solid rgba(17,19,18,0.14); }
     .ct-arch-stat .v { font-family: var(--ct-serif); font-size: clamp(30px, 3vw, 44px); color: var(--ct-ink); }
     .ct-arch-stat .k { font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ct-muted); margin-top: 8px; }
+
+    /* ---------- 11b. NATURE — Space to Breathe ---------- */
+    .ct-nature { background: var(--ct-ivory); padding: 40px 0 150px; }
+    .ct-nature-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; align-items: center; }
+    .ct-nature-fig { position: relative; border-radius: 8px; overflow: hidden; height: clamp(420px, 50vw, 620px); }
+    .ct-nature-fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+    .ct-nature-fig:hover img { transform: scale(1.045); }
+    .ct-nature-tag { position: absolute; left: 20px; bottom: 20px; z-index: 2; color: #fff;
+      font-family: var(--ct-sans); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+      background: rgba(17,19,18,0.55); backdrop-filter: blur(4px); padding: 10px 16px; border-radius: 2px; }
+    .ct-nature-body .ct-eyebrow { color: var(--ct-ink); } .ct-nature-body .ct-eyebrow::before { background: var(--ct-ink); }
+    .ct-nature-h { font-family: var(--ct-serif); font-weight: 400; line-height: 1.08; font-size: clamp(34px, 4.2vw, 56px); color: var(--ct-ink); margin-top: 24px; }
+    .ct-nature-h em { font-style: italic; color: var(--ct-gold); }
+    .ct-nature-p { font-family: var(--ct-sans); font-size: 16.5px; line-height: 1.8; color: var(--ct-muted); margin-top: 26px; max-width: 50ch; }
+    .ct-nature-sub { display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: center; margin-top: 42px;
+      border-top: 1px solid rgba(17,19,18,0.14); padding-top: 36px; }
+    .ct-nature-sub img { width: 130px; height: 130px; object-fit: cover; border-radius: 6px; display: block; }
+    .ct-nature-subeyebrow { font-family: var(--ct-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ct-gold); }
+    .ct-nature-sub-copy p { font-family: var(--ct-sans); font-size: 15px; line-height: 1.7; color: var(--ct-muted); margin-top: 10px; }
 
     /* ---------- 12. EXPERIENCE TIMELINE ---------- */
     .ct-journey { background: var(--ct-ivory); padding: 150px 0; }
@@ -387,6 +423,8 @@
       .ct-map-layout { grid-template-columns: 1fr; gap: 50px; }
       .ct-map-panel { width: min(300px, 85%); }
       .ct-arch-grid { grid-template-columns: 1fr; gap: 50px; }
+      .ct-nature-grid { grid-template-columns: 1fr; gap: 50px; }
+      .ct-nature { padding: 40px 0 110px; }
       .ct-tl { grid-template-columns: repeat(3, 1fr); row-gap: 44px; }
       .ct-tl-step:nth-child(4)::before { left: -25%; right: 75%; }
       .ct-tl-step:nth-child(4)::before { display: block; }
@@ -405,14 +443,16 @@
       .ct-large figure { width: calc(100% - 32px); height: 380px; }
       .ct-experience { padding: 90px 0; }
       .ct-xp-grid { grid-template-columns: 1fr; gap: 40px; }
-      .ct-ero-row, .ct-ero-row--6535, .ct-ero-row--3565 { grid-template-columns: 1fr; }
-      .ct-fig--tall, .ct-fig--med { height: 430px; }
       .ct-map-section { padding: 95px 0; }
       .ct-map-panel { bottom: 18px; top: auto; right: 12px; left: 12px; width: auto; }
       .ct-dests { padding: 90px 0 20px; }
       .ct-dests-head { flex-direction: column; align-items: flex-start; gap: 24px; }
       .ct-cine { min-height: 72vh; padding: 90px 20px; }
       .ct-arch { padding: 95px 0; }
+      .ct-nature { padding: 30px 0 95px; }
+      .ct-nature-fig { height: 360px; }
+      .ct-nature-sub { grid-template-columns: 1fr; gap: 16px; }
+      .ct-nature-sub img { width: 100%; height: 200px; }
       .ct-journey { padding: 95px 0; }
       .ct-tl { grid-template-columns: 1fr; }
       .ct-tl-step::before { display: none; }
@@ -427,8 +467,17 @@
       .ct-final-cta .ct-btn { width: 100%; }
       .ct-lb-prev { left: 10px; } .ct-lb-next { right: 10px; }
     }
-    @media (max-width: 1080px) and (min-width: 761px) {
-      .ct-ero-row--6535, .ct-ero-row--3565 { grid-template-columns: 1fr; }
+
+    /* ---------- Reduced motion ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+      .ct-reveal { opacity: 1 !important; transform: none !important; }
+      .ct-marker.active::before { display: none; }
+      .ct-scroll-line::after { animation: none !important; opacity: 0; }
+      .ct-fig img, .ct-fig .cap .nm, .ct-fig .cap .go, .ct-large img, .ct-arch-fig img, .ct-nature-fig img { transition: none !important; }
+      .ct-fig:hover img, .ct-arch-fig:hover img, .ct-nature-fig:hover img { transform: none !important; }
+      .ct-fig:hover .cap .nm { transform: none !important; }
+      .ct-fig:hover .cap .go { opacity: 0 !important; }
     }
   </style>
 </head>
@@ -673,6 +722,32 @@
     </section>
 
     <!-- ==================================================================
+         11b. NATURE — Space to Breathe
+    =================================================================== -->
+    <section class="ct-section ct-nature">
+      <div class="ct-wrap ct-nature-grid">
+        <figure class="ct-nature-fig ct-reveal">
+          <img src="images/gallery/Screenshot%202026-08-15%20150520.png" alt="The private lake and natural landscape at Quantum" loading="lazy"
+               onerror="this.style.background='#2a3a2a'">
+          <span class="ct-nature-tag">Private Lake</span>
+        </figure>
+        <div class="ct-nature-body">
+          <span class="ct-eyebrow">Landscape &amp; Nature</span>
+          <h2 class="ct-nature-h">Space to <em>Breathe</em></h2>
+          <p class="ct-nature-p">Beyond the treatment rooms and pavilions lies the quiet heart of the campus &mdash; a natural landscape of lake, forest trails, orchards and open lawn. Here, medicine gives way to stillness, and the grounds themselves become part of the therapy.</p>
+          <div class="ct-nature-sub">
+            <img src="images/gallery/Screenshot%202026-08-15%20150511.png" alt="The botanical gardens and medicinal orchards" loading="lazy"
+                 onerror="this.style.background='#2a3a2a'">
+            <div class="ct-nature-sub-copy">
+              <span class="ct-nature-subeyebrow">The Grounds</span>
+              <p>Herb and fruit orchards, lakeside walks and a waterfront trail &mdash; curated nature, planted and tended with intent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
          12. EXPERIENCE TIMELINE
     =================================================================== -->
     <section class="ct-section ct-journey" id="journey">
@@ -858,17 +933,23 @@
         { src: 'images/gallery/Screenshot%202026-08-15%20150635.png', label: 'Campus Panorama' }
       ];
 
-      /* Editorial grid arrangement: all 14 destinations, alternating
-         65/35 rows + full-width cinematic breaths (magazine rhythm) */
-      var GRID_LAYOUT = [
-        { type: '6535', a: { n: '14' }, b: { n: '03' } },
-        { type: 'wide', a: { n: '02' } },
-        { type: '3565', a: { n: '04' }, b: { n: '10' } },
-        { type: '6535', a: { n: '01' }, b: { n: '07' } },
-        { type: '3565', a: { n: '06' }, b: { n: '09' } },
-        { type: '6535', a: { n: '08' }, b: { n: '11' } },
-        { type: 'wide', a: { n: '12' } },
-        { type: '3565', a: { n: '05' }, b: { n: '13' } }
+      /* Destination mosaic: asymmetric, magazine-style composition of all
+         14 destinations with varied tile spans (12-col dense grid). */
+      var MOSAIC = [
+        { n: '14', cls: 'xl' },
+        { n: '03', cls: 'sm' },
+        { n: '01', cls: 'sm' },
+        { n: '04', cls: 'tall' },
+        { n: '02', cls: 'lg' },
+        { n: '05', cls: 'md' },
+        { n: '11', cls: 'md' },
+        { n: '09', cls: 'lg' },
+        { n: '10', cls: 'tall2' },
+        { n: '06', cls: 'tall2' },
+        { n: '07', cls: 'tall2' },
+        { n: '08', cls: 'xl' },
+        { n: '12', cls: 'lg' },
+        { n: '13', cls: 'lg' }
       ];
 
       function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -894,7 +975,11 @@
         li.setAttribute('data-index', d.n);
         li.innerHTML = '<span class="num">' + d.n + '</span><span class="nm">' + esc(d.name) + '</span><span class="dot"></span>';
         li.addEventListener('mouseenter', function (e) { hoverMarker(d.n, true); });
+        li.addEventListener('mouseleave', function (e) { hoverMarker(d.n, false); });
         li.addEventListener('click', function (e) { openPanel(d.n); });
+        li.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPanel(d.n); }
+        });
         listEl.appendChild(li);
       });
 
@@ -908,6 +993,9 @@
         mk.setAttribute('data-index', d.n);
         mk.innerHTML = '<span class="ring"></span><span class="pin">' + d.n + '</span>';
         mk.addEventListener('mouseenter', function (e) { hoverMarker(d.n, true); });
+        mk.addEventListener('mouseleave', function (e) { hoverMarker(d.n, false); });
+        mk.addEventListener('focus', function (e) { hoverMarker(d.n, true); });
+        mk.addEventListener('blur', function (e) { hoverMarker(d.n, false); });
         mk.addEventListener('click', function (e) { e.stopPropagation(); openPanel(d.n); });
         markersEl.appendChild(mk); markers[d.n] = mk;
       });
@@ -953,29 +1041,37 @@
       function closePanel() { panel.classList.remove('open'); }
       document.getElementById('ctPanelClose').addEventListener('click', closePanel);
       document.addEventListener('click', function (e) { if (panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('.ct-marker') && !e.target.closest('.ct-dest-li')) closePanel(); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePanel(); });
-
-      /* ---------------- Destinations editorial grid ---------------- */
-      var grid = document.getElementById('ctDestGrid');
-      GRID_LAYOUT.forEach(function (row, ri) {
-        var rowEl = document.createElement('div');
-        rowEl.className = 'ct-ero-row ct-reveal ' + (row.type === 'wide' ? '' : (row.type === '6535' ? 'ct-ero-row--6535' : 'ct-ero-row--3565'));
-        if (row.type === 'wide') {
-          var d = findDest(row.a.n);
-          rowEl.innerHTML = '<figure class="ct-fig ct-fig--wide">' +
-            '<img src="' + d.img + '" alt="' + esc(d.name) + ' at Quantum campus" loading="lazy"></figure>';
-        } else {
-          var da = findDest(row.a.n), db = findDest(row.b.n);
-          rowEl.innerHTML =
-            '<figure class="ct-fig ct-fig--tall"><img src="' + da.img + '" alt="' + esc(da.name) + ' at Quantum campus" loading="lazy">' +
-            '<span class="veil"></span><figcaption class="cap"><span class="nm"><sub>Destination ' + da.n + '</sub>' + esc(da.name) + '</span>' +
-            '<span class="go" aria-hidden="true">&rarr;</span></figcaption></figure>' +
-            '<figure class="ct-fig ct-fig--tall"><img src="' + db.img + '" alt="' + esc(db.name) + ' at Quantum campus" loading="lazy">' +
-            '<span class="veil"></span><figcaption class="cap"><span class="nm"><sub>Destination ' + db.n + '</sub>' + esc(db.name) + '</span>' +
-            '<span class="go" aria-hidden="true">&rarr;</span></figcaption></figure>';
+      /* Focus trap + escape for the map info panel */
+      panel.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closePanel(); panel.querySelector('#ctPanelClose').focus(); return; }
+        if (e.key === 'Tab') {
+          var f = panel.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
-        grid.appendChild(rowEl);
       });
+      document.addEventListener('keydown', function (e) { if (panel.classList.contains('open') && e.key === 'Escape') closePanel(); });
+
+      /* ---------------- Destinations mosaic ---------------- */
+      var grid = document.getElementById('ctDestGrid');
+      var mosaicEl = document.createElement('div');
+      mosaicEl.className = 'ct-mosaic ct-reveal';
+      MOSAIC.forEach(function (t) {
+        var d = findDest(t.n);
+        var fig = document.createElement('figure');
+        fig.className = 'ct-fig ct-fig--' + t.cls;
+        fig.innerHTML =
+          '<img src="' + d.img + '" alt="' + esc(d.name) + ' at the Quantum campus" loading="lazy">' +
+          '<span class="veil"></span>' +
+          '<figcaption class="cap"><span class="nm"><sub>Destination ' + d.n + '</sub>' + esc(d.name) + '</span>' +
+          '<span class="go" aria-hidden="true">&rarr;</span></figcaption>';
+        mosaicEl.appendChild(fig);
+      });
+      grid.appendChild(mosaicEl);
+      if (typeof io !== 'undefined' && io) io.observe(mosaicEl);
+      else mosaicEl.classList.add('in-view');
 
       /* ---------------- Gallery ---------------- */
       var galGrid = document.getElementById('ctGalGrid');
@@ -1002,9 +1098,12 @@
         lbCap.textContent = GALLERY[lbIdx].label;
         lbCount.textContent = (lbIdx + 1) + ' / ' + GALLERY.length;
         lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        var c = document.getElementById('ctLbClose');
+        if (c) c.focus();
       }
-      function closeLightbox() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+      function closeLightbox() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
       function stepLightbox(d) { showLightbox(lbIdx + d); }
       document.getElementById('ctLbClose').addEventListener('click', closeLightbox);
       document.getElementById('ctLbPrev').addEventListener('click', function () { stepLightbox(-1); });
@@ -1014,6 +1113,13 @@
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') stepLightbox(-1);
         if (e.key === 'ArrowRight') stepLightbox(1);
+        if (e.key === 'Tab') {
+          var f = lb.querySelectorAll('button');
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
       });
       lb.addEventListener('click', function (e) { if (e.target === lb) closeLightbox(); });
       var touchX = null;
